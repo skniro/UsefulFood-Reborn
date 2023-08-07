@@ -28,7 +28,7 @@ public static final Item MilkBottle =
                         .group(UsefulFood.Growable_Ores_Group)
         ));
     public static final Item ChocolateMilkBottle =
-            registerItem( "chocolatebottle", new ItemBottle(
+            registerItem( "chocolatemilkbottle", new ItemBottle(
                     new Item
                             .Settings()
                             .food

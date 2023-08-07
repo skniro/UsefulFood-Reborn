@@ -1,10 +1,10 @@
 {
     "textures": {
-        "particle": "block/applecake_side",
-        "bottom": "block/applecake_bottom",
-        "top": "block/applecake_top",
-        "side": "block/applecake_side",
-        "inside": "block/applecake_inner"
+        "particle": "usefulfood:block/applecake_side",
+        "bottom": "usefulfood:block/applecake_bottom",
+        "top": "usefulfood:block/applecake_top",
+        "side": "usefulfood:block/applecake_side",
+        "inside": "usefulfood:block/applecake_inner"
     },
     "elements": [
         {   "from": [ 7, 0, 1 ],

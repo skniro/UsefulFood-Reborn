@@ -16,12 +16,5 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
 
 
 
-        // Load an existing language file.
-        try {
-            Path existingFilePath = dataGenerator.getModContainer().findPath("assets/agree/lang/en_us.existing.json").get();
-            translationBuilder.add(existingFilePath);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to add existing language file!", e);
-        }
     }
 }

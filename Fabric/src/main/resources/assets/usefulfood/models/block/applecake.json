@@ -1,9 +1,9 @@
 {
     "textures": {
-        "particle": "block/cake_side",
-        "bottom": "block/cake_bottom",
-        "top": "block/cake_top",
-        "side": "block/cake_side"
+        "particle": "usefulfood:block/applecake_side",
+        "bottom": "usefulfood:block/applecake_bottom",
+        "top": "usefulfood:block/applecake_top",
+        "side": "usefulfood:block/applecake_side"
     },
     "elements": [
         {   "from": [ 1, 0, 1 ],

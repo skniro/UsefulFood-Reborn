@@ -11,6 +11,8 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
         fabricDataGenerator.addProvider(UsefulFoodModelProvider::new);
         fabricDataGenerator.addProvider(UsefulFoodEnglishLanguageProvider::new);
         fabricDataGenerator.addProvider(UsefulFoodSimplifiedChineseLanguageProvider::new);
+        fabricDataGenerator.addProvider(UsefulFoodRecipeGenerator::new);
+        fabricDataGenerator.addProvider(MyTagGenerator::new);
     }
 
 }

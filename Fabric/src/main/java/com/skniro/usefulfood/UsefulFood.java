@@ -1,6 +1,7 @@
 package com.skniro.usefulfood;
 
 import com.skniro.usefulfood.item.UsefulFoodItems;
+import com.skniro.usefulfood.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -26,5 +27,6 @@ public class UsefulFood implements ModInitializer {
         ModContent.registerItem();
         ModContent.registerBlock();
         ModContent.CreativeTab();
+        ModLootTableModifiers.modifyLootTables();
     }
 }

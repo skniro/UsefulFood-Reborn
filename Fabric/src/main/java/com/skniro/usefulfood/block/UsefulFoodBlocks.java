@@ -15,12 +15,12 @@ import net.minecraft.util.registry.Registry;
 import java.util.logging.Logger;
 
 public class UsefulFoodBlocks {
-    public static final Block AppleCake = registerBlock("applecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),18,0.6F), UsefulFood.Growable_Ores_Group);
-    public static final Block ChocolateCake = registerBlock("chocolatecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),12,0.5F), UsefulFood.Growable_Ores_Group);
-    public static final Block MagicCake = registerBlock("magiccake", new MagicCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE), 48, 0.5F), UsefulFood.Growable_Ores_Group);
+    public static final Block AppleCake = registerBlock("applecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),18,0.6F), UsefulFood.UsefulFood_Group);
+    public static final Block ChocolateCake = registerBlock("chocolatecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),12,0.5F), UsefulFood.UsefulFood_Group);
+    public static final Block MagicCake = registerBlock("magiccake", new MagicCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE), 48, 0.5F), UsefulFood.UsefulFood_Group);
 
     // 1.4
-    public static final Block CaramelCake = registerBlock("caramelcake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),19,0.1F), UsefulFood.Growable_Ores_Group);
+    public static final Block CaramelCake = registerBlock("caramelcake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),19,0.1F), UsefulFood.UsefulFood_Group);
 
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {

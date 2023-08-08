@@ -19,7 +19,7 @@ public class UsefulFood implements ModInitializer {
 
 
 
-     public static final ItemGroup Growable_Ores_Group = FabricItemGroupBuilder.build(
+     public static final ItemGroup UsefulFood_Group = FabricItemGroupBuilder.build(
              new Identifier(MOD_ID, "test_group"),()-> new ItemStack(UsefulFoodItems.Cheese));
 
     @Override

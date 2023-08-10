@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 
 public class MyTagGenerator extends FabricTagProvider<Item> {
     public MyTagGenerator(FabricDataGenerator dataGenerator) {
-        super(dataGenerator, Registry.ITEM);
+        super(dataGenerator, Registry.ITEM,UsefulFood.MOD_ID);
     }
 
     public static final TagKey<Item> Milk = TagKey.of(Registry.ITEM_KEY, new Identifier("milk"+ UsefulFood.MOD_ID));

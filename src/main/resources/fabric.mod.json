@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "usefulfood",
+  "version": "${version}",
+  "name": "UsefulFood Reborn",
+  "description": "",
+  "authors": [
+    "skniro"
+  ],
+  "contact": {
+    "website": "https://www.curseforge.com/skniro",
+    "sources": "https://github.com/skniro/UsefulFood-Reborn",
+    "issues": "https://github.com/skniro/UsefulFood-Reborn/issues"},
+  "license": "MIT",
+  "icon": "assets/usefulfood/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.skniro.usefulfood.datagen.ModDataGenerator"
+    ],
+    "client": [
+      "com.skniro.usefulfood.client.UsefulFoodClient"
+    ],
+    "main": [
+      "com.skniro.usefulfood.UsefulFood"
+    ]
+  },
+  "mixins": [
+    "usefulfood.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.13",
+    "fabric": "*",
+    "minecraft": "1.20.x"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "usefulfood:caramel"
+    },
+    {
+      "item": "usefulfood:pancake"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:caramelpancake"
+  }
+}

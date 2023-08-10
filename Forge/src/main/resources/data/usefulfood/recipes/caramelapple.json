@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "usefulfood:caramel"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:caramelapple"
+  }
+}

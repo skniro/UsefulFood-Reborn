@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "usefulfood:breadslice"
+    },
+    {
+      "item": "usefulfood:breadslice"
+    },
+    {
+      "tag": "minecraft:fishusefulfood"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:fishsandwich"
+  }
+}

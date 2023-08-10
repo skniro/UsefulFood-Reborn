@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "experience": 0.45,
+  "group": "food",
+  "ingredient": {
+    "item": "minecraft:pumpkin_seeds"
+  },
+  "result": "usefulfood:roastedseeds"
+}

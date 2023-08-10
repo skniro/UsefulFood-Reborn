@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "usefulfood:chocolatebiscuit"
+    },
+    {
+      "item": "usefulfood:chocolatebiscuit"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "usefulfood:milkbottle"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:oreo"
+  }
+}

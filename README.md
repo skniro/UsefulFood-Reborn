@@ -12,7 +12,7 @@ You can reporting issue.
 Discord server https://discord.gg/pDaMyHDfBy
 
 ## Translation
-Submitting translations for GrowableOres can be done via our [Crowdin page](https://crowdin.com/project/usefulfood-reborn). Consider helping us out if you're fluent in any language at all! Alternatively, translations can still be submitted via pull requests.
+Submitting translations for UsefulFoodReborn can be done via our [Crowdin page](https://crowdin.com/project/usefulfood-reborn). Consider helping us out if you're fluent in any language at all! Alternatively, translations can still be submitted via pull requests.
 
 ## License
 

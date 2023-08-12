@@ -7,7 +7,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.item.StewItem;
+import net.minecraft.item.MushroomStewItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -162,7 +162,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item PumpkinSoup = registerItem("pumpkinsoup",new StewItem(
+    public static final Item PumpkinSoup = registerItem("pumpkinsoup",new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -174,7 +174,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group).maxCount(1)
     ));
-    public static final Item Salad = registerItem("salad",new StewItem(
+    public static final Item Salad = registerItem("salad",new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -186,7 +186,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group).maxCount(1)
     ));
-    public static final Item Oatmeal = registerItem("oatmeal",new StewItem(
+    public static final Item Oatmeal = registerItem("oatmeal",new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -198,7 +198,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group).maxCount(1)
     ));
-    public static final Item Jelly = registerItem("jelly",new StewItem(
+    public static final Item Jelly = registerItem("jelly",new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -236,7 +236,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group).maxCount(1)
     ));
 
-    public static final Item VanillaIceCream = registerItem("vanillaicecream",new StewItem(
+    public static final Item VanillaIceCream = registerItem("vanillaicecream",new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -332,7 +332,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item Trailmix = registerItem("trailmix",new StewItem(
+    public static final Item Trailmix = registerItem("trailmix",new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -468,7 +468,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group)
                     .recipeRemainder(Items.GLASS_BOTTLE)
     ));
-    public static final Item CarrotSoup = registerItem("carrotsoup", new StewItem(
+    public static final Item CarrotSoup = registerItem("carrotsoup", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -567,7 +567,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group)
                     .recipeRemainder(Items.GLASS_BOTTLE)
     ));
-    public static final Item chocolateicecream = registerItem("chocolateicecream", new StewItem(
+    public static final Item chocolateicecream = registerItem("chocolateicecream", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -623,7 +623,7 @@ public static final Item MilkBottle =
                     .recipeRemainder(Items.GLASS_BOTTLE)
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item Spaghetti = registerItem("spaghetti", new StewItem(
+    public static final Item Spaghetti = registerItem("spaghetti", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -636,7 +636,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
-    public static final Item AppleIceCream = registerItem("appleicecream", new StewItem(
+    public static final Item AppleIceCream = registerItem("appleicecream", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -649,7 +649,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
-    public static final Item MelonIceCream = registerItem("melonicecream", new StewItem(
+    public static final Item MelonIceCream = registerItem("melonicecream", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -688,7 +688,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item FishSoup = registerItem("fishsoup", new StewItem(
+    public static final Item FishSoup = registerItem("fishsoup", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -739,7 +739,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item CaramelIceCream = registerItem("caramelicecream", new StewItem(
+    public static final Item CaramelIceCream = registerItem("caramelicecream", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -753,7 +753,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
-    public static final Item Cereal = registerItem("cereal", new StewItem(
+    public static final Item Cereal = registerItem("cereal", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -766,7 +766,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
-    public static final Item ChocolateCereal = registerItem("chocolatecereal", new StewItem(
+    public static final Item ChocolateCereal = registerItem("chocolatecereal", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -791,7 +791,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item AppleJelly = registerItem("applejelly", new StewItem(
+    public static final Item AppleJelly = registerItem("applejelly", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -805,7 +805,7 @@ public static final Item MilkBottle =
                     .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
-    public static final Item MelonJelly = registerItem("melonjelly", new StewItem(
+    public static final Item MelonJelly = registerItem("melonjelly", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -918,7 +918,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item AppleJam = registerItem("applejam", new StewItem(
+    public static final Item AppleJam = registerItem("applejam", new MushroomStewItem(
             new Item
                     .Settings()
                     .food
@@ -993,7 +993,7 @@ public static final Item MilkBottle =
                             )
                     .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item MelonJam = registerItem("melonjam", new StewItem(
+    public static final Item MelonJam = registerItem("melonjam", new MushroomStewItem(
             new Item
                     .Settings()
                     .food

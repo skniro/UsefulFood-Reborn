@@ -15,9 +15,6 @@
   "icon": "assets/usefulfood/icon.png",
   "environment": "*",
   "entrypoints": {
-    "fabric-datagen": [
-      "com.skniro.usefulfood.datagen.ModDataGenerator"
-    ],
     "client": [
       "com.skniro.usefulfood.client.UsefulFoodClient"
     ],
@@ -31,6 +28,6 @@
   "depends": {
     "fabricloader": ">=0.14.13",
     "fabric": "*",
-    "minecraft": "1.19.x"
+    "minecraft": "1.16.x"
   }
 }

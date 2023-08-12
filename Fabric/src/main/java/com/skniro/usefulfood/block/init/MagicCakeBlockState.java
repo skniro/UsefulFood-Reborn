@@ -25,12 +25,11 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.minecraft.world.event.GameEvent;
 
 public class MagicCakeBlockState extends SpecialCake {
     public static final int MAX_BITES = 6;
     public static final IntProperty BITES = Properties.BITES;
-    public static final int DEFAULT_COMPARATOR_OUTPUT = CakeBlock.getComparatorOutput(0);
+    public static final int DEFAULT_COMPARATOR_OUTPUT = getComparatorOutput(0);
     protected static final float field_31047 = 1.0f;
     protected static final float field_31048 = 2.0f;
     protected static final VoxelShape[] BITES_TO_SHAPE = new VoxelShape[]{createCuboidShape(1.0, 0.0, 1.0, 15.0, 8.0, 15.0), createCuboidShape(3.0, 0.0, 1.0, 15.0, 8.0, 15.0), createCuboidShape(5.0, 0.0, 1.0, 15.0, 8.0, 15.0), createCuboidShape(7.0, 0.0, 1.0, 15.0, 8.0, 15.0), createCuboidShape(9.0, 0.0, 1.0, 15.0, 8.0, 15.0), createCuboidShape(11.0, 0.0, 1.0, 15.0, 8.0, 15.0), createCuboidShape(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)};
@@ -50,16 +49,6 @@ public class MagicCakeBlockState extends SpecialCake {
         Block block;
         ItemStack itemStack = player.getStackInHand(hand);
         Item item = itemStack.getItem();
-        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = getBlockFromItem(item)) instanceof CandleBlock) {
-            if (!player.isCreative()) {
-                itemStack.decrement(1);
-            }
-            world.playSound(null, pos, SoundEvents.BLOCK_CAKE_ADD_CANDLE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            world.setBlockState(pos, CandleCakeBlock.getCandleCakeFromCandle(block));
-            world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
-            player.incrementStat(Stats.USED.getOrCreateStat(item));
-            return ActionResult.SUCCESS;
-        }
         if (world.isClient) {
             if (tryEat(world, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
@@ -80,12 +69,10 @@ public class MagicCakeBlockState extends SpecialCake {
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,200,3));
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,2000,0));
         int i = state.get(BITES);
-        world.emitGameEvent((Entity)player, GameEvent.EAT, pos);
         if (i < 6) {
-            world.setBlockState(pos, (BlockState)state.with(BITES, i + 1), NOTIFY_ALL);
+            world.setBlockState(pos, (BlockState)state.with(BITES, i + 1), 3);
         } else {
             world.removeBlock(pos, false);
-            world.emitGameEvent((Entity)player, GameEvent.BLOCK_DESTROY, pos);
         }
         return ActionResult.SUCCESS;
     }
@@ -110,7 +97,7 @@ public class MagicCakeBlockState extends SpecialCake {
 
     @Override
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
-        return CakeBlock.getComparatorOutput(state.get(BITES));
+        return getComparatorOutput(state.get(BITES));
     }
 
     public static int getComparatorOutput(int bites) {

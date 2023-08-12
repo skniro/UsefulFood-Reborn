@@ -29,7 +29,7 @@ public class ItemBottle
             Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
-        if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
+        if (user instanceof PlayerEntity && !((PlayerEntity)user).abilities.creativeMode) {
             stack.decrement(1);
         }
         if (!world.isClient) {

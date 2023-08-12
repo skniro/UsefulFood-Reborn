@@ -1,10 +1,11 @@
 package com.skniro.usefulfood.item;
 
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+
 
 public class ModCreativeModeTabs {
-    public static final CreativeModeTab UsefulFood_Group = new CreativeModeTab("usefulfood.test_group") {
+    public static final ItemGroup UsefulFood_Group = new ItemGroup("usefulfood.test_group") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(UsefulFoodItems.Cheese.get());

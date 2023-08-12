@@ -1,31 +1,28 @@
 package com.skniro.usefulfood.block.init;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathType;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.pathfinder.PathComputationType;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 
 public class SpecialCakeBlockState extends SpecialCake {
     public static final int MAX_BITES = 6;
@@ -35,61 +32,49 @@ public class SpecialCakeBlockState extends SpecialCake {
     protected static final float AABB_SIZE_PER_BITE = 2.0F;
     protected static final VoxelShape[] BITES_TO_SHAPE = new VoxelShape[]{box(1.0, 0.0, 1.0, 15.0, 8.0, 15.0), box(3.0, 0.0, 1.0, 15.0, 8.0, 15.0), box(5.0, 0.0, 1.0, 15.0, 8.0, 15.0), box(7.0, 0.0, 1.0, 15.0, 8.0, 15.0), box(9.0, 0.0, 1.0, 15.0, 8.0, 15.0), box(11.0, 0.0, 1.0, 15.0, 8.0, 15.0), box(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)};
 
-    public SpecialCakeBlockState(Properties settings, int foodlevel, float saturation) {
+    public SpecialCakeBlockState(AbstractBlock.Properties settings, int foodlevel, float saturation) {
         super(settings, foodlevel, saturation);
         this.registerDefaultState(this.stateDefinition.any().setValue(BITES, Integer.valueOf(0)));
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
         return BITES_TO_SHAPE[state.getValue(BITES)];
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
         Block block;
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
-        if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
-            if (!player.isCreative()) {
-                itemStack.shrink(1);
-            }
-            world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
-            world.setBlockAndUpdate(pos, CandleCakeBlock.byCandle(block));
-            world.gameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
-            player.awardStat(Stats.ITEM_USED.get(item));
-            return InteractionResult.SUCCESS;
-        }
         if (world.isClientSide) {
             if (eat(world, pos, state, player).consumesAction()) {
-                return InteractionResult.SUCCESS;
+                return ActionResultType.SUCCESS;
             }
             if (itemStack.isEmpty()) {
-                return InteractionResult.CONSUME;
+                return ActionResultType.CONSUME;
             }
         }
         return eat(world, pos, state, player);
     }
 
-    protected static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
+    protected static ActionResultType eat(IWorld world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canEat(false)) {
-            return InteractionResult.PASS;
+            return ActionResultType.PASS;
         }
         player.awardStat(Stats.EAT_CAKE_SLICE);
         player.getFoodData().eat(foodlevel, saturation);
         int i = state.getValue(BITES);
-        world.gameEvent((Entity)player, GameEvent.EAT, pos);
         if (i < 6) {
             world.setBlock(pos, (BlockState)state.setValue(BITES, i + 1), 3);
         } else {
             world.removeBlock(pos, false);
-            world.gameEvent((Entity)player, GameEvent.BLOCK_DESTROY, pos);
         }
-        return InteractionResult.SUCCESS;
+        return ActionResultType.SUCCESS;
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, IWorld world, BlockPos pos, BlockPos neighborPos) {
         if (direction == Direction.DOWN && !state.canSurvive(world, pos)) {
             return Blocks.AIR.defaultBlockState();
         }
@@ -97,17 +82,17 @@ public class SpecialCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, IWorldReader world, BlockPos pos) {
         return world.getBlockState(pos.below()).getMaterial().isSolid();
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(BITES);
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState state, World world, BlockPos pos) {
         return getOutputSignal(state.getValue(BITES));
     }
 
@@ -121,7 +106,7 @@ public class SpecialCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public boolean isPathfindable(BlockState state, BlockGetter world, BlockPos pos, PathComputationType type) {
+    public boolean isPathfindable(BlockState state, IBlockReader world, BlockPos pos, PathType type) {
         return false;
     }
 }

@@ -12,5 +12,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'Useful_Food-1.19'
+rootProject.name = 'Useful_Food-1.16'
 include("Fabric", "Forge")

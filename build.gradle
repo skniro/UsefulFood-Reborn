@@ -2,7 +2,7 @@ subprojects {
     
     apply plugin: 'java'
     
-    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+    java.toolchain.languageVersion = JavaLanguageVersion.of(8)
     java.withSourcesJar()
         
     jar {
@@ -36,13 +36,7 @@ subprojects {
             url = 'https://maven.blamejared.com'
         }
     }
-    
 
-    tasks.withType(JavaCompile).configureEach {
-    
-        it.options.encoding = 'UTF-8'
-        it.options.release = 17
-    }
 
     // Disables Gradle's custom module metadata from being published to maven. The
     // metadata includes mapped dependencies which are not reasonably consumable by

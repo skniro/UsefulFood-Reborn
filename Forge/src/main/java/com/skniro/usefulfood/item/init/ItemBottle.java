@@ -2,14 +2,19 @@ package com.skniro.usefulfood.item.init;
 
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.item.UseAction;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.DrinkHelper;
+import net.minecraft.util.Hand;
+import net.minecraft.world.World;
+
 
 public class ItemBottle
         extends Item {
@@ -20,13 +25,13 @@ public class ItemBottle
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
-        if (user instanceof ServerPlayer) {
-            ServerPlayer serverPlayerEntity = (ServerPlayer)user;
+    public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity user) {
+        if (user instanceof ServerPlayerEntity) {
+            ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)user;
             CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             serverPlayerEntity.awardStat(Stats.ITEM_USED.get(this));
         }
-        if (user instanceof Player && !((Player)user).getAbilities().instabuild) {
+        if (user instanceof PlayerEntity && !((PlayerEntity)user).abilities.instabuild) {
             stack.shrink(1);
         }
         if (!world.isClientSide) {
@@ -44,12 +49,12 @@ public class ItemBottle
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
+    public UseAction getUseAnimation(ItemStack stack) {
+        return UseAction.DRINK;
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
-        return ItemUtils.startUsingInstantly(world, user, hand);
+    public ActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        return DrinkHelper.useDrink(world, user, hand);
     }
 }

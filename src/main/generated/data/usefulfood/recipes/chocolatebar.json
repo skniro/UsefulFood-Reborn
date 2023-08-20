@@ -1,17 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:cocoa_beans"
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        " # ",
+        "#  "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:cocoa_beans"
+        }
     },
-    {
-      "tag": "minecraft:milkusefulfood"
+    "result": {
+        "item": "usefulfood:chocolatebar",
+        "count": 1
     },
-    {
-      "item": "minecraft:sugar"
-    }
-  ],
-  "result": {
-    "item": "usefulfood:chocolatebar"
-  }
+    "category": "food"
 }

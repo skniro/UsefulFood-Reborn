@@ -1,9 +1,10 @@
 {
-  "type": "minecraft:smelting",
-  "cookingtime": 300,
-  "experience": 0.45,
-  "ingredient": {
-    "item": "usefulfood:rawmarshmallow"
-  },
-  "result": "usefulfood:cookedmarshmallow"
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "item": "usefulfood:rawmarshmallow"
+    },
+    "result": "usefulfood:cookedmarshmallow",
+    "experience": 0.6,
+    "cookingtime": 600,
+    "category": "food"
 }

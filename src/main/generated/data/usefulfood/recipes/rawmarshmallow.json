@@ -1,23 +1,20 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:sugar"
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " #",
+        "/ "
+    ],
+    "key": {
+        "#": {
+            "item": "usefulfood:sugarcube"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
     },
-    {
-      "item": "minecraft:sugar"
+    "result": {
+        "item": "usefulfood:rawmarshmallow",
+        "count": 1
     },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:water_bucket"
-    }
-  ],
-  "result": {
-    "item": "usefulfood:rawmarshmallow"
-  }
+    "category": "misc"
 }

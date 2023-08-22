@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#MS",
+        " B "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:apple"
+        },
+        "M": {
+            "item": "minecraft:melon_slice"
+        },
+        "S": {
+            "item": "minecraft:sweet_berries"
+        },
+        "B": {
+            "item": "minecraft:bowl"
+        }
+    },
+    "result": {
+        "item": "usefulfood:fruitsalad",
+        "count": 1
+    },
+    "category": "food",
+	"group": "fruitsalad"
+}

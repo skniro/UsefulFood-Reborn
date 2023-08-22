@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "usefulfood:caramel"
+    },
+    {
+      "item": "usefulfood:caramel"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:milks"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:caramelcake"
+  }
+}

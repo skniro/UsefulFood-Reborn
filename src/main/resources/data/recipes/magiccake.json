@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:milks"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:magiccake"
+  }
+}

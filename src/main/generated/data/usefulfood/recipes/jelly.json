@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "food",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:slime_ball"
     },
     {
-      "item": "minecraft:bone_meal"
+      "item": "minecraft:sugar"
     },
     {
       "item": "minecraft:bowl"

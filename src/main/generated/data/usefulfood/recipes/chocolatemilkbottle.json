@@ -1,24 +1,18 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#",
-        "S",
-        "H"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:cocoa_beans"
-        },
-        "S": {
-            "item": "minecraft:sugar"
-        },
-        "H": {
-            "item": "usefulfood:milkbottle"
-        }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
     },
-    "result": {
-        "item": "usefulfood:chocolatemilkbottle",
-        "count": 1
+    {
+      "item": "minecraft:glass_bottle"
     },
-    "category": "food"
+    {
+      "item": "usefulfood:milkbottle"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:chocolatemilkbottle"
+  }
 }

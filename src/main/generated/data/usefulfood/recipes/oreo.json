@@ -1,21 +1,24 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#",
-        "S",
-        "#"
-    ],
-    "key": {
-        "#": {
-            "item": "usefulfood:chocolatebiscuit"
-        },
-        "S": {
-            "item": "minecraft:sugar"
-        }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:chocolatebiscuit"
     },
-    "result": {
-        "item": "usefulfood:oreo",
-        "count": 1
+    {
+      "item": "usefulfood:chocolatebiscuit"
     },
-    "category": "food"
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "usefulfood:milkbottle"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:oreo"
+  }
 }

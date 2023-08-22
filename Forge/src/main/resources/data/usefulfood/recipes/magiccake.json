@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:enchanted_golden_apple"
+      "item": "minecraft:golden_apple"
     },
     {
       "item": "minecraft:enchanted_golden_apple"
     },
     {
-      "item": "minecraft:wheat"
+      "item": "minecraft:golden_apple"
     },
     {
       "item": "minecraft:wheat"
@@ -17,13 +17,16 @@
       "item": "minecraft:wheat"
     },
     {
-      "tag": "minecraft:milkusefulfood"
+      "item": "minecraft:wheat"
     },
     {
-      "tag": "minecraft:milkusefulfood"
+      "tag": "c:milks"
     },
     {
-      "tag": "minecraft:milkusefulfood"
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:milks"
     }
   ],
   "result": {

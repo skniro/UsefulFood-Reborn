@@ -1,11 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "food",
   "ingredients": [
     {
       "item": "minecraft:glass_bottle"
     },
     {
-      "item": "minecraft:lily_pad"
+      "tag": "c:lily_pads"
     }
   ],
   "result": {

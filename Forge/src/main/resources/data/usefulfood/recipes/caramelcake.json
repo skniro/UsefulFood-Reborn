@@ -8,7 +8,7 @@
       "item": "usefulfood:caramel"
     },
     {
-      "item": "minecraft:wheat"
+      "item": "usefulfood:caramel"
     },
     {
       "item": "minecraft:wheat"
@@ -17,13 +17,16 @@
       "item": "minecraft:wheat"
     },
     {
-      "tag": "minecraft:milkusefulfood"
+      "item": "minecraft:wheat"
     },
     {
-      "tag": "minecraft:milkusefulfood"
+      "tag": "c:milks"
     },
     {
-      "tag": "minecraft:milkusefulfood"
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:milks"
     }
   ],
   "result": {

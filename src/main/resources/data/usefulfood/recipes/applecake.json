@@ -2,10 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "usefulfood:caramel"
+      "item": "minecraft:apple"
     },
     {
-      "item": "usefulfood:caramel"
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
     },
     {
       "item": "minecraft:wheat"
@@ -27,6 +30,6 @@
     }
   ],
   "result": {
-    "item": "usefulfood:caramelcake"
+    "item": "usefulfood:applecake"
   }
 }

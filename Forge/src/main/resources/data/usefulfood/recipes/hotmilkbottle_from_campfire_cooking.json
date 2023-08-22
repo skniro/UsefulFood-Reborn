@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "item": "usefulfood:milkbottle"
+    },
+    "result": "usefulfood:hotmilkbottle",
+    "experience": 0.3,
+    "cookingtime": 75,
+    "category": "food"
+}

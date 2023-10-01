@@ -1,12 +1,11 @@
 package com.skniro.usefulfood.datagen;
 
 import com.google.common.collect.Lists;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
@@ -16,7 +15,6 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Util;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
     UsefulFoodRecipeGenerator(FabricDataOutput generator) {
@@ -24,7 +22,7 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.MilkBottle,2).input(Items.GLASS_BOTTLE,2).input(Items.MILK_BUCKET).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.MILK_BUCKET)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.ChocolateMilkBottle).input(Items.COCOA_BEANS).input(Items.GLASS_BOTTLE).input(UsefulFoodItems.MilkBottle).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Cheese).input(UsefulFoodItems.HotMilkBottle).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.HotMilkBottle)).offerTo(exporter);

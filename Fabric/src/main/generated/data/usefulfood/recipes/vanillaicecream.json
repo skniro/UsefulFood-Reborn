@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "usefulfood:milkbottle"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:vanillaicecream"
+  }
+}

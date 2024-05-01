@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:hotchocolatemilkbottle"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:chocolateapple"
+  }
+}

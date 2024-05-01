@@ -10,7 +10,7 @@ buildscript {
 }
 
 plugins {
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
     id 'maven-publish'
 }
 
@@ -21,7 +21,7 @@ version = "${project.forge_mod_version}"
 
 java {
     archivesBaseName = "${project.archives_base_name}"
-    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
 minecraft {
@@ -202,5 +202,11 @@ publishing {
             }
         }
     }
+}
+
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
 }
 

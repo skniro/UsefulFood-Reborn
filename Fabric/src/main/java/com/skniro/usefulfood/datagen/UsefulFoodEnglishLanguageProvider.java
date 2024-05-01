@@ -5,18 +5,21 @@ import com.skniro.usefulfood.UsefulFood;
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.client.Models;
+import net.minecraft.registry.RegistryWrapper;
 
 import java.nio.file.Path;
+import java.util.concurrent.CompletableFuture;
 
 public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
-    public UsefulFoodEnglishLanguageProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator, "en_us");
+    public UsefulFoodEnglishLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataGenerator, "en_us", registryLookup);
     }
 
     @Override
-    public void generateTranslations(TranslationBuilder translationBuilder) {
+    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add(UsefulFoodItems.MilkBottle,"Milk Bottle");
         translationBuilder.add(UsefulFoodItems.ChocolateMilkBottle,"Chocolate Milk Bottle");
         translationBuilder.add(UsefulFoodItems.Cheese,"Cheese");

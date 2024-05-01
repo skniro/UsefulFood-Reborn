@@ -4,17 +4,20 @@ import com.skniro.usefulfood.UsefulFood;
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.registry.RegistryWrapper;
 
 import java.nio.file.Path;
+import java.util.concurrent.CompletableFuture;
 
 public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
-    public UsefulFoodSimplifiedChineseLanguageProvider(FabricDataGenerator dataGenerator){
-        super(dataGenerator,"zh_cn");
+    public UsefulFoodSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup){
+        super(dataGenerator,"zh_cn", registryLookup);
     }
 
     @Override
-    public void generateTranslations(TranslationBuilder translationBuilder){
+    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add(UsefulFoodItems.MilkBottle,"牛奶");
         translationBuilder.add(UsefulFoodItems.ChocolateMilkBottle,"巧克力牛奶");
         translationBuilder.add(UsefulFoodItems.Cheese,"奶酪");

@@ -30,6 +30,7 @@ public class UsefulFood {
         modEventBus.addListener(this::commonSetup);
         UsefulFoodItems.registerModItems(modEventBus);
         UsefulFoodBlocks.registerModBlocks(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
 

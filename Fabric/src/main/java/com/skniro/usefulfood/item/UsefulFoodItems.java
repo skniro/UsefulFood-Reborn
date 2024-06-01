@@ -67,7 +67,7 @@ public static final Item MilkBottle =
                                     )
             ));
     public static final Item FruitSalad =
-            registerItem("fruitsalad", new Item(
+            registerItem("fruitsalad", new StewItem(
                     new Item
                             .Settings()
                             .food
@@ -80,7 +80,7 @@ public static final Item MilkBottle =
                             .maxCount(1)
             ));
 
-    public static final Item MagicFruitSalad = registerItem("magicfruitsalad", new Item(
+    public static final Item MagicFruitSalad = registerItem("magicfruitsalad", new StewItem(
             new Item
                     .Settings()
                     .food
@@ -93,6 +93,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .rarity(Rarity.RARE)
+                    .maxCount(1)
     ));
     public static final Item SugarCube = registerItem("sugarcube", new Item(
             new Item
@@ -320,6 +321,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.5f)
                                     .build()
                             )
+                    .maxCount(1)
     ));
 
     // 1.0
@@ -396,6 +398,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .rarity(Rarity.RARE)
+                    .maxCount(1)
     ));
     public static final Item MelonJuice = registerItem("melonjuice", new ItemBottle(
             new Item
@@ -409,6 +412,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item AppleJuice = registerItem("applejuice", new ItemBottle(
             new Item
@@ -422,6 +426,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item CarrotJuice = registerItem("carrotjuice", new ItemBottle(
             new Item
@@ -435,6 +440,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item CarrotSoup = registerItem("carrotsoup", new StewItem(
             new Item
@@ -541,7 +547,7 @@ public static final Item MilkBottle =
     ));
 
     // 1.4
-    public static final Item MagicIceCream = registerItem("magicicecream", new Item(
+    public static final Item MagicIceCream = registerItem("magicicecream", new StewItem(
             new Item
                     .Settings()
                     .food
@@ -554,6 +560,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .rarity(Rarity.RARE)
+                    .maxCount(1)
     ));
     public static final Item SquidSushi = registerItem("squidsushi", new Item(
             new Item
@@ -578,6 +585,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item Spaghetti = registerItem("spaghetti", new StewItem(
             new Item
@@ -649,6 +657,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6F)
                                     .build()
                             )
+                    .maxCount(1)
     ));
     public static final Item Tea = registerItem("tea", new Item(
             new Item

@@ -21,35 +21,20 @@ public class ItemBottle
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
-        if (user instanceof ServerPlayer) {
-            ServerPlayer serverPlayerEntity = (ServerPlayer)user;
-            CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
-            serverPlayerEntity.awardStat(Stats.ITEM_USED.get(this));
-        }
-        if (user instanceof Player && !((Player)user).getAbilities().instabuild) {
-            stack.shrink(1);
-        }
         if (!world.isClientSide) {
             user.removeAllEffects();
         }
-        if (stack.isEmpty()) {
-            return new ItemStack(Items.GLASS_BOTTLE);
-        }
-        return stack;
+        ItemStack $$3 = super.finishUsingItem(stack, world, user);
+        return user instanceof Player && ((Player)user).getAbilities().instabuild ? $$3 : new ItemStack(Items.GLASS_BOTTLE);
     }
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 32;
+        return MAX_USE_TIME ;
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
         return UseAnim.DRINK;
-    }
-
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
-        return ItemUtils.startUsingInstantly(world, user, hand);
     }
 }

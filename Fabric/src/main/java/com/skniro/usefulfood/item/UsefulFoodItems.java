@@ -24,9 +24,11 @@ public static final Item MilkBottle =
                                 .Builder()
                                 .hunger(0)
                                 .saturationModifier(0.0f)
+                                .alwaysEdible()
                                 .build()
                         )
                 .recipeRemainder(Items.GLASS_BOTTLE)
+                        .maxCount(1)
         ));
     public static final Item ChocolateMilkBottle =
             registerItem( "chocolatemilkbottle", new ItemBottle(
@@ -39,6 +41,8 @@ public static final Item MilkBottle =
                                             .saturationModifier(0.8f)
                                             .build()
                                     )
+                            .recipeRemainder(Items.GLASS_BOTTLE)
+                            .maxCount(1)
             ));
 
     public static final Item Cheese =
@@ -88,6 +92,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(6)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,50,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,1),1.0F)
                                     .build()
@@ -103,6 +108,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(4)
                                     .saturationModifier(0.1f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -115,6 +121,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(5)
                                     .saturationModifier(0.2f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -129,6 +136,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(10)
                                     .saturationModifier(0.5f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             ).maxCount(1)
@@ -196,6 +204,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(5)
                                     .saturationModifier(0.3f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,50,1),1.0F)
                                     .build()
                             ).maxCount(1)
@@ -390,6 +399,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(13)
                                     .saturationModifier(1.2f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,6000,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE,6000,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,6000,3),1.0F)
@@ -408,6 +418,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(6)
                                     .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -422,6 +433,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(12)
                                     .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -436,6 +448,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(12)
                                     .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -450,6 +463,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(9)
                                     .saturationModifier(0.8f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -532,6 +546,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item chocolateicecream = registerItem("chocolateicecream", new StewItem(
             new Item
@@ -555,6 +570,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(9)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,100,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,1),1.0F)
                                     .build()
@@ -581,6 +597,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(5)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -643,6 +660,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(7)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -659,7 +677,7 @@ public static final Item MilkBottle =
                             )
                     .maxCount(1)
     ));
-    public static final Item Tea = registerItem("tea", new Item(
+    public static final Item Tea = registerItem("tea", new ItemBottle(
             new Item
                     .Settings()
                     .food
@@ -669,6 +687,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item HotMilkBottle = registerItem("hotmilkbottle", new ItemBottle(
             new Item
@@ -681,6 +700,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
 
 
@@ -703,6 +723,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(8)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -751,6 +772,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(9)
                                     .saturationModifier(0.4f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
                                     .build()
                             )
@@ -764,6 +786,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(7)
                                     .saturationModifier(0.4f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
                                     .build()
                             )
@@ -799,6 +822,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(7)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -822,6 +846,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(3)
                                     .saturationModifier(0.2f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -834,6 +859,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(8)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -881,6 +907,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(12)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )

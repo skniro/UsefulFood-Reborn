@@ -1,5 +1,6 @@
 package com.skniro.usefulfood.item.init;
 
+import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,23 +23,13 @@ public class ItemBottle
         super(settings);
     }
 
-    @Override
+
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        if (user instanceof ServerPlayerEntity) {
-            ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)user;
-            Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
-            serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-        }
-        if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
-            stack.decrement(1);
-        }
-        if (!world.isClient) {
+        if (!world.isClient && stack.isOf(UsefulFoodItems.MilkBottle)) {
             user.clearStatusEffects();
         }
-        if (stack.isEmpty()) {
-            return new ItemStack(Items.GLASS_BOTTLE);
-        }
-        return stack;
+        ItemStack itemStack = super.finishUsing(stack, world, user);
+        return user instanceof PlayerEntity && ((PlayerEntity)user).getAbilities().creativeMode ? itemStack : new ItemStack(Items.GLASS_BOTTLE);
     }
 
     @Override
@@ -51,8 +42,4 @@ public class ItemBottle
         return UseAction.DRINK;
     }
 
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        return ItemUsage.consumeHeldItem(world, user, hand);
-    }
 }

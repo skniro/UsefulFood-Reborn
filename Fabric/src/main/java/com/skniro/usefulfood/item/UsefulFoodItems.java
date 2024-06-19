@@ -26,6 +26,7 @@ public static final Item MilkBottle =
                                 .alwaysEdible()
                                 .build()
                         )
+                        .group(UsefulFood.UsefulFood_Group)
                 .recipeRemainder(Items.GLASS_BOTTLE)
                         .maxCount(1)
         ));
@@ -40,6 +41,7 @@ public static final Item MilkBottle =
                                             .saturationModifier(0.8f)
                                             .build()
                                     )
+                            .group(UsefulFood.UsefulFood_Group)
                             .recipeRemainder(Items.GLASS_BOTTLE)
                             .maxCount(1)
             ));
@@ -69,6 +71,7 @@ public static final Item MilkBottle =
                                             .saturationModifier(1.0f)
                                             .build()
                                     )
+                            .group(UsefulFood.UsefulFood_Group)
             ));
     public static final Item FruitSalad =
             registerItem("fruitsalad", new StewItem(
@@ -81,6 +84,7 @@ public static final Item MilkBottle =
                                             .saturationModifier(0.6f)
                                             .build()
                                     )
+                            .group(UsefulFood.UsefulFood_Group)
                             .maxCount(1)
             ));
 

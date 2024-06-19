@@ -4,13 +4,14 @@ import com.skniro.usefulfood.UsefulFood;
 import com.skniro.usefulfood.item.init.ItemBottle;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.item.StewItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class UsefulFoodItems {
 public static final Item MilkBottle =
@@ -22,10 +23,11 @@ public static final Item MilkBottle =
                                 .Builder()
                                 .hunger(0)
                                 .saturationModifier(0.0f)
+                                .alwaysEdible()
                                 .build()
                         )
                 .recipeRemainder(Items.GLASS_BOTTLE)
-                        .group(UsefulFood.UsefulFood_Group)
+                        .maxCount(1)
         ));
     public static final Item ChocolateMilkBottle =
             registerItem( "chocolatemilkbottle", new ItemBottle(
@@ -38,7 +40,8 @@ public static final Item MilkBottle =
                                             .saturationModifier(0.8f)
                                             .build()
                                     )
-                            .group(UsefulFood.UsefulFood_Group)
+                            .recipeRemainder(Items.GLASS_BOTTLE)
+                            .maxCount(1)
             ));
 
     public static final Item Cheese =
@@ -52,7 +55,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
 
     public static final Item ChocolateCandy =
@@ -66,10 +68,9 @@ public static final Item MilkBottle =
                                             .saturationModifier(1.0f)
                                             .build()
                                     )
-                            .group(UsefulFood.UsefulFood_Group)
             ));
     public static final Item FruitSalad =
-            registerItem("fruitsalad", new Item(
+            registerItem("fruitsalad", new StewItem(
                     new Item
                             .Settings()
                             .food
@@ -79,10 +80,10 @@ public static final Item MilkBottle =
                                             .saturationModifier(0.6f)
                                             .build()
                                     )
-                            .group(UsefulFood.UsefulFood_Group)
+                            .maxCount(1)
             ));
 
-    public static final Item MagicFruitSalad = registerItem("magicfruitsalad", new Item(
+    public static final Item MagicFruitSalad = registerItem("magicfruitsalad", new StewItem(
             new Item
                     .Settings()
                     .food
@@ -90,12 +91,13 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(6)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,50,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .rarity(Rarity.RARE)
+                    .maxCount(1)
     ));
     public static final Item SugarCube = registerItem("sugarcube", new Item(
             new Item
@@ -105,10 +107,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(4)
                                     .saturationModifier(0.1f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item caramel = registerItem("caramel",new Item(
             new Item
@@ -118,10 +120,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(5)
                                     .saturationModifier(0.2f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
 
 
@@ -133,10 +135,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(10)
                                     .saturationModifier(0.5f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
     public static final Item RoastedSeeds = registerItem("roastedseeds", new Item(
             new Item
@@ -148,7 +150,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.5f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item FriedEgg = registerItem("friedegg",new Item(
             new Item
@@ -160,7 +161,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.4f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item PumpkinSoup = registerItem("pumpkinsoup",new StewItem(
             new Item
@@ -171,8 +171,7 @@ public static final Item MilkBottle =
                                     .hunger(5)
                                     .saturationModifier(0.8f)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
     public static final Item Salad = registerItem("salad",new StewItem(
             new Item
@@ -183,8 +182,7 @@ public static final Item MilkBottle =
                                     .hunger(3)
                                     .saturationModifier(0.6f)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
     public static final Item Oatmeal = registerItem("oatmeal",new StewItem(
             new Item
@@ -195,8 +193,7 @@ public static final Item MilkBottle =
                                     .hunger(4)
                                     .saturationModifier(0.6f)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
     public static final Item Jelly = registerItem("jelly",new StewItem(
             new Item
@@ -206,10 +203,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(5)
                                     .saturationModifier(0.3f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,50,1),1.0F)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
     public static final Item Marshmallow = registerItem("rawmarshmallow",new Item(
             new Item
@@ -220,8 +217,7 @@ public static final Item MilkBottle =
                                     .hunger(3)
                                     .saturationModifier(0.3f)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
     public static final Item CookMarshmallow = registerItem("cookedmarshmallow",new Item(
             new Item
@@ -232,8 +228,7 @@ public static final Item MilkBottle =
                                     .hunger(4)
                                     .saturationModifier(0.3f)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
 
     public static final Item VanillaIceCream = registerItem("vanillaicecream",new StewItem(
@@ -245,8 +240,7 @@ public static final Item MilkBottle =
                                     .hunger(2)
                                     .saturationModifier(0.3f)
                                     .build()
-                            )
-                    .group(UsefulFood.UsefulFood_Group).maxCount(1)
+                            ).maxCount(1)
     ));
     public static final Item BreadSlice = registerItem("breadslice",new Item(
             new Item
@@ -258,7 +252,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item PorkWich = registerItem("porkchopsandwich",new Item(
             new Item
@@ -270,7 +263,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item Steakwich = registerItem("steaksandwich",new Item(
             new Item
@@ -282,7 +274,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item Fishwich = registerItem("fishsandwich", new Item(
             new Item
@@ -294,7 +285,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item Chickenwich = registerItem("chickensandwich",new Item(
             new Item
@@ -306,7 +296,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item Eggwich = registerItem("eggsandwich", new Item(
             new Item
@@ -318,7 +307,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item Biscuit = registerItem("biscuit", new Item(
             new Item
@@ -330,7 +318,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item Trailmix = registerItem("trailmix",new StewItem(
             new Item
@@ -342,7 +329,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.5f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
+                    .maxCount(1)
     ));
 
     // 1.0
@@ -356,7 +343,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
 
     // 1.2
@@ -370,7 +356,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item SquidTentacleRaw = registerItem("squidrtentacle", new Item(
             new Item
@@ -382,7 +367,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item SquidTentacleCooked = registerItem("cookedsquidtentacle", new Item(
             new Item
@@ -394,7 +378,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.8f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item SquidSandwich = registerItem("squidsandwich",  new Item(
             new Item
@@ -406,9 +389,8 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.8f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item MagicAppleJuice = registerItem("magicapplejuice", new Item(
+    public static final Item MagicAppleJuice = registerItem("magicapplejuice", new ItemBottle(
             new Item
                     .Settings()
                     .food
@@ -416,6 +398,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(13)
                                     .saturationModifier(1.2f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,6000,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE,6000,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,6000,3),1.0F)
@@ -423,10 +406,10 @@ public static final Item MilkBottle =
                                     .statusEffect(new StatusEffectInstance(StatusEffects.HASTE,6000,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .rarity(Rarity.RARE)
+                    .maxCount(1)
     ));
-    public static final Item MelonJuice = registerItem("melonjuice", new Item(
+    public static final Item MelonJuice = registerItem("melonjuice", new ItemBottle(
             new Item
                     .Settings()
                     .food
@@ -434,13 +417,14 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(6)
                                     .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
-    public static final Item AppleJuice = registerItem("applejuice", new Item(
+    public static final Item AppleJuice = registerItem("applejuice", new ItemBottle(
             new Item
                     .Settings()
                     .food
@@ -448,13 +432,14 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(12)
                                     .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
-    public static final Item CarrotJuice = registerItem("carrotjuice", new Item(
+    public static final Item CarrotJuice = registerItem("carrotjuice", new ItemBottle(
             new Item
                     .Settings()
                     .food
@@ -462,11 +447,12 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(12)
                                     .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item CarrotSoup = registerItem("carrotsoup", new StewItem(
             new Item
@@ -476,10 +462,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(9)
                                     .saturationModifier(0.8f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item PumpkinBread = registerItem("pumpkinbread",  new Item(
@@ -492,7 +478,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item FishnChips = registerItem("fishnchips",  new Item(
             new Item
@@ -504,7 +489,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.2f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item SugarBiscuit = registerItem("sugarbiscuit",  new Item(
             new Item
@@ -516,7 +500,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item AppleJamBiscuit = registerItem("applejambiscuit",  new Item(
             new Item
@@ -528,7 +511,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item ChocoBiscuit = registerItem("chocolatebiscuit",  new Item(
             new Item
@@ -540,7 +522,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item CarrotPie = registerItem("carrotpie",  new Item(
             new Item
@@ -552,7 +533,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.8f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item hotchocolatebottle = registerItem("hotchocolatemilkbottle",  new ItemBottle(
             new Item
@@ -564,8 +544,8 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
     ));
     public static final Item chocolateicecream = registerItem("chocolateicecream", new StewItem(
             new Item
@@ -577,12 +557,11 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.8f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
 
     // 1.4
-    public static final Item MagicIceCream = registerItem("magicicecream", new Item(
+    public static final Item MagicIceCream = registerItem("magicicecream", new StewItem(
             new Item
                     .Settings()
                     .food
@@ -590,12 +569,13 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(9)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,100,1),1.0F)
                                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .rarity(Rarity.RARE)
+                    .maxCount(1)
     ));
     public static final Item SquidSushi = registerItem("squidsushi", new Item(
             new Item
@@ -607,9 +587,8 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
-    public static final Item CactusJuice = registerItem("cactusjuice", new Item(
+    public static final Item CactusJuice = registerItem("cactusjuice", new ItemBottle(
             new Item
                     .Settings()
                     .food
@@ -617,11 +596,12 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(5)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
-                    .group(UsefulFood.UsefulFood_Group)
+                    .maxCount(1)
     ));
     public static final Item Spaghetti = registerItem("spaghetti", new StewItem(
             new Item
@@ -633,7 +613,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item AppleIceCream = registerItem("appleicecream", new StewItem(
@@ -646,7 +625,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item MelonIceCream = registerItem("melonicecream", new StewItem(
@@ -659,7 +637,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item ChocolateApple = registerItem("chocolateapple", new Item(
@@ -672,7 +649,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item CaramelBiscuit = registerItem("caramelbiscuit", new Item(
@@ -683,10 +659,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(7)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item FishSoup = registerItem("fishsoup", new StewItem(
             new Item
@@ -698,9 +674,9 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
+                    .maxCount(1)
     ));
-    public static final Item Tea = registerItem("tea", new Item(
+    public static final Item Tea = registerItem("tea", new ItemBottle(
             new Item
                     .Settings()
                     .food
@@ -710,7 +686,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
-                    .group(UsefulFood.UsefulFood_Group)
+                    .maxCount(1)
     ));
     public static final Item HotMilkBottle = registerItem("hotmilkbottle", new ItemBottle(
             new Item
@@ -723,7 +699,7 @@ public static final Item MilkBottle =
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
-                    .group(UsefulFood.UsefulFood_Group)
+                    .maxCount(1)
     ));
 
 
@@ -737,7 +713,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item CaramelIceCream = registerItem("caramelicecream", new StewItem(
             new Item
@@ -747,10 +722,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(8)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item Cereal = registerItem("cereal", new StewItem(
@@ -763,7 +738,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.5f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item ChocolateCereal = registerItem("chocolatecereal", new StewItem(
@@ -776,7 +750,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.5f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item FrenchFries = registerItem("frenchfries", new Item(
@@ -789,7 +762,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item AppleJelly = registerItem("applejelly", new StewItem(
             new Item
@@ -799,10 +771,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(9)
                                     .saturationModifier(0.4f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item MelonJelly = registerItem("melonjelly", new StewItem(
@@ -813,10 +785,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(7)
                                     .saturationModifier(0.4f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
     ));
     public static final Item Donut = registerItem("donut" , new Item(
@@ -829,7 +801,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item Oreo = registerItem("oreo", new Item(
             new Item
@@ -841,7 +812,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(1.0f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item CaramelToast = registerItem("carameltoast", new Item(
             new Item
@@ -851,10 +821,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(7)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item ChocolateToast = registerItem("chocolatetoast", new Item(
             new Item
@@ -866,7 +836,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item SugarToast = registerItem("sugartoast", new Item(
             new Item
@@ -876,10 +845,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(3)
                                     .saturationModifier(0.2f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item SugarPancake = registerItem("sugarpancake", new Item(
             new Item
@@ -889,10 +858,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(8)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item AppleJamPanCake = registerItem("applejampancake", new Item(
             new Item
@@ -904,7 +873,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.7f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item AppleJamToast = registerItem("applejamtoast", new Item(
             new Item
@@ -916,7 +884,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.7f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item AppleJam = registerItem("applejam", new StewItem(
             new Item
@@ -928,7 +895,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.4f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
                     .recipeRemainder(Items.BOWL)
     ));
@@ -940,10 +906,10 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .hunger(12)
                                     .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item ChocolatePanCake = registerItem("chocolatepancake", new Item(
             new Item
@@ -955,7 +921,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item MelonJamPanCake = registerItem("melonjampancake", new Item(
             new Item
@@ -967,7 +932,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.4f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item MelonJamToast = registerItem("melonjamtoast", new Item(
             new Item
@@ -979,7 +943,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.4f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item MelonJamBiscuit = registerItem("melonjambiscuit", new Item(
             new Item
@@ -991,7 +954,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.4f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item MelonJam = registerItem("melonjam", new StewItem(
             new Item
@@ -1003,7 +965,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.4f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
                     .maxCount(1)
                     .recipeRemainder(Items.BOWL)
     ));
@@ -1017,7 +978,6 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
     public static final Item PanCake = registerItem("pancake", new Item(
             new Item
@@ -1029,8 +989,8 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .build()
                             )
-                    .group(UsefulFood.UsefulFood_Group)
     ));
+    private static final Map<Identifier, List<ItemConvertible>> itemsByGroup = new LinkedHashMap<>();
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(UsefulFood.MOD_ID, name), item);

@@ -5,7 +5,8 @@ import com.skniro.usefulfood.block.init.MagicCakeBlockState;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -17,16 +18,16 @@ import net.minecraft.util.Identifier;
 import java.util.logging.Logger;
 
 public class UsefulFoodBlocks {
-    public static final Block AppleCake = registerBlock("applecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),18,0.6F), UsefulFood.UsefulFood_Group);
-    public static final Block ChocolateCake = registerBlock("chocolatecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),12,0.5F), UsefulFood.UsefulFood_Group);
-    public static final Block MagicCake = registerBlock("magiccake", new MagicCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE), 48, 0.5F), UsefulFood.UsefulFood_Group);
+    public static final Block AppleCake = registerBlock("applecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),18,0.6F),1, UsefulFood.UsefulFood_Group);
+    public static final Block ChocolateCake = registerBlock("chocolatecake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),12,0.5F),1, UsefulFood.UsefulFood_Group);
+    public static final Block MagicCake = registerBlock("magiccake", new MagicCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE), 48, 0.5F),1, UsefulFood.UsefulFood_Group);
 
     // 1.4
-    public static final Block CaramelCake = registerBlock("caramelcake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),19,0.1F), UsefulFood.UsefulFood_Group);
+    public static final Block CaramelCake = registerBlock("caramelcake",new SpecialCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),19,0.1F),1, UsefulFood.UsefulFood_Group);
 
 
-    private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> tab) {
-        registerBlockItem(name, block, tab);
+    private static Block registerBlock(String name, Block block, int Maxcount, RegistryKey<ItemGroup> tab) {
+        registerBlockItem(name, block, Maxcount, tab);
         return Registry.register(Registries.BLOCK, new Identifier(UsefulFood.MOD_ID, name), block);
     }
 
@@ -34,9 +35,9 @@ public class UsefulFoodBlocks {
         return Registry.register(Registries.BLOCK, new Identifier(UsefulFood.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block, RegistryKey<ItemGroup> tab) {
+    private static Item registerBlockItem(String name, Block block, int Maxcount, RegistryKey<ItemGroup> tab) {
         return Registry.register(Registries.ITEM, new Identifier(UsefulFood.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+                new BlockItem(block, new FabricItemSettings().maxCount(Maxcount)));
     }
     public static void registerModBlocks(){
         Logger.getLogger("register mod blocks" + UsefulFood.MOD_ID);

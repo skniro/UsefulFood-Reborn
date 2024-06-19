@@ -2,6 +2,7 @@ package com.skniro.usefulfood.item;
 
 
 import com.skniro.usefulfood.UsefulFood;
+import com.skniro.usefulfood.item.init.BowlFoodItem;
 import com.skniro.usefulfood.item.init.ItemBottle;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -24,7 +25,7 @@ public static final RegistryObject<Item> MilkBottle =
                         (new FoodProperties
                                 .Builder()
                                 .nutrition(0)
-                                .saturationMod(0.0f)
+                                .saturationModifier(0.0f)
                                 .build()
                         )
                 .craftRemainder(Items.GLASS_BOTTLE)
@@ -39,7 +40,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     (new FoodProperties
                                             .Builder()
                                             .nutrition(3)
-                                            .saturationMod(0.8f)
+                                            .saturationModifier(0.8f)
                                             .build()
                                     )
                             .stacksTo(1)
@@ -53,7 +54,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(2)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
 
@@ -67,7 +68,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     (new FoodProperties
                                             .Builder()
                                             .nutrition(6)
-                                            .saturationMod(1.0f)
+                                            .saturationModifier(1.0f)
                                             .build()
                                     )
 
@@ -80,7 +81,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     (new FoodProperties
                                             .Builder()
                                             .nutrition(7)
-                                            .saturationMod(0.6f)
+                                            .saturationModifier(0.6f)
                                             .build()
                                     )
                             .stacksTo(1)
@@ -93,8 +94,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,50,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1),1.0F)
                                     .build()
@@ -109,8 +110,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(4)
-                                    .saturationMod(0.1f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.1f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -123,8 +124,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.2f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -139,8 +140,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(10)
-                                    .saturationMod(0.5f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.5f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             ).stacksTo(1)
@@ -152,7 +153,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(1)
-                                    .saturationMod(0.5f)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
 
@@ -164,7 +165,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(3)
-                                    .saturationMod(0.4f)
+                                    .saturationModifier(0.4f)
                                     .build()
                             )
 
@@ -176,7 +177,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.8f)
+                                    .saturationModifier(0.8f)
                                     .build()
                             ).stacksTo(1)
     ));
@@ -187,7 +188,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(3)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             ).stacksTo(1)
     ));
@@ -198,7 +199,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(4)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             ).stacksTo(1)
     ));
@@ -209,8 +210,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.3f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.3f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,50,1),1.0F)
                                     .build()
                             ).stacksTo(1)
@@ -222,7 +223,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(3)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             ).stacksTo(1)
     ));
@@ -233,7 +234,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(4)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             ).stacksTo(1)
     ));
@@ -245,7 +246,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(2)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             ).stacksTo(1)
     ));
@@ -256,7 +257,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(1)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -268,7 +269,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(11)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -280,7 +281,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(11)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -292,7 +293,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -304,7 +305,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -316,7 +317,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -328,7 +329,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(1)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -340,7 +341,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(4)
-                                    .saturationMod(0.5f)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -354,7 +355,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -368,7 +369,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -380,7 +381,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(2)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -392,7 +393,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.8f)
+                                    .saturationModifier(0.8f)
                                     .build()
                             )
 
@@ -404,7 +405,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(0.8f)
+                                    .saturationModifier(0.8f)
                                     .build()
                             )
 
@@ -416,8 +417,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(13)
-                                    .saturationMod(1.2f)
-                                    .alwaysEat()
+                                    .saturationModifier(1.2f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,6000,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE,6000,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,6000,3),1.0F)
@@ -435,8 +436,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationMod(0.9f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -450,8 +451,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(12)
-                                    .saturationMod(0.9f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -465,8 +466,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(12)
-                                    .saturationMod(0.9f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.9f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -480,8 +481,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(0.8f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.8f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -494,7 +495,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(10)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
 
@@ -506,7 +507,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(12)
-                                    .saturationMod(1.2f)
+                                    .saturationModifier(1.2f)
                                     .build()
                             )
 
@@ -518,7 +519,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(3)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -530,7 +531,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(10)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -542,7 +543,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(3)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -554,7 +555,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(0.8f)
+                                    .saturationModifier(0.8f)
                                     .build()
                             )
 
@@ -566,7 +567,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(4)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
@@ -579,7 +580,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(0.8f)
+                                    .saturationModifier(0.8f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -593,8 +594,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,100,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1),1.0F)
                                     .build()
@@ -609,7 +610,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -621,8 +622,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -636,7 +637,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -648,7 +649,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -660,7 +661,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(7)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -672,7 +673,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(11)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -684,8 +685,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(7)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -698,7 +699,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(12)
-                                    .saturationMod(0.6F)
+                                    .saturationModifier(0.6F)
                                     .build()
                             )
                     .stacksTo(1)
@@ -724,7 +725,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(1)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
@@ -739,7 +740,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -751,8 +752,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -765,7 +766,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(4)
-                                    .saturationMod(0.5f)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -777,7 +778,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationMod(0.5f)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -789,7 +790,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(7)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
 
@@ -801,8 +802,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(0.4f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.4f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
                                     .build()
                             )
@@ -815,8 +816,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(7)
-                                    .saturationMod(0.4f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.4f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
                                     .build()
                             )
@@ -829,7 +830,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(7)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
 
@@ -841,7 +842,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(9)
-                                    .saturationMod(1.0f)
+                                    .saturationModifier(1.0f)
                                     .build()
                             )
 
@@ -853,8 +854,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(7)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -867,7 +868,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
 
@@ -879,8 +880,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(3)
-                                    .saturationMod(0.2f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -893,8 +894,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -907,7 +908,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(15)
-                                    .saturationMod(0.7f)
+                                    .saturationModifier(0.7f)
                                     .build()
                             )
 
@@ -919,7 +920,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(10)
-                                    .saturationMod(0.7f)
+                                    .saturationModifier(0.7f)
                                     .build()
                             )
 
@@ -931,7 +932,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(0.4f)
+                                    .saturationModifier(0.4f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -944,8 +945,8 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(12)
-                                    .saturationMod(0.6f)
-                                    .alwaysEat()
+                                    .saturationModifier(0.6f)
+                                    .alwaysEdible()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -958,7 +959,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(13)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
 
@@ -970,7 +971,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(13)
-                                    .saturationMod(0.4f)
+                                    .saturationModifier(0.4f)
                                     .build()
                             )
 
@@ -983,7 +984,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(0.4f)
+                                    .saturationModifier(0.4f)
                                     .build()
                             )
     ));
@@ -994,7 +995,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(8)
-                                    .saturationMod(0.4f)
+                                    .saturationModifier(0.4f)
                                     .build()
                             )
 
@@ -1006,7 +1007,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationMod(0.4f)
+                                    .saturationModifier(0.4f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1019,7 +1020,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationMod(0.3f)
+                                    .saturationModifier(0.3f)
                                     .build()
                             )
 
@@ -1031,7 +1032,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationMod(0.6f)
+                                    .saturationModifier(0.6f)
                                     .build()
                             )
 

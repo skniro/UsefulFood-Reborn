@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "usefulfood:block/caramelcake_side",
+        "bottom": "usefulfood:block/caramelcake_bottom",
+        "top": "usefulfood:block/caramelcake_top",
+        "side": "usefulfood:block/caramelcake_side",
+        "inside": "usefulfood:block/caramelcake_inner"
+    },
+    "elements": [
+        {   "from": [ 3, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#inside" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}

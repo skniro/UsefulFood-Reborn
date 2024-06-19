@@ -12,13 +12,13 @@ import net.minecraft.util.Identifier;
 
 public class ModLootTableModifiers {
     private static final Identifier squid_entities_ID
-            = new Identifier("minecraft", "entities/squid");
+            = Identifier.of("minecraft", "entities/squid");
     private static final Identifier glow_squid_entities_ID
-            = new Identifier("minecraft", "entities/glow_squid");
+            = Identifier.of("minecraft", "entities/glow_squid");
 
 
     public static void modifyLootTables() {
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+        LootTableEvents.MODIFY.register(( id, tableBuilder, source) -> {
             if(squid_entities_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))

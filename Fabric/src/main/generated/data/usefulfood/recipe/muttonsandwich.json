@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:cooked_mutton"
+    },
+    {
+      "item": "usefulfood:breadslice"
+    },
+    {
+      "item": "usefulfood:breadslice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:muttonsandwich"
+  }
+}

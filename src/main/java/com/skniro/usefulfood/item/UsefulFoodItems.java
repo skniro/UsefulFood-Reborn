@@ -28,6 +28,7 @@ public static final RegistryObject<Item> MilkBottle =
                                 .build()
                         )
                 .craftRemainder(Items.GLASS_BOTTLE)
+                        .stacksTo(1)
 
         ));
     public static final RegistryObject<Item> ChocolateMilkBottle =
@@ -41,7 +42,7 @@ public static final RegistryObject<Item> MilkBottle =
                                             .saturationMod(0.8f)
                                             .build()
                                     )
-
+                            .stacksTo(1)
             ));
 
     public static final RegistryObject<Item> Cheese =
@@ -72,7 +73,7 @@ public static final RegistryObject<Item> MilkBottle =
 
             ));
     public static final RegistryObject<Item> FruitSalad =
-            registerItem("fruitsalad", ()->new Item(
+            registerItem("fruitsalad", ()->new BowlFoodItem(
                     new Item
                             .Properties()
                             .food
@@ -82,10 +83,10 @@ public static final RegistryObject<Item> MilkBottle =
                                             .saturationMod(0.6f)
                                             .build()
                                     )
-
+                            .stacksTo(1)
             ));
 
-    public static final RegistryObject<Item> MagicFruitSalad = registerItem("magicfruitsalad", ()->new Item(
+    public static final RegistryObject<Item> MagicFruitSalad = registerItem("magicfruitsalad", ()->new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -93,11 +94,13 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(6)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,50,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1),1.0F)
                                     .build()
                             )
                     .rarity(Rarity.RARE)
+                    .stacksTo(1)
     ));
     public static final RegistryObject<Item> SugarCube = registerItem("sugarcube", ()->new Item(
             new Item
@@ -107,6 +110,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(4)
                                     .saturationMod(0.1f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -120,6 +124,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.2f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -135,6 +140,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(10)
                                     .saturationMod(0.5f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             ).stacksTo(1)
@@ -204,6 +210,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.3f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,50,1),1.0F)
                                     .build()
                             ).stacksTo(1)
@@ -336,7 +343,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.5f)
                                     .build()
                             )
-
+                    .stacksTo(1)
     ));
 
     // 1.0
@@ -402,7 +409,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
 
     ));
-    public static final RegistryObject<Item> MagicAppleJuice = registerItem("magicapplejuice", ()->new Item(
+    public static final RegistryObject<Item> MagicAppleJuice = registerItem("magicapplejuice", ()->new ItemBottle(
             new Item
                     .Properties()
                     .food
@@ -410,6 +417,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(13)
                                     .saturationMod(1.2f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,6000,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE,6000,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,6000,3),1.0F)
@@ -418,8 +426,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .build()
                             )
                     .rarity(Rarity.RARE)
+                    .stacksTo(1)
     ));
-    public static final RegistryObject<Item> MelonJuice = registerItem("melonjuice", ()->new Item(
+    public static final RegistryObject<Item> MelonJuice = registerItem("melonjuice", ()->new ItemBottle(
             new Item
                     .Properties()
                     .food
@@ -427,12 +436,14 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(6)
                                     .saturationMod(0.9f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
     ));
-    public static final RegistryObject<Item> AppleJuice = registerItem("applejuice", ()->new Item(
+    public static final RegistryObject<Item> AppleJuice = registerItem("applejuice", ()->new ItemBottle(
             new Item
                     .Properties()
                     .food
@@ -440,12 +451,14 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(12)
                                     .saturationMod(0.9f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
     ));
-    public static final RegistryObject<Item> CarrotJuice = registerItem("carrotjuice", ()->new Item(
+    public static final RegistryObject<Item> CarrotJuice = registerItem("carrotjuice", ()->new ItemBottle(
             new Item
                     .Properties()
                     .food
@@ -453,10 +466,12 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(12)
                                     .saturationMod(0.9f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
     ));
     public static final RegistryObject<Item> CarrotSoup = registerItem("carrotsoup", ()->new BowlFoodItem(
             new Item
@@ -466,6 +481,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(0.8f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
                                     .build()
                             )
@@ -554,6 +570,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
     ));
     public static final RegistryObject<Item> chocolateicecream = registerItem("chocolateicecream", ()->new BowlFoodItem(
             new Item
@@ -569,7 +586,7 @@ public static final RegistryObject<Item> MilkBottle =
     ));
 
     // 1.4
-    public static final RegistryObject<Item> MagicIceCream = registerItem("magicicecream", ()->new Item(
+    public static final RegistryObject<Item> MagicIceCream = registerItem("magicicecream", ()->new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -577,11 +594,13 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,100,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1),1.0F)
                                     .build()
                             )
                     .rarity(Rarity.RARE)
+                    .stacksTo(1)
     ));
     public static final RegistryObject<Item> SquidSushi = registerItem("squidsushi", ()->new Item(
             new Item
@@ -595,7 +614,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
 
     ));
-    public static final RegistryObject<Item> CactusJuice = registerItem("cactusjuice", ()->new Item(
+    public static final RegistryObject<Item> CactusJuice = registerItem("cactusjuice", ()->new ItemBottle(
             new Item
                     .Properties()
                     .food
@@ -603,11 +622,12 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
-
+                    .stacksTo(1)
     ));
     public static final RegistryObject<Item> Spaghetti = registerItem("spaghetti", ()->new BowlFoodItem(
             new Item
@@ -665,6 +685,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(7)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -680,9 +701,10 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.6F)
                                     .build()
                             )
+                    .stacksTo(1)
 
     ));
-    public static final RegistryObject<Item> Tea = registerItem("tea", ()->new Item(
+    public static final RegistryObject<Item> Tea = registerItem("tea", ()->new ItemBottle(
             new Item
                     .Properties()
                     .food
@@ -692,6 +714,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
 
     ));
     public static final RegistryObject<Item> HotMilkBottle = registerItem("hotmilkbottle", ()-> new ItemBottle(
@@ -705,7 +728,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
-
+                    .stacksTo(1)
     ));
 
 
@@ -729,6 +752,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -778,6 +802,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(0.4f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
                                     .build()
                             )
@@ -791,6 +816,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(7)
                                     .saturationMod(0.4f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
                                     .build()
                             )
@@ -828,6 +854,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(7)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -853,6 +880,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(3)
                                     .saturationMod(0.2f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -866,6 +894,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )
@@ -916,6 +945,7 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(12)
                                     .saturationMod(0.6f)
+                                    .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
                                     .build()
                             )

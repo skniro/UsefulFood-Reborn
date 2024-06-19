@@ -27,6 +27,7 @@ public static final RegistryObject<Item> MilkBottle =
                                 .saturationMod(0.0f)
                                 .build()
                         )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                 .craftRemainder(Items.GLASS_BOTTLE)
                         .stacksTo(1)
 
@@ -40,8 +41,9 @@ public static final RegistryObject<Item> MilkBottle =
                                             .Builder()
                                             .nutrition(3)
                                             .saturationMod(0.8f)
-                                            .build()
-                                    )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                             .stacksTo(1)
             ));
 
@@ -54,8 +56,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(2)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
 
@@ -68,8 +71,9 @@ public static final RegistryObject<Item> MilkBottle =
                                             .Builder()
                                             .nutrition(6)
                                             .saturationMod(1.0f)
-                                            .build()
-                                    )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
             ));
     public static final RegistryObject<Item> FruitSalad =
@@ -81,8 +85,9 @@ public static final RegistryObject<Item> MilkBottle =
                                             .Builder()
                                             .nutrition(7)
                                             .saturationMod(0.6f)
-                                            .build()
-                                    )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                             .stacksTo(1)
             ));
 
@@ -97,8 +102,10 @@ public static final RegistryObject<Item> MilkBottle =
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,50,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
+                    .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .rarity(Rarity.RARE)
                     .stacksTo(1)
     ));
@@ -112,8 +119,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.1f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> caramel = registerItem("caramel",()-> new Item(
@@ -126,8 +134,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.2f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
 
@@ -142,8 +151,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.5f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
     public static final RegistryObject<Item> RoastedSeeds = registerItem("roastedseeds", ()->new Item(
             new Item
@@ -153,8 +163,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(1)
                                     .saturationMod(0.5f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> FriedEgg = registerItem("friedegg",()-> new Item(
@@ -165,8 +176,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(3)
                                     .saturationMod(0.4f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> PumpkinSoup = registerItem("pumpkinsoup",()-> new BowlFoodItem(
@@ -177,8 +189,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.8f)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
     public static final RegistryObject<Item> Salad = registerItem("salad",()-> new BowlFoodItem(
             new Item
@@ -188,8 +201,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(3)
                                     .saturationMod(0.6f)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
     public static final RegistryObject<Item> Oatmeal = registerItem("oatmeal",()-> new BowlFoodItem(
             new Item
@@ -199,8 +213,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(4)
                                     .saturationMod(0.6f)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
     public static final RegistryObject<Item> Jelly = registerItem("jelly",()-> new BowlFoodItem(
             new Item
@@ -212,8 +227,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.3f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,50,1),1.0F)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
     public static final RegistryObject<Item> Marshmallow = registerItem("rawmarshmallow",()-> new Item(
             new Item
@@ -223,8 +239,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(3)
                                     .saturationMod(0.3f)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
     public static final RegistryObject<Item> CookMarshmallow = registerItem("cookedmarshmallow",()-> new Item(
             new Item
@@ -234,8 +251,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(4)
                                     .saturationMod(0.3f)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
 
     public static final RegistryObject<Item> VanillaIceCream = registerItem("vanillaicecream",()-> new BowlFoodItem(
@@ -246,8 +264,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(2)
                                     .saturationMod(0.3f)
-                                    .build()
-                            ).stacksTo(1)
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group).stacksTo(1)
     ));
     public static final RegistryObject<Item> BreadSlice = registerItem("breadslice",()-> new Item(
             new Item
@@ -257,8 +276,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(1)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> PorkWich = registerItem("porkchopsandwich",()-> new Item(
@@ -269,8 +289,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(11)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> Steakwich = registerItem("steaksandwich",()-> new Item(
@@ -281,8 +302,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(11)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> Fishwich = registerItem("fishsandwich", ()->new Item(
@@ -293,8 +315,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> Chickenwich = registerItem("chickensandwich",()-> new Item(
@@ -305,8 +328,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> Eggwich = registerItem("eggsandwich", ()->new Item(
@@ -317,8 +341,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(6)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> Biscuit = registerItem("biscuit", ()->new Item(
@@ -329,8 +354,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(1)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> Trailmix = registerItem("trailmix",()-> new BowlFoodItem(
@@ -341,8 +367,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(4)
                                     .saturationMod(0.5f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
 
@@ -355,8 +382,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
 
@@ -369,8 +397,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> SquidTentacleRaw = registerItem("squidrtentacle", ()->new Item(
@@ -381,8 +410,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(2)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> SquidTentacleCooked = registerItem("cookedsquidtentacle", ()->new Item(
@@ -393,8 +423,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.8f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> SquidSandwich = registerItem("squidsandwich", ()-> new Item(
@@ -405,8 +436,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(0.8f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> MagicAppleJuice = registerItem("magicapplejuice", ()->new ItemBottle(
@@ -423,8 +455,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,6000,3),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,6000,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.DIG_SPEED,6000,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .rarity(Rarity.RARE)
                     .stacksTo(1)
     ));
@@ -438,8 +471,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.9f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
@@ -453,8 +487,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.9f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
@@ -468,8 +503,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.9f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
@@ -483,8 +519,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.8f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> PumpkinBread = registerItem("pumpkinbread", ()-> new Item(
@@ -495,8 +532,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(10)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> FishnChips = registerItem("fishnchips", ()-> new Item(
@@ -507,8 +545,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(12)
                                     .saturationMod(1.2f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> SugarBiscuit = registerItem("sugarbiscuit", ()-> new Item(
@@ -519,8 +558,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(3)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> AppleJamBiscuit = registerItem("applejambiscuit", ()-> new Item(
@@ -531,8 +571,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(10)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> ChocoBiscuit = registerItem("chocolatebiscuit", ()-> new Item(
@@ -543,8 +584,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(3)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> CarrotPie = registerItem("carrotpie", ()-> new Item(
@@ -555,8 +597,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(0.8f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> hotchocolatebottle = registerItem("hotchocolatemilkbottle", ()-> new ItemBottle(
@@ -567,8 +610,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(4)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
@@ -580,8 +624,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(0.8f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
 
@@ -597,8 +642,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.REGENERATION,100,1),1.0F)
                                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .rarity(Rarity.RARE)
                     .stacksTo(1)
     ));
@@ -610,8 +656,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> CactusJuice = registerItem("cactusjuice", ()->new ItemBottle(
@@ -624,8 +671,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.6f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
@@ -637,8 +685,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> AppleIceCream = registerItem("appleicecream", ()->new BowlFoodItem(
@@ -649,8 +698,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> MelonIceCream = registerItem("melonicecream", ()->new BowlFoodItem(
@@ -661,8 +711,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(7)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> ChocolateApple = registerItem("chocolateapple", ()->new Item(
@@ -673,8 +724,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(11)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> CaramelBiscuit = registerItem("caramelbiscuit", ()->new Item(
@@ -687,8 +739,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.6f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> FishSoup = registerItem("fishsoup", ()->new BowlFoodItem(
@@ -699,8 +752,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(12)
                                     .saturationMod(0.6F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
 
     ));
@@ -711,8 +765,9 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(2)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
 
@@ -725,8 +780,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(1)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
@@ -740,8 +796,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> CaramelIceCream = registerItem("caramelicecream", ()->new BowlFoodItem(
@@ -754,8 +811,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.6f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> Cereal = registerItem("cereal", ()->new BowlFoodItem(
@@ -766,8 +824,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(4)
                                     .saturationMod(0.5f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> ChocolateCereal = registerItem("chocolatecereal", ()->new BowlFoodItem(
@@ -778,8 +837,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(6)
                                     .saturationMod(0.5f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> FrenchFries = registerItem("frenchfries", ()->new Item(
@@ -790,8 +850,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(7)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> AppleJelly = registerItem("applejelly", ()->new BowlFoodItem(
@@ -804,8 +865,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.4f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> MelonJelly = registerItem("melonjelly", ()->new BowlFoodItem(
@@ -818,8 +880,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.4f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
     ));
     public static final RegistryObject<Item> Donut = registerItem("donut" , ()->new Item(
@@ -830,8 +893,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(7)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> Oreo = registerItem("oreo", ()->new Item(
@@ -842,8 +906,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(9)
                                     .saturationMod(1.0f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> CaramelToast = registerItem("carameltoast", ()->new Item(
@@ -856,8 +921,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.6f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> ChocolateToast = registerItem("chocolatetoast", ()->new Item(
@@ -868,8 +934,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> SugarToast = registerItem("sugartoast", ()->new Item(
@@ -882,8 +949,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.2f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> SugarPancake = registerItem("sugarpancake", ()->new Item(
@@ -896,8 +964,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.6f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> AppleJamPanCake = registerItem("applejampancake", ()->new Item(
@@ -908,8 +977,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(15)
                                     .saturationMod(0.7f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> AppleJamToast = registerItem("applejamtoast", ()->new Item(
@@ -920,8 +990,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(10)
                                     .saturationMod(0.7f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> AppleJam = registerItem("applejam", ()->new BowlFoodItem(
@@ -932,8 +1003,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(0.4f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
                     .craftRemainder(Items.BOWL)
     ));
@@ -947,8 +1019,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationMod(0.6f)
                                     .alwaysEat()
                                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> ChocolatePanCake = registerItem("chocolatepancake", ()->new Item(
@@ -959,8 +1032,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(13)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> MelonJamPanCake = registerItem("melonjampancake", ()->new Item(
@@ -971,8 +1045,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(13)
                                     .saturationMod(0.4f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> MelonJamToast = registerItem("melonjamtoast",
@@ -984,8 +1059,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(0.4f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
     ));
     public static final RegistryObject<Item> MelonJamBiscuit = registerItem("melonjambiscuit", ()->new Item(
             new Item
@@ -995,8 +1071,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(8)
                                     .saturationMod(0.4f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> MelonJam = registerItem("melonjam", ()->new BowlFoodItem(
@@ -1007,8 +1084,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(6)
                                     .saturationMod(0.4f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
                     .stacksTo(1)
                     .craftRemainder(Items.BOWL)
     ));
@@ -1020,8 +1098,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(5)
                                     .saturationMod(0.3f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
     public static final RegistryObject<Item> PanCake = registerItem("pancake", ()->new Item(
@@ -1032,8 +1111,9 @@ public static final RegistryObject<Item> MilkBottle =
                                     .Builder()
                                     .nutrition(6)
                                     .saturationMod(0.6f)
-                                    .build()
-                            )
+                                .build()
+                        )
+                        .tab(ModCreativeModeTabs.UsefulFood_Group)
 
     ));
 

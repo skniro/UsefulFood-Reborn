@@ -34,7 +34,7 @@ public class UsefulFoodBlocks {
 
     private static Item registerBlockItem(String name, Block block, ItemGroup tab) {
         return Registry.register(Registry.ITEM, new Identifier(UsefulFood.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(tab)));
+                new BlockItem(block, new FabricItemSettings().group(tab).maxCount(1)));
     }
     public static void registerModBlocks(){
         Logger.getLogger("register mod blocks" + UsefulFood.MOD_ID);

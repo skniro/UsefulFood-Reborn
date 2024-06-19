@@ -46,7 +46,7 @@ public class UsefulFoodBlocks {
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, ItemGroup tab) {
         return UsefulFoodItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().tab(tab)));
+                new Item.Properties().tab(tab).stacksTo(1)));
     }
 
     public static void registerModBlocks(IEventBus eventBus) {

@@ -1,7 +1,6 @@
 package com.skniro.usefulfood.item.init;
 
 
-import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -10,16 +9,19 @@ import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
 import net.minecraft.world.World;
 
-public class ItemBottle
+public class MilkItemBottle
         extends Item {
     private static final int MAX_USE_TIME = 32;
 
-    public ItemBottle(Properties settings) {
+    public MilkItemBottle(Properties settings) {
         super(settings);
     }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity user) {
+        if (!world.isClientSide) {
+            user.removeAllEffects();
+        }
         ItemStack $$3 = super.finishUsingItem(stack, world, user);
         return user instanceof PlayerEntity && ((PlayerEntity)user).abilities.instabuild ? $$3 : new ItemStack(Items.GLASS_BOTTLE);
     }

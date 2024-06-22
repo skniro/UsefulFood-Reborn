@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "usefulfood:rawmarshmallow"
   },
-  "result": "usefulfood:cookedmarshmallow"
+  "result": {
+    "id": "usefulfood:cookedmarshmallow"
+  }
 }

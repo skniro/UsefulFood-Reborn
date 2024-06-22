@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "usefulfood:milkbottle"
   },
-  "result": "usefulfood:hotmilkbottle"
+  "result": {
+    "id": "usefulfood:hotmilkbottle"
+  }
 }

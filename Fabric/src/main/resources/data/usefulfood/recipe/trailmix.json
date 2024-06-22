@@ -23,7 +23,7 @@
         }
     },
     "result": {
-        "item": "usefulfood:trailmix",
+        "id": "usefulfood:trailmix",
         "count": 1
     },
     "category": "food"

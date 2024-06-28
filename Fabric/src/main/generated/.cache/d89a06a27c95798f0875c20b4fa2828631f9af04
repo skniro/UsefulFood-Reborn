@@ -1,4 +1,4 @@
-// 1.21	2024-06-19T16:52:36.3888932	UsefulFood Reborn/Recipes
+// 1.21	2024-06-28T21:22:33.6503388	UsefulFood Reborn/Recipes
 bc455bbf10482d0601cfdac7730c029c923d0969 data\usefulfood\advancement\recipes\food\jelly.json
 6eeb2f7ea4d291f67b4497927d88b5e74f358cf8 data\usefulfood\advancement\recipes\food\cheese.json
 a64161ce9e89b0c502fa8f80f045f0bc8a210697 data\usefulfood\recipe\vanillaicecream.json
@@ -66,7 +66,7 @@ c6c97cc163c0883eb0f510be8db578ca9d347dff data\usefulfood\advancement\recipes\foo
 80c778ea1f5579c8a8696bea6bf7d9943312bf09 data\usefulfood\advancement\recipes\food\melonjampancake.json
 ca22110f4ae643e373527c6eda4597cc86465551 data\usefulfood\advancement\recipes\food\sugartoast.json
 7cb18de7e2d06f86487df55a4befbf8c5b7ccdbe data\usefulfood\recipe\chocolateicecream.json
-7c62f362a0a711fea336bdeead47a390fa091acd data\usefulfood\advancement\recipes\food\friedegg.json
+80333cce5888b0e8b72695b6f7c1d8224bc68757 data\usefulfood\advancement\recipes\food\friedegg.json
 77a16ea3b84aea2aef4e61717ba6952f83bb6902 data\usefulfood\advancement\recipes\food\sugarpancake.json
 310aa49edfa346a946c119a3f907fd1845a5eb56 data\usefulfood\advancement\recipes\food\salad.json
 a9482ccd14afdbe0be7c21e9e0a6ed946243c1f0 data\usefulfood\recipe\cereal.json

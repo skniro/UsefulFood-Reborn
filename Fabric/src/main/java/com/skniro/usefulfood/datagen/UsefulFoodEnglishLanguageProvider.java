@@ -54,7 +54,7 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(UsefulFoodItems.CarrotJuice,"Carrot Juice");
         translationBuilder.add(UsefulFoodItems.CarrotSoup,"Carrot Soup");
         translationBuilder.add(UsefulFoodItems.PumpkinBread,"Pumpkin Bread");
-        translationBuilder.add(UsefulFoodItems.FishnChips,"Fish n' Chips");
+        translationBuilder.add(UsefulFoodItems.FishnChips,"Fish 'n' Chips");
         translationBuilder.add(UsefulFoodItems.SugarBiscuit,"Sugar Biscuit");
         translationBuilder.add(UsefulFoodItems.AppleJamBiscuit,"Apple Jam Biscuit");
         translationBuilder.add(UsefulFoodItems.ChocoBiscuit,"Chocolate Biscuit");

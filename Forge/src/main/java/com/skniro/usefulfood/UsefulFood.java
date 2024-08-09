@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.ModCreativeModeTabs;
 import com.skniro.usefulfood.item.UsefulFoodItems;
+import com.skniro.usefulfood.util.ModLootModifiers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,6 +32,7 @@ public class UsefulFood {
         UsefulFoodItems.registerModItems(modEventBus);
         UsefulFoodBlocks.registerModBlocks(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
 

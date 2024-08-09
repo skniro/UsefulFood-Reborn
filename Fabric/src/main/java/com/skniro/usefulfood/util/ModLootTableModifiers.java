@@ -22,7 +22,7 @@ public class ModLootTableModifiers {
             if(squid_entities_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootTableRange.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.15f)) // Drops 35% of the time
+                        .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
                         .with(ItemEntry.builder(UsefulFoodItems.SquidTentacleRaw))
                         .apply(SetCountLootFunction.builder(UniformLootTableRange.between(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
@@ -30,7 +30,7 @@ public class ModLootTableModifiers {
                 if(glow_squid_entities_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(ConstantLootTableRange.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.15f)) // Drops 35% of the time
+                            .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
                             .with(ItemEntry.builder(UsefulFoodItems.SquidTentacleRaw))
                             .apply(SetCountLootFunction.builder(UniformLootTableRange.between(1.0f, 1.0f)));
                     tableBuilder.pool(poolBuilder);

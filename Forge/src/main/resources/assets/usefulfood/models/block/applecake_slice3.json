@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "usefulfood:block/applecake_side",
+        "bottom": "usefulfood:block/applecake_bottom",
+        "top": "usefulfood:block/applecake_top",
+        "side": "usefulfood:block/applecake_side",
+        "inside": "usefulfood:block/applecake_inner"
+    },
+    "elements": [
+        {   "from": [ 7, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#inside" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}

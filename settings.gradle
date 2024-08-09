@@ -5,7 +5,13 @@ pluginManagement {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
+        maven {
+            name = 'Sponge Snapshots'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
     }
 }
+
+include("Fabric", "Forge")
 
 

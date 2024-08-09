@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_melon_seeds",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_melon_seeds"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:roastedseeds_from_smelting_melon_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

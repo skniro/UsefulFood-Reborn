@@ -2,11 +2,11 @@
   "type": "minecraft:smoking",
   "category": "food",
   "cookingtime": 100,
-  "experience": 0.35,
+  "experience": 0.1,
   "ingredient": {
-    "item": "usefulfood:milkbottle"
+    "item": "minecraft:egg"
   },
   "result": {
-    "id": "usefulfood:hotmilkbottle"
+    "id": "usefulfood:friedegg"
   }
 }

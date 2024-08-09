@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "usefulfood:squidrtentacle"
   },
-  "result": "usefulfood:cookedsquidtentacle"
+  "result": {
+    "id": "usefulfood:cookedsquidtentacle"
+  }
 }

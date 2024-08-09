@@ -7,5 +7,7 @@
   "ingredient": {
     "item": "minecraft:wheat_seeds"
   },
-  "result": "usefulfood:roastedseeds"
+  "result": {
+    "id": "usefulfood:roastedseeds"
+  }
 }

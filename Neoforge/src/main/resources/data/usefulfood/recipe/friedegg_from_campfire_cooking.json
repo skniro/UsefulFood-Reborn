@@ -1,10 +1,12 @@
 {
-    "type": "minecraft:campfire_cooking",
-	"category": "food",
-    "ingredient": {
-        "item": "minecraft:egg"
-    },
-    "result": "usefulfood:friedegg",
-    "experience": 0.2,
-    "cookingtime": 100
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "minecraft:egg"
+  },
+  "result": {
+    "id": "usefulfood:friedegg"
+  }
 }

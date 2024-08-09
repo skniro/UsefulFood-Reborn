@@ -1,7 +1,7 @@
 {
-  "type": "minecraft:smelting",
+  "type": "minecraft:campfire_cooking",
   "category": "food",
-  "cookingtime": 200,
+  "cookingtime": 75,
   "experience": 0.3,
   "ingredient": {
     "item": "usefulfood:chocolatemilkbottle"

@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "minecraft:egg"
   },
-  "result": "usefulfood:friedegg"
+  "result": {
+    "id": "usefulfood:friedegg"
+  }
 }

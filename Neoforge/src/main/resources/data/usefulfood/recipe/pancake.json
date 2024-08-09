@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "usefulfood:pancakedough"
   },
-  "result": "usefulfood:pancake"
+  "result": {
+    "id": "usefulfood:pancake"
+  }
 }

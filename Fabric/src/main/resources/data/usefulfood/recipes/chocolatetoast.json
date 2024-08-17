@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "usefulfood:breadslice"
+        },
+        {
+            "item": "usefulfood:chocolatebar"
+        }
+    ],
+    "result": {
+        "item": "usefulfood:chocolatetoast"
+    }
+}

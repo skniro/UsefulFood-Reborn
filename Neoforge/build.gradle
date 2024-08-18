@@ -56,7 +56,7 @@ neoForge {
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
 
-        data {
+        neodata {
             data()
 
             // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it

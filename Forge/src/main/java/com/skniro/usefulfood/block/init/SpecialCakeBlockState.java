@@ -71,7 +71,7 @@ public class SpecialCakeBlockState extends SpecialCake {
         return eat(world, pos, state, player);
     }
 
-    protected static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
+    public static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         }

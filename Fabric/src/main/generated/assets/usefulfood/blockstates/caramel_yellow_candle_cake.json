@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "usefulfood:block/caramel_yellow_candle_cake"
+    },
+    "lit=true": {
+      "model": "usefulfood:block/caramel_yellow_candle_cake_lit"
+    }
+  }
+}

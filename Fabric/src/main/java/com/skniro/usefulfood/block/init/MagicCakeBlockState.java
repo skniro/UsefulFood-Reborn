@@ -1,5 +1,6 @@
 package com.skniro.usefulfood.block.init;
 
+import com.skniro.usefulfood.block.init.candle.CandleMagicCakeBlock;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -47,20 +48,21 @@ public class MagicCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public ItemActionResult onUseWithItem(ItemStack itemStack,BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ItemActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         Block block;
         Item item = itemStack.getItem();
-        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = getBlockFromItem(item)) instanceof CandleBlock candleBlock) {
+        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = Block.getBlockFromItem(item)) instanceof CandleBlock) {
             if (!player.isCreative()) {
                 itemStack.decrement(1);
             }
             world.playSound(null, pos, SoundEvents.BLOCK_CAKE_ADD_CANDLE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            world.setBlockState(pos, CandleCakeBlock.getCandleCakeFromCandle(candleBlock));
+            world.setBlockState(pos, CandleMagicCakeBlock.getCandleCakeFromCandle(block));
             world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
             return ItemActionResult.SUCCESS;
+        } else {
+            return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
-        return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override
@@ -76,7 +78,7 @@ public class MagicCakeBlockState extends SpecialCake {
         return tryEat(world, pos, state, player);
     }
 
-    protected static ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
+    public static ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canConsume(false)) {
             return ActionResult.PASS;
         }

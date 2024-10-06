@@ -1,5 +1,8 @@
 package com.skniro.usefulfood.block.init;
 
+import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
+import com.skniro.usefulfood.block.init.candle.CandleCaramelCakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -20,7 +23,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CandleBlock;
-import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -50,21 +52,34 @@ public class SpecialCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack itemStack,BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public ItemInteractionResult useItemOn(ItemStack itemStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         Block block;
         Item item = itemStack.getItem();
-        if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock candleBlock) {
-            if (!player.isCreative()) {
-                itemStack.shrink(1);
+        if (state.getBlock() == UsefulFoodBlocks.CaramelCake.get()) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleCaramelCakeBlock.getCandleCakeFromCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return ItemInteractionResult.SUCCESS;
             }
-            world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
-            world.setBlockAndUpdate(pos, CandleCakeBlock.byCandle(candleBlock));
-            world.gameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
-            player.awardStat(Stats.ITEM_USED.get(item));
-            return ItemInteractionResult.SUCCESS;
-        } else {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
+        if (state.getBlock() == UsefulFoodBlocks.AppleCake.get()) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleAppleCakeBlock.getCandleCakeFromCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return ItemInteractionResult.SUCCESS;
+            }
+        }
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override
@@ -80,7 +95,7 @@ public class SpecialCakeBlockState extends SpecialCake {
         return eat(world, pos, state, player);
     }
 
-    protected static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
+    public static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         }
@@ -130,7 +145,7 @@ public class SpecialCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public boolean isPathfindable(BlockState state,PathComputationType type) {
+    public boolean isPathfindable(BlockState state, PathComputationType type) {
         return false;
     }
 }

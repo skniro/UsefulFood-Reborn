@@ -1,6 +1,7 @@
 package com.skniro.usefulfood.block.init;
 
 
+import com.skniro.usefulfood.block.init.candle.CandleMagicCakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -19,7 +20,9 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -58,7 +61,7 @@ public class MagicCakeBlockState extends SpecialCake {
                 itemStack.shrink(1);
             }
             world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
-            world.setBlockAndUpdate(pos, CandleCakeBlock.byCandle(block));
+            world.setBlockAndUpdate(pos, CandleMagicCakeBlock.getCandleCakeFromCandle(block));
             world.gameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
             player.awardStat(Stats.ITEM_USED.get(item));
             return InteractionResult.SUCCESS;
@@ -75,7 +78,7 @@ public class MagicCakeBlockState extends SpecialCake {
     }
 
 
-    protected static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
+    public static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         }

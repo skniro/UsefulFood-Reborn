@@ -1,5 +1,8 @@
 package com.skniro.usefulfood.block.init;
 
+import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
+import com.skniro.usefulfood.block.init.candle.CandleCaramelCakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -16,7 +19,10 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CandleBlock;
+import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -50,15 +56,41 @@ public class SpecialCakeBlockState extends SpecialCake {
         Block block;
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
-        if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
-            if (!player.isCreative()) {
-                itemStack.shrink(1);
+        if (state.getBlock() == Blocks.CAKE) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleCakeBlock.byCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.SUCCESS;
             }
-            world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
-            world.setBlockAndUpdate(pos, CandleCakeBlock.byCandle(block));
-            world.gameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
-            player.awardStat(Stats.ITEM_USED.get(item));
-            return InteractionResult.SUCCESS;
+        }
+        if (state.getBlock() == UsefulFoodBlocks.CaramelCake.get()) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleCaramelCakeBlock.getCandleCakeFromCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.SUCCESS;
+            }
+        }
+        if (state.getBlock() == UsefulFoodBlocks.AppleCake.get()) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleAppleCakeBlock.getCandleCakeFromCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.SUCCESS;
+            }
         }
         if (world.isClientSide) {
             if (eat(world, pos, state, player).consumesAction()) {
@@ -71,7 +103,7 @@ public class SpecialCakeBlockState extends SpecialCake {
         return eat(world, pos, state, player);
     }
 
-    protected static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
+    public static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         }

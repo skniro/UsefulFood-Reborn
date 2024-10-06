@@ -1,5 +1,6 @@
 package com.skniro.usefulfood.block.init;
 
+import com.skniro.usefulfood.block.init.candle.CandleMagicCakeBlock;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -47,15 +48,15 @@ public class MagicCakeBlockState extends SpecialCake {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        Block block;
         ItemStack itemStack = player.getStackInHand(hand);
+        Block block;
         Item item = itemStack.getItem();
-        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = getBlockFromItem(item)) instanceof CandleBlock) {
+        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = Block.getBlockFromItem(item)) instanceof CandleBlock) {
             if (!player.isCreative()) {
                 itemStack.decrement(1);
             }
             world.playSound(null, pos, SoundEvents.BLOCK_CAKE_ADD_CANDLE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            world.setBlockState(pos, CandleCakeBlock.getCandleCakeFromCandle(block));
+            world.setBlockState(pos, CandleMagicCakeBlock.getCandleCakeFromCandle(block));
             world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
             return ActionResult.SUCCESS;
@@ -71,7 +72,7 @@ public class MagicCakeBlockState extends SpecialCake {
         return tryEat(world, pos, state, player);
     }
 
-    protected static ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
+    public static ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canConsume(false)) {
             return ActionResult.PASS;
         }

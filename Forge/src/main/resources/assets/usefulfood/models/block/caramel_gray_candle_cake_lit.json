@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/template_cake_with_candle",
+  "textures": {
+    "bottom": "usefulfood:block/caramelcake_bottom",
+    "candle": "minecraft:block/gray_candle_lit",
+    "particle": "usefulfood:block/caramelcake_side",
+    "side": "usefulfood:block/caramelcake_side",
+    "top": "usefulfood:block/caramelcake_top"
+  }
+}

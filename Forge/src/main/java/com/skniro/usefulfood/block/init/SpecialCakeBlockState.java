@@ -1,5 +1,9 @@
 package com.skniro.usefulfood.block.init;
 
+import com.skniro.usefulfood.UsefulFood;
+import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
+import com.skniro.usefulfood.block.init.candle.CandleCaramelCakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -27,6 +31,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.logging.Logger;
+
 public class SpecialCakeBlockState extends SpecialCake {
     public static final int MAX_BITES = 6;
     public static final IntegerProperty BITES = BlockStateProperties.BITES;
@@ -50,15 +56,41 @@ public class SpecialCakeBlockState extends SpecialCake {
         Block block;
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
-        if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
-            if (!player.isCreative()) {
-                itemStack.shrink(1);
+        if (state.getBlock() == Blocks.CAKE) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleCakeBlock.byCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.SUCCESS;
             }
-            world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
-            world.setBlockAndUpdate(pos, CandleCakeBlock.byCandle(block));
-            world.gameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
-            player.awardStat(Stats.ITEM_USED.get(item));
-            return InteractionResult.SUCCESS;
+        }
+        if (state.getBlock() == UsefulFoodBlocks.CaramelCake.get()) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleCaramelCakeBlock.getCandleCakeFromCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.SUCCESS;
+            }
+        }
+        if (state.getBlock() == UsefulFoodBlocks.AppleCake.get()) {
+            if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                world.setBlockAndUpdate(pos, CandleAppleCakeBlock.getCandleCakeFromCandle(block));
+                world.gameEvent((Entity) player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.SUCCESS;
+            }
         }
         if (world.isClientSide) {
             if (eat(world, pos, state, player).consumesAction()) {

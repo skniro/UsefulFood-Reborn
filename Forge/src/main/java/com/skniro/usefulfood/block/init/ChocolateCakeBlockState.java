@@ -36,7 +36,7 @@ public class ChocolateCakeBlockState extends SpecialCakeBlockState {
                 itemStack.shrink(1);
             }
             world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
-            world.setBlockAndUpdate(pos, CandleChocolateCakeBlock.byCandle(block));
+            world.setBlockAndUpdate(pos, CandleChocolateCakeBlock.getCandleCakeFromCandle(block));
             world.gameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
             player.awardStat(Stats.ITEM_USED.get(item));
             return InteractionResult.SUCCESS;

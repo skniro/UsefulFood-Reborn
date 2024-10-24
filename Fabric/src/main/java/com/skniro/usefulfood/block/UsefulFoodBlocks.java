@@ -6,7 +6,6 @@ import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
 import com.skniro.usefulfood.block.init.candle.CandleCaramelCakeBlock;
 import com.skniro.usefulfood.block.init.candle.CandleChocolateCakeBlock;
 import com.skniro.usefulfood.block.init.candle.CandleMagicCakeBlock;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,13 +13,15 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
+import java.util.function.Function;
 import java.util.logging.Logger;
 
 public class UsefulFoodBlocks {
     //Apple cake
-    public static final Block AppleCake = registerBlock("applecake",new AppleCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),18,0.6F),1, UsefulFood.UsefulFood_Group);
+    public static final Block AppleCake = registerBlock("applecake",AppleCakeBlockState::new, (AbstractBlock.Settings.copy(Blocks.CAKE),18,0.6F),1, UsefulFood.UsefulFood_Group);
     public static final Block Apple_CANDLE_CAKE = registerBlockWithoutItem("apple_candle_cake", new CandleAppleCakeBlock(Blocks.CANDLE, AbstractBlock.Settings.copy(AppleCake) ));
     public static final Block Apple_YELLOW_CANDLE_CAKE = registerBlockWithoutItem("apple_yellow_candle_cake", new CandleAppleCakeBlock(Blocks.YELLOW_CANDLE, AbstractBlock.Settings.copy(AppleCake)));
     public static final Block Apple_LIME_CANDLE_CAKE = registerBlockWithoutItem("apple_lime_candle_cake", new CandleAppleCakeBlock(Blocks.LIME_CANDLE, AbstractBlock.Settings.copy(AppleCake)));
@@ -40,7 +41,7 @@ public class UsefulFoodBlocks {
     public static final Block Apple_LIGHT_BLUE_CANDLE_CAKE = registerBlockWithoutItem("apple_light_blue_candle_cake", new CandleAppleCakeBlock(Blocks.LIGHT_BLUE_CANDLE, AbstractBlock.Settings.copy(AppleCake)));
 
     //Chocolate cake
-    public static final Block ChocolateCake = registerBlock("chocolatecake",new ChocolateCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),12,0.5F),1, UsefulFood.UsefulFood_Group);
+    public static final Block ChocolateCake = registerBlock("chocolatecake",new ChocolateCakeBlockState(AbstractBlock.Settings.copy(Blocks.CAKE),12,0.5F),1, UsefulFood.UsefulFood_Group);
     public static final Block Chocolate_CANDLE_CAKE = registerBlockWithoutItem("chocolate_candle_cake", new CandleChocolateCakeBlock(Blocks.CANDLE, AbstractBlock.Settings.copy(ChocolateCake)));
     public static final Block Chocolate_YELLOW_CANDLE_CAKE = registerBlockWithoutItem("chocolate_yellow_candle_cake", new CandleChocolateCakeBlock(Blocks.YELLOW_CANDLE, AbstractBlock.Settings.copy(ChocolateCake)));
     public static final Block Chocolate_LIME_CANDLE_CAKE = registerBlockWithoutItem("chocolate_lime_candle_cake", new CandleChocolateCakeBlock(Blocks.LIME_CANDLE, AbstractBlock.Settings.copy(ChocolateCake)));
@@ -61,7 +62,7 @@ public class UsefulFoodBlocks {
 
 
     //Magic cake
-    public static final Block MagicCake = registerBlock("magiccake", new MagicCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE), 48, 0.5F),1, UsefulFood.UsefulFood_Group);
+    public static final Block MagicCake = registerBlock("magiccake", new MagicCakeBlockState(AbstractBlock.Settings.copy(Blocks.CAKE), 48, 0.5F),1, UsefulFood.UsefulFood_Group);
     public static final Block Magic_CANDLE_CAKE = registerBlockWithoutItem("magic_candle_cake", new CandleMagicCakeBlock(Blocks.CANDLE, AbstractBlock.Settings.copy(MagicCake)));
     public static final Block Magic_YELLOW_CANDLE_CAKE = registerBlockWithoutItem("magic_yellow_candle_cake", new CandleMagicCakeBlock(Blocks.YELLOW_CANDLE, AbstractBlock.Settings.copy(MagicCake)));
     public static final Block Magic_LIME_CANDLE_CAKE = registerBlockWithoutItem("magic_lime_candle_cake", new CandleMagicCakeBlock(Blocks.LIME_CANDLE, AbstractBlock.Settings.copy(MagicCake)));
@@ -82,7 +83,7 @@ public class UsefulFoodBlocks {
 
     // 1.4
     //Caramel cake
-    public static final Block CaramelCake = registerBlock("caramelcake",new CaramelCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),19,0.1F),1, UsefulFood.UsefulFood_Group);
+    public static final Block CaramelCake = registerBlock("caramelcake",CaramelCakeBlockState::new,(AbstractBlock.Settings.copy(Blocks.CAKE),19,0.1F),1, UsefulFood.UsefulFood_Group);
     public static final Block Caramel_CANDLE_CAKE = registerBlockWithoutItem("caramel_candle_cake", new CandleCaramelCakeBlock(Blocks.CANDLE, AbstractBlock.Settings.copy(CaramelCake)));
     public static final Block Caramel_YELLOW_CANDLE_CAKE = registerBlockWithoutItem("caramel_yellow_candle_cake", new CandleCaramelCakeBlock(Blocks.YELLOW_CANDLE, AbstractBlock.Settings.copy(CaramelCake)));
     public static final Block Caramel_LIME_CANDLE_CAKE = registerBlockWithoutItem("caramel_lime_candle_cake", new CandleCaramelCakeBlock(Blocks.LIME_CANDLE, AbstractBlock.Settings.copy(CaramelCake)));
@@ -102,19 +103,22 @@ public class UsefulFoodBlocks {
     public static final Block Caramel_LIGHT_BLUE_CANDLE_CAKE = registerBlockWithoutItem("caramel_light_blue_candle_cake", new CandleCaramelCakeBlock(Blocks.LIGHT_BLUE_CANDLE, AbstractBlock.Settings.copy(CaramelCake)));
 
 
-    private static Block registerBlock(String name, Block block, int Maxcount, RegistryKey<ItemGroup> tab) {
-        registerBlockItem(name, block, Maxcount, tab);
-        return Registry.register(Registries.BLOCK, Identifier.of(UsefulFood.MOD_ID, name), block);
+    private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings, RegistryKey<ItemGroup> tab) {
+        Block block = (Block)factory.apply(settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(GrowableOres.MOD_ID, name))));
+        registerBlockItem(name, block, tab);
+        return Registry.register(Registries.BLOCK, RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(GrowableOres.MOD_ID, name)), block);
     }
 
+    private static Item registerBlockItem(String name, Block block, RegistryKey<ItemGroup> tab) {
+        return Registry.register(Registries.ITEM, RegistryKey.of(RegistryKeys.ITEM, Identifier.of(GrowableOres.MOD_ID, name)),
+                new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey()
+                        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(GrowableOres.MOD_ID, name)))));
+    }
+    public
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(UsefulFood.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block, int Maxcount, RegistryKey<ItemGroup> tab) {
-        return Registry.register(Registries.ITEM, Identifier.of(UsefulFood.MOD_ID, name),
-                new BlockItem(block, new Item.Settings().maxCount(Maxcount)));
-    }
     public static void registerModBlocks(){
         Logger.getLogger("register mod blocks" + UsefulFood.MOD_ID);
     }

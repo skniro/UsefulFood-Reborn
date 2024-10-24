@@ -1,6 +1,7 @@
 package com.skniro.usefulfood.block.init;
 
 import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CandleBlock;
@@ -14,7 +15,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -25,8 +25,9 @@ public class AppleCakeBlockState extends SpecialCakeBlockState {
         super(settings, foodlevel, saturation);
     }
 
+
     @Override
-    public ItemActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         Block block;
         Item item = itemStack.getItem();
         if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = getBlockFromItem(item)) instanceof CandleBlock) {
@@ -37,9 +38,9 @@ public class AppleCakeBlockState extends SpecialCakeBlockState {
             world.setBlockState(pos, CandleAppleCakeBlock.getCandleCakeFromCandle(block));
             world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
-            return ItemActionResult.SUCCESS;
+            return ActionResult.SUCCESS;
         } else {
-            return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
         }
     }
 

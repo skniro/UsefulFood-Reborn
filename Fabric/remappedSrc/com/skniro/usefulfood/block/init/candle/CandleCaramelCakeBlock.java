@@ -75,7 +75,7 @@ public class CandleCaramelCakeBlock extends AbstractCandleBlock {
                 return super.useItemOn(stack, state, world, pos, player, hand, hit);
             }
         }else{
-            return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.TRY_WITH_EMPTY_HAND;
         }
     }
 
@@ -101,8 +101,8 @@ public class CandleCaramelCakeBlock extends AbstractCandleBlock {
         builder.add(new Property[]{LIT});
     }
 
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
-        return direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, world, pos, neighborPos);
+    public BlockState updateShape(BlockState state, LevelReader levelReader, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction,BlockPos neighborPos, BlockState neighborState, RandomSource randomSource) {
+        return direction == Direction.DOWN && !state.canSurvive(levelReader, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, levelReader, scheduledTickAccess, pos, direction, neighborPos, neighborState, randomSource);
     }
 
     public static BlockState getCandleCakeFromCandle(Block candle) {

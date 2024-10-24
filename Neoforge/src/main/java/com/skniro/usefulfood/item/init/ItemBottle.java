@@ -7,7 +7,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 public class ItemBottle
@@ -30,10 +29,5 @@ public class ItemBottle
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity user) {
         return MAX_USE_TIME ;
-    }
-
-    @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
     }
 }

@@ -1,7 +1,8 @@
 package com.skniro.usefulfood.util;
 
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -12,8 +13,8 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 public class ModLootTableModifiers {
 
-    public static void modifyLootTables() {
-        LootTableEvents.MODIFY.register((id, tableBuilder, source) -> {
+/*    public static void modifyLootTables() {
+        LootTableEvents.MODIFY.register((id, tableBuilder, source, wrapperLookup) -> {
             if(EntityType.SQUID.getLootTableId() == id) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
@@ -31,5 +32,5 @@ public class ModLootTableModifiers {
                     tableBuilder.pool(poolBuilder);
                 }
         });
-    }
+    }*/
 }

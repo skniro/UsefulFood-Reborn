@@ -17,17 +17,17 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.tick.ScheduledTickView;
 
 import java.util.Map;
 
@@ -60,17 +60,17 @@ public class CandleMagicCakeBlock extends AbstractCandleBlock {
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (itemStack.isOf(Items.FLINT_AND_STEEL) || itemStack.isOf(Items.FIRE_CHARGE)) {
             if (!(CandleMagicCakeBlock.isHittingCandle(hit) && player.getStackInHand(hand).isEmpty() && state.get(LIT))) {
                 extinguish(player, state, world, pos);
-                return ItemActionResult.success(world.isClient);
+                return ActionResult.SUCCESS;
             } else {
                 return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
             }
         }else{
-            return ItemActionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+            return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
         }
     }
 
@@ -96,8 +96,12 @@ public class CandleMagicCakeBlock extends AbstractCandleBlock {
         builder.add(new Property[]{LIT});
     }
 
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
+        if (direction == Direction.DOWN && !state.canPlaceAt(world, pos)) {
+            return Blocks.AIR.getDefaultState();
+        }
+        return super.getStateForNeighborUpdate(state ,world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 
     public static BlockState getCandleCakeFromCandle(Block candle) {

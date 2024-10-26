@@ -18,16 +18,17 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
+import net.minecraft.world.tick.ScheduledTickView;
 
 public class MagicCakeBlockState extends SpecialCake {
     public static final int MAX_BITES = 6;
@@ -48,7 +49,7 @@ public class MagicCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public ItemActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         Block block;
         Item item = itemStack.getItem();
         if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = Block.getBlockFromItem(item)) instanceof CandleBlock) {
@@ -59,9 +60,9 @@ public class MagicCakeBlockState extends SpecialCake {
             world.setBlockState(pos, CandleMagicCakeBlock.getCandleCakeFromCandle(block));
             world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
-            return ItemActionResult.SUCCESS;
+            return ActionResult.SUCCESS;
         } else {
-            return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
         }
     }
 
@@ -98,11 +99,11 @@ public class MagicCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
         if (direction == Direction.DOWN && !state.canPlaceAt(world, pos)) {
             return Blocks.AIR.getDefaultState();
         }
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+        return super.getStateForNeighborUpdate(state ,world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override

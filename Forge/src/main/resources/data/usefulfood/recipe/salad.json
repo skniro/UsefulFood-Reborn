@@ -1,21 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:poppy"
-    },
-    {
-      "item": "minecraft:dandelion"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:bowl"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:poppy",
+        "minecraft:dandelion",
+        "minecraft:wheat_seeds",
+        "minecraft:bowl"
+    ],
+    "result": {
+        "id": "usefulfood:salad"
     }
-  ],
-  "result": {
-    "id": "usefulfood:salad"
-  }
 }

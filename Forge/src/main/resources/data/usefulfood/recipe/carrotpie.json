@@ -1,21 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:egg"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:wheat"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:egg",
+        "minecraft:carrot",
+        "minecraft:sugar",
+        "minecraft:wheat"
+    ],
+    "result": {
+        "id": "usefulfood:carrotpie"
     }
-  ],
-  "result": {
-    "id": "usefulfood:carrotpie"
-  }
 }

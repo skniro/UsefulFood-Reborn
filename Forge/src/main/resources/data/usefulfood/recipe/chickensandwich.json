@@ -1,18 +1,12 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:breadslice"
-    },
-    {
-      "item": "usefulfood:breadslice"
-    },
-    {
-      "item": "minecraft:cooked_chicken"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:breadslice",
+        "usefulfood:breadslice",
+        "minecraft:cooked_chicken"
+    ],
+    "result": {
+        "id": "usefulfood:chickensandwich"
     }
-  ],
-  "result": {
-    "id": "usefulfood:chickensandwich"
-  }
 }

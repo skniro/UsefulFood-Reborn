@@ -1,35 +1,17 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "usefulfood:caramel"
-    },
-    {
-      "item": "usefulfood:caramel"
-    },
-    {
-      "item": "usefulfood:caramel"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "usefulfood:caramel",
+        "usefulfood:caramel",
+        "usefulfood:caramel",
+        "minecraft:wheat",
+        "minecraft:wheat",
+        "minecraft:wheat",
+        "#c:milks",
+        "#c:milks",
+        "#c:milks"
+    ],
+    "result": {
+        "id": "usefulfood:caramelcake"
     }
-  ],
-  "result": {
-    "id": "usefulfood:caramelcake"
-  }
 }

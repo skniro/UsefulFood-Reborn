@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:jelly"
-    },
-    {
-      "item": "minecraft:apple"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:jelly",
+        "minecraft:apple"
+    ],
+    "result": {
+        "id": "usefulfood:applejelly"
     }
-  ],
-  "result": {
-    "id": "usefulfood:applejelly"
-  }
 }

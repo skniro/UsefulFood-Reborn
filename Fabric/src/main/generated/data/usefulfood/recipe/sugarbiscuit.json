@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "usefulfood:biscuit"
-    }
+    "minecraft:sugar",
+    "usefulfood:biscuit"
   ],
   "result": {
     "count": 1,

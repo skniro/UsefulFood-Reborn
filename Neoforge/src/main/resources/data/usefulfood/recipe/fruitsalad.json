@@ -5,23 +5,15 @@
         " B "
     ],
     "key": {
-        "#": {
-            "item": "minecraft:apple"
-        },
-        "M": {
-            "item": "minecraft:melon_slice"
-        },
-        "S": {
-            "item": "minecraft:sweet_berries"
-        },
-        "B": {
-            "item": "minecraft:bowl"
-        }
+        "#": "minecraft:apple",
+        "M": "minecraft:melon_slice",
+        "S": "minecraft:sweet_berries",
+        "B": "minecraft:bowl"
     },
     "result": {
         "id": "usefulfood:fruitsalad",
         "count": 1
     },
     "category": "food",
-	"group": "fruitsalad"
+    "group": "fruitsalad"
 }

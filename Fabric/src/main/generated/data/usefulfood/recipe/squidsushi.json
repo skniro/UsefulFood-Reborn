@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "usefulfood:squidrtentacle"
-    },
-    {
-      "item": "minecraft:lily_pad"
-    }
+    "usefulfood:squidrtentacle",
+    "minecraft:lily_pad"
   ],
   "result": {
     "count": 1,

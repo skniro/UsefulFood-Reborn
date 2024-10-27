@@ -1,21 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:water_bucket"
-    },
-    {
-      "item": "minecraft:egg"
-    },
-    {
-      "item": "minecraft:wheat"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:bowl",
+        "minecraft:water_bucket",
+        "minecraft:egg",
+        "minecraft:wheat"
+    ],
+    "result": {
+        "id": "usefulfood:spaghetti"
     }
-  ],
-  "result": {
-    "id": "usefulfood:spaghetti"
-  }
 }

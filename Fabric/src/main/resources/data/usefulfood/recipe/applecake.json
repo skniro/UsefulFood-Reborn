@@ -1,35 +1,17 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:apple"
-    },
-    {
-      "item": "minecraft:apple"
-    },
-    {
-      "item": "minecraft:apple"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:apple",
+        "minecraft:apple",
+        "minecraft:apple",
+        "minecraft:wheat",
+        "minecraft:wheat",
+        "minecraft:wheat",
+        "#c:milks",
+        "#c:milks",
+        "#c:milks"
+    ],
+    "result": {
+        "id": "usefulfood:applecake"
     }
-  ],
-  "result": {
-    "id": "usefulfood:applecake"
-  }
 }

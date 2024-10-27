@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "usefulfood:milkbottle"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    }
+    "minecraft:wheat",
+    "minecraft:bowl",
+    "minecraft:sugar",
+    "usefulfood:milkbottle",
+    "minecraft:cocoa_beans"
   ],
   "result": {
     "count": 1,

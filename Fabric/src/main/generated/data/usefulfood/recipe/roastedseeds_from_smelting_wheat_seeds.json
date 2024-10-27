@@ -4,9 +4,7 @@
   "cookingtime": 300,
   "experience": 0.45,
   "group": "food",
-  "ingredient": {
-    "item": "minecraft:wheat_seeds"
-  },
+  "ingredient": "minecraft:wheat_seeds",
   "result": {
     "id": "usefulfood:roastedseeds"
   }

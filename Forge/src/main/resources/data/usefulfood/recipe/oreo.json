@@ -1,24 +1,14 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:chocolatebiscuit"
-    },
-    {
-      "item": "usefulfood:chocolatebiscuit"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "usefulfood:milkbottle"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:chocolatebiscuit",
+        "usefulfood:chocolatebiscuit",
+        "minecraft:sugar",
+        "minecraft:sugar",
+        "usefulfood:milkbottle"
+    ],
+    "result": {
+        "id": "usefulfood:oreo"
     }
-  ],
-  "result": {
-    "id": "usefulfood:oreo"
-  }
 }

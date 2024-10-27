@@ -6,21 +6,11 @@
         " B "
     ],
     "key": {
-        "#": {
-            "item": "minecraft:beetroot_seeds"
-        },
-        "W": {
-            "item": "minecraft:wheat_seeds"
-        },
-        "P": {
-            "item": "minecraft:pumpkin_seeds"
-        },
-        "M": {
-            "item": "minecraft:melon_seeds"
-        },
-        "B": {
-            "item": "minecraft:bowl"
-        }
+        "#": "minecraft:beetroot_seeds",
+        "W": "minecraft:wheat_seeds",
+        "P": "minecraft:pumpkin_seeds",
+        "M": "minecraft:melon_seeds",
+        "B": "minecraft:bowl"
     },
     "result": {
         "id": "usefulfood:trailmix",

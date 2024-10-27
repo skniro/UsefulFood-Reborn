@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:apple"
-    }
+    "minecraft:bowl",
+    "minecraft:sugar",
+    "minecraft:apple"
   ],
   "result": {
     "count": 1,

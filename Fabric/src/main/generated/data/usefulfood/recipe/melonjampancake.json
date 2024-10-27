@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "usefulfood:melonjam"
-    },
-    {
-      "item": "usefulfood:pancake"
-    }
+    "usefulfood:melonjam",
+    "usefulfood:pancake"
   ],
   "result": {
     "count": 1,

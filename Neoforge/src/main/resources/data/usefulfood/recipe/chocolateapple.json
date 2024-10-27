@@ -1,18 +1,12 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:hotchocolatemilkbottle"
-    },
-    {
-      "item": "minecraft:apple"
-    },
-    {
-      "item": "minecraft:stick"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:hotchocolatemilkbottle",
+        "minecraft:apple",
+        "minecraft:stick"
+    ],
+    "result": {
+        "id": "usefulfood:chocolateapple"
     }
-  ],
-  "result": {
-    "id": "usefulfood:chocolateapple"
-  }
 }

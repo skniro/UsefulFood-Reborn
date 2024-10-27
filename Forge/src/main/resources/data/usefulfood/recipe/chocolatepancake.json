@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:chocolatebar"
-    },
-    {
-      "item": "usefulfood:pancake"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:chocolatebar",
+        "usefulfood:pancake"
+    ],
+    "result": {
+        "id": "usefulfood:chocolatepancake"
     }
-  ],
-  "result": {
-    "id": "usefulfood:chocolatepancake"
-  }
 }

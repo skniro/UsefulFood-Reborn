@@ -5,23 +5,15 @@
         " B "
     ],
     "key": {
-        "#": {
-            "item": "minecraft:golden_apple"
-        },
-        "G": {
-            "item": "minecraft:glistering_melon_slice"
-        },
-        "K": {
-            "item": "minecraft:glow_berries"
-        },
-        "B": {
-            "item": "minecraft:bowl"
-        }
+        "#": "minecraft:golden_apple",
+        "G": "minecraft:glistering_melon_slice",
+        "K": "minecraft:glow_berries",
+        "B": "minecraft:bowl"
     },
     "result": {
         "id": "usefulfood:magicfruitsalad",
         "count": 1
     },
     "category": "food",
-	"group": "fruitsalad"
+    "group": "fruitsalad"
 }

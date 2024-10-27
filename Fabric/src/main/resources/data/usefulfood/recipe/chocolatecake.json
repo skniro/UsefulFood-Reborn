@@ -1,35 +1,17 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:cocoa_beans",
+        "minecraft:cocoa_beans",
+        "minecraft:cocoa_beans",
+        "minecraft:wheat",
+        "minecraft:wheat",
+        "minecraft:wheat",
+        "#c:milks",
+        "#c:milks",
+        "#c:milks"
+    ],
+    "result": {
+        "id": "usefulfood:chocolatecake"
     }
-  ],
-  "result": {
-    "id": "usefulfood:chocolatecake"
-  }
 }

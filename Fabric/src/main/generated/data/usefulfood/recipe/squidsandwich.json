@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "usefulfood:cookedsquidtentacle"
-    },
-    {
-      "item": "usefulfood:breadslice"
-    },
-    {
-      "item": "usefulfood:breadslice"
-    }
+    "usefulfood:cookedsquidtentacle",
+    "usefulfood:breadslice",
+    "usefulfood:breadslice"
   ],
   "result": {
     "count": 1,

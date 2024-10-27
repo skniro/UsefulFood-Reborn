@@ -1,21 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "usefulfood:milkbottle"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:wheat",
+        "minecraft:bowl",
+        "minecraft:sugar",
+        "usefulfood:milkbottle"
+    ],
+    "result": {
+        "id": "usefulfood:cereal"
     }
-  ],
-  "result": {
-    "id": "usefulfood:cereal"
-  }
 }

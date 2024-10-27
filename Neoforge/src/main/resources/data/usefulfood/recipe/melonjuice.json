@@ -1,21 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:melon_slice"
-    },
-    {
-      "item": "minecraft:melon_slice"
-    },
-    {
-      "item": "minecraft:melon_slice"
-    },
-    {
-      "item": "minecraft:glass_bottle"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:melon_slice",
+        "minecraft:melon_slice",
+        "minecraft:melon_slice",
+        "minecraft:glass_bottle"
+    ],
+    "result": {
+        "id": "usefulfood:melonjuice"
     }
-  ],
-  "result": {
-    "id": "usefulfood:melonjuice"
-  }
 }

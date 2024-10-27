@@ -2,27 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:bowl"
   ],
   "result": {
     "count": 1,

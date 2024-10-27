@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "usefulfood:vanillaicecream"
-    },
-    {
-      "item": "usefulfood:chocolatebar"
-    }
+    "usefulfood:vanillaicecream",
+    "usefulfood:chocolatebar"
   ],
   "result": {
     "count": 1,

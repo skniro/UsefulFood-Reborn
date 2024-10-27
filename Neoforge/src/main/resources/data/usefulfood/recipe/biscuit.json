@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:wheat",
+        "minecraft:wheat"
+    ],
+    "result": {
+        "id": "usefulfood:biscuit"
     }
-  ],
-  "result": {
-    "id": "usefulfood:biscuit"
-  }
 }

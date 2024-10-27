@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "ingredient": {
-    "item": "usefulfood:squidrtentacle"
-  },
+  "ingredient": "usefulfood:squidrtentacle",
   "result": {
     "id": "usefulfood:cookedsquidtentacle"
   }

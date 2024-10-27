@@ -1,21 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:cactus"
-    },
-    {
-      "item": "minecraft:cactus"
-    },
-    {
-      "item": "minecraft:cactus"
-    },
-    {
-      "item": "minecraft:glass_bottle"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:cactus",
+        "minecraft:cactus",
+        "minecraft:cactus",
+        "minecraft:glass_bottle"
+    ],
+    "result": {
+        "id": "usefulfood:cactusjuice"
     }
-  ],
-  "result": {
-    "id": "usefulfood:cactusjuice"
-  }
 }

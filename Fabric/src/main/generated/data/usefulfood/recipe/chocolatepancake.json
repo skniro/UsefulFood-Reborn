@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "usefulfood:chocolatebar"
-    },
-    {
-      "item": "usefulfood:pancake"
-    }
+    "usefulfood:chocolatebar",
+    "usefulfood:pancake"
   ],
   "result": {
     "count": 1,

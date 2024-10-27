@@ -1,20 +1,12 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:potato"
-    },
-    {
-      "tag": "c:cooked_fish"
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:carrot",
+        "minecraft:bowl",
+        "minecraft:potato",
+        "#c:cooked_fish"
+    ],
+    "result": {
+        "id": "usefulfood:fishsoup"
     }
-  ],
-  "result": {
-    "id": "usefulfood:fishsoup"
-  }
 }

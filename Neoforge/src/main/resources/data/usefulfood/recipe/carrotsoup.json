@@ -1,18 +1,12 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:bowl"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:carrot",
+        "minecraft:carrot",
+        "minecraft:bowl"
+    ],
+    "result": {
+        "id": "usefulfood:carrotsoup"
     }
-  ],
-  "result": {
-    "id": "usefulfood:carrotsoup"
-  }
 }

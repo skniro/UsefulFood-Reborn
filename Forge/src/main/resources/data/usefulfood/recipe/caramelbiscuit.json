@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:caramel"
-    },
-    {
-      "item": "usefulfood:biscuit"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:caramel",
+        "usefulfood:biscuit"
+    ],
+    "result": {
+        "id": "usefulfood:caramelbiscuit"
     }
-  ],
-  "result": {
-    "id": "usefulfood:caramelbiscuit"
-  }
 }

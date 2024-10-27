@@ -1,12 +1,10 @@
 {
-  "type": "minecraft:smelting",
-  "category": "food",
-  "cookingtime": 200,
-  "experience": 0.3,
-  "ingredient": {
-    "item": "usefulfood:chocolatemilkbottle"
-  },
-  "result": {
-    "id": "usefulfood:hotchocolatemilkbottle"
-  }
+    "type": "minecraft:smelting",
+    "category": "food",
+    "cookingtime": 200,
+    "experience": 0.3,
+    "ingredient": "usefulfood:chocolatemilkbottle",
+    "result": {
+        "id": "usefulfood:hotchocolatemilkbottle"
+    }
 }

@@ -1,19 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:biscuit"
-    },
-    {
-      "item": "usefulfood:biscuit"
-    },
-    {
-      "item": "usefulfood:hotchocolatemilkbottle"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:biscuit",
+        "usefulfood:biscuit",
+        "usefulfood:hotchocolatemilkbottle"
+    ],
+    "result": {
+        "count": 2,
+        "id": "usefulfood:chocolatebiscuit"
     }
-  ],
-  "result": {
-    "count": 2,
-    "id": "usefulfood:chocolatebiscuit"
-  }
 }

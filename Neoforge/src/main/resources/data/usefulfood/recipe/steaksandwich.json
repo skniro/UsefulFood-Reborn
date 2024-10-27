@@ -1,18 +1,12 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "usefulfood:breadslice"
-    },
-    {
-      "item": "usefulfood:breadslice"
-    },
-    {
-      "item": "minecraft:cooked_beef"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "usefulfood:breadslice",
+        "usefulfood:breadslice",
+        "minecraft:cooked_beef"
+    ],
+    "result": {
+        "id": "usefulfood:steaksandwich"
     }
-  ],
-  "result": {
-    "id": "usefulfood:steaksandwich"
-  }
 }

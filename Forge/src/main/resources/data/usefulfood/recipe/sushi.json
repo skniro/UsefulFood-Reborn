@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "food",
-  "ingredients": [
-    {
-      "tag": "c:cooked_fish"
-    },
-    {
-      "item": "minecraft:dried_kelp"
+    "type": "minecraft:crafting_shapeless",
+    "category": "food",
+    "ingredients": [
+        "#c:cooked_fish",
+        "minecraft:dried_kelp"
+    ],
+    "result": {
+        "id": "usefulfood:sushi"
     }
-  ],
-  "result": {
-    "id": "usefulfood:sushi"
-  }
 }

@@ -1,21 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:golden_apple"
-    },
-    {
-      "item": "minecraft:golden_apple"
-    },
-    {
-      "item": "minecraft:enchanted_golden_apple"
-    },
-    {
-      "item": "minecraft:glass_bottle"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:golden_apple",
+        "minecraft:golden_apple",
+        "minecraft:enchanted_golden_apple",
+        "minecraft:glass_bottle"
+    ],
+    "result": {
+        "id": "usefulfood:magicapplejuice"
     }
-  ],
-  "result": {
-    "id": "usefulfood:magicapplejuice"
-  }
 }

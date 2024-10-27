@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:pumpkin"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
+    "minecraft:pumpkin",
+    "minecraft:wheat"
   ],
   "result": {
     "count": 1,

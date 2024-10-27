@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:glistering_melon_slice"
-    },
-    {
-      "item": "minecraft:glistering_melon_slice"
-    },
-    {
-      "item": "usefulfood:vanillaicecream"
-    },
-    {
-      "item": "minecraft:golden_apple"
-    }
+    "minecraft:glistering_melon_slice",
+    "minecraft:glistering_melon_slice",
+    "usefulfood:vanillaicecream",
+    "minecraft:golden_apple"
   ],
   "result": {
     "count": 1,

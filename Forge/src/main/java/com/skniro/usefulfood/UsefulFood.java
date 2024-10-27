@@ -24,8 +24,8 @@ public class UsefulFood {
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
-    public UsefulFood() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public UsefulFood(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

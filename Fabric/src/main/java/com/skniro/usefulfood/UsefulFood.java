@@ -32,6 +32,6 @@ public class UsefulFood implements ModInitializer {
         ModContent.registerItem();
         ModContent.registerBlock();
         ModContent.CreativeTab();
-       // ModLootTableModifiers.modifyLootTables();
+        ModLootTableModifiers.modifyLootTables();
     }
 }

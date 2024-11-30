@@ -16,5 +16,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'Useful_Food-1.21.3'
-include("Fabric", "Forge", "Neoforge")
+rootProject.name = 'Useful_Food-1.21.4'
+include("Fabric")
+//include("Fabric", "Forge", "Neoforge")

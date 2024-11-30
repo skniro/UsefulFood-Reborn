@@ -4,7 +4,6 @@ package com.skniro.usefulfood;
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.data.client.Models;
 
 
 public class ModContent {

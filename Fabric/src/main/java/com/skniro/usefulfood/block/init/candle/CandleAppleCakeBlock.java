@@ -89,7 +89,7 @@ public class CandleAppleCakeBlock extends AbstractCandleBlock {
     }
 
     @Override
-    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state, boolean includeData) {
         return new ItemStack(UsefulFoodBlocks.AppleCake);
     }
 

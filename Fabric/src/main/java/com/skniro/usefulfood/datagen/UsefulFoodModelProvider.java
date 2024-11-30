@@ -2,12 +2,11 @@ package com.skniro.usefulfood.datagen;
 
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.client.*;
+import net.minecraft.client.data.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 

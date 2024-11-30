@@ -29,7 +29,7 @@
     "usefulfood.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15",
+    "fabricloader": ">=0.16",
     "fabric": "*",
     "minecraft": "1.21.x"
   }

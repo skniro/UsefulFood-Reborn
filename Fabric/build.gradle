@@ -100,10 +100,11 @@ java {
 
 def dataOutput = 'src/main/generated'
 
+
 loom {
     runs {
         datagen {
-            server()
+            client()
 
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"

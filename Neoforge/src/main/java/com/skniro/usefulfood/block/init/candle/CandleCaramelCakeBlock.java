@@ -90,7 +90,7 @@ public class CandleCaramelCakeBlock extends AbstractCandleBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state, boolean includeData) {
         return new ItemStack(UsefulFoodBlocks.CaramelCake.get());
     }
 

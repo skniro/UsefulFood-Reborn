@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:jelly",
+    "minecraft:chorus_fruit"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:chorus_jelly"
+  }
+}

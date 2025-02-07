@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 300,
+  "experience": 0.1,
+  "group": "friedegg",
+  "ingredient": "minecraft:egg",
+  "result": {
+    "id": "usefulfood:friedegg"
+  }
+}

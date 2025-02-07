@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_squidrtentacle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "usefulfood:squidrtentacle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cookedsquidtentacle_from_smelting_squidrtentacle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_squidrtentacle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cookedsquidtentacle_from_smelting_squidrtentacle"
+    ]
+  }
+}

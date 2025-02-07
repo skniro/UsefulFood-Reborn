@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.6,
+  "group": "cookedmarshmallow",
+  "ingredient": "usefulfood:rawmarshmallow",
+  "result": {
+    "id": "usefulfood:cookedmarshmallow"
+  }
+}

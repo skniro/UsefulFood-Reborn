@@ -102,6 +102,15 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodBlocks.ChocolateCake.get());
                         pOutput.accept(UsefulFoodBlocks.MagicCake.get());
 
+                        pOutput.accept(UsefulFoodItems.Chorus_Juice.get());
+                        pOutput.accept(UsefulFoodItems.Glow_Berries_Juice.get());
+                        pOutput.accept(UsefulFoodItems.Sweet_Berries_Juice.get());
+                        pOutput.accept(UsefulFoodItems.Chorus_Jelly.get());
+                        pOutput.accept(UsefulFoodItems.Glow_Berries_Jelly.get());
+                        pOutput.accept(UsefulFoodItems.Sweet_Berries_Jelly.get());
+                        pOutput.accept(UsefulFoodItems.Chorus_Ice_Cream.get());
+                        pOutput.accept(UsefulFoodItems.Glow_Berries_Ice_Cream.get());
+                        pOutput.accept(UsefulFoodItems.Sweet_Berries_Ice_Cream.get());
                     })
                     .build());
 

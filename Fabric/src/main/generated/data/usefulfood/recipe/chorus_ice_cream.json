@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:vanillaicecream",
+    "minecraft:chorus_fruit"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:chorus_ice_cream"
+  }
+}

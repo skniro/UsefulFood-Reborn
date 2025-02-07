@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sugarcube": {
+      "conditions": {
+        "items": [
+          {
+            "items": "usefulfood:sugarcube"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:caramel_from_campfire_cooking_sugarcube"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sugarcube"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:caramel_from_campfire_cooking_sugarcube"
+    ]
+  }
+}

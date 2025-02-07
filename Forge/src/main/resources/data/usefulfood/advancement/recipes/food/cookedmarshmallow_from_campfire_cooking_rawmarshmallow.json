@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rawmarshmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "usefulfood:rawmarshmallow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cookedmarshmallow_from_campfire_cooking_rawmarshmallow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rawmarshmallow"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cookedmarshmallow_from_campfire_cooking_rawmarshmallow"
+    ]
+  }
+}

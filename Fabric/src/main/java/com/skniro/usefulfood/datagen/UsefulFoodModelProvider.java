@@ -17,14 +17,14 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
-     registerMagicCake(blockStateModelGenerator);
+/*     registerMagicCake(blockStateModelGenerator);
      registerMagicCandleCake(blockStateModelGenerator);
      registerAppleCake(blockStateModelGenerator);
      registerAppleCandleCake(blockStateModelGenerator);
      registerCaramelCake(blockStateModelGenerator);
      registerCaramelCandleCake(blockStateModelGenerator);
      registerChocolateCake(blockStateModelGenerator);
-     registerChocolateCandleCake(blockStateModelGenerator);
+     registerChocolateCandleCake(blockStateModelGenerator);*/
     }
 
     @Override
@@ -119,7 +119,7 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
      itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Ice_Cream, Models.GENERATED);
     }
 
- private void registerMagicCake(BlockStateModelGenerator block) {
+ /*private void registerMagicCake(BlockStateModelGenerator block) {
   block.registerItemModel(UsefulFoodBlocks.MagicCake.asItem());
   block.blockStateCollector.accept(VariantsBlockStateSupplier.create(UsefulFoodBlocks.MagicCake)
           .coordinate(BlockStateVariantMap.create(Properties.BITES)
@@ -220,8 +220,8 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
   Identifier candleCake = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleAppleCake(candle, false), block.modelCollector);
   Identifier candleCakeLit = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleAppleCake(candle, true), block.modelCollector);
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(cake)
-          .coordinate(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
+          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
  }
 
  private static TextureMap candleAppleCake(Block block, boolean lit) {
@@ -345,5 +345,5 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
           .put(TextureKey.TOP, TextureMap.getSubId(UsefulFoodBlocks.ChocolateCake, "_top"))
           .put(TextureKey.SIDE, TextureMap.getSubId(UsefulFoodBlocks.ChocolateCake, "_side"))
           .put(TextureKey.CANDLE, TextureMap.getSubId(block, lit ? "_lit" : ""));
- }
+ }*/
 }

@@ -109,7 +109,7 @@ public static final Supplier<Item> MilkBottle =
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
                                                     List.of(
                                                             new MobEffectInstance(MobEffects.REGENERATION,50,1),
-                                                            new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1))
+                                                            new MobEffectInstance(MobEffects.RESISTANCE,100,1))
                                             )
                                             )
                                             .build()
@@ -129,7 +129,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -147,7 +147,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -167,7 +167,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             ).stacksTo(1)
@@ -241,7 +241,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,50,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,50,1),1.0F)
                                             )
                                             .build()
                             ).stacksTo(1)
@@ -452,10 +452,10 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,6000,1),
-                                                    new MobEffectInstance(MobEffects.DIG_SPEED,6000,1),
+                                                    new MobEffectInstance(MobEffects.SPEED,6000,1),
+                                                    new MobEffectInstance(MobEffects.HASTE,6000,1),
                                                     new MobEffectInstance(MobEffects.FIRE_RESISTANCE,6000,1),
-                                                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,6000,1)
+                                                    new MobEffectInstance(MobEffects.RESISTANCE,6000,1)
                                             )))
                                             .build()
                             )
@@ -474,7 +474,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -493,7 +493,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,300,1),1.0F)
                                             )
                                             .build()
                             )
@@ -512,7 +512,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,600,1),1.0F)
                                             )
                                             .build()
                             )
@@ -531,7 +531,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,600,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,600,1),1.0F)
                                             )
                                             .build()
                             )
@@ -650,7 +650,7 @@ public static final Supplier<Item> MilkBottle =
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
                                                     new MobEffectInstance(MobEffects.REGENERATION,100,1),
-                                                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1)
+                                                    new MobEffectInstance(MobEffects.RESISTANCE,100,1)
                                                     )))
                                             .build()
                             )
@@ -681,7 +681,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -748,7 +748,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -819,7 +819,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -873,7 +873,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
                                             )
                                             .build()
                             )
@@ -891,7 +891,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
                                             )
                                             .build()
                             )
@@ -933,7 +933,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -963,7 +963,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -981,7 +981,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1036,7 +1036,7 @@ public static final Supplier<Item> MilkBottle =
                                     .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1141,7 +1141,7 @@ public static final Supplier<Item> MilkBottle =
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,200,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SPEED,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1196,7 +1196,7 @@ public static final Supplier<Item> MilkBottle =
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1215,7 +1215,7 @@ public static final Supplier<Item> MilkBottle =
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1234,7 +1234,7 @@ public static final Supplier<Item> MilkBottle =
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
                                             )
                                             .build()
                             )

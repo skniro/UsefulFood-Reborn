@@ -1,0 +1,3 @@
+files:
+  - source: /Fabric/src/main/generated/assets/usefulfood/lang/en_us.json
+    translation: /Fabric/src/main/resources/assets/usefulfood/lang/%locale%.json

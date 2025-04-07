@@ -88,7 +88,7 @@ public class MagicCakeBlockState extends SpecialCake {
         player.awardStat(Stats.EAT_CAKE_SLICE);
         player.getFoodData().eat(foodlevel, saturation);
         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,200,3));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,2000,0));
+        player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE,2000,0));
         int i = state.getValue(BITES);
         world.gameEvent((Entity)player, GameEvent.EAT, pos);
         if (i < 6) {

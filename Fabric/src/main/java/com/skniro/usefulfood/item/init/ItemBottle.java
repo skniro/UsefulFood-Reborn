@@ -20,6 +20,7 @@ public class ItemBottle
         super(settings);
     }
 
+    @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         PlayerEntity playerEntity;
         super.finishUsing(stack, world, user);

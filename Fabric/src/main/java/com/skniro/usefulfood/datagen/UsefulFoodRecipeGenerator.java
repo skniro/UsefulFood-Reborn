@@ -103,6 +103,8 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
                 offerSmelting(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300, "caramel");
                 offerSmelting(SEED, RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 300, "food");
                 offerSmelting(List.of(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 200, "friedegg");
+                offerSmelting(List.of(Items.BLUE_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_blueegg");
+                offerSmelting(List.of(Items.BROWN_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_brownegg");
                 offerSmelting(List.of(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600, "cookedmarshmallow");
                 offerSmelting(List.of(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 200, "cookedsquidtentacle");
                 offerSmelting(List.of(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 200, "hotchocolatemilkbottle");
@@ -114,6 +116,8 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
                 offerCampfireCooking(List.of(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 600, "cookedsquidtentacle");
                 offerCampfireCooking(SEED, RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 600, "food");
                 offerCampfireCooking(List.of(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 300, "friedegg");
+                offerCampfireCooking(List.of(Items.BLUE_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_blueegg");
+                offerCampfireCooking(List.of(Items.BROWN_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_brownegg");
                 offerCampfireCooking(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300, "caramel");
                 offerCampfireCooking(List.of(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600, "cookedmarshmallow");
                 offerCampfireCooking(List.of(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 200, "hotchocolatemilkbottle");
@@ -124,6 +128,8 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
                 //Smoking
                 offerSmoking(List.of(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 100, "cookedsquidtentacle");
                 offerSmoking(List.of(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg");
+                offerSmoking(List.of(Items.BLUE_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_blueegg");
+                offerSmoking(List.of(Items.BROWN_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_brownegg");
                 offerSmoking(SEED, RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 100, "food");
                 offerSmoking(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 100, "caramel");
                 offerSmoking(List.of(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 100, "cookedmarshmallow");

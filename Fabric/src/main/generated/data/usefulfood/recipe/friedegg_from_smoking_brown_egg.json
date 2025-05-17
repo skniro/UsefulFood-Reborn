@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "group": "friedegg_brownegg",
+  "ingredient": "minecraft:brown_egg",
+  "result": {
+    "id": "usefulfood:friedegg"
+  }
+}

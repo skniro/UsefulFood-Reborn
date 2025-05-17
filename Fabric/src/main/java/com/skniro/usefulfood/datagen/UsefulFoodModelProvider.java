@@ -7,8 +7,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
+import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+
+import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
 
 public class UsefulFoodModelProvider extends FabricModelProvider {
     public UsefulFoodModelProvider(FabricDataOutput dataGenerator){
@@ -17,14 +20,14 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
-/*     registerMagicCake(blockStateModelGenerator);
+     registerMagicCake(blockStateModelGenerator);
      registerMagicCandleCake(blockStateModelGenerator);
      registerAppleCake(blockStateModelGenerator);
      registerAppleCandleCake(blockStateModelGenerator);
      registerCaramelCake(blockStateModelGenerator);
      registerCaramelCandleCake(blockStateModelGenerator);
      registerChocolateCake(blockStateModelGenerator);
-     registerChocolateCandleCake(blockStateModelGenerator);*/
+     registerChocolateCandleCake(blockStateModelGenerator);
     }
 
     @Override
@@ -119,24 +122,17 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
      itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Ice_Cream, Models.GENERATED);
     }
 
- /*private void registerMagicCake(BlockStateModelGenerator block) {
+ private void registerMagicCake(BlockStateModelGenerator block) {
   block.registerItemModel(UsefulFoodBlocks.MagicCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(UsefulFoodBlocks.MagicCake)
-          .coordinate(BlockStateVariantMap.create(Properties.BITES)
-                  .register(0, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockModelId(UsefulFoodBlocks.MagicCake)))
-                  .register(1, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice1")))
-                  .register(2, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice2")))
-                  .register(3, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice3")))
-                  .register(4, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice4")))
-                  .register(5, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice5")))
-                  .register(6, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice6")))));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodBlocks.MagicCake)
+          .with(BlockStateVariantMap.models(Properties.BITES)
+                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodBlocks.MagicCake)))
+                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice1")))
+                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice2")))
+                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice3")))
+                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice4")))
+                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice5")))
+                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.MagicCake, "_slice6")))));
  }
 
  private void registerMagicCandleCake(BlockStateModelGenerator block) {
@@ -161,10 +157,10 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
  private void registerMagicCandle(BlockStateModelGenerator block, Block candle, Block cake) {
 
-  Identifier candleCake = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleMagicCake(candle, false), block.modelCollector);
-  Identifier candleCakeLit = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleMagicCake(candle, true), block.modelCollector);
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(cake)
-          .coordinate(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleMagicCake(candle, false), block.modelCollector));
+  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleMagicCake(candle, true), block.modelCollector));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
+          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
  }
 
  private static TextureMap candleMagicCake(Block block, boolean lit) {
@@ -178,22 +174,15 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
  private void registerAppleCake(BlockStateModelGenerator block) {
   block.registerItemModel(UsefulFoodBlocks.AppleCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(UsefulFoodBlocks.AppleCake)
-          .coordinate(BlockStateVariantMap.create(Properties.BITES)
-                  .register(0, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockModelId(UsefulFoodBlocks.AppleCake)))
-                  .register(1, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice1")))
-                  .register(2, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice2")))
-                  .register(3, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice3")))
-                  .register(4, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice4")))
-                  .register(5, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice5")))
-                  .register(6, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice6")))));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodBlocks.AppleCake)
+          .with(BlockStateVariantMap.models(Properties.BITES)
+                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodBlocks.AppleCake)))
+                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice1")))
+                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice2")))
+                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice3")))
+                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice4")))
+                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice5")))
+                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.AppleCake, "_slice6")))));
  }
 
  private void registerAppleCandleCake(BlockStateModelGenerator block) {
@@ -218,8 +207,8 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
  private void registerAppleCandle(BlockStateModelGenerator block, Block candle, Block cake) {
 
-  Identifier candleCake = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleAppleCake(candle, false), block.modelCollector);
-  Identifier candleCakeLit = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleAppleCake(candle, true), block.modelCollector);
+  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleAppleCake(candle, false), block.modelCollector));
+  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleAppleCake(candle, true), block.modelCollector));
   block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
           .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
  }
@@ -235,22 +224,15 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
  private void registerCaramelCake(BlockStateModelGenerator block) {
   block.registerItemModel(UsefulFoodBlocks.CaramelCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(UsefulFoodBlocks.CaramelCake)
-          .coordinate(BlockStateVariantMap.create(Properties.BITES)
-                  .register(0, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockModelId(UsefulFoodBlocks.CaramelCake)))
-                  .register(1, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice1")))
-                  .register(2, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice2")))
-                  .register(3, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice3")))
-                  .register(4, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice4")))
-                  .register(5, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice5")))
-                  .register(6, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice6")))));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodBlocks.CaramelCake)
+          .with(BlockStateVariantMap.models(Properties.BITES)
+                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodBlocks.CaramelCake)))
+                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice1")))
+                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice2")))
+                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice3")))
+                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice4")))
+                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice5")))
+                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.CaramelCake, "_slice6")))));
  }
 
  private void registerCaramelCandleCake(BlockStateModelGenerator block) {
@@ -275,10 +257,10 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
  private void registerCaramelCandle(BlockStateModelGenerator block, Block candle, Block cake) {
 
-  Identifier candleCake = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleCaramelCake(candle, false), block.modelCollector);
-  Identifier candleCakeLit = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleCaramelCake(candle, true), block.modelCollector);
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(cake)
-          .coordinate(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleCaramelCake(candle, false), block.modelCollector));
+  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleCaramelCake(candle, true), block.modelCollector));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
+          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
  }
 
  private static TextureMap candleCaramelCake(Block block, boolean lit) {
@@ -292,22 +274,15 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
  private void registerChocolateCake(BlockStateModelGenerator block) {
   block.registerItemModel(UsefulFoodBlocks.ChocolateCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(UsefulFoodBlocks.ChocolateCake)
-          .coordinate(BlockStateVariantMap.create(Properties.BITES)
-                  .register(0, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockModelId(UsefulFoodBlocks.ChocolateCake)))
-                  .register(1, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice1")))
-                  .register(2, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice2")))
-                  .register(3, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice3")))
-                  .register(4, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice4")))
-                  .register(5, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice5")))
-                  .register(6, BlockStateVariant.create()
-                          .put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice6")))));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodBlocks.ChocolateCake)
+          .with(BlockStateVariantMap.models(Properties.BITES)
+                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodBlocks.ChocolateCake)))
+                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice1")))
+                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice2")))
+                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice3")))
+                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice4")))
+                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice5")))
+                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodBlocks.ChocolateCake, "_slice6")))));
  }
 
  private void registerChocolateCandleCake(BlockStateModelGenerator block) {
@@ -332,10 +307,10 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
 
  private void registerChocolateCandle(BlockStateModelGenerator block, Block candle, Block cake) {
 
-  Identifier candleCake = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleChocolateCake(candle, false), block.modelCollector);
-  Identifier candleCakeLit = Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleChocolateCake(candle, true), block.modelCollector);
-  block.blockStateCollector.accept(VariantsBlockStateSupplier.create(cake)
-          .coordinate(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleChocolateCake(candle, false), block.modelCollector));
+  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleChocolateCake(candle, true), block.modelCollector));
+  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
+          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
  }
 
  private static TextureMap candleChocolateCake(Block block, boolean lit) {
@@ -345,5 +320,5 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
           .put(TextureKey.TOP, TextureMap.getSubId(UsefulFoodBlocks.ChocolateCake, "_top"))
           .put(TextureKey.SIDE, TextureMap.getSubId(UsefulFoodBlocks.ChocolateCake, "_side"))
           .put(TextureKey.CANDLE, TextureMap.getSubId(block, lit ? "_lit" : ""));
- }*/
+ }
 }

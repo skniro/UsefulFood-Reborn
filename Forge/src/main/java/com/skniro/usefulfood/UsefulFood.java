@@ -7,8 +7,7 @@ import com.skniro.usefulfood.item.UsefulFoodItems;
 import com.skniro.usefulfood.util.ModLootModifiers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -25,10 +24,10 @@ public class UsefulFood {
 
 
     public UsefulFood(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+        var modEventBus = context.getModBusGroup();
 
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+        FMLCommonSetupEvent.getBus(modEventBus).addListener(this::commonSetup);
         UsefulFoodItems.registerModItems(modEventBus);
         UsefulFoodBlocks.registerModBlocks(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
@@ -36,8 +35,6 @@ public class UsefulFood {
 
         // Register the Deferred Register to the mod event bus so blocks get registered
 
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

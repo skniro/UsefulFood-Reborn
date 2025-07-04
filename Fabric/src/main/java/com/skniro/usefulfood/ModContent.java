@@ -4,7 +4,6 @@ package com.skniro.usefulfood;
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.data.client.Models;
 
 
 public class ModContent {
@@ -103,6 +102,16 @@ public class ModContent {
             content.add(UsefulFoodBlocks.CaramelCake);
             content.add(UsefulFoodBlocks.ChocolateCake);
             content.add(UsefulFoodBlocks.MagicCake);
+
+            content.add(UsefulFoodItems.Chorus_Juice);
+            content.add(UsefulFoodItems.Glow_Berries_Juice);
+            content.add(UsefulFoodItems.Sweet_Berries_Juice);
+            content.add(UsefulFoodItems.Chorus_Jelly);
+            content.add(UsefulFoodItems.Glow_Berries_Jelly);
+            content.add(UsefulFoodItems.Sweet_Berries_Jelly);
+            content.add(UsefulFoodItems.Chorus_Ice_Cream);
+            content.add(UsefulFoodItems.Glow_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Sweet_Berries_Ice_Cream);
         });
     }
 }

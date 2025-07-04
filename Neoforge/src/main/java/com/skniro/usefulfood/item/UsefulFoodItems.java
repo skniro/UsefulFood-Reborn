@@ -1037,6 +1037,137 @@ public static final Supplier<Item> MilkBottle =
 
     ));
 
+    public static final Supplier<Item> Sweet_Berries_Juice = registerItem("sweet_berries_juice", ()-> new ItemBottle(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                            .Builder()
+                                            .nutrition(2)
+                                            .saturationModifier(0.2f)
+                                            .alwaysEdible()
+                                            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,200,1),1.0F)
+                                            .build()
+                            )
+                    .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Glow_Berries_Juice = registerItem("glow_berries_juice", ()-> new ItemBottle(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                            .Builder()
+                                            .nutrition(2)
+                                            .saturationModifier(0.2f)
+                                            .alwaysEdible()
+                                            .effect(new MobEffectInstance(MobEffects.NIGHT_VISION,1000,1),1.0F)
+                                            .build()
+                            )
+                    .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Chorus_Juice = registerItem("chorus_juice", ()-> new ItemBottle(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .build()
+                            )
+                    .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Chorus_Jelly = registerItem("chorus_jelly", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                            .Builder()
+                                            .nutrition(9)
+                                            .saturationModifier(0.4f)
+                                            .alwaysEdible()
+                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                            .build()
+                            )
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Glow_Berries_Jelly = registerItem("glow_berries_jelly", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                            .Builder()
+                                            .nutrition(7)
+                                            .saturationModifier(0.4f)
+                                            .alwaysEdible()
+                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                            .build()
+                            )
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Sweet_Berries_Jelly = registerItem("sweet_berries_jelly", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                            .Builder()
+                                            .nutrition(7)
+                                            .saturationModifier(0.4f)
+                                            .alwaysEdible()
+                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                            .build()
+                            )
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Chorus_Ice_Cream = registerItem("chorus_ice_cream", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Sweet_Berries_Ice_Cream = registerItem("sweet_berries_ice_cream", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+    ));
+
+    public static final Supplier<Item> Glow_Berries_Ice_Cream = registerItem("glow_berries_ice_cream", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+    ));
+
     private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> item, CreativeModeTab tab) {
         Supplier<T> toReturn = ITEMS.register(name, item);
         return toReturn;

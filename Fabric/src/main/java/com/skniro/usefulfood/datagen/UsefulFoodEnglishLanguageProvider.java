@@ -4,13 +4,10 @@ package com.skniro.usefulfood.datagen;
 import com.skniro.usefulfood.UsefulFood;
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.data.client.Models;
 import net.minecraft.registry.RegistryWrapper;
 
-import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
@@ -99,6 +96,16 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(UsefulFoodItems.MelonJam,"Melon Jam");
         translationBuilder.add(UsefulFoodItems.PanCakeDough,"Pancake Dough");
         translationBuilder.add(UsefulFoodItems.PanCake,"Pancake");
+
+        translationBuilder.add(UsefulFoodItems.Chorus_Juice, "Chorus Juice");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Juice, "Glow Berries Juice");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Juice, "Sweet Berries Juice");
+        translationBuilder.add(UsefulFoodItems.Chorus_Jelly, "Chorus Jelly");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Jelly, "Glow Berries Jelly");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Jelly, "Sweet Berries Jelly,");
+        translationBuilder.add(UsefulFoodItems.Chorus_Ice_Cream, "Chorus Ice Cream");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Ice_Cream, "Glow Berries Ice Cream");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Ice_Cream, "Sweet Berries Ice Cream");
 
         translationBuilder.add(UsefulFoodBlocks.AppleCake,"Apple Cake");
         translationBuilder.add(UsefulFoodBlocks.CaramelCake,"Caramel Cake");

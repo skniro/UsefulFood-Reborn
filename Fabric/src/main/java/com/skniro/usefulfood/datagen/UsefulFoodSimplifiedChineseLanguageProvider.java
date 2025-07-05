@@ -3,11 +3,8 @@ package com.skniro.usefulfood.datagen;
 import com.skniro.usefulfood.UsefulFood;
 import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-
-import java.nio.file.Path;
 
 public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
     public UsefulFoodSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator){
@@ -95,6 +92,16 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodItems.MelonJam,"西瓜酱");
         translationBuilder.add(UsefulFoodItems.PanCakeDough,"煎饼面团");
         translationBuilder.add(UsefulFoodItems.PanCake,"煎饼");
+
+        translationBuilder.add(UsefulFoodItems.Chorus_Juice, "紫颂果果汁");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Juice, "发光浆果果汁");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Juice, "甜浆果果汁");
+        translationBuilder.add(UsefulFoodItems.Chorus_Jelly, "紫颂果果冻");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Jelly, "发光浆果果冻");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Jelly, "甜浆果果冻,");
+        translationBuilder.add(UsefulFoodItems.Chorus_Ice_Cream, "紫颂果冰淇淋");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Ice_Cream, "发光浆果冰淇淋");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Ice_Cream, "甜浆果冰淇淋");
 
         translationBuilder.add(UsefulFoodBlocks.AppleCake,"苹果蛋糕");
         translationBuilder.add(UsefulFoodBlocks.CaramelCake,"焦糖蛋糕");

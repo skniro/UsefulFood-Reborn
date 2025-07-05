@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:frenchfries"
+        "recipe": "minecraft:frenchfries"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "usefulfood:frenchfries"
+      "minecraft:frenchfries"
     ]
   }
 }

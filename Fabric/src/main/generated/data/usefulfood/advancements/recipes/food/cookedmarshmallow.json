@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:cookedmarshmallow"
+        "recipe": "minecraft:cookedmarshmallow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "usefulfood:cookedmarshmallow"
+      "minecraft:cookedmarshmallow"
     ]
   }
 }

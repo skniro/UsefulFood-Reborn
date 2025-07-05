@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_base_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_base_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "usefulfood:chickensandwich"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

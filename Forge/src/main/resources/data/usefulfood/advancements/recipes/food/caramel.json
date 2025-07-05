@@ -15,21 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:caramel"
+        "recipe": "minecraft:caramel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_base_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_base_item"
     ]
   ],
   "rewards": {
     "recipes": [
-      "usefulfood:caramel"
+      "minecraft:caramel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

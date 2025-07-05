@@ -12,9 +12,11 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Util;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
     UsefulFoodRecipeGenerator(FabricDataOutput generator) {
@@ -23,7 +25,7 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.MilkBottle,2).input(Items.GLASS_BOTTLE,2).input(Items.MILK_BUCKET).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.MILK_BUCKET)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.MilkBottle,1).input(Items.GLASS_BOTTLE,1).input(Items.MILK_BUCKET).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.MILK_BUCKET)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.ChocolateMilkBottle).input(Items.COCOA_BEANS).input(Items.GLASS_BOTTLE).input(UsefulFoodItems.MilkBottle).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Cheese).input(UsefulFoodItems.HotMilkBottle).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.HotMilkBottle)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.SugarCube).input(Items.SUGAR,2).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.SUGAR)).offerTo(exporter);
@@ -82,20 +84,48 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.MelonJamBiscuit).input(UsefulFoodItems.MelonJam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",RecipeProvider.conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.MelonJam).input(Items.MELON_SLICE).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",RecipeProvider.conditionsFromItem(Items.SUGAR)).offerTo(exporter);
 
-
-
-
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Jelly).input(UsefulFoodItems.Jelly).input(Items.CHORUS_FRUIT).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Jelly).input(UsefulFoodItems.Jelly).input(Items.GLOW_BERRIES).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Jelly).input(UsefulFoodItems.Jelly).input(Items.SWEET_BERRIES).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Ice_Cream).input(UsefulFoodItems.VanillaIceCream).input(Items.CHORUS_FRUIT).criterion("has_base_item", conditionsFromItem(Items.CHORUS_FRUIT)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Ice_Cream).input(UsefulFoodItems.VanillaIceCream).input(Items.GLOW_BERRIES).criterion("has_base_item", conditionsFromItem(Items.GLOW_BERRIES)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Ice_Cream).input(UsefulFoodItems.VanillaIceCream).input(Items.SWEET_BERRIES).criterion("has_base_item", conditionsFromItem(Items.SWEET_BERRIES)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Juice).input(Items.CHORUS_FRUIT,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.CHORUS_FRUIT)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Juice).input(Items.GLOW_BERRIES,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.GLOW_BERRIES)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Juice).input(Items.SWEET_BERRIES,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.SWEET_BERRIES)).offerTo(exporter);
 
         //Smelting
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SugarCube)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SugarCube)).offerTo(exporter, "caramel");
         RecipeProvider.offerSmelting(exporter, SEED, RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 300, "food");
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SugarCube)).offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.Marshmallow)).offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SquidTentacleRaw)).offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.ChocolateMilkBottle)).offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BAKED_POTATO), RecipeCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.BAKED_POTATO)).offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.PanCakeDough)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.EGG)).offerTo(exporter, "friedegg");
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.Marshmallow)).offerTo(exporter, "cookedmarshmallow");
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SquidTentacleRaw)).offerTo(exporter, "cookedsquidtentacle");
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.ChocolateMilkBottle)).offerTo(exporter, "hotchocolatemilkbottle");
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter, "hotmilkbottle");
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BAKED_POTATO), RecipeCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.BAKED_POTATO)).offerTo(exporter, "frenchfries");
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.PanCakeDough)).offerTo(exporter, "pancake");
+
+/*        //Campfire
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 600).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SquidTentacleRaw)).offerTo(exporter, "cookedsquidtentacle");
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems((ItemConvertible) SEED), RecipeCategory.FOOD, UsefulFoodItems.RoastedSeeds, 0.45F, 600).criterion("has_base_item", RecipeProvider.conditionsFromItem((ItemConvertible) SEED)).offerTo(exporter, "roastedseeds");;
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.EGG)).offerTo(exporter, "friedegg");
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SugarCube)).offerTo(exporter, "caramel");
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.Marshmallow)).offerTo(exporter, "cookedmarshmallow");
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 75).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.ChocolateMilkBottle)).offerTo(exporter, "hotchocolatemilkbottle");
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 200).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter, "hotmilkbottle");
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.BAKED_POTATO), RecipeCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.BAKED_POTATO)).offerTo(exporter, "frenchfries");
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.PanCakeDough)).offerTo(exporter, "pancake");
+
+        //Smoking
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SquidTentacleRaw)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems((ItemConvertible) SEED), RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem((ItemConvertible) SEED)).offerTo(exporter, "roastedseeds");
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.EGG)).offerTo(exporter, "friedegg");
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SugarCube)).offerTo(exporter, "caramel");
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.Marshmallow)).offerTo(exporter, "cookedmarshmallow");
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.ChocolateMilkBottle)).offerTo(exporter, "hotchocolatemilkbottle");
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter, "hotmilkbottle");
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.BAKED_POTATO), RecipeCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(Items.BAKED_POTATO)).offerTo(exporter, "frenchfries");
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 100).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.PanCakeDough)).offerTo(exporter, "pancake");*/
 
     }
 

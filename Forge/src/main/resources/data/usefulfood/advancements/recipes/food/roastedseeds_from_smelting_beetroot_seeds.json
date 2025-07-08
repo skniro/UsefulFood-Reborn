@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_beetroot_seeds",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beetroot_seeds"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:roastedseeds_from_smelting_beetroot_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

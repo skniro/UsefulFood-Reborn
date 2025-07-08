@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "usefulfood:sugarcube"
+              "minecraft:egg"
             ]
           }
         ]
@@ -15,21 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:friedegg"
+        "recipe": "minecraft:friedegg"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_base_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_base_item"
     ]
   ],
   "rewards": {
     "recipes": [
-      "usefulfood:friedegg"
+      "minecraft:friedegg"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

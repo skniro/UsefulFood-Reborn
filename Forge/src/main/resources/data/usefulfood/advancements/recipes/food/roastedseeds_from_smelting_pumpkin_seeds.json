@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_pumpkin_seeds",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pumpkin_seeds"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:roastedseeds_from_smelting_pumpkin_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

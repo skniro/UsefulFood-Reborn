@@ -6,12 +6,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
@@ -19,22 +18,43 @@ public class ItemBottle
         extends Item {
     private static final int MAX_USE_TIME = 32;
 
-    public ItemBottle(Item.Settings settings) {
+    public ItemBottle(Settings settings) {
         super(settings);
     }
 
-
+    @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        if (!world.isClient && stack.isOf(UsefulFoodItems.MilkBottle)) {
-            user.clearStatusEffects();
+        PlayerEntity playerEntity;
+        super.finishUsing(stack, world, user);
+
+        // Advancement check + stat
+        if (user instanceof ServerPlayerEntity serverPlayerEntity) {
+            Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
+            serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
-        ItemStack itemStack = super.finishUsing(stack, world, user);
-        return user instanceof PlayerEntity && ((PlayerEntity)user).getAbilities().creativeMode ? itemStack : new ItemStack(Items.GLASS_BOTTLE);
+
+        // Clear statuses (if milk)
+        if (!world.isClient && stack.isOf(UsefulFoodItems.MilkBottle))
+            user.clearStatusEffects();
+
+
+        if (user instanceof PlayerEntity && !(playerEntity = (PlayerEntity)user).isCreative()) {
+            ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
+            if (!playerEntity.getInventory().insertStack(itemStack)) {
+                playerEntity.dropItem(itemStack, false);
+            }
+        }
+        return stack;
     }
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
         return MAX_USE_TIME;
+    }
+
+    @Override
+    public SoundEvent getEatSound() {
+        return SoundEvents.ENTITY_GENERIC_DRINK;
     }
 
     @Override

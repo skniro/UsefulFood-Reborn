@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_wheat_seeds"
+      "has_wheat_seeds",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:roastedseeds_from_smelting_wheat_seeds"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

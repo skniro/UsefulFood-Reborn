@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "usefulfood:block/magic_pink_candle_cake"
+    },
+    "lit=true": {
+      "model": "usefulfood:block/magic_pink_candle_cake_lit"
+    }
+  }
+}

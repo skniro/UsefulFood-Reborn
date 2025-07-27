@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:smoking",
+	"category": "food",
+    "ingredient": {
+        "item": "minecraft:egg"
+    },
+    "result": "usefulfood:friedegg",
+    "experience": 0.2,
+    "cookingtime": 100
+}

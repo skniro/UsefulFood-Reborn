@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "item": "usefulfood:milkbottle"
+    },
+    "result": "usefulfood:hotmilkbottle",
+    "experience": 0.3,
+    "cookingtime": 100,
+    "category": "food"
+}

@@ -5,7 +5,12 @@ pluginManagement {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
+        maven {
+            name = 'Sponge Snapshots'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
     }
 }
 
-
+rootProject.name = 'Useful_Food-1.20.4'
+include("Fabric", "Forge")

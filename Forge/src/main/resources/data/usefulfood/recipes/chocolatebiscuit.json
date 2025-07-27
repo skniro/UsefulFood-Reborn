@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:biscuit"
+    },
+    {
+      "item": "usefulfood:biscuit"
+    },
+    {
+      "item": "usefulfood:hotchocolatemilkbottle"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "usefulfood:chocolatebiscuit"
+  }
+}

@@ -12,7 +12,7 @@
     "sources": "https://github.com/skniro/UsefulFood-Reborn",
     "issues": "https://github.com/skniro/UsefulFood-Reborn/issues"},
   "license": "MIT",
-  "icon": "assets/usefulfood/icon.png",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [

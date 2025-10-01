@@ -66,7 +66,7 @@ public class SpecialCakeBlockState extends SpecialCake {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient) {
+        if (world.isClient()) {
             if (tryEat(world, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
             }
@@ -114,7 +114,7 @@ public class SpecialCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos, Direction direction) {
         return CakeBlock.getComparatorOutput(state.get(BITES));
     }
 

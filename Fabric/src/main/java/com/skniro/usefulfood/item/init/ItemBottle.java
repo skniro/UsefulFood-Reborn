@@ -31,7 +31,7 @@ public class ItemBottle
         }
 
         // Clear statuses (if milk)
-        if (!world.isClient && stack.isOf(UsefulFoodItems.MilkBottle))
+        if (!world.isClient() && stack.isOf(UsefulFoodItems.MilkBottle))
             user.clearStatusEffects();
 
 

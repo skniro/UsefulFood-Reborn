@@ -33,7 +33,7 @@ public class ItemBottle
         }
 
         // Clear statuses (if milk)
-        if (!world.isClientSide && stack.is(UsefulFoodItems.MilkBottle.get()))
+        if (!world.isClientSide() && stack.is(UsefulFoodItems.MilkBottle.get()))
             user.removeAllEffects();
 
 

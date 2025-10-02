@@ -81,7 +81,7 @@ public class SpecialCakeBlockState extends SpecialCake {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
-        if (world.isClientSide) {
+        if (world.isClientSide()) {
             if (eat(world, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }
@@ -128,7 +128,7 @@ public class SpecialCakeBlockState extends SpecialCake {
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos, Direction direction) {
         return getOutputSignal(state.getValue(BITES));
     }
 

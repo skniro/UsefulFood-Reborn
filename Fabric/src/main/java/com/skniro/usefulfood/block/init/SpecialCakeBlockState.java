@@ -47,10 +47,9 @@ public class SpecialCakeBlockState extends SpecialCake {
 
     @Override
     public ActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        Block block;
 
         Item item = itemStack.getItem();
-        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = getBlockFromItem(item)) instanceof CandleBlock candleBlock) {
+        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && getBlockFromItem(item) instanceof CandleBlock candleBlock) {
             if (!player.isCreative()) {
                 itemStack.decrement(1);
             }

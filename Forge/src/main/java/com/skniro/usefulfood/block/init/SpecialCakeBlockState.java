@@ -40,7 +40,7 @@ public class SpecialCakeBlockState extends SpecialCake {
 
     public SpecialCakeBlockState(Properties settings, int foodlevel, float saturation) {
         super(settings, foodlevel, saturation);
-        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, 0));
     }
 
     @Override

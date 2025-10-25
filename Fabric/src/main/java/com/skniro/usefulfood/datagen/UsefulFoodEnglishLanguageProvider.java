@@ -2,7 +2,7 @@ package com.skniro.usefulfood.datagen;
 
 
 import com.skniro.usefulfood.UsefulFood;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -107,10 +107,10 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(UsefulFoodItems.Glow_Berries_Ice_Cream, "Glow Berries Ice Cream");
         translationBuilder.add(UsefulFoodItems.Sweet_Berries_Ice_Cream, "Sweet Berries Ice Cream");
 
-        translationBuilder.add(UsefulFoodBlocks.AppleCake,"Apple Cake");
-        translationBuilder.add(UsefulFoodBlocks.CaramelCake,"Caramel Cake");
-        translationBuilder.add(UsefulFoodBlocks.ChocolateCake,"Chocolate Cake");
-        translationBuilder.add(UsefulFoodBlocks.MagicCake,"Magic Cake");
+        translationBuilder.add(UsefulFoodCakeBlocks.AppleCake,"Apple Cake");
+        translationBuilder.add(UsefulFoodCakeBlocks.CaramelCake,"Caramel Cake");
+        translationBuilder.add(UsefulFoodCakeBlocks.ChocolateCake,"Chocolate Cake");
+        translationBuilder.add(UsefulFoodCakeBlocks.MagicCake,"Magic Cake");
 
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
     }

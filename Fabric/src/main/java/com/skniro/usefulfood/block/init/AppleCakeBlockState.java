@@ -36,7 +36,7 @@ public class AppleCakeBlockState extends SpecialCakeBlockState {
             }
             world.playSound(null, pos, SoundEvents.BLOCK_CAKE_ADD_CANDLE, SoundCategory.BLOCKS, 1.0f, 1.0f);
             world.setBlockState(pos, CandleAppleCakeBlock.getCandleCakeFromCandle(block));
-            world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
+            world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
             return ActionResult.SUCCESS;
         } else {

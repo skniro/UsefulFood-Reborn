@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:friedegg_from_campfire_cooking_egg"
+        "recipe": "usefulfood:friedegg_from_campfire_cooking_egg"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:friedegg_from_campfire_cooking_egg"
+      "usefulfood:friedegg_from_campfire_cooking_egg"
     ]
   }
 }

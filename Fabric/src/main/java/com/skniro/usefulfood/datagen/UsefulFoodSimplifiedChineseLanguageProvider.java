@@ -1,14 +1,12 @@
 package com.skniro.usefulfood.datagen;
 
 import com.skniro.usefulfood.UsefulFood;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
 
-import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
@@ -108,10 +106,10 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodItems.Glow_Berries_Ice_Cream, "发光浆果冰淇淋");
         translationBuilder.add(UsefulFoodItems.Sweet_Berries_Ice_Cream, "甜浆果冰淇淋");
 
-        translationBuilder.add(UsefulFoodBlocks.AppleCake,"苹果蛋糕");
-        translationBuilder.add(UsefulFoodBlocks.CaramelCake,"焦糖蛋糕");
-        translationBuilder.add(UsefulFoodBlocks.ChocolateCake,"巧克力蛋糕");
-        translationBuilder.add(UsefulFoodBlocks.MagicCake,"魔法蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.AppleCake,"苹果蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.CaramelCake,"焦糖蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.ChocolateCake,"巧克力蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.MagicCake,"魔法蛋糕");
 
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
 

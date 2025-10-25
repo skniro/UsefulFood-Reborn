@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -54,7 +54,7 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
 
     public CandleChocolateCakeBlock(Block candle, Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(LIT, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false));
         CAKES_TRANSFORM.put(candle, this);
         this.candle = candle;
     }
@@ -75,7 +75,7 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
     }
 
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        ActionResult actionResult = SpecialCakeBlockState.tryEat(world, pos, UsefulFoodBlocks.ChocolateCake.getDefaultState(), player);
+        ActionResult actionResult = SpecialCakeBlockState.tryEat(world, pos, UsefulFoodCakeBlocks.ChocolateCake.getDefaultState(), player);
         if (actionResult.isAccepted()) {
             dropStacks(state, world, pos);
         }
@@ -89,11 +89,11 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
 
     @Override
     public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state, boolean includeData) {
-        return new ItemStack(UsefulFoodBlocks.ChocolateCake);
+        return new ItemStack(UsefulFoodCakeBlocks.ChocolateCake);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{LIT});
+        builder.add(LIT);
     }
 
     @Override

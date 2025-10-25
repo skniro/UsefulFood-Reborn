@@ -29,6 +29,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class SpecialCakeBlockState extends SpecialCake {
     public static final int MAX_BITES = 6;
@@ -40,11 +41,11 @@ public class SpecialCakeBlockState extends SpecialCake {
 
     public SpecialCakeBlockState(Properties settings, int foodlevel, float saturation) {
         super(settings, foodlevel, saturation);
-        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, 0));
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return BITES_TO_SHAPE[state.getValue(BITES)];
     }
 

@@ -73,6 +73,28 @@ public class GlassJarBlock extends HorizontalFacingBlock {
             return ActionResult.SUCCESS;
         }
 
+        if (heldItem.isOf(UsefulFoodItems.Glow_Berries_Jam)) {
+            replaceWith(world, pos, UsefulFoodBlocks.Glow_Berries_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.decrement(1);
+            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            return ActionResult.SUCCESS;
+        }
+
+        if (heldItem.isOf(UsefulFoodItems.Sweet_Berries_Jam)) {
+            replaceWith(world, pos, UsefulFoodBlocks.Sweet_Berries_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.decrement(1);
+            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            return ActionResult.SUCCESS;
+        }
+
+        if (heldItem.isOf(UsefulFoodItems.Chorus_Jam)) {
+            replaceWith(world, pos, UsefulFoodBlocks.Chorus_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.decrement(1);
+            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            return ActionResult.SUCCESS;
+        }
+
+
         return ActionResult.PASS;
     }
 

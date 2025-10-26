@@ -1,6 +1,9 @@
 package com.skniro.usefulfood.block.init;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 import com.mojang.serialization.MapCodec;
+import com.skniro.usefulfood.block.init.jam.JamType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -30,17 +33,23 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class JamJarBlock extends Block {
     public static final IntProperty JAM_STAGE = IntProperty.of("jam_stage", 1, 3);
     public static final MapCodec<JamJarBlock> CODEC = createCodec(JamJarBlock::new);
     private static final VoxelShape SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 9.5, 11.0);
+    public static final Map<JamType, BiMap<Item, Item>> JAM_TYPE_MAPS = new HashMap<>();
     public ItemStack JamItem;
     public Block JamBlock;
+    public JamType jamType;
 
-    public JamJarBlock(Settings settings, ItemStack item, Block JamBlock) {
+    public JamJarBlock(Settings settings, ItemStack item, Block JamBlock, JamType jamType) {
         super(settings);
         this.JamItem = item;
         this.JamBlock = JamBlock;
+        this.jamType = jamType;
         setDefaultState(this.stateManager.getDefaultState().with(JAM_STAGE, 3));
     }
 
@@ -93,6 +102,20 @@ public class JamJarBlock extends Block {
                 world.setBlockState(pos, JamBlock.getDefaultState(), 3);
                 world.playSound(null, pos, SoundEvents.BLOCK_GLASS_PLACE, SoundCategory.BLOCKS, 0.5F, 1.2F);
             }
+            return ActionResult.SUCCESS;
+        }
+
+        BiMap<Item, Item> conversions = JAM_TYPE_MAPS.get(jamType);
+        if (conversions != null && conversions.containsKey(heldItem.getItem())) {
+            Item jamVariant = conversions.get(heldItem.getItem());
+            player.setStackInHand(hand, new ItemStack(jamVariant));
+            if (stage > 1) {
+                world.setBlockState(pos, state.with(JAM_STAGE, stage - 1), 3);
+            } else {
+                world.setBlockState(pos, JamBlock.getDefaultState(), 3);
+                world.playSound(null, pos, SoundEvents.BLOCK_GLASS_PLACE, SoundCategory.BLOCKS, 0.5F, 1.2F);
+            }
+            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.PLAYERS, 0.8F, 1.0F);
             return ActionResult.SUCCESS;
         }
 

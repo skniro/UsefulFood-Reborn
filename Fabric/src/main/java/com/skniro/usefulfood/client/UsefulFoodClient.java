@@ -15,5 +15,9 @@ public class UsefulFoodClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Apple_JAM_JAR, renderLayer4);
         BlockRenderLayerMap.putBlock(UsefulFoodBlocks.GLASS_JAR, renderLayer4);
         BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Melon_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Chorus_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Sweet_Berries_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Glow_Berries_JAM_JAR, renderLayer4);
+
     }
 }

@@ -5,6 +5,7 @@ import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.client.data.Models;
 
 
 public class ModContent {
@@ -114,10 +115,26 @@ public class ModContent {
             content.add(UsefulFoodItems.Chorus_Ice_Cream);
             content.add(UsefulFoodItems.Glow_Berries_Ice_Cream);
             content.add(UsefulFoodItems.Sweet_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Glow_Berries_JamPanCake);
+            content.add(UsefulFoodItems.Glow_Berries_JamToast);
+            content.add(UsefulFoodItems.Glow_Berries_JamBiscuit);
+            content.add(UsefulFoodItems.Glow_Berries_Jam);
+            content.add(UsefulFoodItems.Sweet_Berries_JamPanCake);
+            content.add(UsefulFoodItems.Sweet_Berries_JamToast);
+            content.add(UsefulFoodItems.Sweet_Berries_JamBiscuit);
+            content.add(UsefulFoodItems.Sweet_Berries_Jam);
+            content.add(UsefulFoodItems.Chorus_JamPanCake);
+            content.add(UsefulFoodItems.Chorus_JamToast);
+            content.add(UsefulFoodItems.Chorus_JamBiscuit);
+            content.add(UsefulFoodItems.Chorus_Jam);
 
             content.add(UsefulFoodBlocks.GLASS_JAR);
             content.add(UsefulFoodBlocks.Apple_JAM_JAR);
             content.add(UsefulFoodBlocks.Melon_JAM_JAR);
+            content.add(UsefulFoodBlocks.Chorus_JAM_JAR);
+            content.add(UsefulFoodBlocks.Sweet_Berries_JAM_JAR);
+            content.add(UsefulFoodBlocks.Glow_Berries_JAM_JAR);
+
         });
     }
 }

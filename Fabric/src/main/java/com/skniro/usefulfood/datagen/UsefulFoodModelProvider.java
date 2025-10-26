@@ -25,6 +25,9 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
         MapleModelDatagenHelper usefulfoodModelDatagenHelper = new MapleModelDatagenHelper(blockStateModelGenerator);
         usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Apple_JAM_JAR);
         usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Melon_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Chorus_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Sweet_Berries_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Glow_Berries_JAM_JAR);
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(UsefulFoodBlocks.GLASS_JAR);
 
@@ -128,6 +131,18 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
      itemModelGenerator.register(UsefulFoodItems.Chorus_Ice_Cream, Models.GENERATED);
      itemModelGenerator.register(UsefulFoodItems.Glow_Berries_Ice_Cream, Models.GENERATED);
      itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Ice_Cream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_JamPanCake, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_JamToast, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_JamBiscuit, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_Jam, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_JamPanCake, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_JamToast, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_JamBiscuit, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Jam, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Chorus_JamPanCake, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Chorus_JamToast, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Chorus_JamBiscuit, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Chorus_Jam, Models.GENERATED);
     }
 
  private void registerMagicCake(BlockStateModelGenerator block) {

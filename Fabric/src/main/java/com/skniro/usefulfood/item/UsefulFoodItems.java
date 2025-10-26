@@ -1233,6 +1233,147 @@ public static final Item MilkBottle =
                     .maxCount(1)
     ));
 
+    public static final Item Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(13)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Glow_Berries_JamToast = registerItem("glow_berries_jam_toast", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Glow_Berries_JamBiscuit = registerItem("glow_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Glow_Berries_Jam = registerItem("glow_berries_jam", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .maxCount(1)
+                    .recipeRemainder(Items.BOWL)
+    ));
+
+    public static final Item Sweet_Berries_JamPanCake = registerItem("sweet_berries_jam_pancake", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(13)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Sweet_Berries_JamToast = registerItem("sweet_berries_jam_toast", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Sweet_Berries_JamBiscuit = registerItem("sweet_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Sweet_Berries_Jam = registerItem("sweet_berries_jam", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .maxCount(1)
+                    .recipeRemainder(Items.BOWL)
+    ));
+
+    public static final Item Chorus_JamPanCake = registerItem("chorus_jam_pancake", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(13)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Chorus_JamToast = registerItem("chorus_jam_toast", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Chorus_JamBiscuit = registerItem("chorus_jam_biscuit", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Chorus_Jam = registerItem("chorus_jam", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .maxCount(1)
+                    .recipeRemainder(Items.BOWL)
+    ));
+
     private static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         Item item = factory.apply(settings.registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(UsefulFood.MOD_ID, name))));
         return Registry.register(Registries.ITEM, RegistryKey.of(RegistryKeys.ITEM, Identifier.of(UsefulFood.MOD_ID, name)), item);

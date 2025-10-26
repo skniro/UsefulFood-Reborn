@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:roastedseeds_from_smelting_wheat_seeds"
+        "recipe": "usefulfood:roastedseeds_from_smelting_wheat_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:wheat_seeds"
-            ]
+            "items": "minecraft:wheat_seeds"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wheat_seeds",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wheat_seeds"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:roastedseeds_from_smelting_wheat_seeds"
+      "usefulfood:roastedseeds_from_smelting_wheat_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

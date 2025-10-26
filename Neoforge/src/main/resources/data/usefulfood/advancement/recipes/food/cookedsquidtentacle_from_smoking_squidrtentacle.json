@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cookedsquidtentacle_from_smoking_squidrtentacle"
+        "recipe": "usefulfood:cookedsquidtentacle_from_smoking_squidrtentacle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cookedsquidtentacle_from_smoking_squidrtentacle"
+      "usefulfood:cookedsquidtentacle_from_smoking_squidrtentacle"
     ]
   }
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:chorus_jam",
+    "usefulfood:chorus_jam",
+    "usefulfood:chorus_jam"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:chorus_jam_jar"
+  }
+}

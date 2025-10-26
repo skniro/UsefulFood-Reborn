@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:hotchocolatemilkbottle_from_campfire_cooking_chocolatemilkbottle"
+        "recipe": "usefulfood:hotchocolatemilkbottle_from_campfire_cooking_chocolatemilkbottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:hotchocolatemilkbottle_from_campfire_cooking_chocolatemilkbottle"
+      "usefulfood:hotchocolatemilkbottle_from_campfire_cooking_chocolatemilkbottle"
     ]
   }
 }

@@ -22,6 +22,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class UsefulFoodItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UsefulFood.MODID);
@@ -1276,6 +1277,148 @@ public static final RegistryObject<Item> MilkBottle =
                                     .build()
                             )
                     .stacksTo(1)
+    ));
+
+
+    public static final Supplier<Item> Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(13)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamToast = registerItem("glow_berries_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamBiscuit = registerItem("glow_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_Jam = registerItem("glow_berries_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Sweet_Berries_JamPanCake = registerItem("sweet_berries_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(13)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamToast = registerItem("sweet_berries_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamBiscuit = registerItem("sweet_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_Jam = registerItem("sweet_berries_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Chorus_JamPanCake = registerItem("chorus_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(13)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamToast = registerItem("chorus_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamBiscuit = registerItem("chorus_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_Jam = registerItem("chorus_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
     ));
 
     public static <B extends Item> RegistryObject<Item> register(String name, Function<Item.Properties, ? extends B> func, Item.Properties props) {

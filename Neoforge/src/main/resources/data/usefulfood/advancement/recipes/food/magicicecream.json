@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "usefulfood:vanillaicecream"
-            ]
+            "items": "usefulfood:vanillaicecream"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_base_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_base_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "usefulfood:magicicecream"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

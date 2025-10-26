@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:hotmilkbottle_from_smelting_milkbottle"
+        "recipe": "usefulfood:hotmilkbottle_from_smelting_milkbottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:hotmilkbottle_from_smelting_milkbottle"
+      "usefulfood:hotmilkbottle_from_smelting_milkbottle"
     ]
   }
 }

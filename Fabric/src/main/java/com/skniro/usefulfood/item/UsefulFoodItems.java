@@ -1088,13 +1088,13 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(2)
-                                    .saturationModifier(0.2f)
+                                    .nutrition(3)
+                                    .saturationModifier(0.3f)
                                     .alwaysEdible()
                                     .build()
                                     , ConsumableComponents.food()
                                             .consumeEffect(new ApplyEffectsConsumeEffect(
-                                                    new StatusEffectInstance(StatusEffects.SPEED,200,1),1.0F)
+                                                    new StatusEffectInstance(StatusEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1109,7 +1109,7 @@ public static final Item MilkBottle =
                             (new FoodComponent
                                     .Builder()
                                     .nutrition(2)
-                                    .saturationModifier(0.2f)
+                                    .saturationModifier(0.25f)
                                     .alwaysEdible()
                                     .build()
                                     , ConsumableComponents.food()
@@ -1132,6 +1132,11 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
+                                    , ConsumableComponents.food()
+                                            .consumeEffect(new ApplyEffectsConsumeEffect(
+                                                    new StatusEffectInstance(StatusEffects.SLOW_FALLING,200,1),1.0F)
+                                            )
+                                            .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
                     .maxCount(1)
@@ -1143,13 +1148,13 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                             .Builder()
-                                            .nutrition(9)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(7)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , ConsumableComponents.food()
                                             .consumeEffect(new ApplyEffectsConsumeEffect(
-                                                    new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new StatusEffectInstance(StatusEffects.SLOW_FALLING,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1162,13 +1167,13 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                             .Builder()
-                                            .nutrition(7)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(6)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , ConsumableComponents.food()
                                             .consumeEffect(new ApplyEffectsConsumeEffect(
-                                                    new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new StatusEffectInstance(StatusEffects.NIGHT_VISION,400,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1187,7 +1192,7 @@ public static final Item MilkBottle =
                                             .build()
                                     , ConsumableComponents.food()
                                             .consumeEffect(new ApplyEffectsConsumeEffect(
-                                                    new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new StatusEffectInstance(StatusEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1213,8 +1218,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.65f)
                                     .build()
                             )
                     .maxCount(1)
@@ -1227,7 +1232,7 @@ public static final Item MilkBottle =
                             (new FoodComponent
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .saturationModifier(0.55f)
                                     .build()
                             )
                     .maxCount(1)
@@ -1239,8 +1244,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(13)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(10)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1250,8 +1255,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1261,8 +1266,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1272,8 +1277,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(5)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
                     .maxCount(1)
@@ -1286,7 +1291,7 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(13)
+                                    .nutrition(12)
                                     .saturationModifier(0.4f)
                                     .build()
                             )
@@ -1297,7 +1302,7 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(8)
+                                    .nutrition(7)
                                     .saturationModifier(0.4f)
                                     .build()
                             )
@@ -1308,7 +1313,7 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(8)
+                                    .nutrition(7)
                                     .saturationModifier(0.4f)
                                     .build()
                             )
@@ -1333,8 +1338,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(13)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(14)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1344,8 +1349,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1355,8 +1360,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1366,8 +1371,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
                     .maxCount(1)

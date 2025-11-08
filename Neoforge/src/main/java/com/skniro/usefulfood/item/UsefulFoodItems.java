@@ -1128,20 +1128,19 @@ public static final Supplier<Item> MilkBottle =
 
     ));
 
-
     public static final Supplier<Item> Sweet_Berries_Juice = registerItem("sweet_berries_juice", ItemBottle::new,(
             new Item
                     .Properties()
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .nutrition(3)
+                                            .saturationModifier(0.3f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.SPEED,200,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1156,7 +1155,7 @@ public static final Supplier<Item> MilkBottle =
                             (new FoodProperties
                                             .Builder()
                                             .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .saturationModifier(0.25f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
@@ -1179,6 +1178,11 @@ public static final Supplier<Item> MilkBottle =
                                     .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
+                                    , Consumables.defaultFood()
+                                            .onConsume(new ApplyStatusEffectsConsumeEffect(
+                                                    new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
+                                            )
+                                            .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -1190,13 +1194,13 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(9)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(7)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1209,13 +1213,13 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(7)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(6)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.NIGHT_VISION,400,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1234,7 +1238,7 @@ public static final Supplier<Item> MilkBottle =
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1247,8 +1251,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(5)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(8)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1260,8 +1264,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.65f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1274,11 +1278,12 @@ public static final Supplier<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .saturationModifier(0.55f)
                                     .build()
                             )
                     .stacksTo(1)
     ));
+
 
     public static final Supplier<Item> Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", Item::new, (
             new Item
@@ -1286,8 +1291,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(13)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(10)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1297,8 +1302,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1308,8 +1313,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1319,8 +1324,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(5)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1333,7 +1338,7 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(13)
+                                    .nutrition(12)
                                     .saturationModifier(0.4f)
                                     .build()
                             )
@@ -1344,7 +1349,7 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(8)
+                                    .nutrition(7)
                                     .saturationModifier(0.4f)
                                     .build()
                             )
@@ -1355,7 +1360,7 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(8)
+                                    .nutrition(7)
                                     .saturationModifier(0.4f)
                                     .build()
                             )
@@ -1380,8 +1385,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(13)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(14)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1391,8 +1396,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1402,8 +1407,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(8)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
     ));
@@ -1413,8 +1418,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.4f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.35f)
                                     .build()
                             )
                     .stacksTo(1)

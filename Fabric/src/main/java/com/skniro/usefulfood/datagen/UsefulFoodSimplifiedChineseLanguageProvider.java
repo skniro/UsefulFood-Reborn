@@ -89,8 +89,8 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodItems.AppleJam,"苹果酱");
         translationBuilder.add(UsefulFoodItems.CaramelPanCake,"焦糖煎饼");
         translationBuilder.add(UsefulFoodItems.ChocolatePanCake,"巧克力煎饼");
-        translationBuilder.add(UsefulFoodItems.MelonJamPanCake,"西瓜酱吐司");
-        translationBuilder.add(UsefulFoodItems.MelonJamToast,"西瓜酱面包");
+        translationBuilder.add(UsefulFoodItems.MelonJamPanCake,"西瓜酱煎饼");
+        translationBuilder.add(UsefulFoodItems.MelonJamToast,"西瓜酱吐司");
         translationBuilder.add(UsefulFoodItems.MelonJamBiscuit,"西瓜酱饼干");
         translationBuilder.add(UsefulFoodItems.MelonJam,"西瓜酱");
         translationBuilder.add(UsefulFoodItems.PanCakeDough,"煎饼面团");
@@ -110,6 +110,22 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodCakeBlocks.CaramelCake,"焦糖蛋糕");
         translationBuilder.add(UsefulFoodCakeBlocks.ChocolateCake,"巧克力蛋糕");
         translationBuilder.add(UsefulFoodCakeBlocks.MagicCake,"魔法蛋糕");
+
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamPanCake, "发光浆果果酱煎饼");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamToast, "发光浆果果酱吐司");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamBiscuit, "发光浆果果酱饼干");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Jam, "发光浆果果酱");
+
+
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamPanCake, "甜浆果果酱煎饼");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamToast, "甜浆果果酱吐司");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamBiscuit, "甜浆果果酱饼干");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Jam, "甜浆果果酱");
+
+        translationBuilder.add(UsefulFoodItems.Chorus_JamPanCake, "紫颂果果酱煎饼");
+        translationBuilder.add(UsefulFoodItems.Chorus_JamToast, "紫颂果果酱吐司");
+        translationBuilder.add(UsefulFoodItems.Chorus_JamBiscuit, "紫颂果果酱饼干");
+        translationBuilder.add(UsefulFoodItems.Chorus_Jam, "紫颂果果酱");
 
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
 

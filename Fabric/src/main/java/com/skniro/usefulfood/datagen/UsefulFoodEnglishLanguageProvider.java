@@ -112,6 +112,22 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(UsefulFoodCakeBlocks.ChocolateCake,"Chocolate Cake");
         translationBuilder.add(UsefulFoodCakeBlocks.MagicCake,"Magic Cake");
 
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamPanCake, "Glow Berries Jam Pancake");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamToast, "Glow Berries Jam Toast");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamBiscuit, "Glow Berries Jam Biscuit");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Jam, "Glow Berries Jam");
+
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamPanCake, "Sweet Berries Jam Pancake");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamToast, "Sweet Berries Jam Toast");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamBiscuit, "Sweet Berries Jam Biscuit");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Jam, "Sweet Berries Jam");
+
+        translationBuilder.add(UsefulFoodItems.Chorus_JamPanCake, "Chorus Jam Pancake");
+        translationBuilder.add(UsefulFoodItems.Chorus_JamToast, "Chorus Jam Toast");
+        translationBuilder.add(UsefulFoodItems.Chorus_JamBiscuit, "Chorus Jam Biscuit");
+        translationBuilder.add(UsefulFoodItems.Chorus_Jam, "Chorus Jam");
+
+
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
     }
 }

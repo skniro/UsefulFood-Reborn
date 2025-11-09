@@ -2,6 +2,7 @@ package com.skniro.usefulfood.datagen;
 
 
 import com.skniro.usefulfood.UsefulFood;
+import com.skniro.usefulfood.block.UsefulFoodBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -126,6 +127,14 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(UsefulFoodItems.Chorus_JamToast, "Chorus Jam Toast");
         translationBuilder.add(UsefulFoodItems.Chorus_JamBiscuit, "Chorus Jam Biscuit");
         translationBuilder.add(UsefulFoodItems.Chorus_Jam, "Chorus Jam");
+
+        translationBuilder.add(UsefulFoodBlocks.GLASS_JAR, "Glass Jar");
+        translationBuilder.add(UsefulFoodBlocks.Apple_JAM_JAR, "Apple Jam Jar");
+        translationBuilder.add(UsefulFoodBlocks.Melon_JAM_JAR, "Melon Jam Jar");
+        translationBuilder.add(UsefulFoodBlocks.Chorus_JAM_JAR, "Chorus Jam Jar");
+        translationBuilder.add(UsefulFoodBlocks.Sweet_Berries_JAM_JAR, "Sweet Berries Jam Jar");
+        translationBuilder.add(UsefulFoodBlocks.Glow_Berries_JAM_JAR, "Glow Berries Jam Jar");
+
 
 
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");

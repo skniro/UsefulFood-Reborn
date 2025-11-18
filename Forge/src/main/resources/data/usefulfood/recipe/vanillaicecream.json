@@ -1,13 +1,14 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:snowball",
-        "minecraft:sugar",
-        "minecraft:bowl",
-        "usefulfood:milkbottle"
-    ],
-    "result": {
-        "id": "usefulfood:vanillaicecream"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:snowball",
+    "minecraft:sugar",
+    "minecraft:bowl",
+    "usefulfood:milkbottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:vanillaicecream"
+  }
 }

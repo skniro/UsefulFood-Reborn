@@ -1,12 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:breadslice",
-        "usefulfood:breadslice",
-        "usefulfood:friedegg"
-    ],
-    "result": {
-        "id": "usefulfood:eggsandwich"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:breadslice",
+    "usefulfood:breadslice",
+    "usefulfood:friedegg"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:eggsandwich"
+  }
 }

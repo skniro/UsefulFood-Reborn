@@ -1,12 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:breadslice",
-        "usefulfood:breadslice",
-        "minecraft:cooked_porkchop"
-    ],
-    "result": {
-        "id": "usefulfood:porkchopsandwich"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:breadslice",
+    "usefulfood:breadslice",
+    "minecraft:cooked_porkchop"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:porkchopsandwich"
+  }
 }

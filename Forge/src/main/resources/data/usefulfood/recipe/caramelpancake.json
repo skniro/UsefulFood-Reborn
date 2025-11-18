@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:caramel",
-        "usefulfood:pancake"
-    ],
-    "result": {
-        "id": "usefulfood:caramelpancake"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:caramel",
+    "usefulfood:pancake"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:caramelpancake"
+  }
 }

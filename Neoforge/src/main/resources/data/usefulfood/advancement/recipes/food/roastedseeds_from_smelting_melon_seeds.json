@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:melon_seeds"
-            ]
+            "items": "minecraft:melon_seeds"
           }
         ]
       },
@@ -15,21 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:roastedseeds_from_smelting_melon_seeds"
+        "recipe": "usefulfood:roastedseeds_from_smelting_melon_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_melon_seeds",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_melon_seeds"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:roastedseeds_from_smelting_melon_seeds"
+      "usefulfood:roastedseeds_from_smelting_melon_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

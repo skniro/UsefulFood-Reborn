@@ -1,12 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:apple",
-        "minecraft:stick",
-        "usefulfood:caramel"
-    ],
-    "result": {
-        "id": "usefulfood:caramelapple"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:apple",
+    "minecraft:stick",
+    "usefulfood:caramel"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:caramelapple"
+  }
 }

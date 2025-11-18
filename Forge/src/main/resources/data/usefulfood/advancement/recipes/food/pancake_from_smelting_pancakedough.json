@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pancake_from_smelting_pancakedough"
+        "recipe": "usefulfood:pancake_from_smelting_pancakedough"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pancake_from_smelting_pancakedough"
+      "usefulfood:pancake_from_smelting_pancakedough"
     ]
   }
 }

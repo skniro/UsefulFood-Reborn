@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:biscuit",
-        "usefulfood:applejam"
-    ],
-    "result": {
-        "id": "usefulfood:applejambiscuit"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:biscuit",
+    "usefulfood:applejam"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:applejambiscuit"
+  }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cookedmarshmallow_from_campfire_cooking_rawmarshmallow"
+        "recipe": "usefulfood:cookedmarshmallow_from_campfire_cooking_rawmarshmallow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cookedmarshmallow_from_campfire_cooking_rawmarshmallow"
+      "usefulfood:cookedmarshmallow_from_campfire_cooking_rawmarshmallow"
     ]
   }
 }

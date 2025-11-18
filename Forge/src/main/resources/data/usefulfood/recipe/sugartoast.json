@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:breadslice",
-        "minecraft:sugar"
-    ],
-    "result": {
-        "id": "usefulfood:sugartoast"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:breadslice",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:sugartoast"
+  }
 }

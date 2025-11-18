@@ -1,12 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:glass_bottle",
-        "minecraft:milk_bucket"
-    ],
-    "result": {
-        "count": 1,
-        "id": "usefulfood:milkbottle"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "minecraft:milk_bucket"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:milkbottle"
+  }
 }

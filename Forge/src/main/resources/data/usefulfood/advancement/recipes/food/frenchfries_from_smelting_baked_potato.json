@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:frenchfries_from_smelting_baked_potato"
+        "recipe": "usefulfood:frenchfries_from_smelting_baked_potato"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:frenchfries_from_smelting_baked_potato"
+      "usefulfood:frenchfries_from_smelting_baked_potato"
     ]
   }
 }

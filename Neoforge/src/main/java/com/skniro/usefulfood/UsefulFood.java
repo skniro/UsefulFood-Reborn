@@ -1,7 +1,7 @@
 package com.skniro.usefulfood;
 
 import com.mojang.logging.LogUtils;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.jam.UsefulfoodJamConversions;
 import com.skniro.usefulfood.item.ModCreativeModeTabs;
@@ -31,7 +31,7 @@ public class UsefulFood {
         // Register the commonSetup method for modloading
         UsefulFoodItems.registerModItems(modEventBus);
         UsefulFoodCakeBlocks.registerModBlocks(modEventBus);
-        UsefulFoodBlocks.registerModBlocks(modEventBus);
+        UsefulFoodJamBlocks.registerModBlocks(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModLootModifiers.register(modEventBus);
 

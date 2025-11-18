@@ -5,7 +5,6 @@ import com.skniro.usefulfood.block.init.GlassJarBlock;
 import com.skniro.usefulfood.block.init.JamJarBlock;
 import com.skniro.usefulfood.block.init.jam.JamType;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -22,21 +21,21 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class UsefulFoodBlocks {
+public class UsefulFoodJamBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UsefulFood.MODID);
 
     public static final RegistryObject<Block> GLASS_JAR = registerBlock("glass_jar", GlassJarBlock::new, (BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
 
     public static final RegistryObject<Block> Apple_JAM_JAR = registerBlock("apple_jam_jar",
-            (settings)-> new JamJarBlock(settings, UsefulFoodItems.AppleJam, UsefulFoodBlocks.GLASS_JAR, JamType.APPLE),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
+            (settings)-> new JamJarBlock(settings, UsefulFoodItems.AppleJam, UsefulFoodJamBlocks.GLASS_JAR, JamType.APPLE),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> Melon_JAM_JAR = registerBlock("melon_jam_jar",
-            (settings)-> new JamJarBlock(settings, UsefulFoodItems.MelonJam, UsefulFoodBlocks.GLASS_JAR, JamType.MELON),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
+            (settings)-> new JamJarBlock(settings, UsefulFoodItems.MelonJam, UsefulFoodJamBlocks.GLASS_JAR, JamType.MELON),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> Chorus_JAM_JAR = registerBlock("chorus_jam_jar",
-            (settings)-> new JamJarBlock(settings, UsefulFoodItems.Chorus_Jam, UsefulFoodBlocks.GLASS_JAR, JamType.CHORUS),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
+            (settings)-> new JamJarBlock(settings, UsefulFoodItems.Chorus_Jam, UsefulFoodJamBlocks.GLASS_JAR, JamType.CHORUS),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> Sweet_Berries_JAM_JAR = registerBlock("sweet_berries_jam_jar",
-            (settings)-> new JamJarBlock(settings, UsefulFoodItems.Sweet_Berries_Jam, UsefulFoodBlocks.GLASS_JAR, JamType.Sweet_Berries),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
+            (settings)-> new JamJarBlock(settings, UsefulFoodItems.Sweet_Berries_Jam, UsefulFoodJamBlocks.GLASS_JAR, JamType.Sweet_Berries),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> Glow_Berries_JAM_JAR = registerBlock("glow_berries_jam_jar",
-            (settings)-> new JamJarBlock(settings, UsefulFoodItems.Glow_Berries_Jam, UsefulFoodBlocks.GLASS_JAR, JamType.Glow_Berries),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
+            (settings)-> new JamJarBlock(settings, UsefulFoodItems.Glow_Berries_Jam, UsefulFoodJamBlocks.GLASS_JAR, JamType.Glow_Berries),(BlockBehaviour.Properties.of().noOcclusion().strength(0.3F).sound(SoundType.GLASS)));
 
     public static <B extends Block> RegistryObject<Block> register(String name, Function<BlockBehaviour.Properties, ? extends B> func, BlockBehaviour.Properties props) {
         return BLOCKS.register(name, () -> {

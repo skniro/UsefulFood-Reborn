@@ -1,11 +1,10 @@
 package com.skniro.usefulfood;
 
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.client.data.Models;
 
 
 public class ModContent {
@@ -16,7 +15,7 @@ public class ModContent {
     }
     public static void registerBlock(){
         UsefulFoodCakeBlocks.registerModBlocks();
-        UsefulFoodBlocks.registerModBlocks();
+        UsefulFoodJamBlocks.registerModBlocks();
 
     }
 
@@ -128,12 +127,12 @@ public class ModContent {
             content.add(UsefulFoodItems.Chorus_JamBiscuit);
             content.add(UsefulFoodItems.Chorus_Jam);
 
-            content.add(UsefulFoodBlocks.GLASS_JAR);
-            content.add(UsefulFoodBlocks.Apple_JAM_JAR);
-            content.add(UsefulFoodBlocks.Melon_JAM_JAR);
-            content.add(UsefulFoodBlocks.Chorus_JAM_JAR);
-            content.add(UsefulFoodBlocks.Sweet_Berries_JAM_JAR);
-            content.add(UsefulFoodBlocks.Glow_Berries_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.GLASS_JAR);
+            content.add(UsefulFoodJamBlocks.Apple_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Melon_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Chorus_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR);
 
         });
     }

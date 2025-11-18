@@ -1,6 +1,6 @@
 package com.skniro.usefulfood.client;
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,12 +12,12 @@ public class UsefulFoodClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayer renderLayer4 = BlockRenderLayer.TRANSLUCENT;
-        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Apple_JAM_JAR, renderLayer4);
-        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.GLASS_JAR, renderLayer4);
-        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Melon_JAM_JAR, renderLayer4);
-        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Chorus_JAM_JAR, renderLayer4);
-        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Sweet_Berries_JAM_JAR, renderLayer4);
-        BlockRenderLayerMap.putBlock(UsefulFoodBlocks.Glow_Berries_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodJamBlocks.Apple_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodJamBlocks.GLASS_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodJamBlocks.Melon_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodJamBlocks.Chorus_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR, renderLayer4);
+        BlockRenderLayerMap.putBlock(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR, renderLayer4);
 
     }
 }

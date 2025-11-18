@@ -1,6 +1,6 @@
 package com.skniro.usefulfood.datagen;
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.api.registry.MapleModelDatagenHelper;
 import com.skniro.usefulfood.item.UsefulFoodItems;
@@ -23,13 +23,13 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
 
         MapleModelDatagenHelper usefulfoodModelDatagenHelper = new MapleModelDatagenHelper(blockStateModelGenerator);
-        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Apple_JAM_JAR);
-        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Melon_JAM_JAR);
-        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Chorus_JAM_JAR);
-        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Sweet_Berries_JAM_JAR);
-        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodBlocks.Glow_Berries_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Apple_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Melon_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Chorus_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR);
+        usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR);
 
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(UsefulFoodBlocks.GLASS_JAR);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(UsefulFoodJamBlocks.GLASS_JAR);
 
         registerMagicCake(blockStateModelGenerator);
         registerMagicCandleCake(blockStateModelGenerator);

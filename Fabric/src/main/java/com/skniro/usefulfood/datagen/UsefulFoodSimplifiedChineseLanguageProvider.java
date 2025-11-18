@@ -1,7 +1,7 @@
 package com.skniro.usefulfood.datagen;
 
 import com.skniro.usefulfood.UsefulFood;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -128,12 +128,12 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodItems.Chorus_JamBiscuit, "紫颂果果酱饼干");
         translationBuilder.add(UsefulFoodItems.Chorus_Jam, "紫颂果果酱");
 
-        translationBuilder.add(UsefulFoodBlocks.GLASS_JAR, "玻璃罐");
-        translationBuilder.add(UsefulFoodBlocks.Apple_JAM_JAR, "苹果果酱罐");
-        translationBuilder.add(UsefulFoodBlocks.Melon_JAM_JAR, "西瓜果酱罐");
-        translationBuilder.add(UsefulFoodBlocks.Chorus_JAM_JAR, "紫颂果果酱罐");
-        translationBuilder.add(UsefulFoodBlocks.Sweet_Berries_JAM_JAR, "甜浆果果酱罐");
-        translationBuilder.add(UsefulFoodBlocks.Glow_Berries_JAM_JAR, "发光浆果果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.GLASS_JAR, "玻璃罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Apple_JAM_JAR, "苹果果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Melon_JAM_JAR, "西瓜果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Chorus_JAM_JAR, "紫颂果果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR, "甜浆果果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR, "发光浆果果酱罐");
 
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
 

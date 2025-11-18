@@ -1,8 +1,7 @@
 package com.skniro.usefulfood.block.init;
 
 import com.mojang.serialization.MapCodec;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
-import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -64,35 +63,35 @@ public class GlassJarBlock extends HorizontalDirectionalBlock {
         ItemStack heldItem = player.getItemInHand(hand);
 
         if (heldItem.is(UsefulFoodItems.MelonJam.get())) {
-            replaceWith(world, pos, UsefulFoodBlocks.Melon_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            replaceWith(world, pos, UsefulFoodJamBlocks.Melon_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
             if (!player.isCreative()) heldItem.shrink(1);
             world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
 
         if (heldItem.is(UsefulFoodItems.AppleJam.get())) {
-            replaceWith(world, pos, UsefulFoodBlocks.Apple_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            replaceWith(world, pos, UsefulFoodJamBlocks.Apple_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
             if (!player.isCreative()) heldItem.shrink(1);
             world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
 
         if (heldItem.is(UsefulFoodItems.Glow_Berries_Jam.get())) {
-            replaceWith(world, pos, UsefulFoodBlocks.Glow_Berries_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            replaceWith(world, pos, UsefulFoodJamBlocks.Glow_Berries_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
             if (!player.isCreative()) heldItem.shrink(1);
             world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
 
         if (heldItem.is(UsefulFoodItems.Sweet_Berries_Jam.get())) {
-            replaceWith(world, pos, UsefulFoodBlocks.Sweet_Berries_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            replaceWith(world, pos, UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
             if (!player.isCreative()) heldItem.shrink(1);
             world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
 
         if (heldItem.is(UsefulFoodItems.Chorus_Jam.get())) {
-            replaceWith(world, pos, UsefulFoodBlocks.Chorus_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            replaceWith(world, pos, UsefulFoodJamBlocks.Chorus_JAM_JAR.get().defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
             if (!player.isCreative()) heldItem.shrink(1);
             world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;

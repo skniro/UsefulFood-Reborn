@@ -1,7 +1,7 @@
 package com.skniro.usefulfood.item;
 
 import com.skniro.usefulfood.UsefulFood;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -127,12 +127,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.Chorus_JamBiscuit.get());
                         pOutput.accept(UsefulFoodItems.Chorus_Jam.get());
 
-                        pOutput.accept(UsefulFoodBlocks.GLASS_JAR.get());
-                        pOutput.accept(UsefulFoodBlocks.Apple_JAM_JAR.get());
-                        pOutput.accept(UsefulFoodBlocks.Melon_JAM_JAR.get());
-                        pOutput.accept(UsefulFoodBlocks.Chorus_JAM_JAR.get());
-                        pOutput.accept(UsefulFoodBlocks.Sweet_Berries_JAM_JAR.get());
-                        pOutput.accept(UsefulFoodBlocks.Glow_Berries_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.GLASS_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Apple_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Melon_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Chorus_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR.get());
                     })
                     .build());
 

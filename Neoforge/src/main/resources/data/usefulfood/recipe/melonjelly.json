@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:jelly",
-        "minecraft:melon_slice"
-    ],
-    "result": {
-        "id": "usefulfood:melonjelly"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:jelly",
+    "minecraft:melon_slice"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:melonjelly"
+  }
 }

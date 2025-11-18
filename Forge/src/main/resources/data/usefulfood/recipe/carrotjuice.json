@@ -1,13 +1,14 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:carrot",
-        "minecraft:carrot",
-        "minecraft:carrot",
-        "minecraft:glass_bottle"
-    ],
-    "result": {
-        "id": "usefulfood:carrotjuice"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:carrot",
+    "minecraft:carrot",
+    "minecraft:carrot",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:carrotjuice"
+  }
 }

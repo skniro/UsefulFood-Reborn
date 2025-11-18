@@ -1,14 +1,15 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:milkbottle",
-        "minecraft:wheat",
-        "minecraft:wheat",
-        "minecraft:cocoa_beans",
-        "minecraft:sugar"
-    ],
-    "result": {
-        "id": "usefulfood:donut"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:milkbottle",
+    "minecraft:wheat",
+    "minecraft:wheat",
+    "minecraft:cocoa_beans",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:donut"
+  }
 }

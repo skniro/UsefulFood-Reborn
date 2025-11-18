@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:melonjam",
-        "usefulfood:breadslice"
-    ],
-    "result": {
-        "id": "usefulfood:melonjamtoast"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:melonjam",
+    "usefulfood:breadslice"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:melonjamtoast"
+  }
 }

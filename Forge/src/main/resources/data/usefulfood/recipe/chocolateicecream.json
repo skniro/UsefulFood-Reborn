@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:vanillaicecream",
-        "usefulfood:chocolatebar"
-    ],
-    "result": {
-        "id": "usefulfood:chocolateicecream"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:vanillaicecream",
+    "usefulfood:chocolatebar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:chocolateicecream"
+  }
 }

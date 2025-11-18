@@ -1,11 +1,11 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:bread"
-    ],
-    "result": {
-        "count": 5,
-        "id": "usefulfood:breadslice"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bread"
+  ],
+  "result": {
+    "count": 5,
+    "id": "usefulfood:breadslice"
+  }
 }

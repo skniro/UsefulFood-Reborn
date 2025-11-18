@@ -1,5 +1,6 @@
 package com.skniro.usefulfood;
 
+import com.skniro.usefulfood.block.init.jam.UsefulfoodJamConversions;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import com.skniro.usefulfood.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
@@ -33,5 +34,6 @@ public class UsefulFood implements ModInitializer {
         ModContent.registerBlock();
         ModContent.CreativeTab();
         ModLootTableModifiers.modifyLootTables();
+        UsefulfoodJamConversions.registerJamConversions();
     }
 }

@@ -1,10 +1,10 @@
 package com.skniro.usefulfood;
 
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.client.data.Models;
 
 
 public class ModContent {
@@ -14,7 +14,8 @@ public class ModContent {
         UsefulFoodItems.registerUsefulFoodItem();
     }
     public static void registerBlock(){
-        UsefulFoodBlocks.registerModBlocks();
+        UsefulFoodCakeBlocks.registerModBlocks();
+        UsefulFoodJamBlocks.registerModBlocks();
 
     }
 
@@ -99,10 +100,10 @@ public class ModContent {
             content.add(UsefulFoodItems.MelonJam);
             content.add(UsefulFoodItems.PanCakeDough);
             content.add(UsefulFoodItems.PanCake);
-            content.add(UsefulFoodBlocks.AppleCake);
-            content.add(UsefulFoodBlocks.CaramelCake);
-            content.add(UsefulFoodBlocks.ChocolateCake);
-            content.add(UsefulFoodBlocks.MagicCake);
+            content.add(UsefulFoodCakeBlocks.AppleCake);
+            content.add(UsefulFoodCakeBlocks.CaramelCake);
+            content.add(UsefulFoodCakeBlocks.ChocolateCake);
+            content.add(UsefulFoodCakeBlocks.MagicCake);
 
             content.add(UsefulFoodItems.Chorus_Juice);
             content.add(UsefulFoodItems.Glow_Berries_Juice);
@@ -113,6 +114,26 @@ public class ModContent {
             content.add(UsefulFoodItems.Chorus_Ice_Cream);
             content.add(UsefulFoodItems.Glow_Berries_Ice_Cream);
             content.add(UsefulFoodItems.Sweet_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Glow_Berries_JamPanCake);
+            content.add(UsefulFoodItems.Glow_Berries_JamToast);
+            content.add(UsefulFoodItems.Glow_Berries_JamBiscuit);
+            content.add(UsefulFoodItems.Glow_Berries_Jam);
+            content.add(UsefulFoodItems.Sweet_Berries_JamPanCake);
+            content.add(UsefulFoodItems.Sweet_Berries_JamToast);
+            content.add(UsefulFoodItems.Sweet_Berries_JamBiscuit);
+            content.add(UsefulFoodItems.Sweet_Berries_Jam);
+            content.add(UsefulFoodItems.Chorus_JamPanCake);
+            content.add(UsefulFoodItems.Chorus_JamToast);
+            content.add(UsefulFoodItems.Chorus_JamBiscuit);
+            content.add(UsefulFoodItems.Chorus_Jam);
+
+            content.add(UsefulFoodJamBlocks.GLASS_JAR);
+            content.add(UsefulFoodJamBlocks.Apple_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Melon_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Chorus_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR);
+
         });
     }
 }

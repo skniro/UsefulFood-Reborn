@@ -1,11 +1,12 @@
 package com.skniro.usefulfood;
 
 import com.mojang.logging.LogUtils;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
+import com.skniro.usefulfood.block.init.jam.UsefulfoodJamConversions;
 import com.skniro.usefulfood.item.ModCreativeModeTabs;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import com.skniro.usefulfood.util.ModLootModifiers;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -29,7 +30,8 @@ public class UsefulFood {
         // Register the commonSetup method for modloading
         FMLCommonSetupEvent.getBus(modEventBus).addListener(this::commonSetup);
         UsefulFoodItems.registerModItems(modEventBus);
-        UsefulFoodBlocks.registerModBlocks(modEventBus);
+        UsefulFoodCakeBlocks.registerModBlocks(modEventBus);
+        UsefulFoodJamBlocks.registerModBlocks(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModLootModifiers.register(modEventBus);
 
@@ -38,6 +40,7 @@ public class UsefulFood {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        UsefulfoodJamConversions.registerJamConversions();
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

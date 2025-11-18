@@ -1,7 +1,8 @@
 package com.skniro.usefulfood.item;
 
 import com.skniro.usefulfood.UsefulFood;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -97,10 +98,10 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.MelonJam.get());
                         pOutput.accept(UsefulFoodItems.PanCakeDough.get());
                         pOutput.accept(UsefulFoodItems.PanCake.get());
-                        pOutput.accept(UsefulFoodBlocks.AppleCake.get());
-                        pOutput.accept(UsefulFoodBlocks.CaramelCake.get());
-                        pOutput.accept(UsefulFoodBlocks.ChocolateCake.get());
-                        pOutput.accept(UsefulFoodBlocks.MagicCake.get());
+                        pOutput.accept(UsefulFoodCakeBlocks.AppleCake.get());
+                        pOutput.accept(UsefulFoodCakeBlocks.CaramelCake.get());
+                        pOutput.accept(UsefulFoodCakeBlocks.ChocolateCake.get());
+                        pOutput.accept(UsefulFoodCakeBlocks.MagicCake.get());
 
                         pOutput.accept(UsefulFoodItems.Chorus_Juice.get());
                         pOutput.accept(UsefulFoodItems.Glow_Berries_Juice.get());
@@ -111,6 +112,26 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.Chorus_Ice_Cream.get());
                         pOutput.accept(UsefulFoodItems.Glow_Berries_Ice_Cream.get());
                         pOutput.accept(UsefulFoodItems.Sweet_Berries_Ice_Cream.get());
+
+                        pOutput.accept(UsefulFoodItems.Glow_Berries_JamPanCake.get());
+                        pOutput.accept(UsefulFoodItems.Glow_Berries_JamToast.get());
+                        pOutput.accept(UsefulFoodItems.Glow_Berries_JamBiscuit.get());
+                        pOutput.accept(UsefulFoodItems.Glow_Berries_Jam.get());
+                        pOutput.accept(UsefulFoodItems.Sweet_Berries_JamPanCake.get());
+                        pOutput.accept(UsefulFoodItems.Sweet_Berries_JamToast.get());
+                        pOutput.accept(UsefulFoodItems.Sweet_Berries_JamBiscuit.get());
+                        pOutput.accept(UsefulFoodItems.Sweet_Berries_Jam.get());
+                        pOutput.accept(UsefulFoodItems.Chorus_JamPanCake.get());
+                        pOutput.accept(UsefulFoodItems.Chorus_JamToast.get());
+                        pOutput.accept(UsefulFoodItems.Chorus_JamBiscuit.get());
+                        pOutput.accept(UsefulFoodItems.Chorus_Jam.get());
+
+                        pOutput.accept(UsefulFoodJamBlocks.GLASS_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Apple_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Melon_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Chorus_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR.get());
+                        pOutput.accept(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR.get());
                     })
                     .build());
 

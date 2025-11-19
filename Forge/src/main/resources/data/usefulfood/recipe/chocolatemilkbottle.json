@@ -1,12 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:cocoa_beans",
-        "minecraft:glass_bottle",
-        "usefulfood:milkbottle"
-    ],
-    "result": {
-        "id": "usefulfood:chocolatemilkbottle"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:cocoa_beans",
+    "minecraft:glass_bottle",
+    "usefulfood:milkbottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:chocolatemilkbottle"
+  }
 }

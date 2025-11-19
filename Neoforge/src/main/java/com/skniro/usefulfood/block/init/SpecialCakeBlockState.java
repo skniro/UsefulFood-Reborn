@@ -1,6 +1,6 @@
 package com.skniro.usefulfood.block.init;
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
 import com.skniro.usefulfood.block.init.candle.CandleCaramelCakeBlock;
 import net.minecraft.core.BlockPos;
@@ -29,6 +29,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class SpecialCakeBlockState extends SpecialCake {
     public static final int MAX_BITES = 6;
@@ -40,11 +41,11 @@ public class SpecialCakeBlockState extends SpecialCake {
 
     public SpecialCakeBlockState(Properties settings, int foodlevel, float saturation) {
         super(settings, foodlevel, saturation);
-        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, 0));
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return BITES_TO_SHAPE[state.getValue(BITES)];
     }
 
@@ -52,7 +53,7 @@ public class SpecialCakeBlockState extends SpecialCake {
     public InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         Block block;
         Item item = itemStack.getItem();
-        if (state.getBlock() == UsefulFoodBlocks.CaramelCake.get()) {
+        if (state.getBlock() == UsefulFoodCakeBlocks.CaramelCake.get()) {
             if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
@@ -64,7 +65,7 @@ public class SpecialCakeBlockState extends SpecialCake {
                 return InteractionResult.SUCCESS;
             }
         }
-        if (state.getBlock() == UsefulFoodBlocks.AppleCake.get()) {
+        if (state.getBlock() == UsefulFoodCakeBlocks.AppleCake.get()) {
             if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
                 if (!player.isCreative()) {
                     itemStack.shrink(1);

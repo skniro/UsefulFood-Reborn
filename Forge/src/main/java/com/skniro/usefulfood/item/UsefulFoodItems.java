@@ -22,6 +22,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class UsefulFoodItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UsefulFood.MODID);
@@ -1133,13 +1134,13 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .nutrition(3)
+                                            .saturationModifier(0.3f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.SPEED,200,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1154,7 +1155,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                             .Builder()
                                             .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .saturationModifier(0.25f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
@@ -1177,6 +1178,11 @@ public static final RegistryObject<Item> MilkBottle =
                                     .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
+                                    , Consumables.defaultFood()
+                                            .onConsume(new ApplyStatusEffectsConsumeEffect(
+                                                    new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
+                                            )
+                                            .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -1188,13 +1194,13 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(9)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(7)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1207,13 +1213,13 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(7)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(6)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.NIGHT_VISION,400,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1232,7 +1238,7 @@ public static final RegistryObject<Item> MilkBottle =
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP_BOOST,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1245,8 +1251,8 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(5)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(8)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1258,8 +1264,8 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.65f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1272,10 +1278,152 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .saturationModifier(0.55f)
                                     .build()
                             )
                     .stacksTo(1)
+    ));
+
+
+    public static final Supplier<Item> Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(10)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamToast = registerItem("glow_berries_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamBiscuit = registerItem("glow_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_Jam = registerItem("glow_berries_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Sweet_Berries_JamPanCake = registerItem("sweet_berries_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(12)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamToast = registerItem("sweet_berries_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamBiscuit = registerItem("sweet_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_Jam = registerItem("sweet_berries_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Chorus_JamPanCake = registerItem("chorus_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(14)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamToast = registerItem("chorus_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamBiscuit = registerItem("chorus_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_Jam = registerItem("chorus_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
     ));
 
     public static <B extends Item> RegistryObject<Item> register(String name, Function<Item.Properties, ? extends B> func, Item.Properties props) {

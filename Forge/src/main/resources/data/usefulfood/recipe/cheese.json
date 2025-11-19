@@ -1,10 +1,11 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:hotmilkbottle"
-    ],
-    "result": {
-        "id": "usefulfood:cheese"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:hotmilkbottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:cheese"
+  }
 }

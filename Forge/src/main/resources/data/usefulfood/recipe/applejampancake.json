@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:pancake",
-        "usefulfood:applejam"
-    ],
-    "result": {
-        "id": "usefulfood:applejampancake"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:pancake",
+    "usefulfood:applejam"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:applejampancake"
+  }
 }

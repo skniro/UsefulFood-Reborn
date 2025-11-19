@@ -1,0 +1,116 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "block/thin_block",
+	"textures": {
+		"glass": "minecraft:block/glass",
+		"plank": "minecraft:block/stripped_oak_log",
+		"particle": "minecraft:block/glass"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 0, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 8]},
+			"faces": {
+				"north": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"east": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"south": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"west": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [5, 7, 5],
+			"to": [11, 7, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 6, 8]},
+			"faces": {
+				"north": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"east": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"south": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"west": {"uv": [5.5, 1, 11.5, 2], "texture": "#glass"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [5.5, 7.5, 5.5],
+			"to": [10.5, 9.5, 10.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.5, 7.5, 6.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 7], "texture": "#plank"},
+				"east": {"uv": [0, 0, 16, 7], "texture": "#plank"},
+				"south": {"uv": [0, 0, 16, 7], "texture": "#plank"},
+				"west": {"uv": [0, 0, 16, 7], "texture": "#plank"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#plank"},
+				"down": {"uv": [0, 0, 17, 17], "texture": "#plank"}
+			}
+		},
+		{
+			"from": [5, 0, 11],
+			"to": [11, 7, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.5, 0, 9]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"east": {"uv": [0, 0, 2, 16], "texture": "#glass"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"west": {"uv": [14, 0, 16, 16], "texture": "#glass"},
+				"up": {"uv": [0, 14, 16, 16], "texture": "#glass"},
+				"down": {"uv": [0, 0, 16, 2], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [5, 0, 5],
+			"to": [11, 7, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.5, 0, 4]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"east": {"uv": [14, 0, 16, 16], "texture": "#glass"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"west": {"uv": [0, 0, 2, 16], "texture": "#glass"},
+				"up": {"uv": [0, 0, 16, 2], "texture": "#glass"},
+				"down": {"uv": [0, 14, 16, 16], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [5, 0, 5],
+			"to": [5, 7, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3.5, -7, 7]},
+			"faces": {
+				"north": {"uv": [6, 1, 7, 7], "texture": "#glass"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"south": {"uv": [6, 1, 7, 7], "texture": "#glass"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"up": {"uv": [0, 5, 2.5, 15], "texture": "#glass"},
+				"down": {"uv": [0, 1, 2, 15], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [11, 0, 5],
+			"to": [11, 7, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.5, -7, 7]},
+			"faces": {
+				"north": {"uv": [6, 1, 7, 7], "texture": "#glass"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"south": {"uv": [6, 1, 7, 7], "texture": "#glass"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"up": {"uv": [13.5, 1, 16, 11.5], "texture": "#glass"},
+				"down": {"uv": [14, 1, 16, 15], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [6, 7, 6],
+			"to": [10, 7.5, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.5, 7, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 1], "texture": "#glass"},
+				"east": {"uv": [0, 0, 6, 0.5], "texture": "#glass"},
+				"south": {"uv": [0, 0, 6, 0.5], "texture": "#glass"},
+				"west": {"uv": [0, 0, 6, 0.5], "texture": "#glass"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#glass"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#glass"}
+			}
+		}
+	]
+}

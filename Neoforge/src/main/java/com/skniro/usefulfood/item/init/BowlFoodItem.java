@@ -8,7 +8,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class BowlFoodItem extends Item {
-    public BowlFoodItem(Item.Properties properties) {
+    public BowlFoodItem(Properties properties) {
         super(properties);
     }
 

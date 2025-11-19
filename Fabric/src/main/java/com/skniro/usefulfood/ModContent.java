@@ -1,10 +1,9 @@
 package com.skniro.usefulfood;
 
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.client.data.Models;
 
 
 public class ModContent {
@@ -14,7 +13,7 @@ public class ModContent {
         UsefulFoodItems.registerUsefulFoodItem();
     }
     public static void registerBlock(){
-        UsefulFoodBlocks.registerModBlocks();
+        UsefulFoodCakeBlocks.registerModBlocks();
 
     }
 
@@ -99,10 +98,10 @@ public class ModContent {
             content.add(UsefulFoodItems.MelonJam);
             content.add(UsefulFoodItems.PanCakeDough);
             content.add(UsefulFoodItems.PanCake);
-            content.add(UsefulFoodBlocks.AppleCake);
-            content.add(UsefulFoodBlocks.CaramelCake);
-            content.add(UsefulFoodBlocks.ChocolateCake);
-            content.add(UsefulFoodBlocks.MagicCake);
+            content.add(UsefulFoodCakeBlocks.AppleCake);
+            content.add(UsefulFoodCakeBlocks.CaramelCake);
+            content.add(UsefulFoodCakeBlocks.ChocolateCake);
+            content.add(UsefulFoodCakeBlocks.MagicCake);
 
             content.add(UsefulFoodItems.Chorus_Juice);
             content.add(UsefulFoodItems.Glow_Berries_Juice);

@@ -1,14 +1,13 @@
 package com.skniro.usefulfood.datagen;
 
 import com.skniro.usefulfood.UsefulFood;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
 
-import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
@@ -91,8 +90,8 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodItems.AppleJam,"苹果酱");
         translationBuilder.add(UsefulFoodItems.CaramelPanCake,"焦糖煎饼");
         translationBuilder.add(UsefulFoodItems.ChocolatePanCake,"巧克力煎饼");
-        translationBuilder.add(UsefulFoodItems.MelonJamPanCake,"西瓜酱吐司");
-        translationBuilder.add(UsefulFoodItems.MelonJamToast,"西瓜酱面包");
+        translationBuilder.add(UsefulFoodItems.MelonJamPanCake,"西瓜酱煎饼");
+        translationBuilder.add(UsefulFoodItems.MelonJamToast,"西瓜酱吐司");
         translationBuilder.add(UsefulFoodItems.MelonJamBiscuit,"西瓜酱饼干");
         translationBuilder.add(UsefulFoodItems.MelonJam,"西瓜酱");
         translationBuilder.add(UsefulFoodItems.PanCakeDough,"煎饼面团");
@@ -108,10 +107,33 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodItems.Glow_Berries_Ice_Cream, "发光浆果冰淇淋");
         translationBuilder.add(UsefulFoodItems.Sweet_Berries_Ice_Cream, "甜浆果冰淇淋");
 
-        translationBuilder.add(UsefulFoodBlocks.AppleCake,"苹果蛋糕");
-        translationBuilder.add(UsefulFoodBlocks.CaramelCake,"焦糖蛋糕");
-        translationBuilder.add(UsefulFoodBlocks.ChocolateCake,"巧克力蛋糕");
-        translationBuilder.add(UsefulFoodBlocks.MagicCake,"魔法蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.AppleCake,"苹果蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.CaramelCake,"焦糖蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.ChocolateCake,"巧克力蛋糕");
+        translationBuilder.add(UsefulFoodCakeBlocks.MagicCake,"魔法蛋糕");
+
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamPanCake, "发光浆果果酱煎饼");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamToast, "发光浆果果酱吐司");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_JamBiscuit, "发光浆果果酱饼干");
+        translationBuilder.add(UsefulFoodItems.Glow_Berries_Jam, "发光浆果果酱");
+
+
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamPanCake, "甜浆果果酱煎饼");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamToast, "甜浆果果酱吐司");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_JamBiscuit, "甜浆果果酱饼干");
+        translationBuilder.add(UsefulFoodItems.Sweet_Berries_Jam, "甜浆果果酱");
+
+        translationBuilder.add(UsefulFoodItems.Chorus_JamPanCake, "紫颂果果酱煎饼");
+        translationBuilder.add(UsefulFoodItems.Chorus_JamToast, "紫颂果果酱吐司");
+        translationBuilder.add(UsefulFoodItems.Chorus_JamBiscuit, "紫颂果果酱饼干");
+        translationBuilder.add(UsefulFoodItems.Chorus_Jam, "紫颂果果酱");
+
+        translationBuilder.add(UsefulFoodJamBlocks.GLASS_JAR, "玻璃罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Apple_JAM_JAR, "苹果果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Melon_JAM_JAR, "西瓜果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Chorus_JAM_JAR, "紫颂果果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR, "甜浆果果酱罐");
+        translationBuilder.add(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR, "发光浆果果酱罐");
 
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
 

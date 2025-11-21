@@ -4,16 +4,15 @@ package com.skniro.usefulfood.item;
 import com.skniro.usefulfood.UsefulFood;
 import com.skniro.usefulfood.item.init.BowlFoodItem;
 import com.skniro.usefulfood.item.init.ItemBottle;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.neoforged.bus.api.IEventBus;
@@ -1128,20 +1127,19 @@ public static final Supplier<Item> MilkBottle =
 
     ));
 
-
     public static final Supplier<Item> Sweet_Berries_Juice = registerItem("sweet_berries_juice", ItemBottle::new,(
             new Item
                     .Properties()
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .nutrition(3)
+                                            .saturationModifier(0.3f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,200,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1156,7 +1154,7 @@ public static final Supplier<Item> MilkBottle =
                             (new FoodProperties
                                             .Builder()
                                             .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .saturationModifier(0.25f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
@@ -1179,6 +1177,11 @@ public static final Supplier<Item> MilkBottle =
                                     .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
+                                    , Consumables.defaultFood()
+                                            .onConsume(new ApplyStatusEffectsConsumeEffect(
+                                                    new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
+                                            )
+                                            .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -1190,13 +1193,13 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(9)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(7)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1209,13 +1212,13 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(7)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(6)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.NIGHT_VISION,400,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1234,7 +1237,7 @@ public static final Supplier<Item> MilkBottle =
                                             .build()
                                     , Consumables.defaultFood()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                    new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                                    new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             )
                                             .build()
                             )
@@ -1247,8 +1250,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(5)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(8)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1260,8 +1263,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.65f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1274,10 +1277,152 @@ public static final Supplier<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .saturationModifier(0.55f)
                                     .build()
                             )
                     .stacksTo(1)
+    ));
+
+
+    public static final Supplier<Item> Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(10)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamToast = registerItem("glow_berries_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamBiscuit = registerItem("glow_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_Jam = registerItem("glow_berries_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Sweet_Berries_JamPanCake = registerItem("sweet_berries_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(12)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamToast = registerItem("sweet_berries_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamBiscuit = registerItem("sweet_berries_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_Jam = registerItem("sweet_berries_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Chorus_JamPanCake = registerItem("chorus_jam_pancake", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(14)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamToast = registerItem("chorus_jam_toast", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamBiscuit = registerItem("chorus_jam_biscuit", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_Jam = registerItem("chorus_jam", BowlFoodItem::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
     ));
 
     private static <T extends Item> DeferredItem<T> registerItem(String name, Function<Item.Properties, ? extends T> item, Item.Properties properties) {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "usefulfood:item/glow_berries_jam_pancake"
+  }
+}

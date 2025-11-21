@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:squidrtentacle",
-        "minecraft:lily_pad"
-    ],
-    "result": {
-        "id": "usefulfood:squidsushi"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:squidrtentacle",
+    "minecraft:lily_pad"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:squidsushi"
+  }
 }

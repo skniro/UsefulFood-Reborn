@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:breadslice",
-        "usefulfood:caramel"
-    ],
-    "result": {
-        "id": "usefulfood:carameltoast"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:breadslice",
+    "usefulfood:caramel"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:carameltoast"
+  }
 }

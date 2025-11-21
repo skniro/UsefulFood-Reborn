@@ -1,12 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:slime_ball",
-        "minecraft:sugar",
-        "minecraft:bowl"
-    ],
-    "result": {
-        "id": "usefulfood:jelly"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:slime_ball",
+    "minecraft:sugar",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:jelly"
+  }
 }

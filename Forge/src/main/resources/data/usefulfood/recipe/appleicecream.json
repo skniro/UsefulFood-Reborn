@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:vanillaicecream",
-        "minecraft:apple"
-    ],
-    "result": {
-        "id": "usefulfood:appleicecream"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:vanillaicecream",
+    "minecraft:apple"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:appleicecream"
+  }
 }

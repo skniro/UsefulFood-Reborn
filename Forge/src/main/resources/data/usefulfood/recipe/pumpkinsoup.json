@@ -1,11 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:bowl",
-        "minecraft:pumpkin"
-    ],
-    "result": {
-        "id": "usefulfood:pumpkinsoup"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bowl",
+    "minecraft:pumpkin"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:pumpkinsoup"
+  }
 }

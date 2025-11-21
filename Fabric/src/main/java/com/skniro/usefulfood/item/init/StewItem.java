@@ -8,7 +8,7 @@ import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
 public class StewItem extends Item {
-    public StewItem(Item.Settings settings) {
+    public StewItem(Settings settings) {
         super(settings);
     }
 

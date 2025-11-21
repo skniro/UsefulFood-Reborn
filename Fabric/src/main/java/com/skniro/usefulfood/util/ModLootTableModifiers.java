@@ -1,9 +1,7 @@
 package com.skniro.usefulfood.util;
 
 import com.skniro.usefulfood.item.UsefulFoodItems;
-
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.entity.EntityType;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;

@@ -1,13 +1,14 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "usefulfood:vanillaicecream",
-        "minecraft:melon_slice",
-        "minecraft:melon_slice",
-        "minecraft:melon_slice"
-    ],
-    "result": {
-        "id": "usefulfood:melonicecream"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:vanillaicecream",
+    "minecraft:melon_slice",
+    "minecraft:melon_slice",
+    "minecraft:melon_slice"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:melonicecream"
+  }
 }

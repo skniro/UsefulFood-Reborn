@@ -1,12 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "minecraft:melon_slice",
-        "minecraft:bowl",
-        "minecraft:sugar"
-    ],
-    "result": {
-        "id": "usefulfood:melonjam"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:melon_slice",
+    "minecraft:bowl",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:melonjam"
+  }
 }

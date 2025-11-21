@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -16,7 +16,10 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.*;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.AbstractCandleBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -77,7 +80,7 @@ public class CandleAppleCakeBlock extends AbstractCandleBlock {
     }
 
     protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
-        InteractionResult actionResult = SpecialCakeBlockState.eat(world, pos, UsefulFoodBlocks.AppleCake.get().defaultBlockState(), player);
+        InteractionResult actionResult = SpecialCakeBlockState.eat(world, pos, UsefulFoodCakeBlocks.AppleCake.get().defaultBlockState(), player);
         if (actionResult.consumesAction()) {
             dropResources(state, world, pos);
         }
@@ -91,7 +94,7 @@ public class CandleAppleCakeBlock extends AbstractCandleBlock {
 
     @Override
     public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state, boolean includeData) {
-        return new ItemStack(UsefulFoodBlocks.AppleCake.get());
+        return new ItemStack(UsefulFoodCakeBlocks.AppleCake.get());
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

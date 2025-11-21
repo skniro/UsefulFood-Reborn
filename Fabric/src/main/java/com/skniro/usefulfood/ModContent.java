@@ -2,6 +2,7 @@ package com.skniro.usefulfood;
 
 
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
@@ -14,6 +15,7 @@ public class ModContent {
     }
     public static void registerBlock(){
         UsefulFoodCakeBlocks.registerModBlocks();
+        UsefulFoodJamBlocks.registerModBlocks();
 
     }
 
@@ -112,6 +114,26 @@ public class ModContent {
             content.add(UsefulFoodItems.Chorus_Ice_Cream);
             content.add(UsefulFoodItems.Glow_Berries_Ice_Cream);
             content.add(UsefulFoodItems.Sweet_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Glow_Berries_JamPanCake);
+            content.add(UsefulFoodItems.Glow_Berries_JamToast);
+            content.add(UsefulFoodItems.Glow_Berries_JamBiscuit);
+            content.add(UsefulFoodItems.Glow_Berries_Jam);
+            content.add(UsefulFoodItems.Sweet_Berries_JamPanCake);
+            content.add(UsefulFoodItems.Sweet_Berries_JamToast);
+            content.add(UsefulFoodItems.Sweet_Berries_JamBiscuit);
+            content.add(UsefulFoodItems.Sweet_Berries_Jam);
+            content.add(UsefulFoodItems.Chorus_JamPanCake);
+            content.add(UsefulFoodItems.Chorus_JamToast);
+            content.add(UsefulFoodItems.Chorus_JamBiscuit);
+            content.add(UsefulFoodItems.Chorus_Jam);
+
+            content.add(UsefulFoodJamBlocks.GLASS_JAR);
+            content.add(UsefulFoodJamBlocks.Apple_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Melon_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Chorus_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR);
+            content.add(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR);
+
         });
     }
 }

@@ -1,13 +1,17 @@
 package com.skniro.usefulfood.datagen;
 
 import com.google.common.collect.Lists;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.tag.FabricTagKey;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.*;
@@ -118,6 +122,26 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Apple_JAM_JAR).input(UsefulFoodItems.AppleJam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Chorus_Jam)).offerTo(exporter);
                 createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Melon_JAM_JAR).input(UsefulFoodItems.MelonJam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Sweet_Berries_Jam)).offerTo(exporter);
                 createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.GLASS_JAR).input(Blocks.GLASS).input(ItemTags.WOODEN_SLABS).criterion("has_base_item",conditionsFromItem(Blocks.GLASS)).offerTo(exporter);
+
+                //Reborn 1.5.0
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Cod_Roe_Sushi).input(Items.COD).input(Items.LILY_PAD).criterion("has_base_item",conditionsFromItem(Items.FISHING_ROD)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Baked_Sushi).input(ConventionalItemTags.COOKED_FISH_FOODS).input(Items.DRIED_KELP).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Salmon_Sushi).input(Items.SALMON).input(Items.DRIED_KELP).criterion("has_base_item",conditionsFromItem(Items.SALMON)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Fishwich).input(UsefulFoodItems.BreadSlice,2).input(ConventionalItemTags.COOKED_FISH_FOODS).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.FishSoup).input(Items.CARROT).input(Items.BOWL).input(Items.POTATO).input(ConventionalItemTags.COOKED_FISH_FOODS).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.ChocolateToast).input(UsefulFoodItems.BreadSlice).input(UsefulFoodItems.ChocolateCandy).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.ChocolateCandy)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.FishnChips).input(UsefulFoodItems.FrenchFries).input(ConventionalItemTags.COOKED_FISH_FOODS).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.ChocolateCandy).input(Items.COCOA_BEANS).input(ConventionalItemTags.MILK_DRINKS).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.COCOA_BEANS)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.PanCakeDough).input(Items.SUGAR).input(Items.WHEAT).input(Items.EGG).input(ConventionalItemTags.MILK_DRINKS).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
+                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Tea).input(Items.GLASS_BOTTLE).input(UsefulFoodItemTagGeneration.ModItemTags.C_Lily_Pads).criterion("has_base_item",conditionsFromItem(Items.GLASS_BOTTLE)).offerTo(exporter);
+
+                createShaped(RecipeCategory.FOOD, UsefulFoodItems.Trailmix).pattern("#WP").pattern("WMW").pattern(" B ").input('#', Items.BEETROOT_SEEDS).input('W', Items.WHEAT_SEEDS).input('P', Items.PUMPKIN_SEEDS).input('M', Items.MELON_SEEDS).input('B', Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.BEETROOT_SEEDS)).offerTo(exporter);
+                createShaped(RecipeCategory.FOOD, UsefulFoodItems.FruitSalad).pattern("#MS").pattern(" B ").input('#', Items.APPLE).input('M', Items.MELON_SLICE).input('S', Items.SWEET_BERRIES).input('B', Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.MELON_SLICE)).offerTo(exporter);
+                createShaped(RecipeCategory.FOOD, UsefulFoodItems.MagicFruitSalad).pattern("#GK").pattern(" B ").input('#', Items.GOLDEN_APPLE).input('G', Items.GLISTERING_MELON_SLICE).input('K', Items.GLOW_BERRIES).input('B', Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.GLISTERING_MELON_SLICE)).offerTo(exporter);
+                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.MagicCake).pattern("MMM").pattern("GEG").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('G', Items.GOLDEN_APPLE).input('E', Items.ENCHANTED_GOLDEN_APPLE).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(Items.GOLDEN_APPLE)).offerTo(exporter);
+                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.AppleCake).pattern("MMM").pattern("AAA").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('A', Items.APPLE).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(Items.APPLE)).offerTo(exporter);
+                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.CaramelCake).pattern("MMM").pattern("CCC").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('C', UsefulFoodItems.caramel).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.caramel)).offerTo(exporter);
+                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.ChocolateCake).pattern("MMM").pattern("CCC").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('C', Items.COCOA_BEANS).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(Items.COCOA_BEANS)).offerTo(exporter);
 
                 //Smelting
                 offerSmelting(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300, "caramel");

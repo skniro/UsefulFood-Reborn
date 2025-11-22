@@ -46,7 +46,6 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.Biscuit.get());
                         pOutput.accept(UsefulFoodItems.Trailmix.get());
                         pOutput.accept(UsefulFoodItems.MuttonSandwich.get());
-                        pOutput.accept(UsefulFoodItems.Sushi.get());
                         pOutput.accept(UsefulFoodItems.SquidTentacleRaw.get());
                         pOutput.accept(UsefulFoodItems.SquidTentacleCooked.get());
                         pOutput.accept(UsefulFoodItems.SquidSandwich.get());
@@ -65,6 +64,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.chocolateicecream.get());
                         pOutput.accept(UsefulFoodItems.MagicIceCream.get());
                         pOutput.accept(UsefulFoodItems.SquidSushi.get());
+                        pOutput.accept(UsefulFoodItems.Baked_Sushi.get());
+                        pOutput.accept(UsefulFoodItems.Salmon_Sushi.get());
+                        pOutput.accept(UsefulFoodItems.Cod_Roe_Sushi.get());
                         pOutput.accept(UsefulFoodItems.CactusJuice.get());
                         pOutput.accept(UsefulFoodItems.Spaghetti.get());
                         pOutput.accept(UsefulFoodItems.AppleIceCream.get());

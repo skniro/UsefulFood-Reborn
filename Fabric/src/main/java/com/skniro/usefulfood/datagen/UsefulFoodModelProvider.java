@@ -143,6 +143,11 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
      itemModelGenerator.register(UsefulFoodItems.Chorus_JamToast, Models.GENERATED);
      itemModelGenerator.register(UsefulFoodItems.Chorus_JamBiscuit, Models.GENERATED);
      itemModelGenerator.register(UsefulFoodItems.Chorus_Jam, Models.GENERATED);
+
+        //Reborn 1.5.0
+        itemModelGenerator.register(UsefulFoodItems.Baked_Sushi, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Salmon_Sushi, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Cod_Roe_Sushi, Models.GENERATED);
     }
 
  private void registerMagicCake(BlockStateModelGenerator block) {

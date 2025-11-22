@@ -1381,6 +1381,43 @@ public static final Item MilkBottle =
                     .recipeRemainder(Items.BOWL)
     ));
 
+    //Reborn 1.5.0
+    public static final Item Baked_Sushi = registerItem("baked_sushi", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+    ));
+
+    public static final Item Cod_Roe_Sushi = registerItem("cod_roe_sushi", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+    ));
+
+    public static final Item Salmon_Sushi = registerItem("salmon_sushi", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+    ));
+
     private static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         Item item = factory.apply(settings.registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(UsefulFood.MOD_ID, name))));
         return Registry.register(Registries.ITEM, RegistryKey.of(RegistryKeys.ITEM, Identifier.of(UsefulFood.MOD_ID, name)), item);

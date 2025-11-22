@@ -135,6 +135,11 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR, "甜浆果果酱罐");
         translationBuilder.add(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR, "发光浆果果酱罐");
 
+        translationBuilder.add(UsefulFoodItems.Baked_Sushi, "烤寿司");
+        translationBuilder.add(UsefulFoodItems.Salmon_Sushi, "鲑鱼寿司");
+        translationBuilder.add(UsefulFoodItems.Cod_Roe_Sushi, "鳕鱼子寿司");
+
+
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
 
 

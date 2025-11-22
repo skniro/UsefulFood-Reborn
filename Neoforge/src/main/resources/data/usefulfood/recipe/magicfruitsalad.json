@@ -1,19 +1,18 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#GK",
-        " B "
-    ],
-    "key": {
-        "#": "minecraft:golden_apple",
-        "G": "minecraft:glistering_melon_slice",
-        "K": "minecraft:glow_berries",
-        "B": "minecraft:bowl"
-    },
-    "result": {
-        "id": "usefulfood:magicfruitsalad",
-        "count": 1
-    },
-    "category": "misc",
-    "group": "fruitsalad"
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:golden_apple",
+    "B": "minecraft:bowl",
+    "G": "minecraft:glistering_melon_slice",
+    "K": "minecraft:glow_berries"
+  },
+  "pattern": [
+    "#GK",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:magicfruitsalad"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:salmon",
+    "minecraft:dried_kelp"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:salmon_sushi"
+  }
+}

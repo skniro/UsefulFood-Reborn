@@ -1,17 +1,18 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        "minecraft:cocoa_beans",
-        "minecraft:cocoa_beans",
-        "minecraft:cocoa_beans",
-        "minecraft:wheat",
-        "minecraft:wheat",
-        "minecraft:wheat",
-        "#c:milks",
-        "#c:milks",
-        "#c:milks"
-    ],
-    "result": {
-        "id": "usefulfood:chocolatecake"
-    }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:cocoa_beans",
+    "M": "#c:drinks/milk",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    "MMM",
+    "CCC",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:chocolatecake"
+  }
 }

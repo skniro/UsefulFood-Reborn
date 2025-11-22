@@ -7,6 +7,7 @@ import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.client.data.Models;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -135,7 +136,9 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR, "Sweet Berries Jam Jar");
         translationBuilder.add(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR, "Glow Berries Jam Jar");
 
-
+        translationBuilder.add(UsefulFoodItems.Baked_Sushi, "Baked Sushi");
+        translationBuilder.add(UsefulFoodItems.Salmon_Sushi, "Salmon Sushi");
+        translationBuilder.add(UsefulFoodItems.Cod_Roe_Sushi, "Cod Roe Sushi");
 
         translationBuilder.add(UsefulFood.UsefulFood_Group,"Useful Food");
     }

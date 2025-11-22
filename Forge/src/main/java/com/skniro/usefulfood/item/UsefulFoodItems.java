@@ -392,6 +392,7 @@ public static final RegistryObject<Item> MilkBottle =
     ));
 
     // 1.2
+    @Deprecated(since = "Reborn 1.5.0", forRemoval = true)
     public static final RegistryObject<Item> Sushi = registerItem("sushi", Item::new, (
             new Item
                     .Properties()
@@ -1424,6 +1425,43 @@ public static final RegistryObject<Item> MilkBottle =
                             )
                     .stacksTo(1)
                     .craftRemainder(Items.BOWL)
+    ));
+
+    //Reborn 1.5.0
+    public static final Supplier<Item> Baked_Sushi = registerItem("baked_sushi", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+    ));
+
+    public static final Supplier<Item> Cod_Roe_Sushi = registerItem("cod_roe_sushi", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+    ));
+
+    public static final Supplier<Item> Salmon_Sushi = registerItem("salmon_sushi", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
     ));
 
     public static <B extends Item> RegistryObject<Item> register(String name, Function<Item.Properties, ? extends B> func, Item.Properties props) {

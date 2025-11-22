@@ -1,19 +1,18 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#MS",
-        " B "
-    ],
-    "key": {
-        "#": "minecraft:apple",
-        "M": "minecraft:melon_slice",
-        "S": "minecraft:sweet_berries",
-        "B": "minecraft:bowl"
-    },
-    "result": {
-        "id": "usefulfood:fruitsalad",
-        "count": 1
-    },
-    "category": "misc",
-    "group": "fruitsalad"
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:apple",
+    "B": "minecraft:bowl",
+    "M": "minecraft:melon_slice",
+    "S": "minecraft:sweet_berries"
+  },
+  "pattern": [
+    "#MS",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:fruitsalad"
+  }
 }

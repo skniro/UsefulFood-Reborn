@@ -5,6 +5,7 @@ import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.client.data.Models;
 
 
 public class ModContent {
@@ -66,6 +67,9 @@ public class ModContent {
             content.add(UsefulFoodItems.chocolateicecream);
             content.add(UsefulFoodItems.MagicIceCream);
             content.add(UsefulFoodItems.SquidSushi);
+            content.add(UsefulFoodItems.Baked_Sushi);
+            content.add(UsefulFoodItems.Salmon_Sushi);
+            content.add(UsefulFoodItems.Cod_Roe_Sushi);
             content.add(UsefulFoodItems.CactusJuice);
             content.add(UsefulFoodItems.Spaghetti);
             content.add(UsefulFoodItems.AppleIceCream);

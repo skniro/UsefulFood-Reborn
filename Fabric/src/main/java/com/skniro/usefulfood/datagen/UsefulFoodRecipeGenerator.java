@@ -1,9 +1,11 @@
 package com.skniro.usefulfood.datagen;
 
 import com.google.common.collect.Lists;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeProvider;
@@ -13,6 +15,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Util;
 
 import java.util.List;
@@ -93,6 +96,26 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Juice).input(Items.CHORUS_FRUIT,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.CHORUS_FRUIT)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Juice).input(Items.GLOW_BERRIES,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.GLOW_BERRIES)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Juice).input(Items.SWEET_BERRIES,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.SWEET_BERRIES)).offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamPanCake).input(UsefulFoodItems.Glow_Berries_Jam).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamToast).input(UsefulFoodItems.Glow_Berries_Jam).input(UsefulFoodItems.BreadSlice).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamBiscuit).input(UsefulFoodItems.Glow_Berries_Jam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Jam).input(Items.GLOW_BERRIES).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamPanCake).input(UsefulFoodItems.Sweet_Berries_Jam).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamToast).input(UsefulFoodItems.Sweet_Berries_Jam).input(UsefulFoodItems.BreadSlice).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamBiscuit).input(UsefulFoodItems.Sweet_Berries_Jam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Jam).input(Items.SWEET_BERRIES).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamPanCake).input(UsefulFoodItems.Chorus_Jam).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamToast).input(UsefulFoodItems.Chorus_Jam).input(UsefulFoodItems.BreadSlice).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamBiscuit).input(UsefulFoodItems.Chorus_Jam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Jam).input(Items.CHORUS_FRUIT).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, UsefulFoodJamBlocks.Chorus_JAM_JAR).input(UsefulFoodItems.Chorus_Jam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Chorus_Jam)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR).input(UsefulFoodItems.Sweet_Berries_Jam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Sweet_Berries_Jam)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, UsefulFoodJamBlocks.Glow_Berries_JAM_JAR).input(UsefulFoodItems.Glow_Berries_Jam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Glow_Berries_Jam)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, UsefulFoodJamBlocks.Apple_JAM_JAR).input(UsefulFoodItems.AppleJam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Chorus_Jam)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, UsefulFoodJamBlocks.Melon_JAM_JAR).input(UsefulFoodItems.MelonJam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Sweet_Berries_Jam)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, UsefulFoodJamBlocks.GLASS_JAR).input(Blocks.GLASS).input(ItemTags.WOODEN_SLABS).criterion("has_base_item",conditionsFromItem(Blocks.GLASS)).offerTo(exporter);
 
         //Smelting
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300).criterion("has_base_item", RecipeProvider.conditionsFromItem(UsefulFoodItems.SugarCube)).offerTo(exporter, "caramel");

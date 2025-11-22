@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "usefulfood:pancakedough"
-            ]
+            "items": "usefulfood:pancakedough"
           }
         ]
       },
@@ -15,21 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:pancake"
+        "recipe": "minecraft:pancake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_base_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_base_item"
     ]
   ],
   "rewards": {
     "recipes": [
-      "usefulfood:pancake"
+      "minecraft:pancake"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

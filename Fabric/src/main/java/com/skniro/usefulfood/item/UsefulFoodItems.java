@@ -1000,11 +1000,12 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                             .Builder()
-                                            .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .nutrition(3)
+                                            .saturationModifier(0.3f)
                                             .alwaysEdible()
-                                            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,200,1),1.0F)
-                                    .build())
+                                            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,200,1),1.0F)
+                                            .build()
+                            )
                     .recipeRemainder(Items.GLASS_BOTTLE)
                     .maxCount(1)
     ));
@@ -1016,7 +1017,7 @@ public static final Item MilkBottle =
                             (new FoodComponent
                                             .Builder()
                                             .nutrition(2)
-                                            .saturationModifier(0.2f)
+                                            .saturationModifier(0.25f)
                                             .alwaysEdible()
                                             .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION,1000,1),1.0F)
                                             .build()
@@ -1030,11 +1031,12 @@ public static final Item MilkBottle =
                     .Settings()
                     .food
                             (new FoodComponent
-                                    .Builder()
-                                    .nutrition(2)
-                                    .saturationModifier(0.2f)
-                                    .alwaysEdible()
-                                    .build()
+                                            .Builder()
+                                            .nutrition(2)
+                                            .saturationModifier(0.2f)
+                                            .alwaysEdible()
+                                            .statusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,200,1),1.0F)
+                                            .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
                     .maxCount(1)
@@ -1046,10 +1048,10 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                             .Builder()
-                                            .nutrition(9)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(7)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
-                                            .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
+                                            .statusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,200,1),1.0F)
                                             .build()
                             )
                     .maxCount(1)
@@ -1061,10 +1063,10 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                             .Builder()
-                                            .nutrition(7)
-                                            .saturationModifier(0.4f)
+                                            .nutrition(6)
+                                            .saturationModifier(0.35f)
                                             .alwaysEdible()
-                                            .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
+                                            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION,400,1),1.0F)
                                             .build()
                             )
                     .maxCount(1)
@@ -1079,7 +1081,7 @@ public static final Item MilkBottle =
                                             .nutrition(7)
                                             .saturationModifier(0.4f)
                                             .alwaysEdible()
-                                            .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,300,1),1.0F)
+                                            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,200,1),1.0F)
                                             .build()
                             )
                     .maxCount(1)
@@ -1104,8 +1106,8 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.65f)
                                     .build()
                             )
                     .maxCount(1)
@@ -1118,10 +1120,151 @@ public static final Item MilkBottle =
                             (new FoodComponent
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .saturationModifier(0.55f)
                                     .build()
                             )
                     .maxCount(1)
+    ));
+
+    public static final Item Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(10)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Item Glow_Berries_JamToast = registerItem("glow_berries_jam_toast", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Item Glow_Berries_JamBiscuit = registerItem("glow_berries_jam_biscuit", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Item Glow_Berries_Jam = registerItem("glow_berries_jam", new StewItem(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .maxCount(1)
+                    .recipeRemainder(Items.BOWL)
+    ));
+
+    public static final Item Sweet_Berries_JamPanCake = registerItem("sweet_berries_jam_pancake", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(12)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Sweet_Berries_JamToast = registerItem("sweet_berries_jam_toast", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Sweet_Berries_JamBiscuit = registerItem("sweet_berries_jam_biscuit", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Item Sweet_Berries_Jam = registerItem("sweet_berries_jam", new StewItem(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .maxCount(1)
+                    .recipeRemainder(Items.BOWL)
+    ));
+
+    public static final Item Chorus_JamPanCake = registerItem("chorus_jam_pancake", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(14)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Item Chorus_JamToast = registerItem("chorus_jam_toast", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Item Chorus_JamBiscuit = registerItem("chorus_jam_biscuit", new Item(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Item Chorus_Jam = registerItem("chorus_jam", new StewItem(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .maxCount(1)
+                    .recipeRemainder(Items.BOWL)
     ));
 
     private static final Map<Identifier, List<ItemConvertible>> itemsByGroup = new LinkedHashMap<>();

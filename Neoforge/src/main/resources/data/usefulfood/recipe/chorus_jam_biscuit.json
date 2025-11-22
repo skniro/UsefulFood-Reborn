@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:chorus_jam"
+    },
+    {
+      "item": "usefulfood:biscuit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:chorus_jam_biscuit"
+  }
+}

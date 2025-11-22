@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "usefulfood:milkbottle"
-            ]
+            "items": "usefulfood:milkbottle"
           }
         ]
       },
@@ -15,21 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:hotmilkbottle"
+        "recipe": "minecraft:hotmilkbottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_base_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_base_item"
     ]
   ],
   "rewards": {
     "recipes": [
-      "usefulfood:hotmilkbottle"
+      "minecraft:hotmilkbottle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

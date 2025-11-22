@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -79,7 +79,7 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
     }
 
     protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
-        InteractionResult actionResult = SpecialCakeBlockState.eat(world, pos, UsefulFoodBlocks.ChocolateCake.get().defaultBlockState(), player);
+        InteractionResult actionResult = SpecialCakeBlockState.eat(world, pos, UsefulFoodCakeBlocks.ChocolateCake.get().defaultBlockState(), player);
         if (actionResult.consumesAction()) {
             dropResources(state, world, pos);
         }
@@ -93,7 +93,7 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
 
     @Override
     public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
-        return new ItemStack(UsefulFoodBlocks.ChocolateCake.get());
+        return new ItemStack(UsefulFoodCakeBlocks.ChocolateCake.get());
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

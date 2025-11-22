@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:sweet_berries_jam"
+    },
+    {
+      "item": "usefulfood:sweet_berries_jam"
+    },
+    {
+      "item": "usefulfood:sweet_berries_jam"
+    },
+    {
+      "item": "usefulfood:glass_jar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:sweet_berries_jam_jar"
+  }
+}

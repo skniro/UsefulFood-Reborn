@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -75,7 +75,7 @@ public class CandleMagicCakeBlock extends AbstractCandleBlock {
     }
 
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        ActionResult actionResult = SpecialCakeBlockState.tryEat(world, pos, UsefulFoodBlocks.MagicCake.getDefaultState(), player);
+        ActionResult actionResult = SpecialCakeBlockState.tryEat(world, pos, UsefulFoodCakeBlocks.MagicCake.getDefaultState(), player);
         if (actionResult.isAccepted()) {
             dropStacks(state, world, pos);
         }
@@ -89,7 +89,7 @@ public class CandleMagicCakeBlock extends AbstractCandleBlock {
 
     @Override
     public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
-        return new ItemStack(UsefulFoodBlocks.MagicCake);
+        return new ItemStack(UsefulFoodCakeBlocks.MagicCake);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

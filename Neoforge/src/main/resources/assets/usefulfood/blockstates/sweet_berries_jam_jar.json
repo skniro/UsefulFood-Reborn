@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "jam_stage=1": {
+      "model": "usefulfood:block/sweet_berries_jam_jar_stage1"
+    },
+    "jam_stage=2": {
+      "model": "usefulfood:block/sweet_berries_jam_jar_stage2"
+    },
+    "jam_stage=3": {
+      "model": "usefulfood:block/sweet_berries_jam_jar_stage3"
+    }
+  }
+}

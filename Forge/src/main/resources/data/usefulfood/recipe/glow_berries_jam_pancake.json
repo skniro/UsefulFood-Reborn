@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:glow_berries_jam"
+    },
+    {
+      "item": "usefulfood:pancake"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:glow_berries_jam_pancake"
+  }
+}

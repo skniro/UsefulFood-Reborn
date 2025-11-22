@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "usefulfood:squidrtentacle"
-            ]
+            "items": "usefulfood:squidrtentacle"
           }
         ]
       },
@@ -15,21 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:cookedsquidtentacle"
+        "recipe": "minecraft:cookedsquidtentacle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_base_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_base_item"
     ]
   ],
   "rewards": {
     "recipes": [
-      "usefulfood:cookedsquidtentacle"
+      "minecraft:cookedsquidtentacle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

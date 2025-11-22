@@ -1042,12 +1042,12 @@ public static final Supplier<Item> MilkBottle =
                     .Properties()
                     .food
                             (new FoodProperties
-                                            .Builder()
-                                            .nutrition(2)
-                                            .saturationModifier(0.2f)
-                                            .alwaysEdible()
-                                            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,200,1),1.0F)
-                                            .build()
+                                    .Builder()
+                                    .nutrition(3)
+                                    .saturationModifier(0.3f)
+                                    .alwaysEdible()
+                                    .effect(new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
+                                    .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -1058,12 +1058,12 @@ public static final Supplier<Item> MilkBottle =
                     .Properties()
                     .food
                             (new FoodProperties
-                                            .Builder()
-                                            .nutrition(2)
-                                            .saturationModifier(0.2f)
-                                            .alwaysEdible()
-                                            .effect(new MobEffectInstance(MobEffects.NIGHT_VISION,1000,1),1.0F)
-                                            .build()
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.25f)
+                                    .alwaysEdible()
+                                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION,1000,1),1.0F)
+                                    .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -1078,6 +1078,7 @@ public static final Supplier<Item> MilkBottle =
                                     .nutrition(2)
                                     .saturationModifier(0.2f)
                                     .alwaysEdible()
+                                    .effect(new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
                                     .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
@@ -1089,12 +1090,12 @@ public static final Supplier<Item> MilkBottle =
                     .Properties()
                     .food
                             (new FoodProperties
-                                            .Builder()
-                                            .nutrition(9)
-                                            .saturationModifier(0.4f)
-                                            .alwaysEdible()
-                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
-                                            .build()
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.35f)
+                                    .alwaysEdible()
+                                    .effect(new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
+                                    .build()
                             )
                     .stacksTo(1)
     ));
@@ -1104,12 +1105,12 @@ public static final Supplier<Item> MilkBottle =
                     .Properties()
                     .food
                             (new FoodProperties
-                                            .Builder()
-                                            .nutrition(7)
-                                            .saturationModifier(0.4f)
-                                            .alwaysEdible()
-                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
-                                            .build()
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .alwaysEdible()
+                                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION,400,1),1.0F)
+                                    .build()
                             )
                     .stacksTo(1)
     ));
@@ -1119,12 +1120,12 @@ public static final Supplier<Item> MilkBottle =
                     .Properties()
                     .food
                             (new FoodProperties
-                                            .Builder()
-                                            .nutrition(7)
-                                            .saturationModifier(0.4f)
-                                            .alwaysEdible()
-                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
-                                            .build()
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .alwaysEdible()
+                                    .effect(new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
+                                    .build()
                             )
                     .stacksTo(1)
     ));
@@ -1135,8 +1136,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(5)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(8)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1148,8 +1149,8 @@ public static final Supplier<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(7)
+                                    .saturationModifier(0.65f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1162,10 +1163,152 @@ public static final Supplier<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationModifier(0.6f)
+                                    .saturationModifier(0.55f)
                                     .build()
                             )
                     .stacksTo(1)
+    ));
+
+
+    public static final Supplier<Item> Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(10)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamToast = registerItem("glow_berries_jam_toast", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamBiscuit = registerItem("glow_berries_jam_biscuit", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_Jam = registerItem("glow_berries_jam", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Sweet_Berries_JamPanCake = registerItem("sweet_berries_jam_pancake", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(12)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamToast = registerItem("sweet_berries_jam_toast", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamBiscuit = registerItem("sweet_berries_jam_biscuit", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_Jam = registerItem("sweet_berries_jam", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.4f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Chorus_JamPanCake = registerItem("chorus_jam_pancake", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(14)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamToast = registerItem("chorus_jam_toast", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamBiscuit = registerItem("chorus_jam_biscuit", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_Jam = registerItem("chorus_jam", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
     ));
 
     private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> item, CreativeModeTab tab) {

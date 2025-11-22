@@ -1,6 +1,6 @@
 package com.skniro.usefulfood.block.init;
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
 import com.skniro.usefulfood.block.init.candle.CandleCaramelCakeBlock;
 import net.minecraft.core.BlockPos;
@@ -23,7 +23,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CandleBlock;
-import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -56,7 +55,7 @@ public class SpecialCakeBlockState extends SpecialCake {
     public ItemInteractionResult useItemOn(ItemStack itemStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         Block block;
         Item item = itemStack.getItem();
-        if (state.getBlock() == UsefulFoodBlocks.CaramelCake.get()) {
+        if (state.getBlock() == UsefulFoodCakeBlocks.CaramelCake.get()) {
             if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
@@ -68,7 +67,7 @@ public class SpecialCakeBlockState extends SpecialCake {
                 return ItemInteractionResult.SUCCESS;
             }
         }
-        if (state.getBlock() == UsefulFoodBlocks.AppleCake.get()) {
+        if (state.getBlock() == UsefulFoodCakeBlocks.AppleCake.get()) {
             if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
                 if (!player.isCreative()) {
                     itemStack.shrink(1);

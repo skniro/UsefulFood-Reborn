@@ -1,0 +1,6 @@
+{
+  "parent": "usefulfood:block/furniture/glass_jar_stage2",
+  "textures": {
+    "jam": "usefulfood:block/jam/sweet_berries_jam"
+  }
+}

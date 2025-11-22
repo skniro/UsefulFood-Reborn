@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:chorus_jam"
+    },
+    {
+      "item": "usefulfood:chorus_jam"
+    },
+    {
+      "item": "usefulfood:chorus_jam"
+    },
+    {
+      "item": "usefulfood:glass_jar"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:chorus_jam_jar"
+  }
+}

@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -63,7 +63,7 @@ public class CandleAppleCakeBlock extends AbstractCandleBlock {
         ItemStack itemStack = player.getStackInHand(hand);
         if(itemStack.isOf(Items.FLINT_AND_STEEL) || itemStack.isOf(Items.FIRE_CHARGE)) return ActionResult.PASS;
         if (!(CandleAppleCakeBlock.isHittingCandle(hit) && player.getStackInHand(hand).isEmpty() && state.get(LIT))) {
-            ActionResult result = SpecialCakeBlockState.tryEat(world, pos, UsefulFoodBlocks.AppleCake.getDefaultState(), player);
+            ActionResult result = SpecialCakeBlockState.tryEat(world, pos, UsefulFoodCakeBlocks.AppleCake.getDefaultState(), player);
             if (result.isAccepted()) CandleCakeBlock.dropStacks(state, world, pos);
             return result;
         }
@@ -77,7 +77,7 @@ public class CandleAppleCakeBlock extends AbstractCandleBlock {
 
     @Override
     public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
-        return new ItemStack(UsefulFoodBlocks.AppleCake);
+        return new ItemStack(UsefulFoodCakeBlocks.AppleCake);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

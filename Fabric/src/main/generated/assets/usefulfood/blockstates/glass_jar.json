@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "usefulfood:block/glass_jar",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "usefulfood:block/glass_jar"
+    },
+    "facing=south": {
+      "model": "usefulfood:block/glass_jar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "usefulfood:block/glass_jar",
+      "y": 270
+    }
+  }
+}

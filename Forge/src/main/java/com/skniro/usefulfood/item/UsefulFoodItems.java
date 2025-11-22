@@ -73,7 +73,7 @@ public static final RegistryObject<Item> MilkBottle =
 
             ));
     public static final RegistryObject<Item> FruitSalad =
-            registerItem("fruitsalad", ()->new BowlFoodItem(
+            registerItem("fruitsalad", ()-> new BowlFoodItem(
                     new Item
                             .Properties()
                             .food
@@ -86,7 +86,7 @@ public static final RegistryObject<Item> MilkBottle =
                             .stacksTo(1)
             ));
 
-    public static final RegistryObject<Item> MagicFruitSalad = registerItem("magicfruitsalad", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> MagicFruitSalad = registerItem("magicfruitsalad", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -473,7 +473,7 @@ public static final RegistryObject<Item> MilkBottle =
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> CarrotSoup = registerItem("carrotsoup", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> CarrotSoup = registerItem("carrotsoup", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -572,7 +572,7 @@ public static final RegistryObject<Item> MilkBottle =
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> chocolateicecream = registerItem("chocolateicecream", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> chocolateicecream = registerItem("chocolateicecream", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -586,7 +586,7 @@ public static final RegistryObject<Item> MilkBottle =
     ));
 
     // 1.4
-    public static final RegistryObject<Item> MagicIceCream = registerItem("magicicecream", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> MagicIceCream = registerItem("magicicecream", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -629,7 +629,7 @@ public static final RegistryObject<Item> MilkBottle =
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> Spaghetti = registerItem("spaghetti", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> Spaghetti = registerItem("spaghetti", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -641,7 +641,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> AppleIceCream = registerItem("appleicecream", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> AppleIceCream = registerItem("appleicecream", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -653,7 +653,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> MelonIceCream = registerItem("melonicecream", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> MelonIceCream = registerItem("melonicecream", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -691,7 +691,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
 
     ));
-    public static final RegistryObject<Item> FishSoup = registerItem("fishsoup", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> FishSoup = registerItem("fishsoup", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -744,7 +744,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
 
     ));
-    public static final RegistryObject<Item> CaramelIceCream = registerItem("caramelicecream", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> CaramelIceCream = registerItem("caramelicecream", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -758,7 +758,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> Cereal = registerItem("cereal", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> Cereal = registerItem("cereal", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -770,7 +770,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> ChocolateCereal = registerItem("chocolatecereal", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> ChocolateCereal = registerItem("chocolatecereal", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -794,7 +794,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
 
     ));
-    public static final RegistryObject<Item> AppleJelly = registerItem("applejelly", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> AppleJelly = registerItem("applejelly", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -808,7 +808,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
                     .stacksTo(1)
     ));
-    public static final RegistryObject<Item> MelonJelly = registerItem("melonjelly", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> MelonJelly = registerItem("melonjelly", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -924,7 +924,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
 
     ));
-    public static final RegistryObject<Item> AppleJam = registerItem("applejam", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> AppleJam = registerItem("applejam", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -999,7 +999,7 @@ public static final RegistryObject<Item> MilkBottle =
                             )
 
     ));
-    public static final RegistryObject<Item> MelonJam = registerItem("melonjam", ()->new BowlFoodItem(
+    public static final RegistryObject<Item> MelonJam = registerItem("melonjam", ()-> new BowlFoodItem(
             new Item
                     .Properties()
                     .food
@@ -1043,10 +1043,10 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(2)
-                                            .saturationMod(0.2f)
+                                            .nutrition(3)
+                                            .saturationMod(0.3f)
                                             .alwaysEat()
-                                            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,200,1),1.0F)
+                                            .effect(new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
@@ -1060,7 +1060,7 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                             .Builder()
                                             .nutrition(2)
-                                            .saturationMod(0.2f)
+                                            .saturationMod(0.25f)
                                             .alwaysEat()
                                             .effect(new MobEffectInstance(MobEffects.NIGHT_VISION,1000,1),1.0F)
                                             .build()
@@ -1074,11 +1074,12 @@ public static final RegistryObject<Item> MilkBottle =
                     .Properties()
                     .food
                             (new FoodProperties
-                                    .Builder()
-                                    .nutrition(2)
-                                    .saturationMod(0.2f)
-                                    .alwaysEat()
-                                    .build()
+                                            .Builder()
+                                            .nutrition(2)
+                                            .saturationMod(0.2f)
+                                            .alwaysEat()
+                                            .effect(new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
+                                            .build()
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -1090,10 +1091,10 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(9)
-                                            .saturationMod(0.4f)
+                                            .nutrition(7)
+                                            .saturationMod(0.35f)
                                             .alwaysEat()
-                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                            .effect(new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
                                             .build()
                             )
                     .stacksTo(1)
@@ -1105,10 +1106,10 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                             .Builder()
-                                            .nutrition(7)
-                                            .saturationMod(0.4f)
+                                            .nutrition(6)
+                                            .saturationMod(0.35f)
                                             .alwaysEat()
-                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                            .effect(new MobEffectInstance(MobEffects.NIGHT_VISION,400,1),1.0F)
                                             .build()
                             )
                     .stacksTo(1)
@@ -1123,7 +1124,7 @@ public static final RegistryObject<Item> MilkBottle =
                                             .nutrition(7)
                                             .saturationMod(0.4f)
                                             .alwaysEat()
-                                            .effect(new MobEffectInstance(MobEffects.JUMP,300,1),1.0F)
+                                            .effect(new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             .build()
                             )
                     .stacksTo(1)
@@ -1135,8 +1136,8 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(5)
-                                    .saturationMod(0.6f)
+                                    .nutrition(8)
+                                    .saturationMod(0.5f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1148,8 +1149,8 @@ public static final RegistryObject<Item> MilkBottle =
                     .food
                             (new FoodProperties
                                     .Builder()
-                                    .nutrition(6)
-                                    .saturationMod(0.6f)
+                                    .nutrition(7)
+                                    .saturationMod(0.65f)
                                     .build()
                             )
                     .stacksTo(1)
@@ -1162,10 +1163,152 @@ public static final RegistryObject<Item> MilkBottle =
                             (new FoodProperties
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationMod(0.6f)
+                                    .saturationMod(0.55f)
                                     .build()
                             )
                     .stacksTo(1)
+    ));
+
+
+    public static final Supplier<Item> Glow_Berries_JamPanCake = registerItem("glow_berries_jam_pancake", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(10)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamToast = registerItem("glow_berries_jam_toast", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_JamBiscuit = registerItem("glow_berries_jam_biscuit", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Glow_Berries_Jam = registerItem("glow_berries_jam", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Sweet_Berries_JamPanCake = registerItem("sweet_berries_jam_pancake", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(12)
+                                    .saturationMod(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamToast = registerItem("sweet_berries_jam_toast", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationMod(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_JamBiscuit = registerItem("sweet_berries_jam_biscuit", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationMod(0.4f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Sweet_Berries_Jam = registerItem("sweet_berries_jam", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationMod(0.4f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
+    ));
+
+    public static final Supplier<Item> Chorus_JamPanCake = registerItem("chorus_jam_pancake", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(14)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamToast = registerItem("chorus_jam_toast", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_JamBiscuit = registerItem("chorus_jam_biscuit", ()-> new Item(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+    ));
+    public static final Supplier<Item> Chorus_Jam = registerItem("chorus_jam", ()-> new BowlFoodItem(
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationMod(0.35f)
+                                    .build()
+                            )
+                    .stacksTo(1)
+                    .craftRemainder(Items.BOWL)
     ));
 
     private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item, CreativeModeTab tab) {

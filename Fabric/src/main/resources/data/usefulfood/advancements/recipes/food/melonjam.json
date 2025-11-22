@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_base_item"
+      "has_base_item",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "usefulfood:melonjam"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

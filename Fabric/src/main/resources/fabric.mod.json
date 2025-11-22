@@ -15,9 +15,6 @@
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
-    "fabric-datagen": [
-      "com.skniro.usefulfood.datagen.ModDataGenerator"
-    ],
     "client": [
       "com.skniro.usefulfood.client.UsefulFoodClient"
     ],

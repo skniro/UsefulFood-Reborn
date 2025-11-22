@@ -1,7 +1,8 @@
 package com.skniro.usefulfood;
 
 
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
+import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 
 
@@ -12,8 +13,8 @@ public class ModContent {
         UsefulFoodItems.registerUsefulFoodItem();
     }
     public static void registerBlock(){
-        UsefulFoodBlocks.registerModBlocks();
-
+        UsefulFoodCakeBlocks.registerModBlocks();
+        UsefulFoodJamBlocks.registerModBlocks();
     }
 
     public static void CreativeTab() {

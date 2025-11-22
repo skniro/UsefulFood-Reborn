@@ -2,13 +2,10 @@ package com.skniro.usefulfood.block.init.candle;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.skniro.usefulfood.block.UsefulFoodBlocks;
+import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -61,7 +58,7 @@ public class CandleAppleCakeBlock extends AbstractCandleBlock {
         ItemStack itemStack = player.getItemInHand(hand);
         if(itemStack.is(Items.FLINT_AND_STEEL) || itemStack.is(Items.FIRE_CHARGE)) return InteractionResult.PASS;
         if (!(CandleAppleCakeBlock.isHittingCandle(hit) && player.getItemInHand(hand).isEmpty() && state.getValue(LIT))) {
-            InteractionResult result = SpecialCakeBlockState.eat(world, pos, UsefulFoodBlocks.AppleCake.get().defaultBlockState(), player);
+            InteractionResult result = SpecialCakeBlockState.eat(world, pos, UsefulFoodCakeBlocks.AppleCake.get().defaultBlockState(), player);
             if (result.consumesAction()) CandleCakeBlock.dropResources(state, world, pos);
             return result;
         }
@@ -75,7 +72,7 @@ public class CandleAppleCakeBlock extends AbstractCandleBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
-        return new ItemStack(UsefulFoodBlocks.AppleCake.get());
+        return new ItemStack(UsefulFoodCakeBlocks.AppleCake.get());
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

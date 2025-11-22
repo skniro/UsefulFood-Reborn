@@ -48,7 +48,6 @@ public class ModContent {
             content.add(UsefulFoodItems.Biscuit);
             content.add(UsefulFoodItems.Trailmix);
             content.add(UsefulFoodItems.MuttonSandwich);
-            content.add(UsefulFoodItems.Sushi);
             content.add(UsefulFoodItems.SquidTentacleRaw);
             content.add(UsefulFoodItems.SquidTentacleCooked);
             content.add(UsefulFoodItems.SquidSandwich);

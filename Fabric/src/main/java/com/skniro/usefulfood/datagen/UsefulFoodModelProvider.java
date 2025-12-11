@@ -29,7 +29,7 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
         usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR);
         usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR);
 
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(UsefulFoodJamBlocks.GLASS_JAR);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotatable(UsefulFoodJamBlocks.GLASS_JAR);
 
         registerMagicCake(blockStateModelGenerator);
         registerMagicCandleCake(blockStateModelGenerator);

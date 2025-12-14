@@ -130,6 +130,17 @@ public class ModContent {
             content.add(UsefulFoodItems.Chorus_JamBiscuit);
             content.add(UsefulFoodItems.Chorus_Jam);
 
+            content.add(UsefulFoodItems.Waffle);
+            content.add(UsefulFoodItems.Waffle_Vanilla_IceCream);
+            content.add(UsefulFoodItems.Waffle_Chorus_Ice_Cream);
+            content.add(UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Waffle_chocolate_icecream);
+            content.add(UsefulFoodItems.Waffle_Magic_IceCream);
+            content.add(UsefulFoodItems.Waffle_Apple_IceCream);
+            content.add(UsefulFoodItems.Waffle_Melon_IceCream);
+            content.add(UsefulFoodItems.Waffle_Caramel_IceCream);
+
             content.add(UsefulFoodJamBlocks.GLASS_JAR);
             content.add(UsefulFoodJamBlocks.Apple_JAM_JAR);
             content.add(UsefulFoodJamBlocks.Melon_JAM_JAR);

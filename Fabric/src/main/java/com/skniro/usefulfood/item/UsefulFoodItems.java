@@ -1418,6 +1418,144 @@ public static final Item MilkBottle =
                             )
     ));
 
+    public static final Item Waffle = registerItem("waffle", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(100)
+                                    .saturationModifier(0.01f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+
+    public static final Item Waffle_Chorus_Ice_Cream = registerItem("waffle_chorus_ice_cream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+
+    public static final Item Waffle_Sweet_Berries_Ice_Cream = registerItem("waffle_sweet_berries_ice_cream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.65f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+
+    public static final Item Waffle_Glow_Berries_Ice_Cream = registerItem("waffle_glow_berries_ice_cream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.55f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+    public static final Item Waffle_Vanilla_IceCream = registerItem("waffle_vanilla_icecream",StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.3f)
+                                    .build()
+                            ).maxCount(16)
+    ));
+    public static final Item Waffle_chocolate_icecream = registerItem("waffle_chocolate_icecream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(9)
+                                    .saturationModifier(0.8f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+    public static final Item Waffle_Magic_IceCream = registerItem("waffle_magic_icecream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                            .Builder()
+                                            .nutrition(9)
+                                            .saturationModifier(0.6f)
+                                            .alwaysEdible()
+                                            .build()
+                                    , ConsumableComponents.food()
+                                            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(
+                                                            new StatusEffectInstance(StatusEffects.REGENERATION,100,1),
+                                                            new StatusEffectInstance(StatusEffects.RESISTANCE,100,1)
+                                                    ))
+                                            )
+                                            .build()
+                            )
+                    .rarity(Rarity.RARE)
+                    .maxCount(16)
+    ));
+    public static final Item Waffle_Apple_IceCream = registerItem("waffle_apple_icecream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+    public static final Item Waffle_Melon_IceCream = registerItem("waffle_melon_icecream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(7)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+    public static final Item Waffle_Caramel_IceCream = registerItem("waffle_caramel_icecream", StewItem::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                            .Builder()
+                                            .nutrition(8)
+                                            .saturationModifier(0.6f)
+                                            .alwaysEdible()
+                                            .build()
+                                    , ConsumableComponents.food()
+                                            .consumeEffect(new ApplyEffectsConsumeEffect(
+                                                    new StatusEffectInstance(StatusEffects.SPEED,100,1),1.0F)
+                                            )
+                                            .build()
+                            )
+                    .maxCount(16)
+    ));
+
     private static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         Item item = factory.apply(settings.registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(UsefulFood.MOD_ID, name))));
         return Registry.register(Registries.ITEM, RegistryKey.of(RegistryKeys.ITEM, Identifier.of(UsefulFood.MOD_ID, name)), item);

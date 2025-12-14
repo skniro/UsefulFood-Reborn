@@ -6,10 +6,13 @@ import com.skniro.usefulfood.block.api.registry.MapleModelDatagenHelper;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
 import net.minecraft.client.render.model.json.WeightedVariant;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.state.property.Properties;
 
 import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
@@ -148,6 +151,18 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
         itemModelGenerator.register(UsefulFoodItems.Baked_Sushi, Models.GENERATED);
         itemModelGenerator.register(UsefulFoodItems.Salmon_Sushi, Models.GENERATED);
         itemModelGenerator.register(UsefulFoodItems.Cod_Roe_Sushi, Models.GENERATED);
+
+        itemModelGenerator.register(UsefulFoodItems.Waffle, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Vanilla_IceCream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Chorus_Ice_Cream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_chocolate_icecream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Magic_IceCream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Apple_IceCream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Melon_IceCream, Models.GENERATED);
+        itemModelGenerator.register(UsefulFoodItems.Waffle_Caramel_IceCream, Models.GENERATED);
+
     }
 
  private void registerMagicCake(BlockStateModelGenerator block) {

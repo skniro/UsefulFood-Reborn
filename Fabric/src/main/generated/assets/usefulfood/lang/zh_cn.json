@@ -112,5 +112,15 @@
   "item.usefulfood.tea": "花茶",
   "item.usefulfood.trailmix": "什锦杂果",
   "item.usefulfood.vanillaicecream": "香草冰淇淋",
+  "item.usefulfood.waffle": "华夫饼",
+  "item.usefulfood.waffle_apple_icecream": "苹果甜筒冰淇淋",
+  "item.usefulfood.waffle_caramel_icecream": "焦糖甜筒冰淇淋",
+  "item.usefulfood.waffle_chocolate_icecream": "巧克力甜筒冰淇淋",
+  "item.usefulfood.waffle_chorus_ice_cream": "紫颂果甜筒冰淇淋",
+  "item.usefulfood.waffle_glow_berries_ice_cream": "发光浆果甜筒冰淇淋",
+  "item.usefulfood.waffle_magic_icecream": "魔法甜筒冰淇淋",
+  "item.usefulfood.waffle_melon_icecream": "西瓜甜筒冰淇淋",
+  "item.usefulfood.waffle_sweet_berries_ice_cream": "甜浆果甜筒冰淇淋",
+  "item.usefulfood.waffle_vanilla_icecream": "香草甜筒冰淇淋",
   "itemGroup.usefulfood.test_group": "Useful Food"
 }

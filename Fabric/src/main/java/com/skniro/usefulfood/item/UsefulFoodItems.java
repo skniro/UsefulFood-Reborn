@@ -1424,82 +1424,82 @@ public static final Item MilkBottle =
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(100)
-                                    .saturationModifier(0.01f)
+                                    .nutrition(1)
+                                    .saturationModifier(0.1f)
                                     .build()
                             )
                     .maxCount(16)
     ));
 
-    public static final Item Waffle_Chorus_Ice_Cream = registerItem("waffle_chorus_ice_cream", StewItem::new, (
+    public static final Item Waffle_Chorus_Ice_Cream = registerItem("waffle_chorus_ice_cream", Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(4)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+
+    public static final Item Waffle_Sweet_Berries_Ice_Cream = registerItem("waffle_sweet_berries_ice_cream", Item::new, (
             new Item
                     .Settings()
                     .food
                             (new FoodComponent
                                     .Builder()
                                     .nutrition(5)
-                                    .saturationModifier(0.6f)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .maxCount(16)
     ));
 
-    public static final Item Waffle_Sweet_Berries_Ice_Cream = registerItem("waffle_sweet_berries_ice_cream", StewItem::new, (
+    public static final Item Waffle_Glow_Berries_Ice_Cream = registerItem("waffle_glow_berries_ice_cream", Item::new, (
             new Item
                     .Settings()
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(7)
-                                    .saturationModifier(0.65f)
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .maxCount(16)
     ));
-
-    public static final Item Waffle_Glow_Berries_Ice_Cream = registerItem("waffle_glow_berries_ice_cream", StewItem::new, (
+    public static final Item Waffle_Vanilla_IceCream = registerItem("waffle_vanilla_icecream",Item::new, (
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(3)
+                                    .saturationModifier(0.3f)
+                                    .build()
+                            ).maxCount(16)
+    ));
+    public static final Item Waffle_chocolate_icecream = registerItem("waffle_chocolate_icecream", Item::new, (
             new Item
                     .Settings()
                     .food
                             (new FoodComponent
                                     .Builder()
                                     .nutrition(6)
-                                    .saturationModifier(0.55f)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .maxCount(16)
     ));
-    public static final Item Waffle_Vanilla_IceCream = registerItem("waffle_vanilla_icecream",StewItem::new, (
-            new Item
-                    .Settings()
-                    .food
-                            (new FoodComponent
-                                    .Builder()
-                                    .nutrition(2)
-                                    .saturationModifier(0.3f)
-                                    .build()
-                            ).maxCount(16)
-    ));
-    public static final Item Waffle_chocolate_icecream = registerItem("waffle_chocolate_icecream", StewItem::new, (
-            new Item
-                    .Settings()
-                    .food
-                            (new FoodComponent
-                                    .Builder()
-                                    .nutrition(9)
-                                    .saturationModifier(0.8f)
-                                    .build()
-                            )
-                    .maxCount(16)
-    ));
-    public static final Item Waffle_Magic_IceCream = registerItem("waffle_magic_icecream", StewItem::new, (
+    public static final Item Waffle_Magic_IceCream = registerItem("waffle_magic_icecream", Item::new, (
             new Item
                     .Settings()
                     .food
                             (new FoodComponent
                                             .Builder()
-                                            .nutrition(9)
-                                            .saturationModifier(0.6f)
+                                            .nutrition(7)
+                                            .saturationModifier(0.5f)
                                             .alwaysEdible()
                                             .build()
                                     , ConsumableComponents.food()
@@ -1513,7 +1513,7 @@ public static final Item MilkBottle =
                     .rarity(Rarity.RARE)
                     .maxCount(16)
     ));
-    public static final Item Waffle_Apple_IceCream = registerItem("waffle_apple_icecream", StewItem::new, (
+    public static final Item Waffle_Apple_IceCream = registerItem("waffle_apple_icecream", Item::new, (
             new Item
                     .Settings()
                     .food
@@ -1525,26 +1525,26 @@ public static final Item MilkBottle =
                             )
                     .maxCount(16)
     ));
-    public static final Item Waffle_Melon_IceCream = registerItem("waffle_melon_icecream", StewItem::new, (
+    public static final Item Waffle_Melon_IceCream = registerItem("waffle_melon_icecream", Item::new, (
             new Item
                     .Settings()
                     .food
                             (new FoodComponent
                                     .Builder()
-                                    .nutrition(7)
-                                    .saturationModifier(0.6f)
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
                                     .build()
                             )
                     .maxCount(16)
     ));
-    public static final Item Waffle_Caramel_IceCream = registerItem("waffle_caramel_icecream", StewItem::new, (
+    public static final Item Waffle_Caramel_IceCream = registerItem("waffle_caramel_icecream", Item::new, (
             new Item
                     .Settings()
                     .food
                             (new FoodComponent
                                             .Builder()
-                                            .nutrition(8)
-                                            .saturationModifier(0.6f)
+                                            .nutrition(6)
+                                            .saturationModifier(0.5f)
                                             .alwaysEdible()
                                             .build()
                                     , ConsumableComponents.food()

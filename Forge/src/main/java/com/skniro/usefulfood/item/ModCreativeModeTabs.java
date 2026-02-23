@@ -46,7 +46,6 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.Biscuit.get());
                         pOutput.accept(UsefulFoodItems.Trailmix.get());
                         pOutput.accept(UsefulFoodItems.MuttonSandwich.get());
-                        pOutput.accept(UsefulFoodItems.Sushi.get());
                         pOutput.accept(UsefulFoodItems.SquidTentacleRaw.get());
                         pOutput.accept(UsefulFoodItems.SquidTentacleCooked.get());
                         pOutput.accept(UsefulFoodItems.SquidSandwich.get());
@@ -65,6 +64,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.chocolateicecream.get());
                         pOutput.accept(UsefulFoodItems.MagicIceCream.get());
                         pOutput.accept(UsefulFoodItems.SquidSushi.get());
+                        pOutput.accept(UsefulFoodItems.Baked_Sushi.get());
+                        pOutput.accept(UsefulFoodItems.Salmon_Sushi.get());
+                        pOutput.accept(UsefulFoodItems.Cod_Roe_Sushi.get());
                         pOutput.accept(UsefulFoodItems.CactusJuice.get());
                         pOutput.accept(UsefulFoodItems.Spaghetti.get());
                         pOutput.accept(UsefulFoodItems.AppleIceCream.get());
@@ -125,6 +127,17 @@ public class ModCreativeModeTabs {
                         pOutput.accept(UsefulFoodItems.Chorus_JamToast.get());
                         pOutput.accept(UsefulFoodItems.Chorus_JamBiscuit.get());
                         pOutput.accept(UsefulFoodItems.Chorus_Jam.get());
+
+                        pOutput.accept(UsefulFoodItems.Waffle.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Vanilla_IceCream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Chorus_Ice_Cream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_chocolate_icecream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Magic_IceCream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Apple_IceCream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Melon_IceCream.get());
+                        pOutput.accept(UsefulFoodItems.Waffle_Caramel_IceCream.get());
 
                         pOutput.accept(UsefulFoodJamBlocks.GLASS_JAR.get());
                         pOutput.accept(UsefulFoodJamBlocks.Apple_JAM_JAR.get());

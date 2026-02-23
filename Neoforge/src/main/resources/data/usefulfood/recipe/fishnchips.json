@@ -1,10 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        "#c:cooked_fish",
-        "usefulfood:frenchfries"
-    ],
-    "result": {
-        "id": "usefulfood:fishnchips"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:frenchfries",
+    "#c:foods/cooked_fish"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:fishnchips"
+  }
 }

@@ -1,12 +1,14 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        "minecraft:sugar",
-        "minecraft:wheat",
-        "minecraft:egg",
-        "#c:milks"
-    ],
-    "result": {
-        "id": "usefulfood:pancakedough"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:wheat",
+    "minecraft:egg",
+    "#c:drinks/milk"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:pancakedough"
+  }
 }

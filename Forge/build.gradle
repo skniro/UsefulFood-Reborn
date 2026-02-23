@@ -3,8 +3,7 @@ plugins {
     id 'idea'
     id 'eclipse'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '7.0.0-beta.+'
-    id 'net.minecraftforge.jarjar' version '0.2.3'
+    id 'net.minecraftforge.gradle' version '7.0.6'
 }
 
 version = forge_mod_version
@@ -74,9 +73,6 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 // This methods registers jarJar for the default jar task.
 // The closure allows you to configure the task, instead of needing to do this:
 // tasks.named('jarJar', net.minecraftforge.jarjar.gradle.JarJar)
-jarJar.register() {
-    archiveClassifier = null
-}
 
 repositories {
     maven minecraft.mavenizer
@@ -171,7 +167,6 @@ tasks.named('jar', Jar) {
         attributes['MixinConfigs'] = "${mod_id}.mixins.json"
     }
 
-    archiveClassifier = 'slim'
 }
 
 publishing {
@@ -180,7 +175,6 @@ publishing {
             groupId project.maven_group
             artifactId project.archives_base_name
             version project.version
-            from components.jarJar
             artifact jar
         }
     }

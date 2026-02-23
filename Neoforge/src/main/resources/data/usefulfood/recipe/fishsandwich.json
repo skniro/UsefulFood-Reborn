@@ -1,11 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        "usefulfood:breadslice",
-        "usefulfood:breadslice",
-        "#c:cooked_fish"
-    ],
-    "result": {
-        "id": "usefulfood:fishsandwich"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "usefulfood:breadslice",
+    "usefulfood:breadslice",
+    "#c:foods/cooked_fish"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:fishsandwich"
+  }
 }

@@ -4,9 +4,8 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 import com.skniro.usefulfood.block.init.JamJarBlock;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.minecraft.item.Item;
-
 import java.util.Map;
+import net.minecraft.world.item.Item;
 
 
 public class UsefulfoodJamConversions {

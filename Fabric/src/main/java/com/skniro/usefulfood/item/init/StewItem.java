@@ -1,21 +1,21 @@
 package com.skniro.usefulfood.item.init;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 
 public class StewItem extends Item {
-    public StewItem(Item.Settings settings) {
+    public StewItem(Item.Properties settings) {
         super(settings);
     }
 
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        ItemStack itemStack = super.finishUsing(stack, world, user);
-        if (user instanceof PlayerEntity playerEntity) {
-            if (playerEntity.isInCreativeMode()) {
+    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
+        ItemStack itemStack = super.finishUsingItem(stack, world, user);
+        if (user instanceof Player playerEntity) {
+            if (playerEntity.hasInfiniteMaterials()) {
                 return itemStack;
             }
         }

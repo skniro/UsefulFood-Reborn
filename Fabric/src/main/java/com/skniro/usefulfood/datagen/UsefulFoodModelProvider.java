@@ -5,25 +5,31 @@ import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.block.api.registry.MapleModelDatagenHelper;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
-import net.minecraft.client.render.model.json.WeightedVariant;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.state.property.Properties;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
+import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
 public class UsefulFoodModelProvider extends FabricModelProvider {
-    public UsefulFoodModelProvider(FabricDataOutput dataGenerator){
+    public UsefulFoodModelProvider(FabricPackOutput dataGenerator){
         super(dataGenerator);
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
+    public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator){
 
         MapleModelDatagenHelper usefulfoodModelDatagenHelper = new MapleModelDatagenHelper(blockStateModelGenerator);
         usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Apple_JAM_JAR);
@@ -32,7 +38,7 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
         usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR);
         usefulfoodModelDatagenHelper.registerJamJarBlock(UsefulFoodJamBlocks.Glow_Berries_JAM_JAR);
 
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotatable(UsefulFoodJamBlocks.GLASS_JAR);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(UsefulFoodJamBlocks.GLASS_JAR);
 
         registerMagicCake(blockStateModelGenerator);
         registerMagicCandleCake(blockStateModelGenerator);
@@ -45,140 +51,140 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-     itemModelGenerator.register(UsefulFoodItems.MilkBottle, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.ChocolateMilkBottle, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Cheese, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.ChocolateCandy, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.FruitSalad, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MagicFruitSalad , Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SugarCube, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.caramel, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.caramelapple , Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.RoastedSeeds, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.FriedEgg, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.PumpkinSoup, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Salad, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Oatmeal, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Jelly, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Marshmallow, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CookMarshmallow, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.VanillaIceCream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.BreadSlice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.PorkWich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Steakwich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Fishwich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chickenwich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Eggwich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Biscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Trailmix, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MuttonSandwich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sushi, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SquidTentacleRaw, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SquidTentacleCooked, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SquidSandwich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MagicAppleJuice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MelonJuice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.AppleJuice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CarrotJuice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CarrotSoup, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.PumpkinBread, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.FishnChips, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SugarBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.AppleJamBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.ChocoBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CarrotPie, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.hotchocolatebottle , Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.chocolateicecream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MagicIceCream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SquidSushi, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CactusJuice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Spaghetti, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.AppleIceCream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MelonIceCream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.ChocolateApple , Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CaramelBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.FishSoup, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Tea, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.HotMilkBottle, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CheeseSandwich, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CaramelIceCream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Cereal, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.ChocolateCereal, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.FrenchFries, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.AppleJelly, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MelonJelly, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Donut, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Oreo, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CaramelToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.ChocolateToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SugarToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.SugarPancake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.AppleJamPanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.AppleJamToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.AppleJam, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.CaramelPanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.ChocolatePanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MelonJamPanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MelonJamToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MelonJamBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.MelonJam, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.PanCakeDough, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.PanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chorus_Juice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_Juice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Juice, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chorus_Jelly, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_Jelly, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Jelly, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chorus_Ice_Cream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_Ice_Cream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Ice_Cream, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_JamPanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_JamToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_JamBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Glow_Berries_Jam, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_JamPanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_JamToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_JamBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Sweet_Berries_Jam, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chorus_JamPanCake, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chorus_JamToast, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chorus_JamBiscuit, Models.GENERATED);
-     itemModelGenerator.register(UsefulFoodItems.Chorus_Jam, Models.GENERATED);
+    public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MilkBottle, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.ChocolateMilkBottle, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Cheese, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.ChocolateCandy, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.FruitSalad, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MagicFruitSalad , ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SugarCube, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.caramel, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.caramelapple , ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.RoastedSeeds, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.FriedEgg, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.PumpkinSoup, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Salad, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Oatmeal, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Jelly, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Marshmallow, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CookMarshmallow, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.VanillaIceCream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.BreadSlice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.PorkWich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Steakwich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Fishwich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chickenwich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Eggwich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Biscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Trailmix, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MuttonSandwich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sushi, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SquidTentacleRaw, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SquidTentacleCooked, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SquidSandwich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MagicAppleJuice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MelonJuice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.AppleJuice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CarrotJuice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CarrotSoup, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.PumpkinBread, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.FishnChips, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SugarBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.AppleJamBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.ChocoBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CarrotPie, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.hotchocolatebottle , ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.chocolateicecream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MagicIceCream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SquidSushi, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CactusJuice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Spaghetti, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.AppleIceCream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MelonIceCream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.ChocolateApple , ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CaramelBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.FishSoup, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Tea, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.HotMilkBottle, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CheeseSandwich, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CaramelIceCream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Cereal, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.ChocolateCereal, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.FrenchFries, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.AppleJelly, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MelonJelly, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Donut, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Oreo, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CaramelToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.ChocolateToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SugarToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.SugarPancake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.AppleJamPanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.AppleJamToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.AppleJam, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.CaramelPanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.ChocolatePanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MelonJamPanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MelonJamToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MelonJamBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.MelonJam, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.PanCakeDough, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.PanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chorus_Juice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Glow_Berries_Juice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sweet_Berries_Juice, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chorus_Jelly, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Glow_Berries_Jelly, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sweet_Berries_Jelly, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chorus_Ice_Cream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Glow_Berries_Ice_Cream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sweet_Berries_Ice_Cream, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Glow_Berries_JamPanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Glow_Berries_JamToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Glow_Berries_JamBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Glow_Berries_Jam, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sweet_Berries_JamPanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sweet_Berries_JamToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sweet_Berries_JamBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sweet_Berries_Jam, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chorus_JamPanCake, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chorus_JamToast, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chorus_JamBiscuit, ModelTemplates.FLAT_ITEM);
+     itemModelGenerator.generateFlatItem(UsefulFoodItems.Chorus_Jam, ModelTemplates.FLAT_ITEM);
 
         //Reborn 1.5.0
-        itemModelGenerator.register(UsefulFoodItems.Baked_Sushi, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Salmon_Sushi, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Cod_Roe_Sushi, Models.GENERATED);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Baked_Sushi, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Salmon_Sushi, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Cod_Roe_Sushi, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(UsefulFoodItems.Waffle, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Vanilla_IceCream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Chorus_Ice_Cream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_chocolate_icecream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Magic_IceCream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Apple_IceCream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Melon_IceCream, Models.GENERATED);
-        itemModelGenerator.register(UsefulFoodItems.Waffle_Caramel_IceCream, Models.GENERATED);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Vanilla_IceCream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Chorus_Ice_Cream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_chocolate_icecream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Magic_IceCream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Apple_IceCream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Melon_IceCream, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UsefulFoodItems.Waffle_Caramel_IceCream, ModelTemplates.FLAT_ITEM);
 
     }
 
- private void registerMagicCake(BlockStateModelGenerator block) {
-  block.registerItemModel(UsefulFoodCakeBlocks.MagicCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodCakeBlocks.MagicCake)
-          .with(BlockStateVariantMap.models(Properties.BITES)
-                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodCakeBlocks.MagicCake)))
-                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.MagicCake, "_slice1")))
-                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.MagicCake, "_slice2")))
-                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.MagicCake, "_slice3")))
-                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.MagicCake, "_slice4")))
-                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.MagicCake, "_slice5")))
-                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.MagicCake, "_slice6")))));
+ private void registerMagicCake(BlockModelGenerators block) {
+  block.registerSimpleFlatItemModel(UsefulFoodCakeBlocks.MagicCake.asItem());
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(UsefulFoodCakeBlocks.MagicCake)
+          .with(PropertyDispatch.initial(BlockStateProperties.BITES)
+                  .select(0, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.MagicCake)))
+                  .select(1, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.MagicCake, "_slice1")))
+                  .select(2, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.MagicCake, "_slice2")))
+                  .select(3, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.MagicCake, "_slice3")))
+                  .select(4, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.MagicCake, "_slice4")))
+                  .select(5, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.MagicCake, "_slice5")))
+                  .select(6, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.MagicCake, "_slice6")))));
  }
 
- private void registerMagicCandleCake(BlockStateModelGenerator block) {
+ private void registerMagicCandleCake(BlockModelGenerators block) {
   registerMagicCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Magic_WHITE_CANDLE_CAKE);
   registerMagicCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Magic_ORANGE_CANDLE_CAKE);
   registerMagicCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Magic_MAGENTA_CANDLE_CAKE);
@@ -198,37 +204,37 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
   registerMagicCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Magic_CANDLE_CAKE);
  }
 
- private void registerMagicCandle(BlockStateModelGenerator block, Block candle, Block cake) {
+ private void registerMagicCandle(BlockModelGenerators block, Block candle, Block cake) {
 
-  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleMagicCake(candle, false), block.modelCollector));
-  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleMagicCake(candle, true), block.modelCollector));
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
-          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  MultiVariant candleCake = plainVariant(ModelTemplates.CANDLE_CAKE.create(cake, candleMagicCake(candle, false), block.modelOutput));
+  MultiVariant candleCakeLit = plainVariant(ModelTemplates.CANDLE_CAKE.createWithSuffix(cake, "_lit", candleMagicCake(candle, true), block.modelOutput));
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(cake)
+          .with(BlockModelGenerators.createBooleanModelDispatch(BlockStateProperties.LIT, candleCakeLit, candleCake)));
  }
 
- private static TextureMap candleMagicCake(Block block, boolean lit) {
-  return new TextureMap()
-          .put(TextureKey.PARTICLE, TextureMap.getSubId(UsefulFoodCakeBlocks.MagicCake, "_side"))
-          .put(TextureKey.BOTTOM, TextureMap.getSubId(UsefulFoodCakeBlocks.MagicCake, "_bottom"))
-          .put(TextureKey.TOP, TextureMap.getSubId(UsefulFoodCakeBlocks.MagicCake, "_top"))
-          .put(TextureKey.SIDE, TextureMap.getSubId(UsefulFoodCakeBlocks.MagicCake, "_side"))
-          .put(TextureKey.CANDLE, TextureMap.getSubId(block, lit ? "_lit" : ""));
+ private static TextureMapping candleMagicCake(Block block, boolean lit) {
+  return new TextureMapping()
+          .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.MagicCake, "_side"))
+          .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.MagicCake, "_bottom"))
+          .put(TextureSlot.TOP, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.MagicCake, "_top"))
+          .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.MagicCake, "_side"))
+          .put(TextureSlot.CANDLE, TextureMapping.getBlockTexture(block, lit ? "_lit" : ""));
  }
 
- private void registerAppleCake(BlockStateModelGenerator block) {
-  block.registerItemModel(UsefulFoodCakeBlocks.AppleCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodCakeBlocks.AppleCake)
-          .with(BlockStateVariantMap.models(Properties.BITES)
-                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodCakeBlocks.AppleCake)))
-                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.AppleCake, "_slice1")))
-                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.AppleCake, "_slice2")))
-                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.AppleCake, "_slice3")))
-                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.AppleCake, "_slice4")))
-                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.AppleCake, "_slice5")))
-                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.AppleCake, "_slice6")))));
+ private void registerAppleCake(BlockModelGenerators block) {
+  block.registerSimpleFlatItemModel(UsefulFoodCakeBlocks.AppleCake.asItem());
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(UsefulFoodCakeBlocks.AppleCake)
+          .with(PropertyDispatch.initial(BlockStateProperties.BITES)
+                  .select(0, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.AppleCake)))
+                  .select(1, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.AppleCake, "_slice1")))
+                  .select(2, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.AppleCake, "_slice2")))
+                  .select(3, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.AppleCake, "_slice3")))
+                  .select(4, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.AppleCake, "_slice4")))
+                  .select(5, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.AppleCake, "_slice5")))
+                  .select(6, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.AppleCake, "_slice6")))));
  }
 
- private void registerAppleCandleCake(BlockStateModelGenerator block) {
+ private void registerAppleCandleCake(BlockModelGenerators block) {
   registerAppleCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Apple_WHITE_CANDLE_CAKE);
   registerAppleCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Apple_ORANGE_CANDLE_CAKE);
   registerAppleCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Apple_MAGENTA_CANDLE_CAKE);
@@ -248,37 +254,37 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
   registerAppleCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Apple_CANDLE_CAKE);
  }
 
- private void registerAppleCandle(BlockStateModelGenerator block, Block candle, Block cake) {
+ private void registerAppleCandle(BlockModelGenerators block, Block candle, Block cake) {
 
-  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleAppleCake(candle, false), block.modelCollector));
-  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleAppleCake(candle, true), block.modelCollector));
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
-          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  MultiVariant candleCake = plainVariant(ModelTemplates.CANDLE_CAKE.create(cake, candleAppleCake(candle, false), block.modelOutput));
+  MultiVariant candleCakeLit = plainVariant(ModelTemplates.CANDLE_CAKE.createWithSuffix(cake, "_lit", candleAppleCake(candle, true), block.modelOutput));
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(cake)
+          .with(BlockModelGenerators.createBooleanModelDispatch(BlockStateProperties.LIT, candleCakeLit, candleCake)));
  }
 
- private static TextureMap candleAppleCake(Block block, boolean lit) {
-  return new TextureMap()
-          .put(TextureKey.PARTICLE, TextureMap.getSubId(UsefulFoodCakeBlocks.AppleCake, "_side"))
-          .put(TextureKey.BOTTOM, TextureMap.getSubId(UsefulFoodCakeBlocks.AppleCake, "_bottom"))
-          .put(TextureKey.TOP, TextureMap.getSubId(UsefulFoodCakeBlocks.AppleCake, "_top"))
-          .put(TextureKey.SIDE, TextureMap.getSubId(UsefulFoodCakeBlocks.AppleCake, "_side"))
-          .put(TextureKey.CANDLE, TextureMap.getSubId(block, lit ? "_lit" : ""));
+ private static TextureMapping candleAppleCake(Block block, boolean lit) {
+  return new TextureMapping()
+          .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.AppleCake, "_side"))
+          .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.AppleCake, "_bottom"))
+          .put(TextureSlot.TOP, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.AppleCake, "_top"))
+          .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.AppleCake, "_side"))
+          .put(TextureSlot.CANDLE, TextureMapping.getBlockTexture(block, lit ? "_lit" : ""));
  }
 
- private void registerCaramelCake(BlockStateModelGenerator block) {
-  block.registerItemModel(UsefulFoodCakeBlocks.CaramelCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodCakeBlocks.CaramelCake)
-          .with(BlockStateVariantMap.models(Properties.BITES)
-                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodCakeBlocks.CaramelCake)))
-                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.CaramelCake, "_slice1")))
-                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.CaramelCake, "_slice2")))
-                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.CaramelCake, "_slice3")))
-                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.CaramelCake, "_slice4")))
-                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.CaramelCake, "_slice5")))
-                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.CaramelCake, "_slice6")))));
+ private void registerCaramelCake(BlockModelGenerators block) {
+  block.registerSimpleFlatItemModel(UsefulFoodCakeBlocks.CaramelCake.asItem());
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(UsefulFoodCakeBlocks.CaramelCake)
+          .with(PropertyDispatch.initial(BlockStateProperties.BITES)
+                  .select(0, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.CaramelCake)))
+                  .select(1, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.CaramelCake, "_slice1")))
+                  .select(2, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.CaramelCake, "_slice2")))
+                  .select(3, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.CaramelCake, "_slice3")))
+                  .select(4, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.CaramelCake, "_slice4")))
+                  .select(5, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.CaramelCake, "_slice5")))
+                  .select(6, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.CaramelCake, "_slice6")))));
  }
 
- private void registerCaramelCandleCake(BlockStateModelGenerator block) {
+ private void registerCaramelCandleCake(BlockModelGenerators block) {
   registerCaramelCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Caramel_WHITE_CANDLE_CAKE);
   registerCaramelCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Caramel_ORANGE_CANDLE_CAKE);
   registerCaramelCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Caramel_MAGENTA_CANDLE_CAKE);
@@ -298,37 +304,37 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
   registerCaramelCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Caramel_CANDLE_CAKE);
  }
 
- private void registerCaramelCandle(BlockStateModelGenerator block, Block candle, Block cake) {
+ private void registerCaramelCandle(BlockModelGenerators block, Block candle, Block cake) {
 
-  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleCaramelCake(candle, false), block.modelCollector));
-  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleCaramelCake(candle, true), block.modelCollector));
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
-          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  MultiVariant candleCake = plainVariant(ModelTemplates.CANDLE_CAKE.create(cake, candleCaramelCake(candle, false), block.modelOutput));
+  MultiVariant candleCakeLit = plainVariant(ModelTemplates.CANDLE_CAKE.createWithSuffix(cake, "_lit", candleCaramelCake(candle, true), block.modelOutput));
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(cake)
+          .with(BlockModelGenerators.createBooleanModelDispatch(BlockStateProperties.LIT, candleCakeLit, candleCake)));
  }
 
- private static TextureMap candleCaramelCake(Block block, boolean lit) {
-  return new TextureMap()
-          .put(TextureKey.PARTICLE, TextureMap.getSubId(UsefulFoodCakeBlocks.CaramelCake, "_side"))
-          .put(TextureKey.BOTTOM, TextureMap.getSubId(UsefulFoodCakeBlocks.CaramelCake, "_bottom"))
-          .put(TextureKey.TOP, TextureMap.getSubId(UsefulFoodCakeBlocks.CaramelCake, "_top"))
-          .put(TextureKey.SIDE, TextureMap.getSubId(UsefulFoodCakeBlocks.CaramelCake, "_side"))
-          .put(TextureKey.CANDLE, TextureMap.getSubId(block, lit ? "_lit" : ""));
+ private static TextureMapping candleCaramelCake(Block block, boolean lit) {
+  return new TextureMapping()
+          .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.CaramelCake, "_side"))
+          .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.CaramelCake, "_bottom"))
+          .put(TextureSlot.TOP, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.CaramelCake, "_top"))
+          .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.CaramelCake, "_side"))
+          .put(TextureSlot.CANDLE, TextureMapping.getBlockTexture(block, lit ? "_lit" : ""));
  }
 
- private void registerChocolateCake(BlockStateModelGenerator block) {
-  block.registerItemModel(UsefulFoodCakeBlocks.ChocolateCake.asItem());
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(UsefulFoodCakeBlocks.ChocolateCake)
-          .with(BlockStateVariantMap.models(Properties.BITES)
-                  .register(0, createWeightedVariant(ModelIds.getBlockModelId(UsefulFoodCakeBlocks.ChocolateCake)))
-                  .register(1, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.ChocolateCake, "_slice1")))
-                  .register(2, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.ChocolateCake, "_slice2")))
-                  .register(3, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.ChocolateCake, "_slice3")))
-                  .register(4, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.ChocolateCake, "_slice4")))
-                  .register(5, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.ChocolateCake, "_slice5")))
-                  .register(6, createWeightedVariant(ModelIds.getBlockSubModelId(UsefulFoodCakeBlocks.ChocolateCake, "_slice6")))));
+ private void registerChocolateCake(BlockModelGenerators block) {
+  block.registerSimpleFlatItemModel(UsefulFoodCakeBlocks.ChocolateCake.asItem());
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(UsefulFoodCakeBlocks.ChocolateCake)
+          .with(PropertyDispatch.initial(BlockStateProperties.BITES)
+                  .select(0, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.ChocolateCake)))
+                  .select(1, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.ChocolateCake, "_slice1")))
+                  .select(2, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.ChocolateCake, "_slice2")))
+                  .select(3, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.ChocolateCake, "_slice3")))
+                  .select(4, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.ChocolateCake, "_slice4")))
+                  .select(5, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.ChocolateCake, "_slice5")))
+                  .select(6, plainVariant(ModelLocationUtils.getModelLocation(UsefulFoodCakeBlocks.ChocolateCake, "_slice6")))));
  }
 
- private void registerChocolateCandleCake(BlockStateModelGenerator block) {
+ private void registerChocolateCandleCake(BlockModelGenerators block) {
   registerChocolateCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Chocolate_WHITE_CANDLE_CAKE);
   registerChocolateCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Chocolate_ORANGE_CANDLE_CAKE);
   registerChocolateCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Chocolate_MAGENTA_CANDLE_CAKE);
@@ -348,20 +354,20 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
   registerChocolateCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Chocolate_CANDLE_CAKE);
  }
 
- private void registerChocolateCandle(BlockStateModelGenerator block, Block candle, Block cake) {
+ private void registerChocolateCandle(BlockModelGenerators block, Block candle, Block cake) {
 
-  WeightedVariant candleCake = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, candleChocolateCake(candle, false), block.modelCollector));
-  WeightedVariant candleCakeLit = createWeightedVariant(Models.TEMPLATE_CAKE_WITH_CANDLE.upload(cake, "_lit", candleChocolateCake(candle, true), block.modelCollector));
-  block.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(cake)
-          .with(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, candleCakeLit, candleCake)));
+  MultiVariant candleCake = plainVariant(ModelTemplates.CANDLE_CAKE.create(cake, candleChocolateCake(candle, false), block.modelOutput));
+  MultiVariant candleCakeLit = plainVariant(ModelTemplates.CANDLE_CAKE.createWithSuffix(cake, "_lit", candleChocolateCake(candle, true), block.modelOutput));
+  block.blockStateOutput.accept(MultiVariantGenerator.dispatch(cake)
+          .with(BlockModelGenerators.createBooleanModelDispatch(BlockStateProperties.LIT, candleCakeLit, candleCake)));
  }
 
- private static TextureMap candleChocolateCake(Block block, boolean lit) {
-  return new TextureMap()
-          .put(TextureKey.PARTICLE, TextureMap.getSubId(UsefulFoodCakeBlocks.ChocolateCake, "_side"))
-          .put(TextureKey.BOTTOM, TextureMap.getSubId(UsefulFoodCakeBlocks.ChocolateCake, "_bottom"))
-          .put(TextureKey.TOP, TextureMap.getSubId(UsefulFoodCakeBlocks.ChocolateCake, "_top"))
-          .put(TextureKey.SIDE, TextureMap.getSubId(UsefulFoodCakeBlocks.ChocolateCake, "_side"))
-          .put(TextureKey.CANDLE, TextureMap.getSubId(block, lit ? "_lit" : ""));
+ private static TextureMapping candleChocolateCake(Block block, boolean lit) {
+  return new TextureMapping()
+          .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.ChocolateCake, "_side"))
+          .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.ChocolateCake, "_bottom"))
+          .put(TextureSlot.TOP, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.ChocolateCake, "_top"))
+          .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(UsefulFoodCakeBlocks.ChocolateCake, "_side"))
+          .put(TextureSlot.CANDLE, TextureMapping.getBlockTexture(block, lit ? "_lit" : ""));
  }
 }

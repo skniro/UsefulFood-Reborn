@@ -1,57 +1,56 @@
 package com.skniro.usefulfood.block.init;
 
 import com.skniro.usefulfood.block.init.candle.CandleAppleCakeBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CandleBlock;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CandleBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 
 public class AppleCakeBlockState extends SpecialCakeBlockState {
-    public AppleCakeBlockState(Settings settings, int foodlevel, float saturation) {
+    public AppleCakeBlockState(Properties settings, int foodlevel, float saturation) {
         super(settings, foodlevel, saturation);
     }
 
 
     @Override
-    public ActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         Block block;
         Item item = itemStack.getItem();
-        if (itemStack.isIn(ItemTags.CANDLES) && state.get(BITES) == 0 && (block = getBlockFromItem(item)) instanceof CandleBlock) {
+        if (itemStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && (block = byItem(item)) instanceof CandleBlock) {
             if (!player.isCreative()) {
-                itemStack.decrement(1);
+                itemStack.shrink(1);
             }
-            world.playSound(null, pos, SoundEvents.BLOCK_CAKE_ADD_CANDLE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            world.setBlockState(pos, CandleAppleCakeBlock.getCandleCakeFromCandle(block));
-            world.emitGameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
-            player.incrementStat(Stats.USED.getOrCreateStat(item));
-            return ActionResult.SUCCESS;
+            world.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0f, 1.0f);
+            world.setBlockAndUpdate(pos, CandleAppleCakeBlock.getCandleCakeFromCandle(block));
+            world.gameEvent((Entity)player, GameEvent.BLOCK_CHANGE, pos);
+            player.awardStat(Stats.ITEM_USED.get(item));
+            return InteractionResult.SUCCESS;
         } else {
-            return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
+            return InteractionResult.TRY_WITH_EMPTY_HAND;
         }
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient()) {
-            if (tryEat(world, pos, state, player).isAccepted()) {
-                return ActionResult.SUCCESS;
+    public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+        if (world.isClientSide()) {
+            if (tryEat(world, pos, state, player).consumesAction()) {
+                return InteractionResult.SUCCESS;
             }
-            if (player.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
-                return ActionResult.CONSUME;
+            if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
+                return InteractionResult.CONSUME;
             }
         }
         return tryEat(world, pos, state, player);

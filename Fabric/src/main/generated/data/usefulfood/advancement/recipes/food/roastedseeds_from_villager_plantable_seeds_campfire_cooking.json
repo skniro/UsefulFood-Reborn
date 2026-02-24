@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "usefulfood:roastedseeds_from_villager_plantable_seeds_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_villager_plantable_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:villager_plantable_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_villager_plantable_seeds"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "usefulfood:roastedseeds_from_villager_plantable_seeds_campfire_cooking"
+    ]
+  }
+}

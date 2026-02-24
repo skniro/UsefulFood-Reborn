@@ -4,215 +4,220 @@ import com.google.common.collect.Lists;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.FabricTagKey;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.recipe.RecipeExporter;
-import net.minecraft.data.recipe.RecipeGenerator;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.CampfireCookingRecipe;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.SmokingRecipe;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.Util;
-
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
-    public UsefulFoodRecipeGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public UsefulFoodRecipeGenerator(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
 
     @Override
-    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter exporter) {
-        return new RecipeGenerator(wrapperLookup, exporter) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider wrapperLookup, RecipeOutput exporter) {
+        return new RecipeProvider(wrapperLookup, exporter) {
             @Override
-            public void generate() {
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MilkBottle,1).input(Items.GLASS_BOTTLE,1).input(Items.MILK_BUCKET).criterion("has_base_item", conditionsFromItem(Items.MILK_BUCKET)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolateMilkBottle).input(Items.COCOA_BEANS).input(Items.GLASS_BOTTLE).input(UsefulFoodItems.MilkBottle).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Cheese).input(UsefulFoodItems.HotMilkBottle).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.HotMilkBottle)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarCube).input(Items.SUGAR,2).criterion("has_base_item", conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.caramelapple).input(Items.APPLE).input(Items.STICK).input(UsefulFoodItems.caramel).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.caramel)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.PumpkinSoup).input(Items.BOWL).input(Items.PUMPKIN).criterion("has_base_item", conditionsFromItem(Items.BOWL)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Salad).input(Items.POPPY).input(Items.DANDELION).input(Items.WHEAT_SEEDS).input(Items.BOWL).criterion("has_base_item", conditionsFromItem(Items.BOWL)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Marshmallow).input(Items.SUGAR,3).input(Items.BOWL).input(Items.WATER_BUCKET).input(Items.STICK).criterion("has_base_item", conditionsFromItem(Items.BOWL)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.VanillaIceCream).input(Items.SNOWBALL).input(Items.SUGAR).input(Items.BOWL).input(UsefulFoodItems.MilkBottle).criterion("has_base_item", conditionsFromItem(Items.BOWL)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.BreadSlice,5).input(Items.BREAD).criterion("has_base_item", conditionsFromItem(Items.BREAD)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.PorkWich).input(UsefulFoodItems.BreadSlice,2).input(Items.COOKED_PORKCHOP).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Steakwich).input(UsefulFoodItems.BreadSlice,2).input(Items.COOKED_BEEF).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chickenwich).input(UsefulFoodItems.BreadSlice,2).input(Items.COOKED_CHICKEN).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Eggwich).input(UsefulFoodItems.BreadSlice,2).input(UsefulFoodItems.FriedEgg).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Biscuit).input(Items.WHEAT,2).criterion("has_base_item",conditionsFromItem(Items.WHEAT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MuttonSandwich).input(Items.COOKED_MUTTON).input(UsefulFoodItems.BreadSlice,2).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.SquidSandwich).input(UsefulFoodItems.SquidTentacleCooked).input(UsefulFoodItems.BreadSlice,2).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MagicAppleJuice).input(Items.GOLDEN_APPLE,2).input(Items.ENCHANTED_GOLDEN_APPLE).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.GOLDEN_APPLE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJuice).input(Items.MELON_SLICE,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.MELON_SLICE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJuice).input(Items.APPLE,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.APPLE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CarrotJuice).input(Items.CARROT,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.CARROT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CarrotSoup).input(Items.CARROT,2).input(Items.BOWL).criterion("has_base_item", conditionsFromItem(Items.BOWL)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.PumpkinBread).input(Items.PUMPKIN).input(Items.WHEAT).criterion("has_base_item", conditionsFromItem(Items.WHEAT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarBiscuit).input(Items.SUGAR).input(UsefulFoodItems.Biscuit).criterion("has_base_item", conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJamBiscuit).input(UsefulFoodItems.Biscuit).input(UsefulFoodItems.AppleJam).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocoBiscuit,2).input(UsefulFoodItems.Biscuit,2).input(UsefulFoodItems.hotchocolatebottle).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CarrotPie).input(Items.EGG).input(Items.CARROT).input(Items.SUGAR).input(Items.WHEAT).criterion("has_base_item", conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.chocolateicecream).input(UsefulFoodItems.VanillaIceCream).input(UsefulFoodItems.ChocolateCandy).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.ChocolateCandy)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MagicIceCream).input(Items.GLISTERING_MELON_SLICE,2).input(UsefulFoodItems.VanillaIceCream).input(Items.GOLDEN_APPLE).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.VanillaIceCream)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.SquidSushi).input(UsefulFoodItems.SquidTentacleRaw).input(Items.LILY_PAD).criterion("has_base_item",conditionsFromItem(Items.LILY_PAD)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CactusJuice).input(Items.CACTUS,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.CACTUS)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Spaghetti).input(Items.BOWL).input(Items.WATER_BUCKET).input(Items.EGG).input(Items.WHEAT).criterion("has_base_item", conditionsFromItem(Items.WHEAT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleIceCream).input(UsefulFoodItems.VanillaIceCream).input(Items.APPLE).criterion("has_base_item", conditionsFromItem(Items.APPLE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonIceCream).input(UsefulFoodItems.VanillaIceCream).input(Items.MELON_SLICE,3).criterion("has_base_item", conditionsFromItem(Items.MELON_SLICE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolateApple).input(UsefulFoodItems.hotchocolatebottle).input(Items.APPLE).input(Items.STICK).criterion("has_base_item", conditionsFromItem(Items.APPLE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelBiscuit).input(UsefulFoodItems.caramel).input(UsefulFoodItems.Biscuit).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CheeseSandwich).input(UsefulFoodItems.BreadSlice,2).input(UsefulFoodItems.Cheese).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Cheese)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelIceCream).input(UsefulFoodItems.VanillaIceCream).input(UsefulFoodItems.caramel).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.caramel)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Cereal).input(Items.WHEAT).input(Items.BOWL).input(Items.SUGAR).input(UsefulFoodItems.MilkBottle).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolateCereal).input(Items.WHEAT).input(Items.BOWL).input(Items.SUGAR).input(UsefulFoodItems.MilkBottle).input(Items.COCOA_BEANS).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Oatmeal).input(Items.WHEAT_SEEDS,6).input(Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.BOWL)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Jelly).input(Items.SLIME_BALL).input(Items.SUGAR).input(Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.BOWL)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJelly).input(UsefulFoodItems.Jelly).input(Items.APPLE).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJelly).input(UsefulFoodItems.Jelly).input(Items.MELON_SLICE).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Donut).input(UsefulFoodItems.MilkBottle).input(Items.WHEAT,2).input(Items.COCOA_BEANS).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Oreo).input(UsefulFoodItems.ChocoBiscuit,2).input(Items.SUGAR,2).input(UsefulFoodItems.MilkBottle).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.MilkBottle)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelToast).input(UsefulFoodItems.BreadSlice).input(UsefulFoodItems.caramel).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.caramel)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarToast).input(UsefulFoodItems.BreadSlice).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarPancake).input(UsefulFoodItems.PanCake).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJamPanCake).input(UsefulFoodItems.PanCake).input(UsefulFoodItems.AppleJam).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJamToast).input(UsefulFoodItems.BreadSlice).input(UsefulFoodItems.AppleJam).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.AppleJam)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJam).input(Items.BOWL).input(Items.SUGAR).input(Items.APPLE).criterion("has_base_item",conditionsFromItem(Items.APPLE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelPanCake).input(UsefulFoodItems.caramel).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolatePanCake).input(UsefulFoodItems.ChocolateCandy).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJamPanCake).input(UsefulFoodItems.MelonJam).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJamToast).input(UsefulFoodItems.MelonJam).input(UsefulFoodItems.BreadSlice).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJamBiscuit).input(UsefulFoodItems.MelonJam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJam).input(Items.MELON_SLICE).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
+            public void buildRecipes() {
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MilkBottle,1).requires(Items.GLASS_BOTTLE,1).requires(Items.MILK_BUCKET).unlockedBy("has_base_item", has(Items.MILK_BUCKET)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolateMilkBottle).requires(Items.COCOA_BEANS).requires(Items.GLASS_BOTTLE).requires(UsefulFoodItems.MilkBottle).unlockedBy("has_base_item", has(UsefulFoodItems.MilkBottle)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Cheese).requires(UsefulFoodItems.HotMilkBottle).unlockedBy("has_base_item", has(UsefulFoodItems.HotMilkBottle)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarCube).requires(Items.SUGAR,2).unlockedBy("has_base_item", has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.caramelapple).requires(Items.APPLE).requires(Items.STICK).requires(UsefulFoodItems.caramel).unlockedBy("has_base_item", has(UsefulFoodItems.caramel)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.PumpkinSoup).requires(Items.BOWL).requires(Items.PUMPKIN).unlockedBy("has_base_item", has(Items.BOWL)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Salad).requires(Items.POPPY).requires(Items.DANDELION).requires(Items.WHEAT_SEEDS).requires(Items.BOWL).unlockedBy("has_base_item", has(Items.BOWL)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Marshmallow).requires(Items.SUGAR,3).requires(Items.BOWL).requires(Items.WATER_BUCKET).requires(Items.STICK).unlockedBy("has_base_item", has(Items.BOWL)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.VanillaIceCream).requires(Items.SNOWBALL).requires(Items.SUGAR).requires(Items.BOWL).requires(UsefulFoodItems.MilkBottle).unlockedBy("has_base_item", has(Items.BOWL)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.BreadSlice,5).requires(Items.BREAD).unlockedBy("has_base_item", has(Items.BREAD)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.PorkWich).requires(UsefulFoodItems.BreadSlice,2).requires(Items.COOKED_PORKCHOP).unlockedBy("has_base_item", has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Steakwich).requires(UsefulFoodItems.BreadSlice,2).requires(Items.COOKED_BEEF).unlockedBy("has_base_item", has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chickenwich).requires(UsefulFoodItems.BreadSlice,2).requires(Items.COOKED_CHICKEN).unlockedBy("has_base_item", has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Eggwich).requires(UsefulFoodItems.BreadSlice,2).requires(UsefulFoodItems.FriedEgg).unlockedBy("has_base_item", has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Biscuit).requires(Items.WHEAT,2).unlockedBy("has_base_item",has(Items.WHEAT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MuttonSandwich).requires(Items.COOKED_MUTTON).requires(UsefulFoodItems.BreadSlice,2).unlockedBy("has_base_item", has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.SquidSandwich).requires(UsefulFoodItems.SquidTentacleCooked).requires(UsefulFoodItems.BreadSlice,2).unlockedBy("has_base_item", has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MagicAppleJuice).requires(Items.GOLDEN_APPLE,2).requires(Items.ENCHANTED_GOLDEN_APPLE).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.GOLDEN_APPLE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJuice).requires(Items.MELON_SLICE,3).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.MELON_SLICE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJuice).requires(Items.APPLE,3).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.APPLE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CarrotJuice).requires(Items.CARROT,3).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.CARROT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CarrotSoup).requires(Items.CARROT,2).requires(Items.BOWL).unlockedBy("has_base_item", has(Items.BOWL)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.PumpkinBread).requires(Items.PUMPKIN).requires(Items.WHEAT).unlockedBy("has_base_item", has(Items.WHEAT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarBiscuit).requires(Items.SUGAR).requires(UsefulFoodItems.Biscuit).unlockedBy("has_base_item", has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJamBiscuit).requires(UsefulFoodItems.Biscuit).requires(UsefulFoodItems.AppleJam).unlockedBy("has_base_item", has(UsefulFoodItems.Biscuit)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocoBiscuit,2).requires(UsefulFoodItems.Biscuit,2).requires(UsefulFoodItems.hotchocolatebottle).unlockedBy("has_base_item", has(UsefulFoodItems.Biscuit)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CarrotPie).requires(Items.EGG).requires(Items.CARROT).requires(Items.SUGAR).requires(Items.WHEAT).unlockedBy("has_base_item", has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.chocolateicecream).requires(UsefulFoodItems.VanillaIceCream).requires(UsefulFoodItems.ChocolateCandy).unlockedBy("has_base_item", has(UsefulFoodItems.ChocolateCandy)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MagicIceCream).requires(Items.GLISTERING_MELON_SLICE,2).requires(UsefulFoodItems.VanillaIceCream).requires(Items.GOLDEN_APPLE).unlockedBy("has_base_item", has(UsefulFoodItems.VanillaIceCream)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.SquidSushi).requires(UsefulFoodItems.SquidTentacleRaw).requires(Items.LILY_PAD).unlockedBy("has_base_item",has(Items.LILY_PAD)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CactusJuice).requires(Items.CACTUS,3).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.CACTUS)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Spaghetti).requires(Items.BOWL).requires(Items.WATER_BUCKET).requires(Items.EGG).requires(Items.WHEAT).unlockedBy("has_base_item", has(Items.WHEAT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleIceCream).requires(UsefulFoodItems.VanillaIceCream).requires(Items.APPLE).unlockedBy("has_base_item", has(Items.APPLE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonIceCream).requires(UsefulFoodItems.VanillaIceCream).requires(Items.MELON_SLICE,3).unlockedBy("has_base_item", has(Items.MELON_SLICE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolateApple).requires(UsefulFoodItems.hotchocolatebottle).requires(Items.APPLE).requires(Items.STICK).unlockedBy("has_base_item", has(Items.APPLE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelBiscuit).requires(UsefulFoodItems.caramel).requires(UsefulFoodItems.Biscuit).unlockedBy("has_base_item", has(UsefulFoodItems.Biscuit)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CheeseSandwich).requires(UsefulFoodItems.BreadSlice,2).requires(UsefulFoodItems.Cheese).unlockedBy("has_base_item",has(UsefulFoodItems.Cheese)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelIceCream).requires(UsefulFoodItems.VanillaIceCream).requires(UsefulFoodItems.caramel).unlockedBy("has_base_item",has(UsefulFoodItems.caramel)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Cereal).requires(Items.WHEAT).requires(Items.BOWL).requires(Items.SUGAR).requires(UsefulFoodItems.MilkBottle).unlockedBy("has_base_item",has(UsefulFoodItems.MilkBottle)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolateCereal).requires(Items.WHEAT).requires(Items.BOWL).requires(Items.SUGAR).requires(UsefulFoodItems.MilkBottle).requires(Items.COCOA_BEANS).unlockedBy("has_base_item",has(UsefulFoodItems.MilkBottle)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Oatmeal).requires(Items.WHEAT_SEEDS,6).requires(Items.BOWL).unlockedBy("has_base_item",has(Items.BOWL)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Jelly).requires(Items.SLIME_BALL).requires(Items.SUGAR).requires(Items.BOWL).unlockedBy("has_base_item",has(Items.BOWL)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJelly).requires(UsefulFoodItems.Jelly).requires(Items.APPLE).unlockedBy("has_base_item",has(UsefulFoodItems.Jelly)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJelly).requires(UsefulFoodItems.Jelly).requires(Items.MELON_SLICE).unlockedBy("has_base_item",has(UsefulFoodItems.Jelly)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Donut).requires(UsefulFoodItems.MilkBottle).requires(Items.WHEAT,2).requires(Items.COCOA_BEANS).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Oreo).requires(UsefulFoodItems.ChocoBiscuit,2).requires(Items.SUGAR,2).requires(UsefulFoodItems.MilkBottle).unlockedBy("has_base_item",has(UsefulFoodItems.MilkBottle)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelToast).requires(UsefulFoodItems.BreadSlice).requires(UsefulFoodItems.caramel).unlockedBy("has_base_item",has(UsefulFoodItems.caramel)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarToast).requires(UsefulFoodItems.BreadSlice).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.SugarPancake).requires(UsefulFoodItems.PanCake).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJamPanCake).requires(UsefulFoodItems.PanCake).requires(UsefulFoodItems.AppleJam).unlockedBy("has_base_item",has(UsefulFoodItems.PanCake)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJamToast).requires(UsefulFoodItems.BreadSlice).requires(UsefulFoodItems.AppleJam).unlockedBy("has_base_item",has(UsefulFoodItems.AppleJam)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.AppleJam).requires(Items.BOWL).requires(Items.SUGAR).requires(Items.APPLE).unlockedBy("has_base_item",has(Items.APPLE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.CaramelPanCake).requires(UsefulFoodItems.caramel).requires(UsefulFoodItems.PanCake).unlockedBy("has_base_item",has(UsefulFoodItems.PanCake)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.ChocolatePanCake).requires(UsefulFoodItems.ChocolateCandy).requires(UsefulFoodItems.PanCake).unlockedBy("has_base_item",has(UsefulFoodItems.PanCake)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJamPanCake).requires(UsefulFoodItems.MelonJam).requires(UsefulFoodItems.PanCake).unlockedBy("has_base_item",has(UsefulFoodItems.PanCake)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJamToast).requires(UsefulFoodItems.MelonJam).requires(UsefulFoodItems.BreadSlice).unlockedBy("has_base_item",has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJamBiscuit).requires(UsefulFoodItems.MelonJam).requires(UsefulFoodItems.Biscuit).unlockedBy("has_base_item",has(UsefulFoodItems.Biscuit)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.MelonJam).requires(Items.MELON_SLICE).requires(Items.BOWL).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
 
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Jelly).input(UsefulFoodItems.Jelly).input(Items.CHORUS_FRUIT).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Jelly).input(UsefulFoodItems.Jelly).input(Items.GLOW_BERRIES).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Jelly).input(UsefulFoodItems.Jelly).input(Items.SWEET_BERRIES).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Jelly)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Ice_Cream).input(UsefulFoodItems.VanillaIceCream).input(Items.CHORUS_FRUIT).criterion("has_base_item", conditionsFromItem(Items.CHORUS_FRUIT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Ice_Cream).input(UsefulFoodItems.VanillaIceCream).input(Items.GLOW_BERRIES).criterion("has_base_item", conditionsFromItem(Items.GLOW_BERRIES)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Ice_Cream).input(UsefulFoodItems.VanillaIceCream).input(Items.SWEET_BERRIES).criterion("has_base_item", conditionsFromItem(Items.SWEET_BERRIES)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Juice).input(Items.CHORUS_FRUIT,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.CHORUS_FRUIT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Juice).input(Items.GLOW_BERRIES,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.GLOW_BERRIES)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Juice).input(Items.SWEET_BERRIES,3).input(Items.GLASS_BOTTLE).criterion("has_base_item", conditionsFromItem(Items.SWEET_BERRIES)).offerTo(exporter);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Jelly).requires(UsefulFoodItems.Jelly).requires(Items.CHORUS_FRUIT).unlockedBy("has_base_item",has(UsefulFoodItems.Jelly)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Jelly).requires(UsefulFoodItems.Jelly).requires(Items.GLOW_BERRIES).unlockedBy("has_base_item",has(UsefulFoodItems.Jelly)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Jelly).requires(UsefulFoodItems.Jelly).requires(Items.SWEET_BERRIES).unlockedBy("has_base_item",has(UsefulFoodItems.Jelly)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Ice_Cream).requires(UsefulFoodItems.VanillaIceCream).requires(Items.CHORUS_FRUIT).unlockedBy("has_base_item", has(Items.CHORUS_FRUIT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Ice_Cream).requires(UsefulFoodItems.VanillaIceCream).requires(Items.GLOW_BERRIES).unlockedBy("has_base_item", has(Items.GLOW_BERRIES)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Ice_Cream).requires(UsefulFoodItems.VanillaIceCream).requires(Items.SWEET_BERRIES).unlockedBy("has_base_item", has(Items.SWEET_BERRIES)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Juice).requires(Items.CHORUS_FRUIT,3).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.CHORUS_FRUIT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Juice).requires(Items.GLOW_BERRIES,3).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.GLOW_BERRIES)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Juice).requires(Items.SWEET_BERRIES,3).requires(Items.GLASS_BOTTLE).unlockedBy("has_base_item", has(Items.SWEET_BERRIES)).save(output);
 
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamPanCake).input(UsefulFoodItems.Glow_Berries_Jam).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamToast).input(UsefulFoodItems.Glow_Berries_Jam).input(UsefulFoodItems.BreadSlice).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamBiscuit).input(UsefulFoodItems.Glow_Berries_Jam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Jam).input(Items.GLOW_BERRIES).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamPanCake).input(UsefulFoodItems.Sweet_Berries_Jam).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamToast).input(UsefulFoodItems.Sweet_Berries_Jam).input(UsefulFoodItems.BreadSlice).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamBiscuit).input(UsefulFoodItems.Sweet_Berries_Jam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Jam).input(Items.SWEET_BERRIES).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamPanCake).input(UsefulFoodItems.Chorus_Jam).input(UsefulFoodItems.PanCake).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.PanCake)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamToast).input(UsefulFoodItems.Chorus_Jam).input(UsefulFoodItems.BreadSlice).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.BreadSlice)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamBiscuit).input(UsefulFoodItems.Chorus_Jam).input(UsefulFoodItems.Biscuit).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Biscuit)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Jam).input(Items.CHORUS_FRUIT).input(Items.BOWL).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamPanCake).requires(UsefulFoodItems.Glow_Berries_Jam).requires(UsefulFoodItems.PanCake).unlockedBy("has_base_item",has(UsefulFoodItems.PanCake)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamToast).requires(UsefulFoodItems.Glow_Berries_Jam).requires(UsefulFoodItems.BreadSlice).unlockedBy("has_base_item",has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_JamBiscuit).requires(UsefulFoodItems.Glow_Berries_Jam).requires(UsefulFoodItems.Biscuit).unlockedBy("has_base_item",has(UsefulFoodItems.Biscuit)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Glow_Berries_Jam).requires(Items.GLOW_BERRIES).requires(Items.BOWL).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamPanCake).requires(UsefulFoodItems.Sweet_Berries_Jam).requires(UsefulFoodItems.PanCake).unlockedBy("has_base_item",has(UsefulFoodItems.PanCake)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamToast).requires(UsefulFoodItems.Sweet_Berries_Jam).requires(UsefulFoodItems.BreadSlice).unlockedBy("has_base_item",has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_JamBiscuit).requires(UsefulFoodItems.Sweet_Berries_Jam).requires(UsefulFoodItems.Biscuit).unlockedBy("has_base_item",has(UsefulFoodItems.Biscuit)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Sweet_Berries_Jam).requires(Items.SWEET_BERRIES).requires(Items.BOWL).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamPanCake).requires(UsefulFoodItems.Chorus_Jam).requires(UsefulFoodItems.PanCake).unlockedBy("has_base_item",has(UsefulFoodItems.PanCake)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamToast).requires(UsefulFoodItems.Chorus_Jam).requires(UsefulFoodItems.BreadSlice).unlockedBy("has_base_item",has(UsefulFoodItems.BreadSlice)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_JamBiscuit).requires(UsefulFoodItems.Chorus_Jam).requires(UsefulFoodItems.Biscuit).unlockedBy("has_base_item",has(UsefulFoodItems.Biscuit)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Chorus_Jam).requires(Items.CHORUS_FRUIT).requires(Items.BOWL).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
 
-                createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Chorus_JAM_JAR).input(UsefulFoodItems.Chorus_Jam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Chorus_Jam)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR).input(UsefulFoodItems.Sweet_Berries_Jam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Sweet_Berries_Jam)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Glow_Berries_JAM_JAR).input(UsefulFoodItems.Glow_Berries_Jam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Glow_Berries_Jam)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Apple_JAM_JAR).input(UsefulFoodItems.AppleJam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Chorus_Jam)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Melon_JAM_JAR).input(UsefulFoodItems.MelonJam,3).input(UsefulFoodJamBlocks.GLASS_JAR).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.Sweet_Berries_Jam)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.GLASS_JAR).input(Blocks.GLASS).input(ItemTags.WOODEN_SLABS).criterion("has_base_item",conditionsFromItem(Blocks.GLASS)).offerTo(exporter);
+                shapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Chorus_JAM_JAR).requires(UsefulFoodItems.Chorus_Jam,3).requires(UsefulFoodJamBlocks.GLASS_JAR).unlockedBy("has_base_item",has(UsefulFoodItems.Chorus_Jam)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR).requires(UsefulFoodItems.Sweet_Berries_Jam,3).requires(UsefulFoodJamBlocks.GLASS_JAR).unlockedBy("has_base_item",has(UsefulFoodItems.Sweet_Berries_Jam)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Glow_Berries_JAM_JAR).requires(UsefulFoodItems.Glow_Berries_Jam,3).requires(UsefulFoodJamBlocks.GLASS_JAR).unlockedBy("has_base_item",has(UsefulFoodItems.Glow_Berries_Jam)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Apple_JAM_JAR).requires(UsefulFoodItems.AppleJam,3).requires(UsefulFoodJamBlocks.GLASS_JAR).unlockedBy("has_base_item",has(UsefulFoodItems.Chorus_Jam)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.Melon_JAM_JAR).requires(UsefulFoodItems.MelonJam,3).requires(UsefulFoodJamBlocks.GLASS_JAR).unlockedBy("has_base_item",has(UsefulFoodItems.Sweet_Berries_Jam)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodJamBlocks.GLASS_JAR).requires(Blocks.GLASS).requires(ItemTags.WOODEN_SLABS).unlockedBy("has_base_item",has(Blocks.GLASS)).save(output);
 
                 //Reborn 1.5.0
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Cod_Roe_Sushi).input(Items.COD).input(Items.LILY_PAD).criterion("has_base_item",conditionsFromItem(Items.FISHING_ROD)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Baked_Sushi).input(ConventionalItemTags.COOKED_FISH_FOODS).input(Items.DRIED_KELP).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Salmon_Sushi).input(Items.SALMON).input(Items.DRIED_KELP).criterion("has_base_item",conditionsFromItem(Items.SALMON)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Fishwich).input(UsefulFoodItems.BreadSlice,2).input(ConventionalItemTags.COOKED_FISH_FOODS).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.FishSoup).input(Items.CARROT).input(Items.BOWL).input(Items.POTATO).input(ConventionalItemTags.COOKED_FISH_FOODS).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.ChocolateToast).input(UsefulFoodItems.BreadSlice).input(UsefulFoodItems.ChocolateCandy).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.ChocolateCandy)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.FishnChips).input(UsefulFoodItems.FrenchFries).input(ConventionalItemTags.COOKED_FISH_FOODS).criterion("has_base_item",conditionsFromTag(ConventionalItemTags.COOKED_FISH_FOODS)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.ChocolateCandy).input(Items.COCOA_BEANS).input(ConventionalItemTags.MILK_DRINKS).input(Items.SUGAR).criterion("has_base_item",conditionsFromItem(Items.COCOA_BEANS)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.PanCakeDough).input(Items.SUGAR).input(Items.WHEAT).input(Items.EGG).input(ConventionalItemTags.MILK_DRINKS).criterion("has_base_item",conditionsFromItem(Items.SUGAR)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD, UsefulFoodItems.Tea).input(Items.GLASS_BOTTLE).input(UsefulFoodItemTagGeneration.ModItemTags.C_Lily_Pads).criterion("has_base_item",conditionsFromItem(Items.GLASS_BOTTLE)).offerTo(exporter);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.Cod_Roe_Sushi).requires(Items.COD).requires(Items.LILY_PAD).unlockedBy("has_base_item",has(Items.FISHING_ROD)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.Baked_Sushi).requires(ConventionalItemTags.COOKED_FISH_FOODS).requires(Items.DRIED_KELP).unlockedBy("has_base_item",has(ConventionalItemTags.COOKED_FISH_FOODS)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.Salmon_Sushi).requires(Items.SALMON).requires(Items.DRIED_KELP).unlockedBy("has_base_item",has(Items.SALMON)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.Fishwich).requires(UsefulFoodItems.BreadSlice,2).requires(ConventionalItemTags.COOKED_FISH_FOODS).unlockedBy("has_base_item",has(ConventionalItemTags.COOKED_FISH_FOODS)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.FishSoup).requires(Items.CARROT).requires(Items.BOWL).requires(Items.POTATO).requires(ConventionalItemTags.COOKED_FISH_FOODS).unlockedBy("has_base_item",has(ConventionalItemTags.COOKED_FISH_FOODS)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.ChocolateToast).requires(UsefulFoodItems.BreadSlice).requires(UsefulFoodItems.ChocolateCandy).unlockedBy("has_base_item",has(UsefulFoodItems.ChocolateCandy)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.FishnChips).requires(UsefulFoodItems.FrenchFries).requires(ConventionalItemTags.COOKED_FISH_FOODS).unlockedBy("has_base_item",has(ConventionalItemTags.COOKED_FISH_FOODS)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.ChocolateCandy).requires(Items.COCOA_BEANS).requires(ConventionalItemTags.MILK_DRINKS).requires(Items.SUGAR).unlockedBy("has_base_item",has(Items.COCOA_BEANS)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.PanCakeDough).requires(Items.SUGAR).requires(Items.WHEAT).requires(Items.EGG).requires(ConventionalItemTags.MILK_DRINKS).unlockedBy("has_base_item",has(Items.SUGAR)).save(output);
+                shapeless(RecipeCategory.FOOD, UsefulFoodItems.Tea).requires(Items.GLASS_BOTTLE).requires(UsefulFoodItemTagGeneration.ModItemTags.C_Lily_Pads).unlockedBy("has_base_item",has(Items.GLASS_BOTTLE)).save(output);
 
-                createShaped(RecipeCategory.FOOD, UsefulFoodItems.Trailmix).pattern("#WP").pattern("WMW").pattern(" B ").input('#', Items.BEETROOT_SEEDS).input('W', Items.WHEAT_SEEDS).input('P', Items.PUMPKIN_SEEDS).input('M', Items.MELON_SEEDS).input('B', Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.BEETROOT_SEEDS)).offerTo(exporter);
-                createShaped(RecipeCategory.FOOD, UsefulFoodItems.FruitSalad).pattern("#MS").pattern(" B ").input('#', Items.APPLE).input('M', Items.MELON_SLICE).input('S', Items.SWEET_BERRIES).input('B', Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.MELON_SLICE)).offerTo(exporter);
-                createShaped(RecipeCategory.FOOD, UsefulFoodItems.MagicFruitSalad).pattern("#GK").pattern(" B ").input('#', Items.GOLDEN_APPLE).input('G', Items.GLISTERING_MELON_SLICE).input('K', Items.GLOW_BERRIES).input('B', Items.BOWL).criterion("has_base_item",conditionsFromItem(Items.GLISTERING_MELON_SLICE)).offerTo(exporter);
-                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.MagicCake).pattern("MMM").pattern("GEG").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('G', Items.GOLDEN_APPLE).input('E', Items.ENCHANTED_GOLDEN_APPLE).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(Items.GOLDEN_APPLE)).offerTo(exporter);
-                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.AppleCake).pattern("MMM").pattern("AAA").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('A', Items.APPLE).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(Items.APPLE)).offerTo(exporter);
-                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.CaramelCake).pattern("MMM").pattern("CCC").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('C', UsefulFoodItems.caramel).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.caramel)).offerTo(exporter);
-                createShaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.ChocolateCake).pattern("MMM").pattern("CCC").pattern("WWW").input('M', ConventionalItemTags.MILK_DRINKS).input('C', Items.COCOA_BEANS).input('W', Items.WHEAT).criterion("has_base_item",conditionsFromItem(Items.COCOA_BEANS)).offerTo(exporter);
+                shaped(RecipeCategory.FOOD, UsefulFoodItems.Trailmix).pattern("#WP").pattern("WMW").pattern(" B ").define('#', Items.BEETROOT_SEEDS).define('W', Items.WHEAT_SEEDS).define('P', Items.PUMPKIN_SEEDS).define('M', Items.MELON_SEEDS).define('B', Items.BOWL).unlockedBy("has_base_item",has(Items.BEETROOT_SEEDS)).save(output);
+                shaped(RecipeCategory.FOOD, UsefulFoodItems.FruitSalad).pattern("#MS").pattern(" B ").define('#', Items.APPLE).define('M', Items.MELON_SLICE).define('S', Items.SWEET_BERRIES).define('B', Items.BOWL).unlockedBy("has_base_item",has(Items.MELON_SLICE)).save(output);
+                shaped(RecipeCategory.FOOD, UsefulFoodItems.MagicFruitSalad).pattern("#GK").pattern(" B ").define('#', Items.GOLDEN_APPLE).define('G', Items.GLISTERING_MELON_SLICE).define('K', Items.GLOW_BERRIES).define('B', Items.BOWL).unlockedBy("has_base_item",has(Items.GLISTERING_MELON_SLICE)).save(output);
+                shaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.MagicCake).pattern("MMM").pattern("GEG").pattern("WWW").define('M', ConventionalItemTags.MILK_DRINKS).define('G', Items.GOLDEN_APPLE).define('E', Items.ENCHANTED_GOLDEN_APPLE).define('W', Items.WHEAT).unlockedBy("has_base_item",has(Items.GOLDEN_APPLE)).save(output);
+                shaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.AppleCake).pattern("MMM").pattern("AAA").pattern("WWW").define('M', ConventionalItemTags.MILK_DRINKS).define('A', Items.APPLE).define('W', Items.WHEAT).unlockedBy("has_base_item",has(Items.APPLE)).save(output);
+                shaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.CaramelCake).pattern("MMM").pattern("CCC").pattern("WWW").define('M', ConventionalItemTags.MILK_DRINKS).define('C', UsefulFoodItems.caramel).define('W', Items.WHEAT).unlockedBy("has_base_item",has(UsefulFoodItems.caramel)).save(output);
+                shaped(RecipeCategory.FOOD, UsefulFoodCakeBlocks.ChocolateCake).pattern("MMM").pattern("CCC").pattern("WWW").define('M', ConventionalItemTags.MILK_DRINKS).define('C', Items.COCOA_BEANS).define('W', Items.WHEAT).unlockedBy("has_base_item",has(Items.COCOA_BEANS)).save(output);
 
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle,8).input(Items.WHEAT, 2).input(Items.SUGAR).input(Items.EGG).input(ConventionalItemTags.MILK_DRINKS).criterion("has_base_item", conditionsFromItem(Items.WHEAT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Vanilla_IceCream,2).input(Items.SNOWBALL).input(Items.SUGAR).input(UsefulFoodItems.Waffle).input(ConventionalItemTags.MILK_DRINKS).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.Waffle)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Chorus_Ice_Cream, 2).input(UsefulFoodItems.VanillaIceCream).input(Items.CHORUS_FRUIT).input(UsefulFoodItems.Waffle).criterion("has_base_item", conditionsFromItem(Items.CHORUS_FRUIT)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream, 2).input(UsefulFoodItems.VanillaIceCream).input(Items.GLOW_BERRIES).input(UsefulFoodItems.Waffle).criterion("has_base_item", conditionsFromItem(Items.GLOW_BERRIES)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream, 2).input(UsefulFoodItems.VanillaIceCream).input(Items.SWEET_BERRIES).input(UsefulFoodItems.Waffle).criterion("has_base_item", conditionsFromItem(Items.SWEET_BERRIES)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_chocolate_icecream, 2).input(UsefulFoodItems.VanillaIceCream).input(UsefulFoodItems.ChocolateCandy).input(UsefulFoodItems.Waffle).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.ChocolateCandy)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Magic_IceCream, 2).input(Items.GLISTERING_MELON_SLICE,2).input(UsefulFoodItems.VanillaIceCream).input(Items.GOLDEN_APPLE).input(UsefulFoodItems.Waffle).criterion("has_base_item", conditionsFromItem(UsefulFoodItems.VanillaIceCream)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Apple_IceCream, 2).input(UsefulFoodItems.VanillaIceCream).input(Items.APPLE).input(UsefulFoodItems.Waffle).criterion("has_base_item", conditionsFromItem(Items.APPLE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Melon_IceCream, 2).input(UsefulFoodItems.VanillaIceCream).input(Items.MELON_SLICE,3).input(UsefulFoodItems.Waffle).criterion("has_base_item", conditionsFromItem(Items.MELON_SLICE)).offerTo(exporter);
-                createShapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Caramel_IceCream, 2).input(UsefulFoodItems.VanillaIceCream).input(UsefulFoodItems.caramel).input(UsefulFoodItems.Waffle).criterion("has_base_item",conditionsFromItem(UsefulFoodItems.caramel)).offerTo(exporter);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle,8).requires(Items.WHEAT, 2).requires(Items.SUGAR).requires(Items.EGG).requires(ConventionalItemTags.MILK_DRINKS).unlockedBy("has_base_item", has(Items.WHEAT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Vanilla_IceCream,2).requires(Items.SNOWBALL).requires(Items.SUGAR).requires(UsefulFoodItems.Waffle).requires(ConventionalItemTags.MILK_DRINKS).unlockedBy("has_base_item", has(UsefulFoodItems.Waffle)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Chorus_Ice_Cream, 2).requires(UsefulFoodItems.VanillaIceCream).requires(Items.CHORUS_FRUIT).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item", has(Items.CHORUS_FRUIT)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream, 2).requires(UsefulFoodItems.VanillaIceCream).requires(Items.GLOW_BERRIES).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item", has(Items.GLOW_BERRIES)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream, 2).requires(UsefulFoodItems.VanillaIceCream).requires(Items.SWEET_BERRIES).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item", has(Items.SWEET_BERRIES)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_chocolate_icecream, 2).requires(UsefulFoodItems.VanillaIceCream).requires(UsefulFoodItems.ChocolateCandy).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item", has(UsefulFoodItems.ChocolateCandy)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Magic_IceCream, 2).requires(Items.GLISTERING_MELON_SLICE,2).requires(UsefulFoodItems.VanillaIceCream).requires(Items.GOLDEN_APPLE).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item", has(UsefulFoodItems.VanillaIceCream)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Apple_IceCream, 2).requires(UsefulFoodItems.VanillaIceCream).requires(Items.APPLE).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item", has(Items.APPLE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Melon_IceCream, 2).requires(UsefulFoodItems.VanillaIceCream).requires(Items.MELON_SLICE,3).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item", has(Items.MELON_SLICE)).save(output);
+                shapeless(RecipeCategory.FOOD,UsefulFoodItems.Waffle_Caramel_IceCream, 2).requires(UsefulFoodItems.VanillaIceCream).requires(UsefulFoodItems.caramel).requires(UsefulFoodItems.Waffle).unlockedBy("has_base_item",has(UsefulFoodItems.caramel)).save(output);
 
                 //Smelting
-                offerSmelting(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300, "caramel");
-                offerSmelting(SEED, RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 300, "food");
-                offerSmelting(List.of(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 200, "friedegg");
-                offerSmelting(List.of(Items.BLUE_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_blueegg");
-                offerSmelting(List.of(Items.BROWN_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_brownegg");
-                offerSmelting(List.of(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600, "cookedmarshmallow");
-                offerSmelting(List.of(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 200, "cookedsquidtentacle");
-                offerSmelting(List.of(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 200, "hotchocolatemilkbottle");
-                offerSmelting(List.of(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 200, "hotmilkbottle");
-                offerSmelting(List.of(Items.BAKED_POTATO), RecipeCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 300, "frenchfries");
-                offerSmelting(List.of(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 300, "pancake");
+                oreSmelting(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300, "caramel");
+                oreSmelting(SEED, RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 300, "food");
+                oreSmelting(List.of(Items.EGG), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 200, "friedegg");
+                oreSmelting(List.of(Items.BLUE_EGG), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_blueegg");
+                oreSmelting(List.of(Items.BROWN_EGG), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_brownegg");
+                oreSmelting(List.of(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600, "cookedmarshmallow");
+                oreSmelting(List.of(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 200, "cookedsquidtentacle");
+                oreSmelting(List.of(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, CookingBookCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 200, "hotchocolatemilkbottle");
+                oreSmelting(List.of(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 200, "hotmilkbottle");
+                oreSmelting(List.of(Items.BAKED_POTATO), RecipeCategory.FOOD, CookingBookCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 300, "frenchfries");
+                oreSmelting(List.of(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, CookingBookCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 300, "pancake");
 
                 //Campfire
-                offerCampfireCooking(List.of(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 600, "cookedsquidtentacle");
-                offerCampfireCooking(SEED, RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 600, "food");
-                offerCampfireCooking(List.of(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 300, "friedegg");
-                offerCampfireCooking(List.of(Items.BLUE_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_blueegg");
-                offerCampfireCooking(List.of(Items.BROWN_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_brownegg");
-                offerCampfireCooking(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 300, "caramel");
-                offerCampfireCooking(List.of(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 600, "cookedmarshmallow");
-                offerCampfireCooking(List.of(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 200, "hotchocolatemilkbottle");
-                offerCampfireCooking(List.of(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 400, "hotmilkbottle");
-                offerCampfireCooking(List.of(Items.BAKED_POTATO), RecipeCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 600, "frenchfries");
-                offerCampfireCooking(List.of(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 600, "pancake");
+                offerCampfireCooking(UsefulFoodItems.SquidTentacleRaw,UsefulFoodItems.SquidTentacleCooked, 0.35F, 600);
+                offerCampfireCooking(ItemTags.VILLAGER_PLANTABLE_SEEDS, UsefulFoodItems.RoastedSeeds, 0.45F, 600);
+                offerCampfireCooking(ItemTags.EGGS,UsefulFoodItems.FriedEgg, 0.10F, 300);
+                offerCampfireCooking(UsefulFoodItems.SugarCube,UsefulFoodItems.caramel, 0.45F, 300);
+                offerCampfireCooking(UsefulFoodItems.Marshmallow,UsefulFoodItems.CookMarshmallow, 0.60F, 600);
+                offerCampfireCooking(UsefulFoodItems.ChocolateMilkBottle, UsefulFoodItems.hotchocolatebottle, 0.30F, 200);
+                offerCampfireCooking(UsefulFoodItems.MilkBottle, UsefulFoodItems.HotMilkBottle, 0.35F, 400);
+                offerCampfireCooking(Items.BAKED_POTATO, UsefulFoodItems.FrenchFries, 0.45F, 600);
+                offerCampfireCooking(UsefulFoodItems.PanCakeDough, UsefulFoodItems.PanCake, 0.45F, 600);
 
                 //Smoking
-                offerSmoking(List.of(UsefulFoodItems.SquidTentacleRaw), RecipeCategory.FOOD,UsefulFoodItems.SquidTentacleCooked, 0.35F, 100, "cookedsquidtentacle");
-                offerSmoking(List.of(Items.EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg");
-                offerSmoking(List.of(Items.BLUE_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_blueegg");
-                offerSmoking(List.of(Items.BROWN_EGG), RecipeCategory.FOOD,UsefulFoodItems.FriedEgg, 0.10F, 100, "friedegg_brownegg");
-                offerSmoking(SEED, RecipeCategory.FOOD,UsefulFoodItems.RoastedSeeds, 0.45F, 100, "food");
-                offerSmoking(List.of(UsefulFoodItems.SugarCube), RecipeCategory.FOOD,UsefulFoodItems.caramel, 0.45F, 100, "caramel");
-                offerSmoking(List.of(UsefulFoodItems.Marshmallow), RecipeCategory.FOOD,UsefulFoodItems.CookMarshmallow, 0.60F, 100, "cookedmarshmallow");
-                offerSmoking(List.of(UsefulFoodItems.ChocolateMilkBottle),RecipeCategory.FOOD, UsefulFoodItems.hotchocolatebottle, 0.30F, 100, "cookedmarshmallow");
-                offerSmoking(List.of(UsefulFoodItems.MilkBottle), RecipeCategory.FOOD,UsefulFoodItems.HotMilkBottle, 0.35F, 50, "hotchocolatemilkbottle");
-                offerSmoking(List.of(Items.BAKED_POTATO), RecipeCategory.FOOD,UsefulFoodItems.FrenchFries, 0.45F, 100, "frenchfries");
-                offerSmoking(List.of(UsefulFoodItems.PanCakeDough), RecipeCategory.FOOD, UsefulFoodItems.PanCake, 0.45F, 100, "pancake");
+                offerSmoking(UsefulFoodItems.SquidTentacleRaw,UsefulFoodItems.SquidTentacleCooked, 0.35F, 100);
+                offerSmoking(ItemTags.EGGS,UsefulFoodItems.FriedEgg, 0.10F, 100);
+                offerSmoking(ItemTags.VILLAGER_PLANTABLE_SEEDS, UsefulFoodItems.RoastedSeeds, 0.45F, 100);
+                offerSmoking(UsefulFoodItems.SugarCube,UsefulFoodItems.caramel, 0.45F, 100);
+                offerSmoking(UsefulFoodItems.Marshmallow,UsefulFoodItems.CookMarshmallow, 0.60F, 100);
+                offerSmoking(UsefulFoodItems.ChocolateMilkBottle, UsefulFoodItems.hotchocolatebottle, 0.30F, 100);
+                offerSmoking(UsefulFoodItems.MilkBottle,UsefulFoodItems.HotMilkBottle, 0.35F, 50);
+                offerSmoking(Items.BAKED_POTATO,UsefulFoodItems.FrenchFries, 0.45F, 100);
+                offerSmoking(UsefulFoodItems.PanCakeDough, UsefulFoodItems.PanCake, 0.45F, 100);
 
             }
 
-            public static final List<ItemConvertible> SEED = Util.make(Lists.newArrayList(), list -> {
+            public static final List<ItemLike> SEED = Util.make(Lists.newArrayList(), list -> {
                 list.add(Items.PUMPKIN_SEEDS);
                 list.add(Items.MELON_SEEDS);
                 list.add(Items.WHEAT_SEEDS);
                 list.add(Items.BEETROOT_SEEDS);
             });
 
-            public void offerCampfireCooking(List<ItemConvertible> inputs, RecipeCategory category, ItemConvertible output, float experience, int cookingTime, String group) {
-                this.offerMultipleOptions(RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, inputs, category, output, experience, cookingTime, group, "_from_campfire_cooking");
+            public void offerCampfireCooking(ItemLike inputs, ItemLike output, float experience, int cookingTime) {
+                this.simpleCookingRecipe("campfire_cooking", CampfireCookingRecipe::new, cookingTime, inputs, output, experience);
             }
 
-            public void offerSmoking(List<ItemConvertible> inputs, RecipeCategory category, ItemConvertible output, float experience, int cookingTime, String group) {
-                this.offerMultipleOptions(RecipeSerializer.SMOKING, SmokingRecipe::new, inputs, category, output, experience, cookingTime, group, "_from_smoking");
+            public void offerSmoking(ItemLike inputs, ItemLike output, float experience, int cookingTime) {
+                this.simpleCookingRecipe("smoking", SmokingRecipe::new, cookingTime, inputs, output, experience);
             }
 
+            public void offerSmoking(TagKey<Item> inputs, ItemLike output, float experience, int cookingTime) {
+                this.simpleCookingRecipeTag("smoking", SmokingRecipe::new, cookingTime, inputs, output, experience);
+            }
+
+            public void offerCampfireCooking(TagKey<Item> inputs, ItemLike output, float experience, int cookingTime) {
+                this.simpleCookingRecipeTag("campfire_cooking", CampfireCookingRecipe::new, cookingTime, inputs, output, experience);
+            }
+
+            public <T extends AbstractCookingRecipe> void simpleCookingRecipeTag(final String source, final AbstractCookingRecipe.Factory<T> factory, final int cookingTime, final TagKey<Item> baseTag, final ItemLike result, final float experience) {
+                SimpleCookingRecipeBuilder.generic(this.tag(baseTag), RecipeCategory.FOOD, CookingBookCategory.FOOD, result, experience, cookingTime, factory).unlockedBy("has_" + baseTag.location().getPath(), this.has(baseTag)).save(this.output, getItemName(result) + "_from_" + baseTag.location().getPath() + "_" + source);
+            }
         };
     }
 

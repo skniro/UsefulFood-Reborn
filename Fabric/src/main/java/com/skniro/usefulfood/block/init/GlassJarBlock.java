@@ -3,116 +3,116 @@ package com.skniro.usefulfood.block.init;
 import com.mojang.serialization.MapCodec;
 import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class GlassJarBlock extends HorizontalFacingBlock {
-    private static final VoxelShape SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 9.5, 11.0);
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
-    public static final MapCodec<GlassJarBlock> CODEC = createCodec(GlassJarBlock::new);
+public class GlassJarBlock extends HorizontalDirectionalBlock {
+    private static final VoxelShape SHAPE = Block.box(5.0, 0.0, 5.0, 11.0, 9.5, 11.0);
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final MapCodec<GlassJarBlock> CODEC = simpleCodec(GlassJarBlock::new);
 
-    public GlassJarBlock(Settings settings) {
+    public GlassJarBlock(Properties settings) {
         super(settings);
     }
 
 
     @Override
-    protected MapCodec<GlassJarBlock> getCodec() {
+    protected MapCodec<GlassJarBlock> codec() {
         return CODEC;
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
-    protected BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+    protected BlockState rotate(BlockState state, Rotation rotation) {
+        return (BlockState)state.setValue(FACING, rotation.rotate((Direction)state.getValue(FACING)));
     }
 
-    protected BlockState mirror(BlockState state, BlockMirror mirror) {
-        return state.rotate(mirror.getRotation((Direction)state.get(FACING)));
+    protected BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation((Direction)state.getValue(FACING)));
     }
 
 
     @Override
-    public ActionResult onUseWithItem(ItemStack itemStack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (world.isClient()) return ActionResult.SUCCESS;
+    public InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (world.isClientSide()) return InteractionResult.SUCCESS;
 
-        ItemStack heldItem = player.getStackInHand(hand);
+        ItemStack heldItem = player.getItemInHand(hand);
 
-        if (heldItem.isOf(UsefulFoodItems.MelonJam)) {
-            replaceWith(world, pos, UsefulFoodJamBlocks.Melon_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
-            if (!player.isCreative()) heldItem.decrement(1);
-            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            return ActionResult.SUCCESS;
+        if (heldItem.is(UsefulFoodItems.MelonJam)) {
+            replaceWith(world, pos, UsefulFoodJamBlocks.Melon_JAM_JAR.defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.shrink(1);
+            world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.SUCCESS;
         }
 
-        if (heldItem.isOf(UsefulFoodItems.AppleJam)) {
-            replaceWith(world, pos, UsefulFoodJamBlocks.Apple_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
-            if (!player.isCreative()) heldItem.decrement(1);
-            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            return ActionResult.SUCCESS;
+        if (heldItem.is(UsefulFoodItems.AppleJam)) {
+            replaceWith(world, pos, UsefulFoodJamBlocks.Apple_JAM_JAR.defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.shrink(1);
+            world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.SUCCESS;
         }
 
-        if (heldItem.isOf(UsefulFoodItems.Glow_Berries_Jam)) {
-            replaceWith(world, pos, UsefulFoodJamBlocks.Glow_Berries_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
-            if (!player.isCreative()) heldItem.decrement(1);
-            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            return ActionResult.SUCCESS;
+        if (heldItem.is(UsefulFoodItems.Glow_Berries_Jam)) {
+            replaceWith(world, pos, UsefulFoodJamBlocks.Glow_Berries_JAM_JAR.defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.shrink(1);
+            world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.SUCCESS;
         }
 
-        if (heldItem.isOf(UsefulFoodItems.Sweet_Berries_Jam)) {
-            replaceWith(world, pos, UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
-            if (!player.isCreative()) heldItem.decrement(1);
-            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            return ActionResult.SUCCESS;
+        if (heldItem.is(UsefulFoodItems.Sweet_Berries_Jam)) {
+            replaceWith(world, pos, UsefulFoodJamBlocks.Sweet_Berries_JAM_JAR.defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.shrink(1);
+            world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.SUCCESS;
         }
 
-        if (heldItem.isOf(UsefulFoodItems.Chorus_Jam)) {
-            replaceWith(world, pos, UsefulFoodJamBlocks.Chorus_JAM_JAR.getDefaultState().with(JamJarBlock.JAM_STAGE, 1));
-            if (!player.isCreative()) heldItem.decrement(1);
-            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            return ActionResult.SUCCESS;
+        if (heldItem.is(UsefulFoodItems.Chorus_Jam)) {
+            replaceWith(world, pos, UsefulFoodJamBlocks.Chorus_JAM_JAR.defaultBlockState().setValue(JamJarBlock.JAM_STAGE, 1));
+            if (!player.isCreative()) heldItem.shrink(1);
+            world.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.SUCCESS;
         }
 
 
-        return ActionResult.PASS;
+        return InteractionResult.PASS;
     }
 
-    private void replaceWith(World world, BlockPos pos, BlockState newState) {
-        world.setBlockState(pos, newState, 3);
+    private void replaceWith(Level world, BlockPos pos, BlockState newState) {
+        world.setBlock(pos, newState, 3);
     }
 
     @Nullable
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
 }

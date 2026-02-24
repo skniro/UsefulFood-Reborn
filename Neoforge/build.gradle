@@ -11,14 +11,22 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        name = "Maven for PR #2975" // https://github.com/neoforged/NeoForge/pull/2975
+        url = uri("https://prmaven.neoforged.net/NeoForge/pr2975")
+        content {
+            includeModule("net.neoforged", "neoforge")
+            includeModule("net.neoforged", "testframework")
+        }
+    }
 }
 
 base {
     archivesName = project.archives_base_name
 }
 
-// Mojang ships Java 21 to end users in 1.20.5+, so your mod should target Java 21.
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+// Mojang ships Java 25 to end users in 26.1+, so your mod should target Java 25.
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 //minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
 //minecraft.accessTransformers.entry public net.minecraft.client.Minecraft textureManager # textureManager

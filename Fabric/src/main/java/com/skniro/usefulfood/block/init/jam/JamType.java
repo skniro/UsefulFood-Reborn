@@ -1,7 +1,7 @@
 package com.skniro.usefulfood.block.init.jam;
 
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 
 public enum JamType {
     APPLE("apple", UsefulFoodItems.AppleJam),

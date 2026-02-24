@@ -6,7 +6,6 @@
     "#c:foods/cooked_fish"
   ],
   "result": {
-    "count": 1,
     "id": "usefulfood:fishnchips"
   }
 }

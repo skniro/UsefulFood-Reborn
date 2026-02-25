@@ -1,34 +1,35 @@
 {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-        "has_base_item": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "items": [
-                            "c:lily_pads"
-                        ]
-                    }
-                ]
-            }
-        },
-        "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
-            "conditions": {
-                "recipe": "usefulfood:tea"
-            }
-        }
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_base_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glass_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
-    "requirements": [
-        [
-            "has_base_item",
-            "has_the_recipe"
-        ]
-    ],
-    "rewards": {
-        "recipes": [
-            "usefulfood:tea"
-        ]
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "usefulfood:tea"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
+  },
+  "requirements": [
+    [
+      "has_base_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "usefulfood:tea"
+    ]
+  },
+  "sends_telemetry_event": false
 }

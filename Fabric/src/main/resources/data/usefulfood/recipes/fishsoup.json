@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:carrot"
@@ -11,7 +12,7 @@
       "item": "minecraft:potato"
     },
     {
-      "tag": "c:cooked_fish"
+      "tag": "c:foods/cooked_fish"
     }
   ],
   "result": {

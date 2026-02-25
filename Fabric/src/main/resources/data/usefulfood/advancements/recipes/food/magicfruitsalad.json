@@ -1,34 +1,35 @@
 {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-        "has_base_item": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "items": [
-                            "minecraft:glow_berries"
-                        ]
-                    }
-                ]
-            }
-        },
-        "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
-            "conditions": {
-                "recipe": "usefulfood:magicfruitsalad"
-            }
-        }
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_base_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glistering_melon_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
-    "requirements": [
-        [
-            "has_base_item",
-            "has_the_recipe"
-        ]
-    ],
-    "rewards": {
-        "recipes": [
-            "usefulfood:magicfruitsalad"
-        ]
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "usefulfood:magicfruitsalad"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
+  },
+  "requirements": [
+    [
+      "has_base_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "usefulfood:magicfruitsalad"
+    ]
+  },
+  "sends_telemetry_event": false
 }

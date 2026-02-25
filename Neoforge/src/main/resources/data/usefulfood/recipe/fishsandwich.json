@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "usefulfood:breadslice"
@@ -8,10 +9,11 @@
       "item": "usefulfood:breadslice"
     },
     {
-      "tag": "c:cooked_fish"
+      "tag": "c:foods/cooked_fish"
     }
   ],
   "result": {
+    "count": 1,
     "id": "usefulfood:fishsandwich"
   }
 }

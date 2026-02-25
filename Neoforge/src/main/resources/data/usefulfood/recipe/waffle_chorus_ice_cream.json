@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:vanillaicecream"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "usefulfood:waffle"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "usefulfood:waffle_chorus_ice_cream"
+  }
+}

@@ -1,35 +1,27 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:golden_apple"
-    },
-    {
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
       "item": "minecraft:enchanted_golden_apple"
     },
-    {
+    "G": {
       "item": "minecraft:golden_apple"
     },
-    {
+    "M": {
+      "tag": "c:drinks/milk"
+    },
+    "W": {
       "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
-    },
-    {
-      "tag": "c:milks"
     }
+  },
+  "pattern": [
+    "MMM",
+    "GEG",
+    "WWW"
   ],
   "result": {
     "item": "usefulfood:magiccake"
-  }
+  },
+  "show_notification": true
 }

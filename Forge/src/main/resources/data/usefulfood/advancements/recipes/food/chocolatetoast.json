@@ -1,34 +1,35 @@
 {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-        "has_base_item": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "items": [
-                            "usefulfood:breadslice"
-                        ]
-                    }
-                ]
-            }
-        },
-        "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
-            "conditions": {
-                "recipe": "usefulfood:chocolatetoast"
-            }
-        }
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_base_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "usefulfood:chocolatebar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
-    "requirements": [
-        [
-            "has_base_item",
-            "has_the_recipe"
-        ]
-    ],
-    "rewards": {
-        "recipes": [
-            "usefulfood:chocolatetoast"
-        ]
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "usefulfood:chocolatetoast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
+  },
+  "requirements": [
+    [
+      "has_base_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "usefulfood:chocolatetoast"
+    ]
+  },
+  "sends_telemetry_event": false
 }

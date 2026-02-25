@@ -1,11 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
-      "tag": "c:cooked_fish"
+      "item": "usefulfood:frenchfries"
     },
     {
-      "item": "usefulfood:frenchfries"
+      "tag": "c:foods/cooked_fish"
     }
   ],
   "result": {

@@ -1,18 +1,18 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        {
-            "item": "minecraft:cocoa_beans"
-        },
-        {
-            "tag": "c:milks"
-        },
-        {
-            "item": "minecraft:sugar"
-        }
-    ],
-    "result": {
-        "item": "usefulfood:chocolatebar"
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "item": "minecraft:sugar"
     }
+  ],
+  "result": {
+    "item": "usefulfood:chocolatebar"
+  }
 }

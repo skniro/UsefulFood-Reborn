@@ -25,7 +25,7 @@ import net.minecraft.util.registry.Registry;
 import java.util.function.ToIntFunction;
 import java.util.logging.Logger;
 
-public class UsefulFoodBlocks {
+public class UsefulFoodCakeBlocks {
     //Apple cake
     public static final Block AppleCake = registerBlock("applecake",new AppleCakeBlockState(FabricBlockSettings.copy(Blocks.CAKE),18,0.6F), UsefulFood.UsefulFood_Group);
     public static final Block Apple_CANDLE_CAKE = registerBlockWithoutItem("apple_candle_cake", new CandleAppleCakeBlock(Blocks.CANDLE, AbstractBlock.Settings.copy(AppleCake) ));

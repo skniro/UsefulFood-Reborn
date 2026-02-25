@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:melonjam"
+    },
+    {
+      "item": "usefulfood:melonjam"
+    },
+    {
+      "item": "usefulfood:melonjam"
+    },
+    {
+      "item": "usefulfood:glass_jar"
+    }
+  ],
+  "result": {
+    "item": "usefulfood:melon_jam_jar"
+  }
+}

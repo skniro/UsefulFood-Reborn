@@ -1,34 +1,35 @@
 {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-        "has_base_item": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "items": [
-                            "minecraft:wheat"
-                        ]
-                    }
-                ]
-            }
-        },
-        "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
-            "conditions": {
-                "recipe": "usefulfood:caramelcake"
-            }
-        }
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_base_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "usefulfood:caramel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
-    "requirements": [
-        [
-            "has_base_item",
-            "has_the_recipe"
-        ]
-    ],
-    "rewards": {
-        "recipes": [
-            "usefulfood:caramelcake"
-        ]
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "usefulfood:caramelcake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
+  },
+  "requirements": [
+    [
+      "has_base_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "usefulfood:caramelcake"
+    ]
+  },
+  "sends_telemetry_event": false
 }

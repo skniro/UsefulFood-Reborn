@@ -23,7 +23,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class UsefulFoodBlocks {
+public class UsefulFoodCakeBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UsefulFood.MODID);
     //Apple cake
     public static final RegistryObject<Block>  AppleCake = registerBlock("applecake",

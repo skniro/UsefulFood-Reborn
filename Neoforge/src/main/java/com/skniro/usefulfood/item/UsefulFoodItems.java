@@ -391,6 +391,7 @@ public static final Supplier<Item> MilkBottle =
     ));
 
     // 1.2
+    @Deprecated(since = "Reborn 1.5.0", forRemoval = true)
     public static final Supplier<Item> Sushi = registerItem("sushi", Item::new, (
             new Item
                     .Properties()
@@ -1423,6 +1424,183 @@ public static final Supplier<Item> MilkBottle =
                             )
                     .stacksTo(1)
                     .craftRemainder(Items.BOWL)
+    ));
+
+
+    //Reborn 1.5.0
+    public static final Supplier<Item> Baked_Sushi = registerItem("baked_sushi", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(8)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+    ));
+
+    public static final Supplier<Item> Cod_Roe_Sushi = registerItem("cod_roe_sushi", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+    ));
+
+    public static final Supplier<Item> Salmon_Sushi = registerItem("salmon_sushi", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+    ));
+
+
+    public static final Supplier<Item> Waffle = registerItem("waffle", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(1)
+                                    .saturationModifier(0.1f)
+                                    .build()
+                            )
+                    .stacksTo(16)
+    ));
+
+    public static final Supplier<Item> Waffle_Chorus_Ice_Cream = registerItem("waffle_chorus_ice_cream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(4)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+                    .stacksTo(16)
+    ));
+
+    public static final Supplier<Item> Waffle_Sweet_Berries_Ice_Cream = registerItem("waffle_sweet_berries_ice_cream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+                    .stacksTo(16)
+    ));
+
+    public static final Supplier<Item> Waffle_Glow_Berries_Ice_Cream = registerItem("waffle_glow_berries_ice_cream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+                    .stacksTo(16)
+    ));
+    public static final Supplier<Item> Waffle_Vanilla_IceCream = registerItem("waffle_vanilla_icecream",Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(3)
+                                    .saturationModifier(0.3f)
+                                    .build()
+                            ).stacksTo(16)
+    ));
+    public static final Supplier<Item> Waffle_chocolate_icecream = registerItem("waffle_chocolate_icecream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(6)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+                    .stacksTo(16)
+    ));
+    public static final Supplier<Item> Waffle_Magic_IceCream = registerItem("waffle_magic_icecream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                            .Builder()
+                                            .nutrition(7)
+                                            .saturationModifier(0.5f)
+                                            .alwaysEdible()
+                                            .build()
+                                    , Consumables.defaultFood()
+                                            .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
+                                                            new MobEffectInstance(MobEffects.REGENERATION,100,1),
+                                                            new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100,1)
+                                                    ))
+                                            )
+                                            .build()
+                            )
+                    .rarity(Rarity.RARE)
+                    .stacksTo(16)
+    ));
+    public static final Supplier<Item> Waffle_Apple_IceCream = registerItem("waffle_apple_icecream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.6f)
+                                    .build()
+                            )
+                    .stacksTo(16)
+    ));
+    public static final Supplier<Item> Waffle_Melon_IceCream = registerItem("waffle_melon_icecream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                    .Builder()
+                                    .nutrition(5)
+                                    .saturationModifier(0.5f)
+                                    .build()
+                            )
+                    .stacksTo(16)
+    ));
+    public static final Supplier<Item> Waffle_Caramel_IceCream = registerItem("waffle_caramel_icecream", Item::new, (
+            new Item
+                    .Properties()
+                    .food
+                            (new FoodProperties
+                                            .Builder()
+                                            .nutrition(6)
+                                            .saturationModifier(0.5f)
+                                            .alwaysEdible()
+                                            .build()
+                                    , Consumables.defaultFood()
+                                            .onConsume(new ApplyStatusEffectsConsumeEffect(
+                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                            )
+                                            .build()
+                            )
+                    .stacksTo(16)
     ));
 
     private static <T extends Item> DeferredItem<T> registerItem(String name, Function<Item.Properties, ? extends T> item, Item.Properties properties) {

@@ -141,6 +141,23 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
      itemModelGenerator.register(UsefulFoodItems.Chorus_JamToast, Models.GENERATED);
      itemModelGenerator.register(UsefulFoodItems.Chorus_JamBiscuit, Models.GENERATED);
      itemModelGenerator.register(UsefulFoodItems.Chorus_Jam, Models.GENERATED);
+
+     //Reborn 1.5.0
+     itemModelGenerator.register(UsefulFoodItems.Baked_Sushi, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Salmon_Sushi, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Cod_Roe_Sushi, Models.GENERATED);
+
+     itemModelGenerator.register(UsefulFoodItems.Waffle, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Vanilla_IceCream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Chorus_Ice_Cream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_chocolate_icecream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Magic_IceCream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Apple_IceCream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Melon_IceCream, Models.GENERATED);
+     itemModelGenerator.register(UsefulFoodItems.Waffle_Caramel_IceCream, Models.GENERATED);
+
     }
 
  private void registerMagicCake(BlockStateModelGenerator block) {

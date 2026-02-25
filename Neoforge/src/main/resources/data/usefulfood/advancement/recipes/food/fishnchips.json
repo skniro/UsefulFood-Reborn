@@ -1,32 +1,32 @@
 {
-    "parent": "minecraft:recipes/root",
-    "criteria": {
-        "has_base_item": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "items": "#c:cooked_fish"
-                    }
-                ]
-            }
-        },
-        "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
-            "conditions": {
-                "recipe": "usefulfood:fishnchips"
-            }
-        }
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_base_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:foods/cooked_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
-    "requirements": [
-        [
-            "has_base_item",
-            "has_the_recipe"
-        ]
-    ],
-    "rewards": {
-        "recipes": [
-            "usefulfood:fishnchips"
-        ]
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "usefulfood:fishnchips"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_base_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "usefulfood:fishnchips"
+    ]
+  }
 }

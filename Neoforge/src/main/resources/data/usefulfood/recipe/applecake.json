@@ -1,17 +1,18 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        "minecraft:apple",
-        "minecraft:apple",
-        "minecraft:apple",
-        "minecraft:wheat",
-        "minecraft:wheat",
-        "minecraft:wheat",
-        "#c:milks",
-        "#c:milks",
-        "#c:milks"
-    ],
-    "result": {
-        "id": "usefulfood:applecake"
-    }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:apple",
+    "M": "#c:drinks/milk",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    "MMM",
+    "AAA",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "usefulfood:applecake"
+  }
 }

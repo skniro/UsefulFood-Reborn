@@ -5,6 +5,7 @@ import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.client.data.Models;
 
 
 public class ModContent {
@@ -48,7 +49,6 @@ public class ModContent {
             content.add(UsefulFoodItems.Biscuit);
             content.add(UsefulFoodItems.Trailmix);
             content.add(UsefulFoodItems.MuttonSandwich);
-            content.add(UsefulFoodItems.Sushi);
             content.add(UsefulFoodItems.SquidTentacleRaw);
             content.add(UsefulFoodItems.SquidTentacleCooked);
             content.add(UsefulFoodItems.SquidSandwich);
@@ -67,6 +67,9 @@ public class ModContent {
             content.add(UsefulFoodItems.chocolateicecream);
             content.add(UsefulFoodItems.MagicIceCream);
             content.add(UsefulFoodItems.SquidSushi);
+            content.add(UsefulFoodItems.Baked_Sushi);
+            content.add(UsefulFoodItems.Salmon_Sushi);
+            content.add(UsefulFoodItems.Cod_Roe_Sushi);
             content.add(UsefulFoodItems.CactusJuice);
             content.add(UsefulFoodItems.Spaghetti);
             content.add(UsefulFoodItems.AppleIceCream);
@@ -126,6 +129,17 @@ public class ModContent {
             content.add(UsefulFoodItems.Chorus_JamToast);
             content.add(UsefulFoodItems.Chorus_JamBiscuit);
             content.add(UsefulFoodItems.Chorus_Jam);
+
+            content.add(UsefulFoodItems.Waffle);
+            content.add(UsefulFoodItems.Waffle_Vanilla_IceCream);
+            content.add(UsefulFoodItems.Waffle_Chorus_Ice_Cream);
+            content.add(UsefulFoodItems.Waffle_Glow_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Waffle_Sweet_Berries_Ice_Cream);
+            content.add(UsefulFoodItems.Waffle_chocolate_icecream);
+            content.add(UsefulFoodItems.Waffle_Magic_IceCream);
+            content.add(UsefulFoodItems.Waffle_Apple_IceCream);
+            content.add(UsefulFoodItems.Waffle_Melon_IceCream);
+            content.add(UsefulFoodItems.Waffle_Caramel_IceCream);
 
             content.add(UsefulFoodJamBlocks.GLASS_JAR);
             content.add(UsefulFoodJamBlocks.Apple_JAM_JAR);

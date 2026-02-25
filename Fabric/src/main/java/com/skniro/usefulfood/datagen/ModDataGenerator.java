@@ -14,6 +14,7 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(UsefulFoodSimplifiedChineseLanguageProvider::new);
         pack.addProvider(UsefulFoodRecipeGenerator::new);
         pack.addProvider(UsefulFoodLootTableGenerator::new);
+        pack.addProvider(UsefulFoodItemTagGeneration::new);
     }
 
 }

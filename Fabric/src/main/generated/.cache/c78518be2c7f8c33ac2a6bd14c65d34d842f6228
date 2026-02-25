@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-22T14:09:45.6124803	UsefulFood Reborn/Block Loot Tables
+// 1.20.1	2026-02-25T17:55:26.867765	UsefulFood Reborn/Block Loot Tables
 956b29d707c5bfa8d16ad4113b7ed87beb63c15d data\usefulfood\loot_tables\blocks\apple_pink_candle_cake.json
 a6cf0506f79acefe9c943e277d1770bcc8994484 data\usefulfood\loot_tables\blocks\apple_black_candle_cake.json
 2a1f98153652fbad3f5405b4877bd95f95c91e19 data\usefulfood\loot_tables\blocks\chocolate_purple_candle_cake.json
@@ -28,8 +28,8 @@ a6cf0506f79acefe9c943e277d1770bcc8994484 data\usefulfood\loot_tables\blocks\magi
 d94c248af80d73d29252b1b67fadbf01da3626fa data\usefulfood\loot_tables\blocks\chorus_jam_jar.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data\usefulfood\loot_tables\blocks\caramelcake.json
 02d2fa4c5c4d52aaf52aea0cae707136eab4b4a0 data\usefulfood\loot_tables\blocks\chocolate_brown_candle_cake.json
-6c373ceba3714f509a6eb8e295e47fbf4583bf2a data\usefulfood\loot_tables\blocks\caramel_white_candle_cake.json
 c7dfe435d7adf9c15dd6a75ede104a139836b8f6 data\usefulfood\loot_tables\blocks\chocolate_light_blue_candle_cake.json
+6c373ceba3714f509a6eb8e295e47fbf4583bf2a data\usefulfood\loot_tables\blocks\caramel_white_candle_cake.json
 5d192066d1dcb2a90d83388a49fdc8d154180ef4 data\usefulfood\loot_tables\blocks\chocolate_green_candle_cake.json
 5bdb65027e6081e2add447fffc12ad7aaad80933 data\usefulfood\loot_tables\blocks\apple_red_candle_cake.json
 497a8d4f65e04e0574bc83c33ad92f39608dca37 data\usefulfood\loot_tables\blocks\magic_cyan_candle_cake.json

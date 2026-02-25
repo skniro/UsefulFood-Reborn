@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:vanillaicecream"
+    },
+    {
+      "item": "usefulfood:caramel"
+    },
+    {
+      "item": "usefulfood:waffle"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "usefulfood:waffle_caramel_icecream"
+  }
+}

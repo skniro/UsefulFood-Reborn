@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "G": {
+      "item": "minecraft:golden_apple"
+    },
+    "M": {
+      "tag": "c:drinks/milk"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "GEG",
+    "WWW"
+  ],
+  "result": {
+    "item": "usefulfood:magiccake"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "usefulfood:caramel"
+    },
+    "M": {
+      "tag": "c:drinks/milk"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "CCC",
+    "WWW"
+  ],
+  "result": {
+    "item": "usefulfood:caramelcake"
+  },
+  "show_notification": true
+}

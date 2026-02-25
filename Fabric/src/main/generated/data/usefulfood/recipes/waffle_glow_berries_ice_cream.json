@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "usefulfood:vanillaicecream"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "usefulfood:waffle"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "usefulfood:waffle_glow_berries_ice_cream"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "M": {
+      "tag": "c:drinks/milk"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "CCC",
+    "WWW"
+  ],
+  "result": {
+    "item": "usefulfood:chocolatecake"
+  },
+  "show_notification": true
+}

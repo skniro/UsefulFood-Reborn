@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:apple"
+    },
+    "M": {
+      "tag": "c:drinks/milk"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "AAA",
+    "WWW"
+  ],
+  "result": {
+    "item": "usefulfood:applecake"
+  },
+  "show_notification": true
+}

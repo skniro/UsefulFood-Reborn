@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:beetroot_seeds"
+    },
+    "B": {
+      "item": "minecraft:bowl"
+    },
+    "M": {
+      "item": "minecraft:melon_seeds"
+    },
+    "P": {
+      "item": "minecraft:pumpkin_seeds"
+    },
+    "W": {
+      "item": "minecraft:wheat_seeds"
+    }
+  },
+  "pattern": [
+    "#WP",
+    "WMW",
+    " B "
+  ],
+  "result": {
+    "item": "usefulfood:trailmix"
+  },
+  "show_notification": true
+}

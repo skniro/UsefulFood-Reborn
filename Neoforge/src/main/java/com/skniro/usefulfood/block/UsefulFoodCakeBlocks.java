@@ -189,7 +189,7 @@ public class UsefulFoodCakeBlocks {
     }
 
     private static <B extends Block> DeferredBlock<B> registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
-        DeferredBlock<B> register = BLOCKS.registerBlock(name, block, properties.setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(UsefulFood.MODID, name))));
+        DeferredBlock<B> register = BLOCKS.registerBlock(name, block, ()-> properties.setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(UsefulFood.MODID, name))));
         return register;
     }
 

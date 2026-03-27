@@ -1,9 +1,6 @@
 package com.skniro.usefulfood.client;
 
 import com.google.common.base.Preconditions;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.rendertype.RenderType;
@@ -11,11 +8,12 @@ import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraftforge.client.loading.ClientModLoader;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Environment(EnvType.CLIENT)
 public class ModItemBlockRenderTypes {
     private static final Map<Block, ChunkSectionLayer> TYPE_BY_BLOCK = new HashMap<>();
 
@@ -62,11 +60,11 @@ public class ModItemBlockRenderTypes {
     }
 
 
-    public static void setCutoutLeaves(final boolean cutoutLeaves) {
-        ModItemBlockRenderTypes.cutoutLeaves = cutoutLeaves;
+    private static void checkClientLoading() {
+        Preconditions.checkState(ClientModLoader.isLoading(), "Render layers can only be set during client loading! This should ideally be done from `FMLClientSetupEvent`.");
     }
 
-    private static void checkClientLoading() {
-        Preconditions.checkState(FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT, "Render layers can only be set during client loading! This should ideally be done from `FMLClientSetupEvent`.");
+    public static void setRenderLayer(FlowingFluid flowingFluid, ChunkSectionLayer renderLayer4) {
+
     }
 }

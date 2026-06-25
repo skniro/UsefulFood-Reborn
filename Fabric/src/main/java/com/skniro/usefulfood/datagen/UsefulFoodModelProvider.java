@@ -79,7 +79,6 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
      itemModelGenerator.generateFlatItem(UsefulFoodItems.Biscuit, ModelTemplates.FLAT_ITEM);
      itemModelGenerator.generateFlatItem(UsefulFoodItems.Trailmix, ModelTemplates.FLAT_ITEM);
      itemModelGenerator.generateFlatItem(UsefulFoodItems.MuttonSandwich, ModelTemplates.FLAT_ITEM);
-     itemModelGenerator.generateFlatItem(UsefulFoodItems.Sushi, ModelTemplates.FLAT_ITEM);
      itemModelGenerator.generateFlatItem(UsefulFoodItems.SquidTentacleRaw, ModelTemplates.FLAT_ITEM);
      itemModelGenerator.generateFlatItem(UsefulFoodItems.SquidTentacleCooked, ModelTemplates.FLAT_ITEM);
      itemModelGenerator.generateFlatItem(UsefulFoodItems.SquidSandwich, ModelTemplates.FLAT_ITEM);
@@ -185,22 +184,22 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
  }
 
  private void registerMagicCandleCake(BlockModelGenerators block) {
-  registerMagicCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Magic_WHITE_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Magic_ORANGE_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Magic_MAGENTA_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.LIGHT_BLUE_CANDLE, UsefulFoodCakeBlocks.Magic_LIGHT_BLUE_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.YELLOW_CANDLE, UsefulFoodCakeBlocks.Magic_YELLOW_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.LIME_CANDLE, UsefulFoodCakeBlocks.Magic_LIME_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.PINK_CANDLE, UsefulFoodCakeBlocks.Magic_PINK_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.GRAY_CANDLE, UsefulFoodCakeBlocks.Magic_GRAY_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.LIGHT_GRAY_CANDLE, UsefulFoodCakeBlocks.Magic_LIGHT_GRAY_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.CYAN_CANDLE, UsefulFoodCakeBlocks.Magic_CYAN_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.PURPLE_CANDLE, UsefulFoodCakeBlocks.Magic_PURPLE_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.BLUE_CANDLE, UsefulFoodCakeBlocks.Magic_BLUE_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.BROWN_CANDLE, UsefulFoodCakeBlocks.Magic_BROWN_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.GREEN_CANDLE, UsefulFoodCakeBlocks.Magic_GREEN_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.RED_CANDLE, UsefulFoodCakeBlocks.Magic_RED_CANDLE_CAKE);
-  registerMagicCandle(block, Blocks.BLACK_CANDLE, UsefulFoodCakeBlocks.Magic_BLACK_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.white(), UsefulFoodCakeBlocks.Magic_WHITE_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.orange(), UsefulFoodCakeBlocks.Magic_ORANGE_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.magenta(), UsefulFoodCakeBlocks.Magic_MAGENTA_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.lightBlue(), UsefulFoodCakeBlocks.Magic_LIGHT_BLUE_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.yellow(), UsefulFoodCakeBlocks.Magic_YELLOW_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.lime(), UsefulFoodCakeBlocks.Magic_LIME_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.pink(), UsefulFoodCakeBlocks.Magic_PINK_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.gray(), UsefulFoodCakeBlocks.Magic_GRAY_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.lightGray(), UsefulFoodCakeBlocks.Magic_LIGHT_GRAY_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.cyan(), UsefulFoodCakeBlocks.Magic_CYAN_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.purple(), UsefulFoodCakeBlocks.Magic_PURPLE_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.blue(), UsefulFoodCakeBlocks.Magic_BLUE_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.brown(), UsefulFoodCakeBlocks.Magic_BROWN_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.green(), UsefulFoodCakeBlocks.Magic_GREEN_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.red(), UsefulFoodCakeBlocks.Magic_RED_CANDLE_CAKE);
+  registerMagicCandle(block, Blocks.DYED_CANDLE.black(), UsefulFoodCakeBlocks.Magic_BLACK_CANDLE_CAKE);
   registerMagicCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Magic_CANDLE_CAKE);
  }
 
@@ -235,22 +234,22 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
  }
 
  private void registerAppleCandleCake(BlockModelGenerators block) {
-  registerAppleCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Apple_WHITE_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Apple_ORANGE_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Apple_MAGENTA_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.LIGHT_BLUE_CANDLE, UsefulFoodCakeBlocks.Apple_LIGHT_BLUE_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.YELLOW_CANDLE, UsefulFoodCakeBlocks.Apple_YELLOW_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.LIME_CANDLE, UsefulFoodCakeBlocks.Apple_LIME_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.PINK_CANDLE, UsefulFoodCakeBlocks.Apple_PINK_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.GRAY_CANDLE, UsefulFoodCakeBlocks.Apple_GRAY_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.LIGHT_GRAY_CANDLE, UsefulFoodCakeBlocks.Apple_LIGHT_GRAY_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.CYAN_CANDLE, UsefulFoodCakeBlocks.Apple_CYAN_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.PURPLE_CANDLE, UsefulFoodCakeBlocks.Apple_PURPLE_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.BLUE_CANDLE, UsefulFoodCakeBlocks.Apple_BLUE_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.BROWN_CANDLE, UsefulFoodCakeBlocks.Apple_BROWN_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.GREEN_CANDLE, UsefulFoodCakeBlocks.Apple_GREEN_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.RED_CANDLE, UsefulFoodCakeBlocks.Apple_RED_CANDLE_CAKE);
-  registerAppleCandle(block, Blocks.BLACK_CANDLE, UsefulFoodCakeBlocks.Apple_BLACK_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.white(), UsefulFoodCakeBlocks.Apple_WHITE_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.orange(), UsefulFoodCakeBlocks.Apple_ORANGE_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.magenta(), UsefulFoodCakeBlocks.Apple_MAGENTA_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.lightBlue(), UsefulFoodCakeBlocks.Apple_LIGHT_BLUE_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.yellow(), UsefulFoodCakeBlocks.Apple_YELLOW_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.lime(), UsefulFoodCakeBlocks.Apple_LIME_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.pink(), UsefulFoodCakeBlocks.Apple_PINK_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.gray(), UsefulFoodCakeBlocks.Apple_GRAY_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.lightGray(), UsefulFoodCakeBlocks.Apple_LIGHT_GRAY_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.cyan(), UsefulFoodCakeBlocks.Apple_CYAN_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.purple(), UsefulFoodCakeBlocks.Apple_PURPLE_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.blue(), UsefulFoodCakeBlocks.Apple_BLUE_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.brown(), UsefulFoodCakeBlocks.Apple_BROWN_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.green(), UsefulFoodCakeBlocks.Apple_GREEN_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.red(), UsefulFoodCakeBlocks.Apple_RED_CANDLE_CAKE);
+  registerAppleCandle(block, Blocks.DYED_CANDLE.black(), UsefulFoodCakeBlocks.Apple_BLACK_CANDLE_CAKE);
   registerAppleCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Apple_CANDLE_CAKE);
  }
 
@@ -285,22 +284,22 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
  }
 
  private void registerCaramelCandleCake(BlockModelGenerators block) {
-  registerCaramelCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Caramel_WHITE_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Caramel_ORANGE_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Caramel_MAGENTA_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.LIGHT_BLUE_CANDLE, UsefulFoodCakeBlocks.Caramel_LIGHT_BLUE_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.YELLOW_CANDLE, UsefulFoodCakeBlocks.Caramel_YELLOW_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.LIME_CANDLE, UsefulFoodCakeBlocks.Caramel_LIME_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.PINK_CANDLE, UsefulFoodCakeBlocks.Caramel_PINK_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.GRAY_CANDLE, UsefulFoodCakeBlocks.Caramel_GRAY_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.LIGHT_GRAY_CANDLE, UsefulFoodCakeBlocks.Caramel_LIGHT_GRAY_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.CYAN_CANDLE, UsefulFoodCakeBlocks.Caramel_CYAN_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.PURPLE_CANDLE, UsefulFoodCakeBlocks.Caramel_PURPLE_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.BLUE_CANDLE, UsefulFoodCakeBlocks.Caramel_BLUE_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.BROWN_CANDLE, UsefulFoodCakeBlocks.Caramel_BROWN_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.GREEN_CANDLE, UsefulFoodCakeBlocks.Caramel_GREEN_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.RED_CANDLE, UsefulFoodCakeBlocks.Caramel_RED_CANDLE_CAKE);
-  registerCaramelCandle(block, Blocks.BLACK_CANDLE, UsefulFoodCakeBlocks.Caramel_BLACK_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.white(), UsefulFoodCakeBlocks.Caramel_WHITE_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.orange(), UsefulFoodCakeBlocks.Caramel_ORANGE_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.magenta(), UsefulFoodCakeBlocks.Caramel_MAGENTA_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.lightBlue(), UsefulFoodCakeBlocks.Caramel_LIGHT_BLUE_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.yellow(), UsefulFoodCakeBlocks.Caramel_YELLOW_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.lime(), UsefulFoodCakeBlocks.Caramel_LIME_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.pink(), UsefulFoodCakeBlocks.Caramel_PINK_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.gray(), UsefulFoodCakeBlocks.Caramel_GRAY_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.lightGray(), UsefulFoodCakeBlocks.Caramel_LIGHT_GRAY_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.cyan(), UsefulFoodCakeBlocks.Caramel_CYAN_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.purple(), UsefulFoodCakeBlocks.Caramel_PURPLE_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.blue(), UsefulFoodCakeBlocks.Caramel_BLUE_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.brown(), UsefulFoodCakeBlocks.Caramel_BROWN_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.green(), UsefulFoodCakeBlocks.Caramel_GREEN_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.red(), UsefulFoodCakeBlocks.Caramel_RED_CANDLE_CAKE);
+  registerCaramelCandle(block, Blocks.DYED_CANDLE.black(), UsefulFoodCakeBlocks.Caramel_BLACK_CANDLE_CAKE);
   registerCaramelCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Caramel_CANDLE_CAKE);
  }
 
@@ -335,22 +334,22 @@ public class UsefulFoodModelProvider extends FabricModelProvider {
  }
 
  private void registerChocolateCandleCake(BlockModelGenerators block) {
-  registerChocolateCandle(block, Blocks.WHITE_CANDLE, UsefulFoodCakeBlocks.Chocolate_WHITE_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.ORANGE_CANDLE, UsefulFoodCakeBlocks.Chocolate_ORANGE_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.MAGENTA_CANDLE, UsefulFoodCakeBlocks.Chocolate_MAGENTA_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.LIGHT_BLUE_CANDLE, UsefulFoodCakeBlocks.Chocolate_LIGHT_BLUE_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.YELLOW_CANDLE, UsefulFoodCakeBlocks.Chocolate_YELLOW_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.LIME_CANDLE, UsefulFoodCakeBlocks.Chocolate_LIME_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.PINK_CANDLE, UsefulFoodCakeBlocks.Chocolate_PINK_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.GRAY_CANDLE, UsefulFoodCakeBlocks.Chocolate_GRAY_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.LIGHT_GRAY_CANDLE, UsefulFoodCakeBlocks.Chocolate_LIGHT_GRAY_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.CYAN_CANDLE, UsefulFoodCakeBlocks.Chocolate_CYAN_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.PURPLE_CANDLE, UsefulFoodCakeBlocks.Chocolate_PURPLE_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.BLUE_CANDLE, UsefulFoodCakeBlocks.Chocolate_BLUE_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.BROWN_CANDLE, UsefulFoodCakeBlocks.Chocolate_BROWN_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.GREEN_CANDLE, UsefulFoodCakeBlocks.Chocolate_GREEN_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.RED_CANDLE, UsefulFoodCakeBlocks.Chocolate_RED_CANDLE_CAKE);
-  registerChocolateCandle(block, Blocks.BLACK_CANDLE, UsefulFoodCakeBlocks.Chocolate_BLACK_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.white(), UsefulFoodCakeBlocks.Chocolate_WHITE_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.orange(), UsefulFoodCakeBlocks.Chocolate_ORANGE_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.magenta(), UsefulFoodCakeBlocks.Chocolate_MAGENTA_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.lightBlue(), UsefulFoodCakeBlocks.Chocolate_LIGHT_BLUE_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.yellow(), UsefulFoodCakeBlocks.Chocolate_YELLOW_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.lime(), UsefulFoodCakeBlocks.Chocolate_LIME_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.pink(), UsefulFoodCakeBlocks.Chocolate_PINK_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.gray(), UsefulFoodCakeBlocks.Chocolate_GRAY_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.lightGray(), UsefulFoodCakeBlocks.Chocolate_LIGHT_GRAY_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.cyan(), UsefulFoodCakeBlocks.Chocolate_CYAN_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.purple(), UsefulFoodCakeBlocks.Chocolate_PURPLE_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.blue(), UsefulFoodCakeBlocks.Chocolate_BLUE_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.brown(), UsefulFoodCakeBlocks.Chocolate_BROWN_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.green(), UsefulFoodCakeBlocks.Chocolate_GREEN_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.red(), UsefulFoodCakeBlocks.Chocolate_RED_CANDLE_CAKE);
+  registerChocolateCandle(block, Blocks.DYED_CANDLE.black(), UsefulFoodCakeBlocks.Chocolate_BLACK_CANDLE_CAKE);
   registerChocolateCandle(block, Blocks.CANDLE, UsefulFoodCakeBlocks.Chocolate_CANDLE_CAKE);
  }
 

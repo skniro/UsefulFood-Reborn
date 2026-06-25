@@ -24,14 +24,14 @@ public class UsefulFoodItemTagGeneration extends FabricTagsProvider.ItemTagsProv
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        valueLookupBuilder(ConventionalItemTags.MILK_DRINKS)
-                .add(UsefulFoodItems.MilkBottle)
+        builder(ConventionalItemTags.MILK_DRINKS)
+                .add(UsefulFoodItems.MilkBottle.builtInRegistryHolder().key())
                 .setReplace(false);
-        valueLookupBuilder(ConventionalItemTags.MILK_BUCKETS)
-                .add(UsefulFoodItems.MilkBottle)
+        builder(ConventionalItemTags.MILK_BUCKETS)
+                .add(UsefulFoodItems.MilkBottle.builtInRegistryHolder().key())
                 .setReplace(false);;
-        valueLookupBuilder(ModItemTags.C_Lily_Pads)
-                .add(Items.LILY_PAD)
+        builder(ModItemTags.C_Lily_Pads)
+                .add(Items.LILY_PAD.builtInRegistryHolder().key())
                 .setReplace(false);;
 
     }

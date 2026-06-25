@@ -373,19 +373,6 @@ public static final Item MilkBottle =
     ));
 
     // 1.2
-    @Deprecated(since = "Reborn 1.5.0", forRemoval = true)
-    public static final Item Sushi = registerItem("sushi", Item::new, (
-            new Item
-                    .Properties()
-                    .food
-                            (new FoodProperties
-                                    .Builder()
-                                    .nutrition(5)
-                                    .saturationModifier(0.3f)
-                                    .build()
-                            )
-    ));
-
     public static final Item SquidTentacleRaw = registerItem("squidrtentacle", Item::new, (
             new Item
                     .Properties()

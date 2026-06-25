@@ -43,7 +43,7 @@ public class UsefulFoodSimplifiedChineseLanguageProvider extends FabricLanguageP
         translationBuilder.add(UsefulFoodItems.Biscuit,"松饼");
         translationBuilder.add(UsefulFoodItems.Trailmix,"什锦杂果");
         translationBuilder.add(UsefulFoodItems.MuttonSandwich,"羊肉三明治");
-        translationBuilder.add(UsefulFoodItems.Sushi,"寿司");
+        translationBuilder.add("item.usefulfood.sushi","寿司");
         translationBuilder.add(UsefulFoodItems.SquidTentacleRaw,"鱿鱼肉");
         translationBuilder.add(UsefulFoodItems.SquidTentacleCooked,"烤鱿鱼肉");
         translationBuilder.add(UsefulFoodItems.SquidSandwich,"鱿鱼三明治");

@@ -44,7 +44,7 @@ public class UsefulFoodEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(UsefulFoodItems.Biscuit,"Biscuit");
         translationBuilder.add(UsefulFoodItems.Trailmix,"Trail mix");
         translationBuilder.add(UsefulFoodItems.MuttonSandwich,"Mutton Sandwich");
-        translationBuilder.add(UsefulFoodItems.Sushi,"Sushi");
+        translationBuilder.add("item.usefulfood.sushi","Sushi");
         translationBuilder.add(UsefulFoodItems.SquidTentacleRaw,"Squid Tentacle");
         translationBuilder.add(UsefulFoodItems.SquidTentacleCooked,"Calamari");
         translationBuilder.add(UsefulFoodItems.SquidSandwich,"Squid Sandwich");

@@ -1,7 +1,7 @@
 package com.skniro.usefulfood.item.init;
 
 import com.skniro.usefulfood.item.UsefulFoodItems;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

@@ -31,6 +31,7 @@ public static final Item MilkBottle =
                                 .saturationModifier(0.0f)
                                 .alwaysEdible()
                                 .build()
+                                , Consumables.DEFAULT_DRINK
                         )
                 .craftRemainder(Items.GLASS_BOTTLE)
                         .stacksTo(1)
@@ -45,6 +46,7 @@ public static final Item MilkBottle =
                                             .nutrition(3)
                                             .saturationModifier(0.8f)
                                             .build()
+                                            , Consumables.DEFAULT_DRINK
                                     )
                             .craftRemainder(Items.GLASS_BOTTLE)
                             .stacksTo(1)
@@ -472,7 +474,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.9f)
                                     .alwaysEdible()
                                     .build()
-                                    , Consumables.defaultFood()
+                                    , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
                                                     new MobEffectInstance(MobEffects.SPEED,600,1),1.0F)
                                             )
@@ -593,6 +595,7 @@ public static final Item MilkBottle =
                                     .nutrition(4)
                                     .saturationModifier(1.0f)
                                     .build()
+                                    , Consumables.DEFAULT_DRINK
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -653,7 +656,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.6f)
                                     .alwaysEdible()
                                     .build()
-                                    , Consumables.defaultFood()
+                                    , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
                                                     new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                             )
@@ -747,6 +750,7 @@ public static final Item MilkBottle =
                                     .Builder()
                                     .nutrition(2)
                                     .build()
+                                    , Consumables.DEFAULT_DRINK
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -760,6 +764,7 @@ public static final Item MilkBottle =
                                     .nutrition(1)
                                     .saturationModifier(0.3f)
                                     .build()
+                                    , Consumables.DEFAULT_DRINK
                             )
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(1)
@@ -1092,7 +1097,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.3f)
                                     .alwaysEdible()
                                     .build()
-                                    , Consumables.defaultFood()
+                                    , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
                                                     new MobEffectInstance(MobEffects.REGENERATION,200,1),1.0F)
                                             )
@@ -1112,7 +1117,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.25f)
                                     .alwaysEdible()
                                     .build()
-                                    , Consumables.defaultFood()
+                                    , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
                                                     new MobEffectInstance(MobEffects.NIGHT_VISION,1000,1),1.0F)
                                             )
@@ -1132,7 +1137,7 @@ public static final Item MilkBottle =
                                     .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
-                                    , Consumables.defaultFood()
+                                    , Consumables.defaultDrink()
                                             .onConsume(new ApplyStatusEffectsConsumeEffect(
                                                     new MobEffectInstance(MobEffects.SLOW_FALLING,200,1),1.0F)
                                             )

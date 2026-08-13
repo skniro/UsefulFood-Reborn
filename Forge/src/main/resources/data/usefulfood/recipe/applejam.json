@@ -1,13 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "minecraft:bowl",
     "minecraft:sugar",
     "minecraft:apple"
   ],
   "result": {
-    "count": 1,
     "id": "usefulfood:applejam"
   }
 }

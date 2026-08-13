@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "minecraft:apple",
     "minecraft:apple",
@@ -8,7 +7,6 @@
     "minecraft:glass_bottle"
   ],
   "result": {
-    "count": 1,
     "id": "usefulfood:applejuice"
   }
 }

@@ -1,13 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "usefulfood:breadslice",
     "usefulfood:breadslice",
     "usefulfood:cheese"
   ],
   "result": {
-    "count": 1,
     "id": "usefulfood:cheesesandwich"
   }
 }

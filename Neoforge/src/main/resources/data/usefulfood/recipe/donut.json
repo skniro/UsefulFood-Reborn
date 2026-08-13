@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "usefulfood:milkbottle",
     "minecraft:wheat",
@@ -9,7 +8,6 @@
     "minecraft:sugar"
   ],
   "result": {
-    "count": 1,
     "id": "usefulfood:donut"
   }
 }

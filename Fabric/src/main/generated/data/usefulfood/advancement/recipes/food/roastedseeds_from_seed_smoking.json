@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#usefulfood:seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "usefulfood:roastedseeds_from_seed_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_seed"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "usefulfood:roastedseeds_from_seed_smoking"
+    ]
+  }
+}

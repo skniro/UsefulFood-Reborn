@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "C": "usefulfood:caramel",
     "M": "#c:drinks/milk",

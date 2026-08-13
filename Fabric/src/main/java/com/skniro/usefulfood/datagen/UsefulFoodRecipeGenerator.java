@@ -170,7 +170,7 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
 
                 //Campfire
                 offerCampfireCooking(UsefulFoodItems.SquidTentacleRaw,UsefulFoodItems.SquidTentacleCooked, 0.35F, 600);
-                offerCampfireCooking(ItemTags.VILLAGER_PLANTABLE_SEEDS, UsefulFoodItems.RoastedSeeds, 0.45F, 600);
+                offerCampfireCooking(UsefulFoodItemTagGeneration.ModItemTags.Seed, UsefulFoodItems.RoastedSeeds, 0.45F, 600);
                 offerCampfireCooking(ItemTags.EGGS,UsefulFoodItems.FriedEgg, 0.10F, 300);
                 offerCampfireCooking(UsefulFoodItems.SugarCube,UsefulFoodItems.caramel, 0.45F, 300);
                 offerCampfireCooking(UsefulFoodItems.Marshmallow,UsefulFoodItems.CookMarshmallow, 0.60F, 600);
@@ -182,7 +182,7 @@ public class UsefulFoodRecipeGenerator extends FabricRecipeProvider {
                 //Smoking
                 offerSmoking(UsefulFoodItems.SquidTentacleRaw,UsefulFoodItems.SquidTentacleCooked, 0.35F, 100);
                 offerSmoking(ItemTags.EGGS,UsefulFoodItems.FriedEgg, 0.10F, 100);
-                offerSmoking(ItemTags.VILLAGER_PLANTABLE_SEEDS, UsefulFoodItems.RoastedSeeds, 0.45F, 100);
+                offerSmoking(UsefulFoodItemTagGeneration.ModItemTags.Seed, UsefulFoodItems.RoastedSeeds, 0.45F, 100);
                 offerSmoking(UsefulFoodItems.SugarCube,UsefulFoodItems.caramel, 0.45F, 100);
                 offerSmoking(UsefulFoodItems.Marshmallow,UsefulFoodItems.CookMarshmallow, 0.60F, 100);
                 offerSmoking(UsefulFoodItems.ChocolateMilkBottle, UsefulFoodItems.hotchocolatebottle, 0.30F, 100);

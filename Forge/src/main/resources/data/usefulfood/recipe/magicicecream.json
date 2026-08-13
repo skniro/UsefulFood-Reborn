@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "minecraft:glistering_melon_slice",
     "minecraft:glistering_melon_slice",
@@ -8,7 +7,6 @@
     "minecraft:golden_apple"
   ],
   "result": {
-    "count": 1,
     "id": "usefulfood:magicicecream"
   }
 }

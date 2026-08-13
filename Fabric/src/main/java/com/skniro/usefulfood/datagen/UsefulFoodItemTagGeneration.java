@@ -1,5 +1,6 @@
 package com.skniro.usefulfood.datagen;
 
+import com.skniro.usefulfood.UsefulFood;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -20,6 +21,7 @@ public class UsefulFoodItemTagGeneration extends FabricTagsProvider.ItemTagsProv
 
     public static class ModItemTags {
         public static final TagKey<Item> C_Lily_Pads = TagKey.create(Registries.ITEM, Identifier.parse("c/lily_pads/lily_pads"));
+        public static final TagKey<Item> Seed = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(UsefulFood.MOD_ID, "seed"));
     }
 
     @Override
@@ -32,7 +34,14 @@ public class UsefulFoodItemTagGeneration extends FabricTagsProvider.ItemTagsProv
                 .setReplace(false);;
         valueLookupBuilder(ModItemTags.C_Lily_Pads)
                 .add(Items.LILY_PAD)
-                .setReplace(false);;
+                .setReplace(false);
+        valueLookupBuilder(ModItemTags.Seed)
+                .add(Items.PUMPKIN_SEEDS)
+                .add(Items.MELON_SEEDS)
+                .add(Items.WHEAT_SEEDS)
+                .add(Items.BEETROOT_SEEDS)
+                .setReplace(false);
+
 
     }
 

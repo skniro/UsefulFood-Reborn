@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "experience": 0.3,
+  "ingredient": "usefulfood:chocolatemilkbottle",
+  "result": {
+    "id": "usefulfood:hotchocolatemilkbottle"
+  }
+}

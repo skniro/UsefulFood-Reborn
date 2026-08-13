@@ -1,13 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "usefulfood:cookedsquidtentacle",
     "usefulfood:breadslice",
     "usefulfood:breadslice"
   ],
   "result": {
-    "count": 1,
     "id": "usefulfood:squidsandwich"
   }
 }

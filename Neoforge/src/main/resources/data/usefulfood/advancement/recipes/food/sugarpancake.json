@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:sugarpancake"
+        "recipes": "usefulfood:sugarpancake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

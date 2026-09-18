@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:pancakedough"
+        "recipes": "usefulfood:pancakedough"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

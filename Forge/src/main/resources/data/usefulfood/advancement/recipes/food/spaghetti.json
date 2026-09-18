@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:spaghetti"
+        "recipes": "usefulfood:spaghetti"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

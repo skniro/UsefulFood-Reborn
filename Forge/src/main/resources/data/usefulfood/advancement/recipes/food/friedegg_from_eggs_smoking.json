@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:friedegg_from_eggs_smoking"
+        "recipes": "usefulfood:friedegg_from_eggs_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

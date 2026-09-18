@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:roastedseeds_from_seed_smoking"
+        "recipes": "usefulfood:roastedseeds_from_seed_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:carrotsoup"
+        "recipes": "usefulfood:carrotsoup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

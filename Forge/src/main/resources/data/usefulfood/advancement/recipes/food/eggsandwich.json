@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:eggsandwich"
+        "recipes": "usefulfood:eggsandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

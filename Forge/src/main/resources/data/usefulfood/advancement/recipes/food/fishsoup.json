@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:fishsoup"
+        "recipes": "usefulfood:fishsoup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

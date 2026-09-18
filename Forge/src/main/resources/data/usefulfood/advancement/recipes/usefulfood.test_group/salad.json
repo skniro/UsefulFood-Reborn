@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:salad"
+        "recipes": "usefulfood:salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

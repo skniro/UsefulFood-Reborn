@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:cookedsquidtentacle_from_campfire_cooking_squidrtentacle"
+        "recipes": "usefulfood:cookedsquidtentacle_from_campfire_cooking_squidrtentacle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

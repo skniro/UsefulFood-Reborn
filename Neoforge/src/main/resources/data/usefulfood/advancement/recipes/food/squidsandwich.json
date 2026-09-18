@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:squidsandwich"
+        "recipes": "usefulfood:squidsandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

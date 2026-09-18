@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:cookedsquidtentacle"
+        "recipes": "usefulfood:cookedsquidtentacle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:caramel_from_smelting_sugarcube"
+        "recipes": "usefulfood:caramel_from_smelting_sugarcube"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:sweet_berries_ice_cream"
+        "recipes": "usefulfood:sweet_berries_ice_cream"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:vanillaicecream"
+        "recipes": "usefulfood:vanillaicecream"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

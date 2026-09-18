@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:melonjuice"
+        "recipes": "usefulfood:melonjuice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

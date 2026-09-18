@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:fruitsalad"
+        "recipes": "usefulfood:fruitsalad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

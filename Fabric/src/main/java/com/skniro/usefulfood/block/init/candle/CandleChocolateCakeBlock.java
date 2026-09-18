@@ -45,12 +45,6 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
     private static final Iterable<Vec3> PARTICLE_OFFSETS;
     private final Block candle;
 
-    public static final MapCodec<CandleChocolateCakeBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
-        return instance.group(BuiltInRegistries.BLOCK.byNameCodec().fieldOf("candle").forGetter((block) -> {
-            return block.candle;
-        }), propertiesCodec()).apply(instance, CandleChocolateCakeBlock::new);
-    });
-
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
@@ -123,11 +117,6 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
         return state.is(BlockTags.CANDLE_CAKES, (statex) -> {
             return statex.hasProperty(LIT) && !(Boolean)state.getValue(LIT);
         });
-    }
-
-    @Override
-    protected MapCodec<? extends CandleChocolateCakeBlock> codec() {
-        return CODEC;
     }
 
     @Override

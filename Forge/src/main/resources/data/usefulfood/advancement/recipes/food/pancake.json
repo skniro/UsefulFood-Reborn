@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:pancake"
+        "recipes": "usefulfood:pancake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

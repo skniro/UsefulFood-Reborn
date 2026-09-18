@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:waffle_chorus_ice_cream"
+        "recipes": "usefulfood:waffle_chorus_ice_cream"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

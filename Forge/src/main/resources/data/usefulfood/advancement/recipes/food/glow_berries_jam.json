@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:glow_berries_jam"
+        "recipes": "usefulfood:glow_berries_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

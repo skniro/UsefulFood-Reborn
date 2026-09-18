@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:waffle"
+        "recipes": "usefulfood:waffle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

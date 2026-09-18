@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:chorus_jam_biscuit"
+        "recipes": "usefulfood:chorus_jam_biscuit"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

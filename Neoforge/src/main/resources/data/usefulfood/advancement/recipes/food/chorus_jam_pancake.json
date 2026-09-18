@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:chorus_jam_pancake"
+        "recipes": "usefulfood:chorus_jam_pancake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

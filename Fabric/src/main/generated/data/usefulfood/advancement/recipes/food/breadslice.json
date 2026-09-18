@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:breadslice"
+        "recipes": "usefulfood:breadslice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

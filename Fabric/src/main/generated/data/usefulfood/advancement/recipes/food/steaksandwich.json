@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:steaksandwich"
+        "recipes": "usefulfood:steaksandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

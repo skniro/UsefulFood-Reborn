@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:glass_jar"
+        "recipes": "usefulfood:glass_jar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

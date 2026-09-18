@@ -27,7 +27,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class JamJarBlock extends Block {
     public static final IntegerProperty JAM_STAGE = IntegerProperty.create("jam_stage", 1, 3);
-    public static final MapCodec<JamJarBlock> CODEC = simpleCodec(JamJarBlock::new);
     private static final VoxelShape SHAPE = Block.box(5.0, 0.0, 5.0, 11.0, 9.5, 11.0);
     public static final Map<JamType, BiMap<Item, Item>> JAM_TYPE_MAPS = new HashMap<>();
     public Item JamItem;
@@ -45,11 +44,6 @@ public class JamJarBlock extends Block {
     public JamJarBlock(Properties settings) {
         super(settings);
         registerDefaultState(this.stateDefinition.any().setValue(JAM_STAGE, 3));
-    }
-
-    @Override
-    protected MapCodec<JamJarBlock> codec() {
-        return CODEC;
     }
 
     @Override

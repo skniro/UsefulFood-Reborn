@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:sweet_berries_jam_jar"
+        "recipes": "usefulfood:sweet_berries_jam_jar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

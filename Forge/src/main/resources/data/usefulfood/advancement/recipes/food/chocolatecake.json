@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:chocolatecake"
+        "recipes": "usefulfood:chocolatecake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:chorus_jelly"
+        "recipes": "usefulfood:chorus_jelly"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

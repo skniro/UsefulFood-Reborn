@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:cod_roe_sushi"
+        "recipes": "usefulfood:cod_roe_sushi"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

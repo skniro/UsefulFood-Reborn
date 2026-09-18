@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:melonjampancake"
+        "recipes": "usefulfood:melonjampancake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

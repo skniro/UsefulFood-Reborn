@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:chorus_jam_jar"
+        "recipes": "usefulfood:chorus_jam_jar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

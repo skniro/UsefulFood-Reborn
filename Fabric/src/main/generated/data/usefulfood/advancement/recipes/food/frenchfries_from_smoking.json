@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:frenchfries_from_smoking"
+        "recipes": "usefulfood:frenchfries_from_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

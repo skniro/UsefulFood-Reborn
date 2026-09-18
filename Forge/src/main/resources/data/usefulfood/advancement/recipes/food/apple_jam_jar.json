@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:apple_jam_jar"
+        "recipes": "usefulfood:apple_jam_jar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

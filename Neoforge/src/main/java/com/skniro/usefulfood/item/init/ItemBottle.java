@@ -6,6 +6,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -40,7 +41,7 @@ public class ItemBottle
         if (user instanceof Player && !(playerEntity = (Player)user).hasInfiniteMaterials()) {
             ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
             if (!playerEntity.getInventory().add(itemStack)) {
-                playerEntity.drop(itemStack, false);
+                playerEntity.drop(itemStack, false, Prediction.PREDICTED);
             }
         }
         return stack;

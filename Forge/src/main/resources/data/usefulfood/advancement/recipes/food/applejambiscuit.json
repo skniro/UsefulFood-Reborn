@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:applejambiscuit"
+        "recipes": "usefulfood:applejambiscuit"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

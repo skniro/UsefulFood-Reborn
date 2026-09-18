@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:friedegg_from_smelting_brown_egg"
+        "recipes": "usefulfood:friedegg_from_smelting_brown_egg"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

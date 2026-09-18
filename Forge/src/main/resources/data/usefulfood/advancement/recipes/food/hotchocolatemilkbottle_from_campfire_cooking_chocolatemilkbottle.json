@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:hotchocolatemilkbottle_from_campfire_cooking_chocolatemilkbottle"
+        "recipes": "usefulfood:hotchocolatemilkbottle_from_campfire_cooking_chocolatemilkbottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

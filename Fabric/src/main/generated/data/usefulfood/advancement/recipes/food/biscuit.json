@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:biscuit"
+        "recipes": "usefulfood:biscuit"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

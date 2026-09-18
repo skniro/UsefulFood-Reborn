@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:friedegg"
+        "recipes": "usefulfood:friedegg"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

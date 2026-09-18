@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:caramelicecream"
+        "recipes": "usefulfood:caramelicecream"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

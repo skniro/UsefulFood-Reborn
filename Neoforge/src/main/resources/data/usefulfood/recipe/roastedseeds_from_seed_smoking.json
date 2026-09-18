@@ -3,8 +3,7 @@
   "category": "food",
   "cookingtime": 100,
   "experience": 0.45,
-  "group": "food",
-  "ingredient": "minecraft:pumpkin_seeds",
+  "ingredient": "#usefulfood:seed",
   "result": {
     "id": "usefulfood:roastedseeds"
   }

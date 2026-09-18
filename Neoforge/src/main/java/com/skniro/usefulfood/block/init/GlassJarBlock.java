@@ -30,16 +30,9 @@ import org.jetbrains.annotations.Nullable;
 public class GlassJarBlock extends HorizontalDirectionalBlock {
     private static final VoxelShape SHAPE = Block.box(5.0, 0.0, 5.0, 11.0, 9.5, 11.0);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final MapCodec<GlassJarBlock> CODEC = simpleCodec(GlassJarBlock::new);
 
     public GlassJarBlock(Properties settings) {
         super(settings);
-    }
-
-
-    @Override
-    protected MapCodec<GlassJarBlock> codec() {
-        return CODEC;
     }
 
     @Override

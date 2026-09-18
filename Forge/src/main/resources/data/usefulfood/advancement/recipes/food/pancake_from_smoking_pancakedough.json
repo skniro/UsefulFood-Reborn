@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "usefulfood:pancake_from_smoking_pancakedough"
+        "recipes": "usefulfood:pancake_from_smoking_pancakedough"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

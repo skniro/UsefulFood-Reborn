@@ -1,6 +1,5 @@
 package com.skniro.usefulfood.block.init;
 
-import com.mojang.serialization.MapCodec;
 import com.skniro.usefulfood.block.UsefulFoodJamBlocks;
 import com.skniro.usefulfood.item.UsefulFoodItems;
 import net.minecraft.core.BlockPos;
@@ -30,16 +29,9 @@ import org.jetbrains.annotations.Nullable;
 public class GlassJarBlock extends HorizontalDirectionalBlock {
     private static final VoxelShape SHAPE = Block.box(5.0, 0.0, 5.0, 11.0, 9.5, 11.0);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final MapCodec<GlassJarBlock> CODEC = simpleCodec(GlassJarBlock::new);
 
     public GlassJarBlock(Properties settings) {
         super(settings);
-    }
-
-
-    @Override
-    protected MapCodec<GlassJarBlock> codec() {
-        return CODEC;
     }
 
     @Override

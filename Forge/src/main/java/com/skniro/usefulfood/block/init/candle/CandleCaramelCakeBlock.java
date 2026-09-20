@@ -2,13 +2,10 @@ package com.skniro.usefulfood.block.init.candle;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.skniro.usefulfood.block.UsefulFoodCakeBlocks;
 import com.skniro.usefulfood.block.init.SpecialCakeBlockState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -46,12 +43,6 @@ public class CandleCaramelCakeBlock extends AbstractCandleBlock {
     private static final Map<Block, CandleCakeBlock> CANDLES_TO_CANDLE_CAKES;
     private static final Iterable<Vec3> PARTICLE_OFFSETS;
     private final Block candle;
-
-    public static final MapCodec<CandleCaramelCakeBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
-        return instance.group(BuiltInRegistries.BLOCK.byNameCodec().fieldOf("candle").forGetter((block) -> {
-            return block.candle;
-        }), propertiesCodec()).apply(instance, CandleCaramelCakeBlock::new);
-    });
 
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
@@ -122,11 +113,6 @@ public class CandleCaramelCakeBlock extends AbstractCandleBlock {
         return state.is(BlockTags.CANDLE_CAKES, (statex) -> {
             return statex.hasProperty(LIT) && !(Boolean)state.getValue(LIT);
         });
-    }
-
-    @Override
-    protected MapCodec<? extends CandleCaramelCakeBlock> codec() {
-        return CODEC;
     }
 
     @Override

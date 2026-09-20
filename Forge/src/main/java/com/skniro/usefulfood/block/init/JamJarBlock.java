@@ -1,7 +1,6 @@
 package com.skniro.usefulfood.block.init;
 
 import com.google.common.collect.BiMap;
-import com.mojang.serialization.MapCodec;
 import com.skniro.usefulfood.block.init.jam.JamType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -29,7 +28,6 @@ import java.util.function.Supplier;
 
 public class JamJarBlock extends Block {
     public static final IntegerProperty JAM_STAGE = IntegerProperty.create("jam_stage", 1, 3);
-    public static final MapCodec<JamJarBlock> CODEC = simpleCodec(JamJarBlock::new);
     private static final VoxelShape SHAPE = Block.box(5.0, 0.0, 5.0, 11.0, 9.5, 11.0);
     public static final Map<JamType, BiMap<Item, Item>> JAM_TYPE_MAPS = new HashMap<>();
     public Supplier<Item> JamItem;
@@ -47,11 +45,6 @@ public class JamJarBlock extends Block {
     public JamJarBlock(Properties settings) {
         super(settings);
         registerDefaultState(this.stateDefinition.any().setValue(JAM_STAGE, 3));
-    }
-
-    @Override
-    protected MapCodec<JamJarBlock> codec() {
-        return CODEC;
     }
 
     @Override

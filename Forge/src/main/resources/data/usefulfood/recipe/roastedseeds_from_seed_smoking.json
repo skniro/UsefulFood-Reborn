@@ -3,9 +3,8 @@
   "category": "food",
   "cookingtime": 100,
   "experience": 0.45,
-  "group": "pancake",
-  "ingredient": "usefulfood:pancakedough",
+  "ingredient": "#usefulfood:seed",
   "result": {
-    "id": "usefulfood:pancake"
+    "id": "usefulfood:roastedseeds"
   }
 }
